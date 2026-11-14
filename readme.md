@@ -11,6 +11,7 @@ Official repository: [SwanThuta/TerraTwin](https://github.com/SwanThuta/TerraTwi
 - [spec.md](spec.md): scope, recommended stack, data contracts, scoring, resources, and acceptance criteria.
 - [design.md](design.md): interface, visual direction, and interaction behavior.
 - [todo.md](todo.md): six-person ownership, delivery sequence, and completion checklist.
+- [data/source-register.md](data/source-register.md): verified source catalogs, proposed site evidence, access leads, and gaps before scoring.
 - [agents.md](agents.md): shared coding-agent instructions and scientific integrity rules.
 - [claude.md](claude.md): Claude entry instructions referencing the shared rules.
 

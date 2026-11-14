@@ -1,0 +1,49 @@
+# TerraTwin source register: proposed four targets and eight Earth sites
+
+Checked 2026-11-14 against public publisher/catalog pages. This is a **retrieval plan and evidence inventory**, not a dataset of measured comparisons. No raster granules or GIS packages have been downloaded, no site footprints have been approved, and no similarity scores have been computed. A catalog listing does not prove that a particular download, image reuse, or site-level interpretation is suitable.
+
+## Terrain products to retrieve
+
+- **Earth, nonpolar sites:** NASA LP DAAC [SRTMGL1 V003](https://doi.org/10.5067/MEaSUREs/SRTM/SRTMGL1.003), approximately 30 m postings, [granule search](https://search.earthdata.nasa.gov/search?q=SRTMGL1). Its latitude range is 60°N to 56°S ([NASA SRTM guide](https://www.earthdata.nasa.gov/s3fs-public/2025-05/SRTM_Quick_Guide.pdf)). It is a candidate for Lava Beds, Kīlauea, Green River Formation, Atacama, Painted Desert, and Wadi Rum after exact footprints and granules are selected. Earthdata access may require a login; this has not been tested here.
+- **Earth, Iceland:** [ArcticDEM](https://www.pgc.umn.edu/data/arcticdem/) provides downloadable elevation mosaics and strip indexes; the Polar Geospatial Center reports [Iceland coverage](https://www.pgc.umn.edu/news/pgc-news-announcements-june-30-2022/). Select a dated tile over a named Vatnajökull outlet or margin, then inspect its quality and redistribution terms. A glacier's surface changes with time, so record acquisition dates.
+- **Earth, Antarctica:** [REMA](https://www.pgc.umn.edu/data/rema/) provides Antarctic elevation mosaics and tile indexes. Select a tile over a specific ice-free part of the McMurdo Dry Valleys. Follow the center's acknowledgement and source-imagery rules.
+- **Moon:** Lunar Orbiter Laser Altimeter [LOLA GDR](https://ode.rsl.wustl.edu/moon/pagehelp/content/Missions_Instruments/LRO/LOLA/GDR/Intro.htm) includes elevation, slope, roughness, and permanently shadowed-region products. The [PDS cylindrical archive](https://pds-geosciences.wustl.edu/lro/lro-l-lola-3-rdr-v1/lrolol_1xxx/data/lola_gdr/cylindrical/jp2/) contains global/tiled lunar products for Marius Hills; the [polar archive](https://pds-geosciences.wustl.edu/lro/lro-l-lola-3-rdr-v1/lrolol_1xxx/data/lola_gdr/polar/jp2/) contains south-polar products for Shackleton. The [product description](https://ode.rsl.wustl.edu/moon/pagehelp/content/Missions_Instruments/LRO/LOLA/GDR/GDRDEM.htm) specifies scale factors and resolutions; read each detached label before interpreting pixel values. LOLA topography cannot itself confirm an underground lava tube or water ice.
+- **Mars:** Mars Orbiter Laser Altimeter [MOLA MEGDR](https://pds-geosciences.wustl.edu/missions/mgs/megdr.html) provides topography and observation-count grids. The maintained [PDS4 128-pixels-per-degree archive](https://pds-geosciences.wustl.edu/mgs/urn-nasa-pds-mgs_mola_topography_derived/meg128/) lists the [Jezero-region topography tile](https://pds-geosciences.wustl.edu/mgs/urn-nasa-pds-mgs_mola_topography_derived/meg128/megt44n000hb.img) and [Gale-region topography tile](https://pds-geosciences.wustl.edu/mgs/urn-nasa-pds-mgs_mola_topography_derived/meg128/megt00n090hb.img), each with `.xml`, `.lbl`, and `.hdr` metadata files in the same directory. These tile selections follow the official [Jezero](https://planetarynames.wr.usgs.gov/Feature/14300) and [Gale](https://planetarynames.wr.usgs.gov/Feature/2071) crater locations, not yet a defined study footprint. MOLA is useful for broad terrain; check a local higher-resolution terrain product before claiming traversal-scale similarity.
+
+Use comparable **physical ground scale and study-area size** when deriving slope/roughness. Do not compare raw pixel spacing, image color, absolute elevations against different planetary datums, or polar map values without projection/label checks. Keep no-data and quality flags.
+
+## Geological and feature evidence by proposed pair
+
+### Marius Hills, Moon → Lava Beds National Monument and Kīlauea
+
+- Planetary evidence: [NASA imagery and interpretation](https://science.nasa.gov/image-article/apod-2017-october-25-marius-hills-holes-in-the-moon/) show volcanic domes and the Marius Hills Hole, interpreted as a possible lava-tube skylight. The [USGS unified lunar geologic map, edition 2](https://astrogeology.usgs.gov/search/map/Moon/Geology/Unified_Geologic_Map_of_the_Moon_GIS_v2/) offers regional mapped units; its 1:5,000,000 scale is not cave-scale evidence.
+- Earth evidence: [NPS Lava Beds geology](https://home.nps.gov/labe/learn/nature/geology.htm) documents lava flows and tubes; its [geologic resource map record](https://irma.nps.gov/DataStore/Reference/Profile/2195547) points to GIS material. [USGS Kīlauea geology](https://www.usgs.gov/volcanoes/kilauea/science/geology-and-history-kilauea?page=1) documents basaltic flows and a lava tube. Pin the comparison to a specific flow or cave area; Kīlauea as a whole is too broad.
+- Status: strong **feature lead**, but no comparable terrain observations or verified lunar tube geometry yet. Treat the tube as an interpretation, not a measured underground match.
+
+### Shackleton crater, Moon → Vatnajökull and McMurdo Dry Valleys
+
+- Planetary evidence: [NASA Shackleton overview](https://science.nasa.gov/resource/shackleton-craters-illuminated-rim-shadowed-interior/) supports the polar crater and permanent-shadow claims and discusses *possible* ice. [NASA LOLA/lighting imagery](https://science.nasa.gov/image-detail/faces-of-shackleton/) shows topography and lighting; the LOLA GDR also catalogs a shadow map.
+- Earth evidence: the [Vatnajökull National Park research page](https://www.vatnajokulsthjodgardur.is/en/melting-glaciers/joklarannsoknir) points to glacier-surface maps and DEM work. [NASA describes the McMurdo Dry Valleys](https://science.nasa.gov/earth/earth-observatory/mcmurdo-dry-valleys-2140/) as mostly ice-free valleys with seasonal meltwater. ArcticDEM and REMA are the elevation leads above.
+- Status: **weak proposed crater analogs**. A glacier or dry valley does not reproduce an impact crater or permanent lunar shadow. Neither Earth site's ice is evidence of ice within Shackleton. Keep this pair unranked until an exact terrain/rock comparison is justified; ice and darkness are context, not terrain-scoring inputs.
+
+### Jezero crater, Mars → Green River Formation and Atacama Desert
+
+- Planetary evidence: [NASA Perseverance Jezero delta observations](https://science.nasa.gov/resource/perseverance-explores-the-jezero-crater-delta/) document a delta and sedimentary rocks. The [USGS Mars geologic map](https://pubs.usgs.gov/publication/sim3292) is downloadable regional context at 1:20,000,000; rover/orbital observations are needed for the delta itself.
+- Earth evidence: [USGS Green River Formation research](https://pubs.usgs.gov/pp/0904/report.pdf) identifies ancient lake deposits, but the formation spans a very large area; choose an individual outcrop and verify whether it represents the desired delta or lakebed process. [NASA describes Atacama](https://science.nasa.gov/solar-system/planetary-analogs/) as a Mars analog for aridity. A more specific possible feature is the [San Pedro River delta in Salar de Atacama](https://eros.usgs.gov/earthshots/salar-de-atacama-chile), documented by USGS; its suitability for Jezero remains untested.
+- Status: **candidate analogs for different aspects** of Jezero. Do not label all of Atacama a delta match or treat aridity as evidence of ancient delta geology.
+
+### Gale crater, Mars → Painted Desert and Wadi Rum
+
+- Planetary evidence: [NASA Gale sedimentation and erosion account](https://science.nasa.gov/resource/sedimentation-and-erosion-in-gale-crater-mars/) describes layered deposits, former lakes, and later erosion. The [USGS Mars geologic map](https://pubs.usgs.gov/publication/sim3292) gives broad mapped context.
+- Earth evidence: [NPS Painted Desert geology](https://www.nps.gov/pefo/learn/nature/geologicformations.htm) identifies the Chinle Formation's exposed layers, mostly river-related deposits in the cited area. [UNESCO Wadi Rum description](https://whc.unesco.org/en/list/1377) identifies continental sandstone landforms, cliffs, and erosion.
+- Status: useful **layered-landscape leads**, but the cited Painted Desert and Wadi Rum materials are not automatically equivalents of Gale's lake deposits. Select particular outcrops and distinguish lake, river, wind, and later erosional processes.
+
+## What is still needed before a score or report
+
+1. Choose a documented, bounded study footprint for each planetary feature and Earth site. A crater center or broad park/desert name is not the scoring footprint. Record body-specific coordinate convention and the reason for the boundary.
+2. Retrieve only the covering DEM tiles/granules and their labels; record exact product ID/version, original URL, access date, checksum, units, projection, resolution, acquisition period, and no-data rules. Large rasters stay outside Git.
+3. Extract terrain metrics using the same physical scale and method, with quality checks. MOLA may be too coarse for human-scale mobility claims. Check local Mars imagery/DTMs if that is the practice objective.
+4. Record mapped geology or published site interpretation separately from measured terrain. Assign the versioned category compatibility table only after reviewing the selected outcrop/feature. If either scored dimension is unavailable or incompatible, use `null` and mark the pair insufficient evidence under `spec.md`.
+5. Add licensed imagery with its own scale and acquisition date. Generate the web comparison and PDF from the same validated records; do not use the illustrative photos as numeric evidence.
+
+No source here establishes an Earth–Moon/Mars similarity percentage, travel suitability, safety, or training approval.
