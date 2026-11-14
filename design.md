@@ -1,102 +1,59 @@
-# Product and interface design
+# TerraTwin — final UI implementation prompt
 
-## Direction
+Implement or restore TerraTwin’s **Planetary Field Atlas** exactly as it appears in the deployed reference below. Use the existing React, TypeScript, Vite and Three.js implementation and its local assets for visual parity. Keep the canvas renderer as the fallback. Treat this document as the UI brief, and use the pinned reference source to resolve exact copy, assets, breakpoints, computed styles and interaction details.
 
-Present a scientific explorer that helps users find Earth locations for Moon or Mars field practice. Lead with terrain evidence, then geology and visual impact. Use a dark navy canvas, light readable text, cyan for Earth interactions, pale silver for Moon, and warm orange for Mars. Treat this palette as a starting point and verify contrast in the implementation.
+- Live visual reference: https://terratwin-field-explorer.dryhill3.chatgpt.site
+- Reference source revision: `d69e3d155daa68df0448328d0515f8ca7528cafa`
+- Source of visual truth: `web/src/style.css`, `main.tsx`, `Space.tsx`, `Globe.tsx`, `softwareGlobe.ts`, `WorldAtlas.tsx` and `bodies.ts` under `web/src/`.
+- Source of scientific truth: `web/public/data/atlas.json` generated from `data/sites.json` and `pipeline/build.py`. Preserve its measurements, source links, imagery credits, documented gaps and comparison logic.
+- Match baseline and motion at the same viewport, zoom, rotation and animation phase. For exact imagery, copy the reference assets byte-for-byte. Use the source revision alongside this brief when recreating the design elsewhere.
 
-Use a system sans-serif font, clear labels, restrained borders, and consistent spacing. Keep scientific caveats beside the claims they qualify. Use text and icons alongside color.
+## App shell and visual language
 
-## Desktop layout
+- Keep the full-height, dark navy shell. Use the Inter, Geist, system-ui, sans-serif stack and dark color scheme. Use foreground `#eaf1fa`, muted text `#a8b8cc` / `#b8c4dc`, Earth cyan `#55d6e8`, Moon silver `#cbd5e1` and Mars orange `#ff9d66`.
+- Set the main content width to `min(1370px, calc(100% - 96px))`, with 48px total gutters at the intermediate breakpoint in the stylesheet and 32px at 760px and below. Use the 74px masthead on desktop and 62px on mobile. Place the existing `favicon.svg` and TerraTwin logotype at left, with “Twin” in cyan. Keep the masthead brand-only.
+- Keep the footer brand, “Planetary field atlas” and “Imagery credits ↗” link. Maintain hash navigation for `#/`, `#/world/earth`, `#/world/moon`, `#/world/mars` and `#/method`, plus existing direct `#/atlas` routes. `← All worlds` returns to the landing page. Preserve the method and sources page and the direct explorer’s existing results, map and comparison layouts.
+- Apply the route reveal over .38s, from opacity 0 and 7px below its final position. Preserve the cyan keyboard focus indicator. Scroll to the top when navigating between routes.
 
-```text
-Header: TerraTwin | Explore | Method & sources
-Search direction: Find Earth analogs / Explore planetary matches
-Planet selector: Moon / Mars       Site selector: fixed sourced list
-------------------------------------------------------------------
-Results list       | Earth map / globe          | Selected comparison
-Match + coverage   | 2D / Globe toggle          | Why it matches
-Curated/candidate  | Earth markers              | Evidence and scores
-Evidence gaps      | Selected-site highlight    | Differences and use
-Practice tags      | Two-site highlight         | Terrain images / PDF
-                   |                           | How calculated
-------------------------------------------------------------------
-Status: dataset version | scoring method | search boundary
-```
+## Galaxy background
 
-The diagram describes information placement, not a fixed pixel layout. Use a flexible center map, approximately 280px results column, and approximately 360px comparison column on wide screens. Collapse details into a panel or tabbed workspace when space is limited.
+Mount one fixed, decorative backdrop behind all routes, with pointer events disabled. Use the original blue nebula over `#020817`. Use `/space/nebula-mobile.webp` (1920 × 1200) below 1200px and `/space/nebula.webp` (3840 × 2400) from 1200px. Center and cover the layer, overscan by 7%, and animate alternately over 85s with ease-in-out. Drift from `translate(-2%, 1%) scale(1)` to `translate(3%, -2%) scale(1.08)`.
 
-## Search behavior
+Overlay the same 110 deterministic stars from `Space.tsx`. Dots are 1–2.75px, star white `#d9eeff` with a soft pale blue glow. Use staggered 2.8–7s twinkle cycles. Opacity runs from .18 to .96 and back, with scale .85 → 1.2 → .85. Add the two subtle shooting stars with 110 × 2px blue-white gradient trails. Start them at 31%/11% and 66%/27% with 19s and 27s cycles and delays of −4s and −12s. Let each travel diagonally down and right at 32°, visible briefly during the first 10% of its cycle. Respect reduced motion for the backdrop, transitions and initial globe spin.
 
-In “Find Earth analogs,” select Moon or Mars and a fixed planetary target. Rank Earth matches with comparable terrain and geology, and select the first ranked match when one exists. Show insufficient-evidence records separately with their coverage.
+## Landing page
 
-In “Explore planetary matches,” select an Earth site. Show relevant lunar and Martian targets with profile labels, keeping scores from different profiles in separate groups. The Earth marker remains selected while planetary cards change.
+- Show “Planetary atlas” and “Explore the surfaces of Earth, the Moon and Mars.” Use `clamp(38px, 5.2vw, 74px)` for the main title and 15px for the subtitle.
+- Present a single open scene on the nebula, with overlapping Earth, Moon and Mars globes in that initial left-to-right order. Keep the larger Moon in front. Use stage x positions 25%, 50%, 75%, side y at 52% and center y at 48%. Side globes use `min(39cqw, 86cqh)` and the center uses `min(46cqw, 99cqh)`. Maintain square globe bounds, side brightness .94 and full center brightness. Scene height is `clamp(400px, 43vw, 590px)` on desktop and `clamp(245px, 56vw, 420px)` at 760px and below.
+- Center the planet name below each globe on a compact dark translucent label. Use the existing small horizontal zoom controls below each sphere and above its name. Put translucent ‹ and › controls on the outer edges at 46% scene height, with a thin pale border and blur. Use 42 × 54px desktop controls and 32 × 42px on mobile.
+- › moves the rightmost globe to the left and moves the others one slot right. ‹ reverses it. Arrow keys act on the focused carousel. Ease position, size and brightness over 1.15s. The wrapping globe passes behind the center along an elevated path, reaching scale .77 and opacity .73 halfway through. Dragging a globe turns its surface in its own slot. Clicking the globe or name opens that world’s atlas.
+- Keep “Use the arrows to change worlds · Select a globe to explore” and the global “Pause rotation” / “Play rotation” control under the scene.
 
-Switching direction should preserve a valid selected pair when possible. Switching body clears an incompatible target and selects a valid one. Update results and explanations together so text never describes a previously selected pair.
+## Globe rendering and controls
 
-In the Moon/Mars-first direction, “Compare another Earth site” lets users choose one additional result for the same target. Keep the primary and second Earth sites highlighted on the map and show both comparison cards. Changing target or direction clears an invalid second site; flat/globe switching keeps both. In Earth-first search, use one Earth site at a time.
+- Reuse `/textures/earth_daymap.jpg`, `/textures/moon.jpg` and `/textures/mars.jpg` with their NASA / NASA-JPL-USGS credits. Render textured spheres with a gently shaded terminator and a blue atmospheric rim on Earth. Preserve the shipped lighting: Three.js ambient `0xbccde5` at intensity .68, directional light at 2.6 from `(-1.65, 4.3, 2.05)`, ACES tone mapping and exposure 1.16. Keep the software fallback’s corresponding softer shading.
+- Start auto-rotation on the landing and world views unless reduced motion applies. Drag and pinch temporarily suspend spinning. Hover or keyboard focus on a region pin temporarily pauses its globe and displays the preview. Clicking a pin or selecting a region stops auto-rotation and centers the chosen coordinates. The user can resume with the visible control.
+- Support mouse-wheel, two-finger pinch, visible +/− buttons, and +, − and 0 keyboard controls. Zoom the sphere and marker projection together over 1×–3×. Rotate with drag or the arrow keys on the focused globe. Hide pins on the far side and outside the viewport. Use vertical 34 × 32px zoom controls at the upper right in world and comparison views. Landing controls use 29 × 27px buttons.
 
-When a practice tag filters results, keep selected sites that remain in the filtered list. If the primary site is filtered out, select the first remaining result; clear a filtered-out second site. If nothing matches, show the empty state and a way to clear the tag.
+## World view and region details
 
-## Map and globe
+- Open with `← All worlds`, a small uppercase world kind in its accent, then the world name in `clamp(46px, 8vw, 100px)`. Place the globe at left and details card at right. Use columns `minmax(0, 1.75fr) minmax(245px, 1fr)`, 20px gap and equal height `clamp(390px, 45vw, 650px)`. Use translucent navy `#071125e8`, 16px card radius and `#8199be36` borders.
+- Begin with no region selected. The card shows “About Earth”, “About the Moon” or “About Mars”, the existing description, Diameter / Gravity / Solar day, then “Surface and terrain”, “Water and ice” and “Explore the dataset”. Preserve the 12 Earth, 2 Moon and 2 Mars regions and their names.
+- Place “Pause rotation” / “Auto-rotate”, the accessible region selector, and the short interaction legend beneath the globe. Pins are 16px blue circles with pale borders and a soft cyan halo. Candidate pins are square with rounded corners. Selected pins are 21px, with a bright ice-cyan center, white border and the strongest glow. Secondary matched pins use a softer cyan glow.
+- Position the hover preview above the pin. Use the 248px maximum panel, 12px radius, translucent navy, 49px square image (35px at 480px and below), bold name and a three-line geology summary. Clamp the preview inside the globe width. Hover leaves the full details and comparison selection intact.
+- On selection show the original full image and credit above the region text. Keep the image and action footer fixed within the card, and make only the details text scroll when it overflows. Include region type, name, location, historical landing information when available, coordinates and convention, geology, footprint and expandable evidence links. Keep NASA touchdown records labeled as historical.
+- Use a 7px gap and equal-width columns for the action row. On Earth use “Overview”, “↔ Moon”, “↔ Mars”. On Moon/Mars use “Overview” and “Compare with Earth”. Buttons stay on one row, minimum height 38px, 9px radius, with compact labels, dark blue borders and blue-teal gradient comparison buttons.
 
-Both views show Earth. The toggle changes projection using the same data and selection; it does not imply detailed 3D terrain. Planetary targets appear in the controls and comparison panel with sourced imagery when available.
+## Comparison view
 
-Differentiate curated sites and automatically surfaced candidates through marker shapes and labels. Clicking a marker or result card opens the same comparison. Keep a visible legend and attribution. Avoid constant globe rotation; respect reduced-motion preferences.
+- Clicking a comparison action opens a dedicated state within the world view. Use the heading “Earth ↔ Moon”, “Earth ↔ Mars” or the reverse order corresponding to the entry point. Replace the single-globe layout and its side card with a full-width navy panel containing two equal globe columns. Keep the two selectors, rotation control and “Close comparison”.
+- Use the selected region and the strongest available precomputed comparison, in the order implemented by `WorldAtlas.tsx`: overall similarity, geology, coverage and stable dataset order. When a Moon/Mars region anchors the comparison, filter Earth pins and the Earth selector to sites with positive documented evidence. Gusev Plains and Hadley–Apennine each yield 10 Earth sites in the reference data. Jezero Crater Floor yields zero and shows the matching evidence gap. Keep the planet region anchored when the user chooses a different eligible Earth site.
+- Below the globe panel place “Region comparison” and the two region cards, with matching height `clamp(370px, 39vw, 480px)` and a 2px top border in each body’s accent. Preserve the 20px column gap. Keep imagery and credits outside the independently scrollable text. Use a thin scrollbar with thumb `#42769b` and track `#101d31`.
+- Follow with “Scientific evidence”. Show the eligibility status and weighted evidence coverage as a prominent percentage with an 8px blue-to-cyan meter. Use a two-column grid for Terrain, Geology, Possible field practice and Analogy limits. Show the terrain and geology weights (⅔ and ⅓). Use numeric score and bar where available and amber “No comparable data” where absent. Preserve the wording of the evidence gaps, dataset/profile provenance and expandable “Candidate search and scoring method”. Coverage represents completeness, and an overall similarity score requires comparable terrain and geology.
+- Finish with “World conditions” for the displayed pair. Order the cards Temperature, Surface appearance, Geological features, Water and ice. Use the original shared temperature scale of −180 to 140 °C, with the Earth mean as a point and the Moon/Mars values drawn as ranges. Label these as planet-wide context and retain the original NASA source links.
 
-If tiles fail, retain markers on a plain background and keep the results list usable. If WebGL fails, explain that the map is unavailable and offer the complete list/comparison workflow. Keep projection selection available only when supported.
+## Responsive behavior and acceptance
 
-## Comparison content
-
-1. Earth name, planetary target, and curated/candidate review status.
-2. Heuristic similarity score, evidence coverage, and profile label.
-3. Terrain and geology values with units, score, source, scale, and quality notes; show any thermal observation as unscored context.
-4. Generated explanation: why it matches, where it differs, possible field-practice use, and evidence gaps.
-5. “How this comparison was made”: source product and link, retrieval date, input values, extraction method, scale, tolerance/category table, weights, and score calculation; include search boundary for candidates.
-6. “Download report (PDF)” for the selected pair, including insufficient-evidence and unreviewed candidate states.
-7. Sourced Earth and planetary terrain images with scale or field of view, acquisition date when known, attribution, and a clear note when their scales differ.
-8. Evidence-backed practice objective tags; selecting a tag filters results without changing their scores.
-
-A score may appear as “Heuristic terrain and geology similarity: 74/100; evidence: 2/2 dimensions.” This is example interface copy, not a research result. Show “Insufficient comparable evidence” when either scored dimension is unavailable. Never display a coverage percentage as confidence.
-
-Use compact horizontal bars with numerical labels for criterion scores. Avoid charts that hide missing values or imply precision beyond the evidence. Keep explanatory text close to the relevant comparison.
-
-Keep the method section readable without a download. Update its contents and PDF link together whenever the selected pair changes. On mobile, place both in the Comparison tab; keep the download keyboard accessible and name the pair in its accessible label.
-
-For a two-site comparison, show the same fields for each Earth–planetary pair, including its own method section and PDF link. Use side-by-side cards on wide screens and stacked cards on small screens. Do not display a new score comparing the two Earth sites directly. If a terrain image is missing, show a labeled placeholder and retain the data comparison.
-
-## Explanations
-
-Initial badge: “Generated from comparison data.” Build text from verified structured evidence. Include linked evidence references and explicit gaps. If a model API is added later, label that mode and retain the template fallback.
-
-Do not show an idle chat box, API setup prompts, or technical provider details in the main exploration flow. Configuration belongs in developer documentation.
-
-## Candidate discovery
-
-Provide a visible “Search candidates” results group, with region/pool, method, run version, and review status. Users can inspect candidates like curated sites while seeing that their analog interpretation needs review. Do not label the section “new discoveries” without supporting research.
-
-## Responsive and accessible behavior
-
-On small screens, use Results / Map / Comparison tabs with persistent search controls. Preserve the selected pair across tabs. Never make hovering, map dragging, or color the only route to information.
-
-All selectors, cards, tabs, and map controls need keyboard focus and accessible names. Announce result changes and loading failures appropriately. Use visible focus states, semantic headings, readable text sizing, and touch-friendly controls.
-
-## States to design
-
-| State | Behavior |
-| --- | --- |
-| Loading data | Explain what is loading; keep layout stable |
-| No qualifying matches | Show evidence gaps and offer another fixed target |
-| Missing observation | Show “No comparable data” and the reason |
-| Partial coverage | Label coverage clearly and show outside the ranked results |
-| Candidate unreviewed | Show a review badge and search provenance |
-| Tiles unavailable | Plain map background plus working list and details |
-| Optional explanation API unavailable later | Use evidence-template explanation |
-| Invalid data | Exclude invalid result and provide a useful error state |
-| Report unavailable | Explain the download failure while keeping the comparison and method visible |
-| Terrain image unavailable | Show source/availability note and keep measurements and source links usable |
-| Practice tag has no matches | Show an empty-results message and a clear way to remove the filter |
-| Only one Earth site available | Disable the second-site control with an explanation |
-
-## Demo story
-
-Begin with a Moon or Mars field-practice question. Select a target, inspect its strongest Earth comparison and sourced terrain images, then select a practice tag and compare a second Earth site. Open each source-to-score method and PDF, explain a meaningful difference, switch between flat map and globe, then show an unexpected candidate and how the bounded search identified it. Finish with the analogy's limits.
+- At 760px and below stack the single globe and detail card, stack the region cards and world-condition cards, and keep the two comparison globes side by side. The single globe and detail card use `clamp(385px, 84vw, 520px)`; each region comparison card is 385px high. At 480px and below collapse the evidence overview and criterion grid to one column.
+- Preserve loading and retry states, no-match states, and accessible keyboard and touch routes to content. Respect the reference’s original credits and source disclosures.
+- Compare desktop and mobile baseline screenshots at the same viewport and animation phase. Check the initial carousel and both arrow directions, keyboard and pointer region previews, click-to-pause, zoom and marker alignment, equal card heights with fixed images, and filtered comparison in both search directions. Run `npm run build` and `python -m unittest discover -s tests`.
