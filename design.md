@@ -17,7 +17,7 @@ Use a dark navy planetary atlas with cyan accents for navigation and evidence, r
 ## Comparison evidence
 
 - Name both reviewed features and their source locators. Show the CSV's C01 Named landform and subfeatures and C02 Surface material / deposit classes as Strong, Moderate, Weak, or Not rated, with cited evidence, differences, and missing-review reasons. The Method page lists the remaining CSV criteria with readiness and does not treat unavailable metrics as scores.
-- Show the fixed overall qualitative label, evidence completeness as a count of supported dimensions, review state, versioned method, and explanation source links. A count is not a similarity percentage or confidence estimate.
+- Show evidence coverage as a percentage and keep the qualitative dimension bands in the expandable evidence section. An analog match percentage requires normalized measurements and a documented formula in the input CSV; coverage is not similarity or confidence.
 - Show sourced practice possibilities separately from ratings, followed by analogy limits. Practice filters do not alter the rating.
 - Show Earth and planetary image cards with credit, source link, and published scale information. Until rights, files, and georeferencing are checked, show explicit image-pending cards. Never imply that unmatched source images share a displayed scale.
 - Include a PDF download for the selected pair. Generate its content from the same validated record as the page.
