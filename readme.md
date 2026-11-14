@@ -6,7 +6,7 @@ This branch is a one-pair preview of the new CSV-backed atlas. The build reads `
 
 Only **P01**, Haughton Site A / Locale 7 ↔ Shackleton rim, is published in this slice. The CSV's dated desk screening rates terrain **Moderate** and geology **Weak**, giving an overall **Weak** qualitative label. C01 (named landform and subfeatures) and C02 (surface material / deposit classes) are the two scored dimensions. The other CSV criteria are shown on the Method & sources page with their readiness; they are not silently turned into scores. In particular, no validated raster measurements are supplied. The HMP research station marker is explicitly a context reference, not a Locale 7 feature point.
 
-The new evidence CSV gives P01 two documented similarity statements and three possible practice objectives, each with source IDs and limitations. The UI shows evidence coverage as a percentage (P01 is 100% across the two scored dimensions), while an analog match percentage stays unavailable until the CSV supplies comparable numeric measurements and a documented scoring formula. Images are pending. The other seven pairs are not imported yet, and Mars search has an empty state.
+The new evidence CSV gives P01 two documented similarity statements and three possible practice objectives, each with source IDs and limitations. These additions make the comparison explainable without changing its Moderate terrain / Weak geology ratings. Images are pending. The other seven pairs are not imported yet, and Mars search has an empty state.
 
 ## Run locally
 
