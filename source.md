@@ -115,7 +115,27 @@ The USGS identifies Copper Canyon as an alluvial fan with radial drainage and do
 
 Qualitative review plan: use the named Copper Canyon and Peace Vallis fan deposits as the feature scope, citing the USGS image/study and Palucis et al.'s mapped fan. Distinguish fan deposits from their source channels and adjacent terrain. Record fan form, radial/channel features, deposit classes, the large whole-fan scale difference, and uncertainty. Candidate practice tags: channel/fan mapping, sedimentary observation and terrain-navigation research; attach only after selected-feature evidence review.
 
-Optional elevation leads for a later quantitative study are NASA's SRTMGL1 tile **N36W117.SRTMGL1.hgt** [S16] and the USGS **MSL_Gale_DEM_Mosaic_1m_v3** [S17]. Neither raster has been retrieved or checked at a selected fan window. The previously proposed HiRISE DTM **DTEED_062963_1760_062172_1760_A01** is described as **channel** terrain [S15, S18], so it is not confirmed fan-deposit coverage. None of these DEM checks is needed for the first qualitative review.
+**Current implementation: qualitative heuristic comparison.** Apply `terrain-geology-qual-v1` from `spec.md`; no elevation raster, DEM download, slope/roughness calculation or equal-area polygon is required. The local `data/raw/earth/` and `data/raw/mars/` download folders were removed at the user's request because they are not required for this profile. The inspected Earth tile did not establish Copper Canyon fan coverage, and the Gale HRSC `.part` file was incomplete. Neither was used to derive observations or ratings. Research documents and metadata elsewhere in `data/raw/` are retained.
+
+Required P07 evidence:
+
+| Dimension | Copper Canyon evidence | Peace Vallis evidence | Review requirement |
+| --- | --- | --- | --- |
+| Terrain/landform | Named fan locator, radial drainage and depositional form [S12, S13] | Mapped fan units and channel-related features [S14, Figures 2 and 5] | Describe corresponding features, scale and preservation differences; do not infer matching slope or roughness without measurements |
+| Geology/materials | Published fan deposits and sediment-source descriptions [S13] | Published deposit/material interpretations at the selected fan units [S14] | Compare the supported deposit classes and uncertainty; a common fan label does not establish identical rocks or minerals |
+| Practice context (unscored) | Selected feature evidence above | Selected feature evidence above | Justify each proposed mapping/observation tag and its limits; do not infer traversability or training approval |
+
+Completion steps for the current profile:
+
+1. Record source-backed locators for both named fan deposits, using cited maps, figures or image footprints. Distinguish fan deposits from source channels and adjacent terrain; exact GIS polygons are optional.
+2. Record each terrain/geology claim with its source ID and exact page, figure, map unit or caption. State similarities, meaningful differences and unresolved evidence.
+3. Review the two dimensions using Strong/Moderate/Weak or null with an insufficient-evidence reason. Record reviewer, date and rubric version; apply the overall-label and `terrain-first-v1` ordering rules from `spec.md`. A downloaded file alone does not complete this review.
+4. Select sourced images with known feature coverage, attribution, reuse terms and scale/field of view when available. Clearly label mismatched or unknown display scales.
+5. Create one validated P07 comparison record and generate the website explanation and PDF from it, preserving evidence references, limitations, practice-tag rationale and review status. Keep P07 outside ranked results until both dimensions are rated and the review is recorded.
+
+No P07 rating or completed review is established by this document update. No similarity percentage is required or implied.
+
+Optional future quantitative work: NASA's SRTMGL1 tile **N36W117.SRTMGL1.hgt** [S16] and the USGS **MSL_Gale_DEM_Mosaic_1m_v3** [S17] remain retrieval leads; neither has verified terrain at a selected fan window. The previously proposed HiRISE DTM **DTEED_062963_1760_062172_1760_A01** is described as **channel** terrain [S15, S18], so it is not confirmed fan-deposit coverage. Reintroduce raster collection only for a separately scoped numerical analysis with checked coverage, units, quality and comparable physical scales.
 
 Visual leads: the USGS Copper Canyon fan image states a 1:48,000 source scale and public-domain use [S12]. Palucis et al., Figure 2, identifies CTX image P22_009571_1756_XI_04S222W at 6 m/pixel [S14]. Those source scales are not calibrated scale bars for a displayed thumbnail. Verify image coverage, georeferencing and reuse terms before cropping or publishing; label differing display scales.
 
