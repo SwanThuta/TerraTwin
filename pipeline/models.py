@@ -21,7 +21,18 @@ class Source(BaseModel):
     title: str
     url: str
     locator: str
-    accessDate: str
+    accessDate: str | None = None
+
+
+class Criterion(BaseModel):
+    id: str
+    key: str
+    role: str
+    title: str
+    question: str
+    unitOrRating: str
+    rule: str
+    readiness: str
 
 
 class Site(BaseModel):
@@ -34,6 +45,8 @@ class Site(BaseModel):
     mapPoint: tuple[float, float] | None
     mapPointKind: str
     mapPointSourceId: str
+    coordinateNote: str = ""
+    coordinateConvention: str = ""
 
 
 class Dimension(BaseModel):
@@ -92,6 +105,7 @@ class Comparison(BaseModel):
     limitSourceIds: list[str] = Field(min_length=1)
     visuals: VisualPair
     reviewNotes: str
+    reviewStatus: str = ""
 
     @model_validator(mode="after")
     def reviewed_requires_ratings(self) -> Comparison:
@@ -112,6 +126,7 @@ class Dataset(BaseModel):
     reviewProfile: str
     orderingProfile: str
     sources: list[Source]
+    criteria: list[Criterion] = Field(default_factory=list)
     sites: list[Site]
     comparisons: list[Comparison]
 
@@ -125,6 +140,8 @@ class Dataset(BaseModel):
             raise ValueError("source and site IDs must be unique")
         if len({item.id for item in self.comparisons}) != len(self.comparisons):
             raise ValueError("comparison IDs must be unique")
+        if self.criteria and {item.key for item in self.criteria if item.role == "primary_qualitative"} != {"terrain", "geology"}:
+            raise ValueError("CSV primary criteria must be terrain and geology")
         for site in self.sites:
             if site.mapPointSourceId not in sources:
                 raise ValueError(f"unknown coordinate source for {site.id}")
@@ -178,11 +195,11 @@ def explanation(item: Comparison) -> str:
             f"The pair remains unranked because {item.terrain.missingReason} "
             f"{item.geology.missingReason}"
         )
-    practice = item.practice[0].label.lower() if item.practice else "field observation"
+    practice = f"A possible use to assess is {item.practice[0].label.lower()}. " if item.practice else "No practice activity has per-tag evidence yet. "
     return (
         f"Terrain is rated {item.terrain.rating}: {item.terrain.evidence} "
         f"Geology is rated {item.geology.rating}: {item.geology.evidence} "
-        f"A possible use to assess is {practice}. "
+        f"{practice}"
         f"Important differences: {item.terrain.difference} {item.geology.difference}"
     )
 

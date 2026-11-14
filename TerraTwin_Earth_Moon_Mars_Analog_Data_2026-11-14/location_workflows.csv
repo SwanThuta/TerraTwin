@@ -1,0 +1,49 @@
+﻿pair_id,step_number,action,precise_instruction,source_ids,completion_state,required_output
+P01,1,Identify Earth field locale,"Use NASA Fig 22/28/29: Haughton Site A Locale 7, 2 km NW of HMP base; record exact image/map figure. Do NOT plot research station as Locale 7.",R01;R02,documented_context_requires_validation,site_locator_and_precision
+P01,2,Identify Moon footprint,"Use LROC 750-m rim scene -89.684, 196.739E; request image product and mapped rim unit.",R03;R29,documented_context_requires_validation,target_locator_and_precision
+P01,3,Compare terrain,"Compare bouldered ridge, shelf and crater blocks with image-scale warning; terrain Moderate from previous dated desk review.",R02;R03,pending,terrain_claims_and_scale
+P01,4,Compare geology,Locale 7 carbonate markers vs unmeasured lunar regolith / likely ejecta; geology Weak from existing desk review.,R02;R03,pending,geology_claims_and_material_classes
+P01,5,Collect optional rasters,"If needed get ArcticDEM strip at Site A and LROC NAC_DTM_ESALL_SR12; check valid-pixel mask, vertical datum and physical window.",R29;R31,pending,validated_data_products_or_not_applicable
+P01,6,Output decision,Keep overall Weak; retain P01 reviewer/date and operational tags; neither safety nor matched minerals established.,R01;R02;R03,pending,review_record_or_unranked_reason
+P02,1,Identify Earth bounded feature,"Start at Maunaulu GNIS site 19.3678716,-155.2024267; select exact dated basalt flow and tube mouth on USGS map before rating.",R05;R06;R37,documented_context_requires_validation,site_locator_and_precision
+P02,2,Identify Moon bounded feature,"LROC Marius Hills pit 14.0917,303.2299E; note pit is not documented open tube.",R04;R28,documented_context_requires_validation,target_locator_and_precision
+P02,3,Compare terrain,"Flow textures / rilles / skylight appearance; require same-scale views, not whole lava field vs a small pit.",R04;R06,pending,terrain_claims_and_scale
+P02,4,Compare geology,Earth lava-tube / basalt evidence vs lunar volcanic interpretation; check actual compositional study if wanted.,R04;R06,pending,geology_claims_and_material_classes
+P02,5,Collect optional rasters,Choose native Earth USGS DEM and lunar LROC pit DTM; create comparable physical surface window and masks.,R28;R30,pending,validated_data_products_or_not_applicable
+P02,6,Output decision,Leave both rating cells null and excluded from ranking until bounded units and reviewer/date are recorded.,R39,pending,review_record_or_unranked_reason
+P03,1,Identify Earth bounded feature,"Use actual 2021 Fagradalsfjall vent 5b 63.8906,-22.2691, not just Iceland; choose date-specific flow extent.",R07;R08,documented_context_requires_validation,site_locator_and_precision
+P03,2,Identify Moon feature,"Use Marius pit 14.0917,303.2299 E or choose separate named flow feature; vent vs pit is not direct morphologic match.",R04,documented_context_requires_validation,target_locator_and_precision
+P03,3,Compare terrain,"Check lava-lobe boundaries, channels, vent/flow geometry at matched image scales.",R07;R08;R04,pending,terrain_claims_and_scale
+P03,4,Compare geology,"Use published eruption material vs supported lunar volcanic units, not appearance-based mineralogy.",R07;R04,pending,geology_claims_and_material_classes
+P03,5,Collect optional rasters,Use post-March-2021 Iceland DEM; exclude pre-eruption ArcticDEM tiles. Check lunar LROC coverage and confidence.,R31;R28,pending,validated_data_products_or_not_applicable
+P03,6,Output decision,"No categorical rating until bounded products, unit evidence and date are documented.",R39,pending,review_record_or_unranked_reason
+P04,1,Identify Earth cave,"Skull Cave is selected for this dataset; USGS Stop14 PARKING 41.7311667,-121.5106667. Survey entrance GPS separately.",R09;R10,documented_context_requires_validation,site_locator_and_precision
+P04,2,Identify lunar pit,"Use Marius Pit LROC 14.0917,303.2299E and exact NAC imagery; do not assume a stable cave.",R04;R28,documented_context_requires_validation,target_locator_and_precision
+P04,3,Compare surface terrain,"Compare collapse-trench / pit visible geometry, approach and blocks, with scale; surface DEM only.",R09;R04,pending,terrain_claims_and_scale
+P04,4,Compare geologic evidence,Mammoth Crater basaltic flow / lava tube vs possible lunar volcanic skylight; record observations vs interpretation.,R09;R10;R04,pending,geology_claims_and_material_classes
+P04,5,Collect optional cave data,Earth cave survey or laser scan needed for subsurface. Lunar pit depth from LROC but underground continuity unmeasured.,R09;R04,pending,validated_data_products_or_not_applicable
+P04,6,Output decision,"Leave ratings null; avoid inference of human access, roof stability or habitat suitability.",R39,pending,review_record_or_unranked_reason
+P05,1,Identify exposed Earth deposit,"IUGS 37.5525,29.6813889 is LAKE coordinate; pick NASA photographed NE shore carbonate bench or SW terrace and geolocate.",R11;R12;R13,documented_context_requires_validation,site_locator_and_precision
+P05,2,Identify matching Mars unit,"Select mapped Jezero western carbonate-bearing margin or other named shoreline unit; crater center 18.41,77.69 not sample location.",R12;R14,documented_context_requires_validation,target_locator_and_precision
+P05,3,Compare terrain,"Compare exposed terracing, benches, fan fringes at matched physical scales; exclude lake-water DEM.",R12;R13,pending,terrain_claims_and_scale
+P05,4,Compare geology,Compare Salda hydromagnesite/Mg carbonate with possible Jezero carbonates; do not infer Martian microbial origin.,R11;R12,pending,geology_claims_and_material_classes
+P05,5,Collect optional rasters,Use Earth SRTM/other high-res shoreline terrain and local Mars stereo image only at validated exposed units.,R30;R14,pending,validated_data_products_or_not_applicable
+P05,6,Output decision,Candidate with potentially strong process support but no justified rating until selected features reviewed.,R39,pending,review_record_or_unranked_reason
+P06,1,Identify Earth delta deposit,"USGS says northern San Pedro delta at salar; geo-stream -23.30461,-68.21839 is NOT delta center. Map actual deposit extent.",R16;R17,documented_context_requires_validation,site_locator_and_precision
+P06,2,Identify Mars delta unit,"THEMIS image center 18.449,77.436 is a footprint reference, NOT exact delta outcrop. Select mapped Jezero unit.",R15;R14,documented_context_requires_validation,target_locator_and_precision
+P06,3,Compare terrain,"Map channels, dispersal fan, delta lobes, topographic gradient and physical sizes; exclude mined pond rectangles.",R16;R15,pending,terrain_claims_and_scale
+P06,4,Compare geology,"Record episodic saline basin deposits and Jezero ancient delta layers, including major chemistry differences.",R16;R15,pending,geology_claims_and_material_classes
+P06,5,Collect optional rasters,Source matched resolution exposed-terrain DEMs. Check surface modifications and acquisition dates.,R30;R34,pending,validated_data_products_or_not_applicable
+P06,6,Output decision,"Unreviewed, no direct NASA validated feature pair; no similarity percent.",R39,pending,review_record_or_unranked_reason
+P07,1,Identify Copper fan polygon,"USGS Copper Canyon fan image 1:48000 and USGS PP466 Plate4; a canyon coordinate 36.1285645,-116.7536577 is NOT fan.",R18;R19;R20,documented_context_requires_validation,site_locator_and_precision
+P07,2,Identify Peace fan mapped units,"Palucis Table2 and Fig5 define fan; IAU Peace Vallis -4.21,137.23 is VALLEY center NOT fan.",R21;R22,documented_context_requires_validation,target_locator_and_precision
+P07,3,Compare terrain,"Inspect radial drainage, distributaries, paleochannels, relief, scale difference; Copper whole fan ~5.2 vs Peace 80 km2.",R18;R19;R22,pending,terrain_claims_and_scale
+P07,4,Compare geology,"Compare sourced sediment / lithology and provenance separately, not only fan morphology.",R19;R22,pending,geology_claims_and_material_classes
+P07,5,Collect optional rasters,After confirming coverage use SRTM N36W117 candidate for Earth and Gale merged DEM / HiRISE for Mars; polygon masks and source scale essential.,R30;R35,pending,validated_data_products_or_not_applicable
+P07,6,Output decision,Keep P07 unranked until expert 2-dimension review; published 80/5.2 area ratio is NOT similarity score.,R39,pending,review_record_or_unranked_reason
+P08,1,Identify Earth lake,"Lake Untersee research site -71.3456,13.4640333; map ice cap and separately identify accessible shore exposed rocks if needed.",R24;R36,documented_context_requires_validation,site_locator_and_precision
+P08,2,Identify Mars lake context,"Gale IAU crater center -5.44,137.70 is regional only; published paper proposes past ice-covered lake model not a specific unit.",R25;R26,documented_context_requires_validation,target_locator_and_precision
+P08,3,Compare process model,Compare cold lake ice cover / persistence under explicit hypotheses; not a terrain analogy.,R24;R25,pending,terrain_claims_and_scale
+P08,4,Check geology evidence,Do not attribute lake floor materials from satellite ice topography; find published Gale sediment unit if ranking later.,R24;R25,pending,geology_claims_and_material_classes
+P08,5,Collect optional rasters,REMA shows uppermost ice surface; MOLA is too coarse for stratigraphic microterrain. No lake-floor comparison from them.,R32;R34,pending,validated_data_products_or_not_applicable
+P08,6,Output decision,"Context-only, not eligible for normal terrain–geology ranking unless two named surface units later selected and reviewed.",R39,pending,review_record_or_unranked_reason

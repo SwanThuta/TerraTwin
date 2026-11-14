@@ -1,6 +1,6 @@
 # TerraTwin specification
 
-Status: agreed product direction; a local P01/P07 first slice is implemented on `codex/build-p01-p07`. The wider product acceptance criteria remain open.
+Status: `codex/csv-dimensions-one-pair` imports P01 directly from the 2026-11-14 CSV package as a reviewable preview. The remaining seven pairs and wider product acceptance criteria remain open.
 
 ## Purpose
 
@@ -35,7 +35,7 @@ Example research leads include Atacama, Haughton Crater, volcanic fields, polar 
 | Styling | CSS with shared variables and simple components | Keep styling easy to understand and coordinate |
 | Maps | MapLibre GL JS, with flat and globe projections | Share one mapping engine and selection state |
 | Data preparation | Python scripts; add NumPy/Pandas when useful | Prepare measurements and comparisons before the demo |
-| Storage | Versioned JSON/GeoJSON with a documented schema | Small, inspectable data; no database setup |
+| Storage | Versioned CSV inputs; generated JSON/GeoJSON for the frontend | Keep the research rows editable and publish validated static assets |
 | Validation | Pydantic during Python preprocessing | Reject inconsistent records before publishing assets |
 | Tests | Pytest for scientific logic; frontend typecheck/build and focused interaction checks | Verify the parts that can undermine the result |
 | Reports | Python-generated PDF for each comparison | Download the selected pair's evidence and method without a runtime API |
@@ -72,6 +72,8 @@ Verify that the selected MapLibre release supports the intended projection switc
 
 ## Scientific comparison
 
+The current P01 preview reads `TerraTwin_Earth_Moon_Mars_Analog_Data_2026-11-14/` as its research input, without using `source.md` or legacy `data/sites.json`. `comparison_criteria.csv` defines C01 **Named landform and subfeatures** and C02 **Surface material / deposit classes** as the two primary qualitative dimensions. Its other 14 criteria are explanatory, contextual, optional quantitative, or metadata checks; they are displayed with readiness but do not alter the rating. The CSV package contains no validated raster measurements for P01. `analog_pairs.csv` supplies P01's existing desk-screening ratings and source IDs, `locations.csv` supplies feature and context-anchor distinctions, and `location_workflows.csv` supplies the review instructions. This is a one-pair integration sample, not a new scientific review of the pair.
+
 The first rating profile has two dimensions: terrain/landform and geology/surface materials. Terrain is the primary match for field practice; geology helps distinguish surfaces that may look similar but have different material evidence. Show thermal conditions, water/ice, and dryness as contextual observations when sourced, without using them to set the rating. Gravity, atmosphere/vacuum, and radiation are analogy limits, not rating criteria.
 
 Rate a named, bounded feature on each body rather than an entire region. Record a locator (coordinates, map unit, image footprint, or a cited figure) that lets another reviewer identify the feature. Exact equal-area polygons and DEM downloads are optional for this qualitative profile. If numeric observations such as slope or roughness are available, show their units, acquisition period, spatial resolution, processing method, and quality notes, but use them in a rating only when their scales and meanings are comparable. If temperature is shown as context, distinguish surface from air temperature. Absolute elevation against different planetary datums is not a direct similarity measure.
@@ -96,6 +98,7 @@ Present terrain evidence first, then geology and other sourced context. Suggest 
 - `Site`: stable ID, name, body (`earth`, `moon`, `mars`), latitude/longitude, coordinate convention, study footprint/scale, description, evidence IDs, curated/candidate status, review status.
 - `Observation`: ID, site ID, observed feature or optional numeric/categorical value, unit when applicable, time range, spatial resolution or map scale when known, method, input record/file locator, uncertainty/quality note, source ID. Missing values are explicit nulls with a reason.
 - `Source`: ID, agency/provider, title, original URL, dataset/product identifier and version when available, access date, license/attribution, retrieval/query notes, and local input checksum when applicable.
+- `Criterion`: CSV ID, key, role, title, question, units or rating type, rule, and readiness. Only C01/C02 are scored in the current profile.
 - `VisualAsset`: stable ID, site ID, image type, original URL or permitted local path, source ID, footprint or field of view, spatial resolution/display scale, acquisition date when known, processing notes, and license/attribution.
 - `Comparison`: stable ID, Earth ID, planetary target ID, rubric/ordering version, reviewed feature locators, terrain and geology ratings or null with evidence references and rationale, missing reasons, evidence completeness, overall rating, review/rank eligibility, limitations, evidence-backed practice objective IDs and supporting evidence references, visual asset IDs, and report asset path.
 - `Explanation`: comparison ID, text, evidence references, generation mode (`template` or later `model`), and generation version.

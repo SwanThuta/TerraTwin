@@ -1,0 +1,10 @@
+﻿body,product,source_id,nominal_resolution,vertical_reference,applicability,required_validation,downloaded_and_checked
+Earth,NASADEM / SRTMGL1,R30,~1 arc-sec posting,EGM96 or product-specific,60N to 56S; can cover Copper Canyon / Hawaii / Atacama / Salda,"Check granule, void-filling, footprint and native effective resolution",False
+Earth,ArcticDEM strips / mosaics,R31,product-specific ~2m strips,product-specific,Haughton (75N) and Fagradalsfjall (63N),Select strip epoch and quality; never use SRTM there,False
+Earth,REMA,R32,product-specific,product-specific,"Lake Untersee, Antarctica","DSM ice-covered surface, not submerged floor",False
+Moon,LROC NAC_DTM_ESALL_SR12,R29,2m/px catalog,read PDS label,Shackleton rim intersection footprint likely within catalog bounds,Need valid-pixel and height-reference verification,False
+Moon,LROC NAC_DTM_MARIUSPIT01,R28,4m/px catalog,read PDS label,Marius Hills Pit,Check LROC footprint and confidence raster before interpreting depth,False
+Moon,LOLA GDR,R33,varies by product,lunar reference radius per label,Regional all lunar target contexts,"May be too coarse for pit, boulders and cave roof",False
+Mars,MOLA MEGDR 128ppd,R34,128 pixels / degree,Mars datum per PDS,Regional Jezero and Gale,Too coarse for local fan matching,False
+Mars,MSL Gale merged DEM 1m v3,R35,1m output grid (effective source variable),read catalog / source,Potential Peace fan regional / local dataset,Never assume 1m effective accuracy throughout merged mosaic,False
+Mars,HiRISE local stereo DTM / CTX,R22,site/product specific,PDS label,Jezero delta and Gale mapped deposits,Verify actual target deposit coverage; Peace channel DTM not automatically fan,False

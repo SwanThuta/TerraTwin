@@ -7,7 +7,18 @@ export interface Source {
   title: string
   url: string
   locator: string
-  accessDate: string
+  accessDate: string | null
+}
+
+export interface Criterion {
+  id: string
+  key: string
+  role: string
+  title: string
+  question: string
+  unitOrRating: string
+  rule: string
+  readiness: string
 }
 
 export interface Site {
@@ -20,6 +31,8 @@ export interface Site {
   mapPoint: [number, number] | null
   mapPointKind: string
   mapPointSourceId: string
+  coordinateNote: string
+  coordinateConvention: string
 }
 
 export interface Dimension {
@@ -61,6 +74,7 @@ export interface Comparison {
   limitSourceIds: string[]
   visuals: { earth: Visual; target: Visual }
   reviewNotes: string
+  reviewStatus: string
   overall: 'Strong' | 'Moderate' | 'Weak' | 'Insufficient evidence'
   coverage: number
   rankEligible: boolean
@@ -75,6 +89,7 @@ export interface Atlas {
   reviewProfile: string
   orderingProfile: string
   sources: Source[]
+  criteria: Criterion[]
   sites: Site[]
   comparisons: Comparison[]
 }

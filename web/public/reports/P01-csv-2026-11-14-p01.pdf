@@ -1,0 +1,415 @@
+%PDF-1.4
+%“Œ‹ž ReportLab Generated PDF document (opensource)
+1 0 obj
+<<
+/F1 2 0 R /F2 3 0 R
+>>
+endobj
+2 0 obj
+<<
+/BaseFont /Helvetica /Encoding /WinAnsiEncoding /Name /F1 /Subtype /Type1 /Type /Font
+>>
+endobj
+3 0 obj
+<<
+/BaseFont /Helvetica-Bold /Encoding /WinAnsiEncoding /Name /F2 /Subtype /Type1 /Type /Font
+>>
+endobj
+4 0 obj
+<<
+/Contents 12 0 R /MediaBox [ 0 0 612 792 ] /Parent 11 0 R /Resources <<
+/Font 1 0 R /ProcSet [ /PDF /Text /ImageB /ImageC /ImageI ]
+>> /Rotate 0 /Trans <<
+
+>> 
+  /Type /Page
+>>
+endobj
+5 0 obj
+<<
+/A <<
+/S /URI /Type /Action /URI (https://ntrs.nasa.gov/api/citations/20110011887/downloads/20110011887.pdf)
+>> /Border [ 0 0 0 ] /Rect [ 52.8 343.075 359.493 355.075 ] /Subtype /Link /Type /Annot
+>>
+endobj
+6 0 obj
+<<
+/A <<
+/S /URI /Type /Action /URI (https://ntrs.nasa.gov/api/citations/20110008151/downloads/20110008151.pdf)
+>> /Border [ 0 0 0 ] /Rect [ 52.8 307.075 359.493 319.075 ] /Subtype /Link /Type /Annot
+>>
+endobj
+7 0 obj
+<<
+/A <<
+/S /URI /Type /Action /URI (https://lroc.im-ldi.com/images/1247)
+>> /Border [ 0 0 0 ] /Rect [ 52.8 259.075 191.841 271.075 ] /Subtype /Link /Type /Annot
+>>
+endobj
+8 0 obj
+<<
+/Annots [ 5 0 R 6 0 R 7 0 R ] /Contents 13 0 R /MediaBox [ 0 0 612 792 ] /Parent 11 0 R /Resources <<
+/Font 1 0 R /ProcSet [ /PDF /Text /ImageB /ImageC /ImageI ]
+>> /Rotate 0 
+  /Trans <<
+
+>> /Type /Page
+>>
+endobj
+9 0 obj
+<<
+/PageMode /UseNone /Pages 11 0 R /Type /Catalog
+>>
+endobj
+10 0 obj
+<<
+/Author (\(anonymous\)) /CreationDate (D:20261114213953+06'00') /Creator (\(unspecified\)) /Keywords () /ModDate (D:20261114213953+06'00') /Producer (ReportLab PDF Library - \(opensource\)) 
+  /Subject (\(unspecified\)) /Title (TerraTwin P01 evidence report) /Trapped /False
+>>
+endobj
+11 0 obj
+<<
+/Count 2 /Kids [ 4 0 R 8 0 R ] /Type /Pages
+>>
+endobj
+12 0 obj
+<<
+/Length 5125
+>>
+stream
+1 0 0 1 0 0 cm  BT /F1 12 Tf 14.4 TL ET
+q
+1 0 0 1 52.8 717.2 cm
+q
+.078431 .164706 .262745 rg
+BT 1 0 0 1 0 4 Tm /F2 18 Tf 22 TL 116.652 0 Td (TerraTwin evidence report - P01) Tj T* -116.652 0 Td ET
+Q
+Q
+q
+1 0 0 1 52.8 668.2 cm
+q
+.082353 .345098 .415686 rg
+BT 1 0 0 1 0 22 Tm /F2 14 Tf 18 TL (Haughton Site A / Locale 7 rocky carbonate ridge and Shackleton\226de) Tj T* (Gerlache ridge rim NAC view) Tj T* ET
+Q
+Q
+q
+1 0 0 1 52.8 649.2 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 3 Tm /F1 10 Tf 13 TL (Status: reviewed | Overall: Weak | Evidence: 2/2 dimensions supported) Tj T* ET
+Q
+Q
+q
+1 0 0 1 52.8 631.2 cm
+q
+.254902 .32549 .419608 rg
+BT 1 0 0 1 0 3 Tm /F1 9 Tf 12 TL (Dataset csv-2026-11-14-p01 | Rubric terrain-geology-qual-v1 | Order terrain-first-v1) Tj T* ET
+Q
+Q
+q
+1 0 0 1 52.8 613.2 cm
+q
+.254902 .32549 .419608 rg
+BT 1 0 0 1 0 3 Tm /F1 9 Tf 12 TL (Qualitative screening judgment; no similarity percentage or route-safety assessment.) Tj T* ET
+Q
+Q
+q
+1 0 0 1 52.8 582.2 cm
+q
+.082353 .345098 .415686 rg
+BT 1 0 0 1 0 4 Tm /F2 14 Tf 18 TL (Feature scope) Tj T* ET
+Q
+Q
+q
+1 0 0 1 52.8 550.2 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 16 Tm /F1 10 Tf 13 TL (Earth: Haughton Site A / Locale 7 rocky carbonate ridge. Locator: Haughton impact crater; NASA locates Locale 7) Tj T* (roughly 2 km NW of base camp. No exact Locale 7 GPS found. Base coordinates only. Footprint: not_digitized.) Tj T* ET
+Q
+Q
+q
+1 0 0 1 52.8 508.2 cm
+q
+.254902 .32549 .419608 rg
+BT 1 0 0 1 0 27 Tm /F1 9 Tf 12 TL (Earth map marker: Context reference: HMP research station 2km SE of Locale 7 \(related_research_base_not_feature\); not a) Tj T* (verified feature point. Coordinate note: NASA locates Locale 7 roughly 2 km NW of base camp. No exact Locale 7 GPS found.) Tj T* (Base coordinates only.. Convention: WGS84 signed East [-180,180]; WGS84 geodetic) Tj T* ET
+Q
+Q
+q
+1 0 0 1 52.8 476.2 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 16 Tm /F1 10 Tf 13 TL (Moon: Shackleton\226de Gerlache ridge rim NAC view. Locator: Shackleton crater; Image view location at rim/ridge) Tj T* (intersection; center or scene location published, not polygon / safe route. Footprint: not_digitized.) Tj T* ET
+Q
+Q
+q
+1 0 0 1 52.8 446.2 cm
+q
+.254902 .32549 .419608 rg
+BT 1 0 0 1 0 15 Tm /F1 9 Tf 12 TL (Planetary coordinate convention: positive East [0,360]; planetocentric unless product label specifies otherwise; verify. Image) Tj T* (view location at rim/ridge intersection; center or scene location published, not polygon / safe route.) Tj T* ET
+Q
+Q
+q
+1 0 0 1 52.8 414.2 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 16 Tm /F1 10 Tf 13 TL -0.117778 Tw (Relationship: NASA documented broad Haughton/Shackleton analog; selected scoped comparison desk-reviewed.) Tj T* 0 Tw (Theme: impact-rim obstacles and robotic traverse mapping. [R02, R03]) Tj T* ET
+Q
+Q
+q
+1 0 0 1 52.8 383.2 cm
+q
+.082353 .345098 .415686 rg
+BT 1 0 0 1 0 4 Tm /F2 14 Tf 18 TL (C01 - Named landform and subfeatures) Tj T* ET
+Q
+Q
+q
+1 0 0 1 52.8 353.2 cm
+q
+.254902 .32549 .419608 rg
+BT 1 0 0 1 0 15 Tm /F1 9 Tf 12 TL (Question: Cross-section/planform, visible subfeatures, area/scale, meaningfully corresponding features | Readiness:) Tj T* (not_numerical) Tj T* ET
+Q
+Q
+q
+1 0 0 1 52.8 334.2 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 3 Tm /F1 10 Tf 13 TL (Rating: Moderate | Sources: R02, R03) Tj T* ET
+Q
+Q
+q
+1 0 0 1 52.8 302.2 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 16 Tm /F1 10 Tf 13 TL (Evidence: Compare bouldered ridge, shelf and crater blocks with image-scale warning; terrain Moderate from) Tj T* (previous dated desk review.) Tj T* ET
+Q
+Q
+q
+1 0 0 1 52.8 270.2 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 16 Tm /F1 10 Tf 13 TL (Difference: Locale 7 carbonates vs interpreted lunar regolith/ejecta; complex terrestrial vs simple lunar crater; no) Tj T* (matched slopes) Tj T* ET
+Q
+Q
+q
+1 0 0 1 52.8 239.2 cm
+q
+.082353 .345098 .415686 rg
+BT 1 0 0 1 0 4 Tm /F2 14 Tf 18 TL (C02 - Surface material / deposit classes) Tj T* ET
+Q
+Q
+q
+1 0 0 1 52.8 209.2 cm
+q
+.254902 .32549 .419608 rg
+BT 1 0 0 1 0 15 Tm /F1 9 Tf 12 TL (Question: Published lithology, regolith, layers, sediment size, bedrock context, mineral analyses if measured | Readiness:) Tj T* (not_numerical) Tj T* ET
+Q
+Q
+q
+1 0 0 1 52.8 190.2 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 3 Tm /F1 10 Tf 13 TL (Rating: Weak | Sources: R02, R03) Tj T* ET
+Q
+Q
+q
+1 0 0 1 52.8 158.2 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 16 Tm /F1 10 Tf 13 TL (Evidence: Locale 7 carbonate markers vs unmeasured lunar regolith / likely ejecta; geology Weak from existing) Tj T* (desk review.) Tj T* ET
+Q
+Q
+q
+1 0 0 1 52.8 139.2 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 3 Tm /F1 10 Tf 13 TL (Difference: Haughton carbonate stratigraphy is not Moon regolith) Tj T* ET
+Q
+Q
+q
+1 0 0 1 52.8 108.2 cm
+q
+.082353 .345098 .415686 rg
+BT 1 0 0 1 0 4 Tm /F2 14 Tf 18 TL (Explanation and practice) Tj T* ET
+Q
+Q
+q
+1 0 0 1 52.8 63.2 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 29 Tm /F1 10 Tf 13 TL (Terrain is rated Moderate: Compare bouldered ridge, shelf and crater blocks with image-scale warning; terrain) Tj T* (Moderate from previous dated desk review. Geology is rated Weak: Locale 7 carbonate markers vs unmeasured) Tj T* (lunar regolith / likely ejecta; geology Weak from existing desk review. No practice activity has per-tag evidence yet.) Tj T* ET
+Q
+Q
+ 
+endstream
+endobj
+13 0 obj
+<<
+/Length 3903
+>>
+stream
+1 0 0 1 0 0 cm  BT /F1 12 Tf 14.4 TL ET
+q
+1 0 0 1 52.8 713.2 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 16 Tm /F1 10 Tf 13 TL (Important differences: Locale 7 carbonates vs interpreted lunar regolith/ejecta; complex terrestrial vs simple lunar) Tj T* (crater; no matched slopes Haughton carbonate stratigraphy is not Moon regolith) Tj T* ET
+Q
+Q
+q
+1 0 0 1 52.8 695.2 cm
+q
+.254902 .32549 .419608 rg
+BT 1 0 0 1 0 3 Tm /F1 9 Tf 12 TL (No practice tag has been approved for this unreviewed candidate.) Tj T* ET
+Q
+Q
+q
+1 0 0 1 52.8 664.2 cm
+q
+.082353 .345098 .415686 rg
+BT 1 0 0 1 0 4 Tm /F2 14 Tf 18 TL (Limits and missing imagery) Tj T* ET
+Q
+Q
+q
+1 0 0 1 52.8 632.2 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 16 Tm /F1 10 Tf 13 TL (- Locale 7 carbonates vs interpreted lunar regolith/ejecta; complex terrestrial vs simple lunar crater; no matched) Tj T* (slopes) Tj T* ET
+Q
+Q
+q
+1 0 0 1 52.8 613.2 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 3 Tm /F1 10 Tf 13 TL (- Haughton carbonate stratigraphy is not Moon regolith) Tj T* ET
+Q
+Q
+q
+1 0 0 1 52.8 594.2 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 3 Tm /F1 10 Tf 13 TL (- Do not substitute whole-crater impact breccia for Locale 7 carbonates) Tj T* ET
+Q
+Q
+q
+1 0 0 1 52.8 575.2 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 3 Tm /F1 10 Tf 13 TL (- Not a lander hazard clearance or PSR access route) Tj T* ET
+Q
+Q
+q
+1 0 0 1 52.8 557.2 cm
+q
+.254902 .32549 .419608 rg
+BT 1 0 0 1 0 3 Tm /F1 9 Tf 12 TL (Limit sources: R02, R03) Tj T* ET
+Q
+Q
+q
+1 0 0 1 52.8 527.2 cm
+q
+.254902 .32549 .419608 rg
+BT 1 0 0 1 0 15 Tm /F1 9 Tf 12 TL (Earth image: CSV package supplies citations but no redistributable terrain image. Scale: No imported image scale. Credit:) Tj T* (NASA NTRS. [R02]) Tj T* ET
+Q
+Q
+q
+1 0 0 1 52.8 497.2 cm
+q
+.254902 .32549 .419608 rg
+BT 1 0 0 1 0 15 Tm /F1 9 Tf 12 TL (Planetary image: CSV package supplies an image locator but no imported image. Scale: 750 m NAC scene cited in CSV) Tj T* (workflow; no image imported. Credit: LROC / NASA GSFC / ASU. [R03]) Tj T* ET
+Q
+Q
+q
+1 0 0 1 52.8 466.2 cm
+q
+.082353 .345098 .415686 rg
+BT 1 0 0 1 0 4 Tm /F2 14 Tf 18 TL (Method and source register) Tj T* ET
+Q
+Q
+q
+1 0 0 1 52.8 421.2 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 29 Tm /F1 10 Tf 13 TL -0.115 Tw (Original source-based 2026-11-14 desk review retained only for P01; new coordinates do not automatically change) Tj T* 0 Tw (ratings Next validation: Publish source-map figure locator; acquire site GPS and comparable bounded footprints if) Tj T* (numerical analysis planned) Tj T* ET
+Q
+Q
+q
+1 0 0 1 52.8 389.2 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 16 Tm /F1 10 Tf 13 TL (Review: reviewed_source_desk_screening | Codex \(as stated by source research\) | Date: 2026-11-14 | Rank) Tj T* (eligible: yes) Tj T* ET
+Q
+Q
+q
+1 0 0 1 52.8 359.2 cm
+q
+.254902 .32549 .419608 rg
+BT 1 0 0 1 0 15 Tm /F1 9 Tf 12 TL (R01 | NASA NTRS | Evaluation of Robotic Systems to Carry Out Traverse Execution Opportunistic Science and Landing Site) Tj T* (Evaluation Tasks | Table 3 printed p15; Table 5 printed p18; fig 13 printed p28; p5 field station) Tj T* ET
+Q
+Q
+q
+1 0 0 1 52.8 341.2 cm
+q
+.090196 .419608 .529412 rg
+BT 1 0 0 1 0 3 Tm /F1 9 Tf 12 TL (https://ntrs.nasa.gov/api/citations/20110011887/downloads/20110011887.pdf) Tj T* ET
+Q
+Q
+q
+1 0 0 1 52.8 323.2 cm
+q
+.254902 .32549 .419608 rg
+BT 1 0 0 1 0 3 Tm /F1 9 Tf 12 TL (R02 | NASA NTRS | Robotic Follow-up for Human Exploration | Figures 22 28 29 printed pp16-21) Tj T* ET
+Q
+Q
+q
+1 0 0 1 52.8 305.2 cm
+q
+.090196 .419608 .529412 rg
+BT 1 0 0 1 0 3 Tm /F1 9 Tf 12 TL (https://ntrs.nasa.gov/api/citations/20110008151/downloads/20110008151.pdf) Tj T* ET
+Q
+Q
+q
+1 0 0 1 52.8 275.2 cm
+q
+.254902 .32549 .419608 rg
+BT 1 0 0 1 0 15 Tm /F1 9 Tf 12 TL (R03 | LROC / NASA GSFC / ASU | Traversing the Shackleton de Gerlache Ridge | 750 m-wide NAC rim view: 89.684 S) Tj T* (196.739 E; 1:8000 geomorphic map) Tj T* ET
+Q
+Q
+q
+1 0 0 1 52.8 257.2 cm
+q
+.090196 .419608 .529412 rg
+BT 1 0 0 1 0 3 Tm /F1 9 Tf 12 TL (https://lroc.im-ldi.com/images/1247) Tj T* ET
+Q
+Q
+ 
+endstream
+endobj
+xref
+0 14
+0000000000 65535 f 
+0000000061 00000 n 
+0000000102 00000 n 
+0000000209 00000 n 
+0000000321 00000 n 
+0000000516 00000 n 
+0000000734 00000 n 
+0000000952 00000 n 
+0000001132 00000 n 
+0000001357 00000 n 
+0000001426 00000 n 
+0000001723 00000 n 
+0000001789 00000 n 
+0000006966 00000 n 
+trailer
+<<
+/ID 
+[<6d9160fd55c78415b48e149b6544a34f><6d9160fd55c78415b48e149b6544a34f>]
+% ReportLab generated PDF document -- digest (opensource)
+
+/Info 10 0 R
+/Root 9 0 R
+/Size 14
+>>
+startxref
+10921
+%%EOF
