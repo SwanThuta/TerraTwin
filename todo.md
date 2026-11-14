@@ -1,6 +1,6 @@
 # Hackathon delivery checklist
 
-Status: documentation prepared; implementation tasks below are pending. Times are relative to the team's development start. Owner numbers are suggested roles; assign member names at kickoff.
+Status: P01/P07 first slice built locally. Checked items below have been verified; dataset expansion, imagery, candidate discovery, and team assignment remain open. Times are relative to the team's development start. Owner numbers are suggested roles; assign member names at kickoff.
 
 ## Ownership
 
@@ -19,28 +19,28 @@ Member 4 coordinates schema changes; member 1 coordinates frontend integration. 
 
 - [ ] Assign members and agree on a shared branch/integration workflow.
 - [ ] Confirm proposed site counts, named planetary targets, and first data products.
-- [ ] Define schema, sample records, profile version, and missing-data representation.
-- [ ] Define feature locators, evidence references, rubric version, and source-to-rating provenance fields for on-page method details and PDFs.
+- [x] Define schema, sample records, profile version, and missing-data representation.
+- [x] Define feature locators, evidence references, rubric version, and source-to-rating provenance fields for on-page method details and PDFs.
 - [ ] Define visual-asset metadata and the versioned practice objective tag catalog with evidence references.
 - [ ] Verify cited source access, figure/map locators, image licensing/scale, and feature applicability; verify optional measurements and temperature type if displayed.
-- [ ] Scaffold React/TypeScript/Vite and minimal Python pipeline.
+- [x] Scaffold React/TypeScript/Vite and minimal Python pipeline.
 - [ ] Apply the exact versions in `spec.md` to dependency manifests, commit the npm lockfile and any Python lockfile, and verify clean installs with the pinned runtimes.
-- [ ] Prototype MapLibre flat/globe switching and check basemap access requirements.
+- [x] Prototype MapLibre flat/globe switching and check basemap access requirements.
 - [ ] Choose a bounded search region or finite candidate pool with accessible real inputs.
 
 Gate: a sourced comparison record can be loaded by the frontend; both map projections render; candidate-search inputs are feasible.
 
 ## Hours 2–8: working vertical slice
 
-- [ ] Implement data validation and the versioned Strong/Moderate/Weak qualitative rubric with cited rationales.
-- [ ] Implement overall-label rule, evidence completeness, review eligibility, and deterministic terrain-first ordering.
-- [ ] Build body/target/Earth selectors and both search directions.
-- [ ] Show markers and synchronize list, selection, and comparison panel.
-- [ ] Generate evidence-based explanation text for one comparison.
-- [ ] Display source links, feature locators, scale, missing evidence, limitations, and an evidence-grounded field-practice use; show units for any optional measurements.
+- [x] Implement data validation and the versioned Strong/Moderate/Weak qualitative rubric with cited rationales.
+- [x] Implement overall-label rule, evidence completeness, review eligibility, and deterministic terrain-first ordering.
+- [x] Build body/target/Earth selectors and both search directions.
+- [x] Show markers and synchronize list, selection, and comparison panel.
+- [x] Generate evidence-based explanation text for one comparison.
+- [x] Display source links, feature locators, scale, missing evidence, limitations, and an evidence-grounded field-practice use; show units for any optional measurements.
 - [ ] Show sourced Earth/planetary terrain images with scale, date when known, attribution, and a missing-image state.
-- [ ] Show how the selected pair's evidence was reviewed and rated; generate and download a matching PDF report.
-- [ ] Confirm end-to-end slice works without a runtime model API.
+- [x] Show how the selected pair's evidence was reviewed and rated; generate and download a matching PDF report.
+- [x] Confirm end-to-end slice works without a runtime model API.
 
 Gate: one Earth-to-planet and planet-to-Earth workflow succeeds with traceable evidence.
 
@@ -51,25 +51,25 @@ Gate: one Earth-to-planet and planet-to-Earth workflow succeeds with traceable e
 - [ ] Run bounded automated search and save its inputs, methods, and outputs.
 - [ ] Surface at least one candidate beyond the curated list, labeled for review.
 - [ ] Add search-method and profile details to the UI.
-- [ ] Add practice objective tag filtering without changing ratings or result ordering.
+- [x] Add practice objective tag filtering without changing ratings or result ordering.
 - [ ] Compare two Earth sites for one planetary target using their existing comparisons, method details, and individual PDFs.
 - [ ] Preserve selection across 2D/globe changes and search-direction changes.
-- [ ] Add responsive layouts, loading, empty, tile-failure, and insufficient-evidence states.
+- [x] Add responsive layouts, loading, empty, map-layer-failure, and insufficient-evidence states.
 
 Gate: both bodies have useful sourced comparisons, and bounded discovery is reproducible.
 
 ## Hours 16–21: verify and integrate
 
-- [ ] Test each rubric combination, null evidence, review eligibility, terrain-first ordering, and stable ties.
+- [x] Test each rubric combination, null evidence, review eligibility, terrain-first ordering, and stable ties.
 - [ ] Verify explanation evidence references and absence of unsupported claims.
-- [ ] Check each PDF against its selected comparison ratings, evidence references, rubric version, and missing-evidence status.
+- [x] Check each PDF against its selected comparison ratings, evidence references, rubric version, and missing-evidence status.
 - [ ] Verify image scale/attribution, tag evidence references, unchanged ratings under filters, and two-site selection through projection switching.
-- [ ] Run frontend typecheck and production build.
-- [ ] Exercise both search directions and flat/globe switching.
+- [x] Run frontend typecheck and production build.
+- [x] Exercise both search directions and flat/globe switching.
 - [ ] Check keyboard controls, text contrast, mobile layout, and map/list parity.
 - [ ] Simulate missing tiles and unavailable optional providers.
 - [ ] Verify source attribution and distinguish heuristic ratings and evidence completeness from scientific confidence.
-- [ ] Document actual install, preprocessing, development, test, and build commands.
+- [x] Document actual install, preprocessing, development, test, and build commands.
 
 ## Hours 21–24+: stabilize and rehearse
 
