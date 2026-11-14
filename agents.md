@@ -2,7 +2,7 @@
 
 ## Context and source of truth
 
-Read `spec.md`, `design.md`, and `todo.md` before implementation. TerraTwin is a six-person hackathon project with a little over 24 hours and beginner-to-intermediate developers. The product combines research comparisons with a website for Earth analogs of Moon and Mars sites. The official repository is `https://github.com/SwanThuta/TerraTwin`.
+Read `spec.md`, `design.md`, and `todo.md` before implementation. TerraTwin is a six-person hackathon project with a little over 24 hours and beginner-to-intermediate developers. The product uses research comparisons to find Earth analogs for Moon and Mars field practice. The official repository is `https://github.com/SwanThuta/TerraTwin`.
 
 Follow explicit user instructions first. Treat `spec.md` as the product and scientific contract, `design.md` as the interface contract, and `todo.md` as the delivery checklist. Keep all affected documents consistent when scope changes. Avoid adding unrequested features.
 
@@ -20,7 +20,7 @@ Follow explicit user instructions first. Treat `spec.md` as the product and scie
 - Use the recommended stack in `spec.md` unless the user changes it or a concrete incompatibility requires an adjustment.
 - Establish a small working end-to-end comparison before expanding the dataset.
 - Implement both search directions, Earth flat/globe views, fixed scoring, generated explanations, and bounded candidate discovery.
-- Keep the first demo usable without accounts or model API keys. Use deterministic evidence templates now; add model-provider integration later.
+- The app has no user accounts or sign-in flow. Keep the first demo usable without model API keys. Use deterministic evidence templates now; add model-provider integration later.
 - Do not add a chatbot, downloadable reports, weight sliders, authentication, a database, or a second frontend framework without a product requirement.
 - Use a single Python scoring implementation and generated JSON outputs initially. Avoid parallel scoring implementations that can disagree.
 - Keep API credentials server-side when providers are added. Document configuration variable names with empty placeholders, never actual secrets.
@@ -33,7 +33,7 @@ Follow explicit user instructions first. Treat `spec.md` as the product and scie
 - Clearly label demonstration fixtures; exclude them from scientific rankings and research claims.
 - Preserve units, coordinate conventions, scale, time range, processing method, and quality notes. Missing evidence is null with a reason, never an implicit zero.
 - Follow the scoring/coverage/ranking rules in `spec.md`. Version profiles, category tables, tolerances, and algorithms.
-- Expose weak matches, missing evidence, and analogy limits. Similarity does not establish permanent-base suitability.
+- Prioritize comparable terrain for field practice; keep geology as the second scored dimension and thermal observations as context. Treat gravity, atmosphere, and radiation as analogy limits, not terrain scores. Expose weak matches and missing evidence. Similarity does not establish permanent-base suitability.
 - Generate explanations from the selected comparison evidence. A future model may explain results but must not author scores or unsupported claims.
 - Candidate discovery must use documented inputs and produce results beyond the curated list. Label bounded searches, unreviewed candidates, and uncertainty honestly.
 

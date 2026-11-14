@@ -20,8 +20,9 @@ Member 4 coordinates schema changes; member 1 coordinates frontend integration. 
 - [ ] Assign members and agree on a shared branch/integration workflow.
 - [ ] Confirm proposed site counts, named planetary targets, and first data products.
 - [ ] Define schema, sample records, profile version, and missing-data representation.
-- [ ] Verify actual product retrieval, licensing, units, resolution, and temperature type.
+- [ ] Verify actual product retrieval, licensing, terrain units and resolution; verify temperature type if used as context.
 - [ ] Scaffold React/TypeScript/Vite and minimal Python pipeline.
+- [ ] Apply the exact versions in `spec.md` to dependency manifests, commit the npm lockfile and any Python lockfile, and verify clean installs with the pinned runtimes.
 - [ ] Prototype MapLibre flat/globe switching and check basemap access requirements.
 - [ ] Choose a bounded search region or finite candidate pool with accessible real inputs.
 
@@ -30,11 +31,11 @@ Gate: a sourced comparison record can be loaded by the frontend; both map projec
 ## Hours 2–8: working vertical slice
 
 - [ ] Implement data validation and numeric/category scoring with documented heuristics.
-- [ ] Implement coverage grouping, eligibility, and deterministic ranking.
+- [ ] Implement terrain-first fixed weights, coverage, eligibility, and deterministic ranking.
 - [ ] Build body/target/Earth selectors and both search directions.
 - [ ] Show markers and synchronize list, selection, and comparison panel.
 - [ ] Generate evidence-based explanation text for one comparison.
-- [ ] Display source links, units, scale, missing evidence, and limitations.
+- [ ] Display source links, units, scale, missing evidence, limitations, and an evidence-grounded field-practice use.
 - [ ] Confirm end-to-end slice works without a runtime model API.
 
 Gate: one Earth-to-planet and planet-to-Earth workflow succeeds with traceable evidence.
@@ -53,7 +54,7 @@ Gate: both bodies have useful sourced comparisons, and bounded discovery is repr
 
 ## Hours 16–21: verify and integrate
 
-- [ ] Test numeric boundaries, missing values, categorical compatibility, coverage, and tie ordering.
+- [ ] Test numeric boundaries, missing values, categorical compatibility, terrain-first weights, coverage, and tie ordering.
 - [ ] Verify explanation evidence references and absence of unsupported claims.
 - [ ] Run frontend typecheck and production build.
 - [ ] Exercise both search directions and flat/globe switching.
@@ -66,7 +67,7 @@ Gate: both bodies have useful sourced comparisons, and bounded discovery is repr
 
 - [ ] Freeze features and resolve demo-blocking defects.
 - [ ] Prepare a production build and small local demonstration dataset.
-- [ ] Rehearse: choose a Mars target, inspect an Earth match, reverse the search, switch map views, and explain a newly surfaced candidate.
+- [ ] Rehearse: choose a Mars target, inspect an Earth match and possible field-practice task, reverse the search, switch map views, and explain a newly surfaced candidate.
 - [ ] Prepare a lunar example and clearly state the limits of Earth analogs.
 - [ ] Record methodology, evidence gaps, and bounded-search limits for judge questions.
 - [ ] Prepare hosting configuration; publish only when deployment is requested or authorized.
@@ -76,6 +77,5 @@ Gate: both bodies have useful sourced comparisons, and bounded discovery is repr
 - [ ] Add a server-side model API adapter with timeouts, grounded prompts, reference validation, and template fallback.
 - [ ] Add external data APIs after verifying authentication, quotas, and product access.
 - [ ] Expand candidate coverage and validate scoring against documented analog cases.
-- [ ] Consider accounts or persistence only if a real workflow requires them.
 
 If time gets tight, reduce the number of sites and visual polish first. Keep source traceability, honest scores, both search directions, both Earth map views, generated explanations, and the smallest reproducible candidate-search demonstration.

@@ -2,7 +2,7 @@
 
 ## Direction
 
-Present a scientific explorer that feels approachable during a live demonstration. Lead with evidence, then visual impact. Use a dark navy canvas, light readable text, cyan for Earth interactions, pale silver for Moon, and warm orange for Mars. Treat this palette as a starting point and verify contrast in the implementation.
+Present a scientific explorer that helps users find Earth locations for Moon or Mars field practice. Lead with terrain evidence, then geology and visual impact. Use a dark navy canvas, light readable text, cyan for Earth interactions, pale silver for Moon, and warm orange for Mars. Treat this palette as a starting point and verify contrast in the implementation.
 
 Use a system sans-serif font, clear labels, restrained borders, and consistent spacing. Keep scientific caveats beside the claims they qualify. Use text and icons alongside color.
 
@@ -26,7 +26,7 @@ The diagram describes information placement, not a fixed pixel layout. Use a fle
 
 ## Search behavior
 
-In “Find Earth analogs,” select Moon or Mars and a fixed planetary target. Rank eligible Earth matches, group by evidence coverage, and select the first full-coverage match when one exists. Show insufficient-evidence records separately.
+In “Find Earth analogs,” select Moon or Mars and a fixed planetary target. Rank Earth matches with comparable terrain and geology, and select the first ranked match when one exists. Show insufficient-evidence records separately with their coverage.
 
 In “Explore planetary matches,” select an Earth site. Show relevant lunar and Martian targets with profile labels, keeping scores from different profiles in separate groups. The Earth marker remains selected while planetary cards change.
 
@@ -44,11 +44,11 @@ If tiles fail, retain markers on a plain background and keep the results list us
 
 1. Earth name, planetary target, and curated/candidate review status.
 2. Heuristic similarity score, evidence coverage, and profile label.
-3. Per-dimension values with units, score, source, scale, and quality notes.
-4. Generated explanation: why it matches, where it differs, exploration use, and evidence gaps.
+3. Terrain and geology values with units, score, source, scale, and quality notes; show any thermal observation as unscored context.
+4. Generated explanation: why it matches, where it differs, possible field-practice use, and evidence gaps.
 5. Method details: profile/tolerance version, search boundary when applicable, and original sources.
 
-A score may appear as “Heuristic similarity: 74/100; evidence: 3/3 dimensions.” This is example interface copy, not a research result. Show “Insufficient comparable evidence” when the ranking threshold is not met. Never display a coverage percentage as confidence.
+A score may appear as “Heuristic terrain and geology similarity: 74/100; evidence: 2/2 dimensions.” This is example interface copy, not a research result. Show “Insufficient comparable evidence” when either scored dimension is unavailable. Never display a coverage percentage as confidence.
 
 Use compact horizontal bars with numerical labels for criterion scores. Avoid charts that hide missing values or imply precision beyond the evidence. Keep explanatory text close to the relevant comparison.
 
@@ -75,7 +75,7 @@ All selectors, cards, tabs, and map controls need keyboard focus and accessible 
 | Loading data | Explain what is loading; keep layout stable |
 | No qualifying matches | Show evidence gaps and offer another fixed target |
 | Missing observation | Show “No comparable data” and the reason |
-| Partial coverage | Label coverage clearly and keep its ranking group separate |
+| Partial coverage | Label coverage clearly and show outside the ranked results |
 | Candidate unreviewed | Show a review badge and search provenance |
 | Tiles unavailable | Plain map background plus working list and details |
 | Optional explanation API unavailable later | Use evidence-template explanation |
@@ -83,4 +83,4 @@ All selectors, cards, tabs, and map controls need keyboard focus and accessible 
 
 ## Demo story
 
-Begin with a planetary exploration question. Select a target, inspect its strongest Earth comparison, explain a meaningful difference, switch between flat map and globe, then show an unexpected candidate and how the bounded search identified it. Finish by showing evidence and practical exploration use.
+Begin with a Moon or Mars field-practice question. Select a target, inspect its strongest Earth comparison, explain a meaningful difference, switch between flat map and globe, then show an unexpected candidate and how the bounded search identified it. Finish by showing evidence, a possible practice task, and the analogy's limits.
