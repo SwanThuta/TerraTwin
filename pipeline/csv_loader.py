@@ -55,6 +55,12 @@ def load_p01() -> Dataset:
         for row in rows("location_workflows.csv")
         if row["pair_id"] == PAIR_ID
     }
+    similarity_rows = [row for row in rows("comparison_evidence.csv") if row["pair_id"] == PAIR_ID]
+    practice_rows = [row for row in rows("practice_objectives.csv") if row["pair_id"] == PAIR_ID]
+    if {row["dimension"] for row in similarity_rows} != {"terrain", "geology"}:
+        raise ValueError("P01 requires one terrain and one geology similarity evidence row")
+    if not practice_rows:
+        raise ValueError("P01 requires at least one practice objective row")
     if set(workflow) != set(range(1, 7)):
         raise ValueError("P01 requires all six source workflow steps")
     if pair["rubric_version"] != "terrain-geology-qual-v1" or pair["sort_version"] != "terrain-first-v1":
@@ -71,6 +77,8 @@ def load_p01() -> Dataset:
         terrain_sources + geology_sources + ids(earth["coordinate_source_id"])
         + ids(target["coordinate_source_id"])
         + [source for step in workflow.values() for source in ids(step["source_ids"])]
+        + [source for row in similarity_rows for source in ids(row["source_ids"])]
+        + [source for row in practice_rows for source in ids(row["evidence_ids"])]
     )
     if referenced - source_ids:
         raise ValueError(f"unknown CSV source IDs: {sorted(referenced - source_ids)}")
@@ -88,6 +96,25 @@ def load_p01() -> Dataset:
         raise ValueError("P01 is no longer the supplied reviewed desk screening")
     if pair["terrain_rating"] not in {"Strong", "Moderate", "Weak"} or pair["geology_rating"] not in {"Strong", "Moderate", "Weak"}:
         raise ValueError("P01 must have both CSV ratings")
+    similarities = [
+        {
+            "id": row["evidence_id"], "dimension": row["dimension"],
+            "earthFeature": row["earth_feature"], "planetaryFeature": row["planetary_feature"],
+            "sharedObservation": row["shared_observation"], "limitation": row["limitation"],
+            "earthLocator": row["earth_locator"], "planetaryLocator": row["planetary_locator"],
+            "scaleNote": row["scale_note"], "sourceIds": ids(row["source_ids"]),
+            "reviewStatus": row["review_status"],
+        }
+        for row in similarity_rows
+    ]
+    practice = [
+        {
+            "id": row["objective_id"], "label": row["label"], "reason": row["support_reason"],
+            "sourceIds": ids(row["evidence_ids"]), "status": row["status"],
+            "limitations": row["limitations"],
+        }
+        for row in practice_rows
+    ]
     record = {
         "id": PAIR_ID, "earthId": earth["feature_id"], "targetId": target["feature_id"],
         "status": "reviewed", "reviewStatus": pair["review_status"],
@@ -104,8 +131,9 @@ def load_p01() -> Dataset:
             "difference": pair["material_difference"],
             "sourceIds": geology_sources, "missingReason": None,
         },
-        # CSV practice tags are proposals, without per-tag evidence references.
-        "practice": [],
+        "similaritySummary": " ".join(row["shared_observation"] for row in similarity_rows),
+        "similarities": similarities,
+        "practice": practice,
         "limits": [pair["critical_difference"], pair["material_difference"],
                    earth["surface_cave_or_ice_warning"], target["surface_cave_or_ice_warning"]],
         "limitSourceIds": sorted(set(terrain_sources + geology_sources)),

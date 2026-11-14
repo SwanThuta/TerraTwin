@@ -1,0 +1,4 @@
+pair_id,objective_id,label,evidence_ids,status,support_reason,limitations
+P01,impact-observation,Impact-landform observation,R02;R03,possible,"NASA and LROC sources document impact-related landforms, blocks, crater textures, and feature interpretation at the selected scopes.","This supports observation practice only; it does not validate scientific equivalence or field safety."
+P01,robotic-mapping,Robotic mapping,R02;R03,possible,"NASA documents field mapping and rover-access work at Haughton, while LROC provides a mapped Shackleton rim view for traverse planning.","Earth operations do not reproduce lunar gravity, vacuum, lighting, or communication conditions."
+P01,traverse-planning,Traverse planning,R02;R03,possible,"The paired sources describe bouldered or blocky terrain and access or traverse interpretation at each feature scope.","No matched slope, obstacle-density, route-clearance, or landing-site analysis has been completed."

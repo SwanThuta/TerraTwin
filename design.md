@@ -24,7 +24,7 @@ Use a dark navy planetary atlas with cyan accents for navigation and evidence, r
 
 ## Current dataset boundary
 
-P01 is the only imported pair: the CSV's dated Haughton Locale 7 ↔ Shackleton rim desk screening gives terrain Moderate, geology Weak, overall Weak. The HMP research station is a context marker, not a Locale 7 point. Mars search is empty in this preview. CSV practice activities remain proposals until each tag has its own evidence references. No route safety or permanent-base suitability follows from P01. Image assets will be supplied later.
+P01 is the only imported pair: the CSV's dated Haughton Locale 7 ↔ Shackleton rim desk screening gives terrain Moderate, geology Weak, overall Weak. The HMP research station is a context marker, not a Locale 7 point. The preview shows two pair-specific similarity statements and three possible practice uses from the evidence CSV, each with sources and limitations. Mars search is empty in this preview. No route safety or permanent-base suitability follows from P01. Image assets will be supplied later.
 
 ## Follow-on design work
 

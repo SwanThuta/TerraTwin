@@ -1,12 +1,12 @@
 # TerraTwin
 
-This branch is a one-pair preview of the new CSV-backed atlas. The build reads `analog_pairs.csv`, `locations.csv`, `sources.csv`, `comparison_criteria.csv`, and `location_workflows.csv` from [the new research package](TerraTwin_Earth_Moon_Mars_Analog_Data_2026-11-14/README.md). `source.md` and the legacy `data/sites.json` are not build inputs. The supplied package also contains reference scoring scripts; the app uses only `pipeline/models.py` to calculate its rating and ranking.
+This branch is a one-pair preview of the new CSV-backed atlas. The build reads `analog_pairs.csv`, `locations.csv`, `sources.csv`, `comparison_criteria.csv`, `location_workflows.csv`, `comparison_evidence.csv`, and `practice_objectives.csv` from [the new research package](TerraTwin_Earth_Moon_Mars_Analog_Data_2026-11-14/README.md). `source.md` and the legacy `data/sites.json` are not build inputs. The supplied package also contains reference scoring scripts; the app uses only `pipeline/models.py` to calculate its rating and ranking.
 
 ## Preview boundary
 
 Only **P01**, Haughton Site A / Locale 7 ↔ Shackleton rim, is published in this slice. The CSV's dated desk screening rates terrain **Moderate** and geology **Weak**, giving an overall **Weak** qualitative label. C01 (named landform and subfeatures) and C02 (surface material / deposit classes) are the two scored dimensions. The other CSV criteria are shown on the Method & sources page with their readiness; they are not silently turned into scores. In particular, no validated raster measurements are supplied. The HMP research station marker is explicitly a context reference, not a Locale 7 feature point.
 
-The CSV package lists possible practice activities, but lacks per-tag evidence links. This preview therefore assigns no evidence-backed practice tags. Images are pending. The other seven pairs are not imported yet, and Mars search has an empty state.
+The new evidence CSV gives P01 two documented similarity statements and three possible practice objectives, each with source IDs and limitations. These additions make the comparison explainable without changing its Moderate terrain / Weak geology ratings. Images are pending. The other seven pairs are not imported yet, and Mars search has an empty state.
 
 ## Run locally
 
@@ -37,6 +37,8 @@ The supplied package's `validate.py` also passed its 18-location, eight-pair, 48
 - [design.md](design.md): interface contract.
 - [todo.md](todo.md): delivery checklist.
 - [pipeline/csv_loader.py](pipeline/csv_loader.py): P01 CSV joins and coordinate handling.
+- [TerraTwin_Earth_Moon_Mars_Analog_Data_2026-11-14/comparison_evidence.csv](TerraTwin_Earth_Moon_Mars_Analog_Data_2026-11-14/comparison_evidence.csv): pair-specific similarity statements and limits.
+- [TerraTwin_Earth_Moon_Mars_Analog_Data_2026-11-14/practice_objectives.csv](TerraTwin_Earth_Moon_Mars_Analog_Data_2026-11-14/practice_objectives.csv): possible practice uses with evidence and caveats.
 - [pipeline/models.py](pipeline/models.py): validation and ordinal rating.
 - [pipeline/build.py](pipeline/build.py): atlas and PDF generation.
 - [web/src/App.tsx](web/src/App.tsx): search and comparison interface.

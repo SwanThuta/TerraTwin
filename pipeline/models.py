@@ -63,11 +63,27 @@ class Dimension(BaseModel):
         return self
 
 
+class SimilarityEvidence(BaseModel):
+    id: str
+    dimension: Literal["terrain", "geology"]
+    earthFeature: str
+    planetaryFeature: str
+    sharedObservation: str
+    limitation: str
+    earthLocator: str
+    planetaryLocator: str
+    scaleNote: str
+    sourceIds: list[str] = Field(min_length=1)
+    reviewStatus: str
+
+
 class Practice(BaseModel):
     id: str
     label: str
     reason: str
     sourceIds: list[str] = Field(min_length=1)
+    status: Literal["possible", "not_supported"]
+    limitations: str
 
 
 class Visual(BaseModel):
@@ -98,8 +114,10 @@ class Comparison(BaseModel):
     reviewDate: str | None
     relationship: str
     relationshipSourceIds: list[str] = Field(min_length=1)
+    similaritySummary: str
     terrain: Dimension
     geology: Dimension
+    similarities: list[SimilarityEvidence] = Field(min_length=1)
     practice: list[Practice]
     limits: list[str] = Field(min_length=1)
     limitSourceIds: list[str] = Field(min_length=1)
@@ -156,6 +174,7 @@ class Dataset(BaseModel):
                 item.relationshipSourceIds
                 + item.terrain.sourceIds
                 + item.geology.sourceIds
+                + [source for similarity in item.similarities for source in similarity.sourceIds]
                 + [source for tag in item.practice for source in tag.sourceIds]
                 + item.limitSourceIds
                 + [item.visuals.earth.sourceId, item.visuals.target.sourceId]
@@ -196,9 +215,11 @@ def explanation(item: Comparison) -> str:
             f"{item.geology.missingReason}"
         )
     practice = f"A possible use to assess is {item.practice[0].label.lower()}. " if item.practice else "No practice activity has per-tag evidence yet. "
+    similarity = f"Similarity: {item.similarities[0].sharedObservation}. " if item.similarities else ""
     return (
         f"Terrain is rated {item.terrain.rating}: {item.terrain.evidence} "
         f"Geology is rated {item.geology.rating}: {item.geology.evidence} "
+        f"{similarity} "
         f"{practice}"
         f"Important differences: {item.terrain.difference} {item.geology.difference}"
     )
@@ -216,6 +237,7 @@ def publishable(dataset: Dataset) -> dict:
         item["explanation"] = explanation(original)
         item["explanationSourceIds"] = sorted(set(
             original.relationshipSourceIds + original.terrain.sourceIds + original.geology.sourceIds
+            + [source for similarity in original.similarities for source in similarity.sourceIds]
             + original.limitSourceIds
             + [source for tag in original.practice for source in tag.sourceIds]
         ))

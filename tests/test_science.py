@@ -43,6 +43,9 @@ def test_p01_uses_csv_review_and_criteria_only():
     assert {criterion.key for criterion in dataset.criteria if criterion.role == "primary_qualitative"} == {"terrain", "geology"}
     assert len(dataset.criteria) == len(rows("comparison_criteria.csv"))
     assert coverage(item) == 2
+    assert {similarity.dimension for similarity in item.similarities} == {"terrain", "geology"}
+    assert len(item.practice) == 3
+    assert all(tag.status == "possible" for tag in item.practice)
     assert publishable(dataset)["comparisons"][0]["overall"] == source_pair["overall_rating"]
     assert rank_key(item) == (1, 2, "E01")
 
@@ -75,10 +78,11 @@ def test_explanation_and_report_reuse_selected_csv_record():
     item = web["comparisons"][0]
     assert item["rankEligible"] is True and item["rankOrder"] == 1
     assert set(item["terrain"]["sourceIds"] + item["geology"]["sourceIds"]).issubset(item["explanationSourceIds"])
+    assert set(source for similarity in item["similarities"] for source in similarity["sourceIds"]).issubset(item["explanationSourceIds"])
     pdf = root / "web/public" / item["reportPath"].lstrip("/")
     body = pdf.read_bytes()
     assert body.startswith(b"%PDF")
     for expected in (item["id"], item["overall"], item["reviewStatus"], item["terrain"]["rating"],
                      item["geology"]["rating"], output["reviewProfile"], "C01", "C02",
-                     "HMP research station", *item["terrain"]["sourceIds"]):
+                     "HMP research station", "Impact-landform observation", "E01-T01", *item["terrain"]["sourceIds"]):
         assert expected.encode() in body

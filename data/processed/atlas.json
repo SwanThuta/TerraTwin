@@ -250,6 +250,7 @@
         "R02",
         "R03"
       ],
+      "similaritySummary": "Both scoped features are documented as impact-related terrain with rocky or blocky obstacles relevant to interpreting traverses and access routes. Both records identify surface materials or blocks associated with impact settings and describe the materials used to interpret the selected terrain.",
       "terrain": {
         "rating": "Moderate",
         "evidence": "Compare bouldered ridge, shelf and crater blocks with image-scale warning; terrain Moderate from previous dated desk review.",
@@ -270,7 +271,75 @@
         ],
         "missingReason": null
       },
-      "practice": [],
+      "similarities": [
+        {
+          "id": "E01-T01",
+          "dimension": "terrain",
+          "earthFeature": "Haughton Site A / Locale 7 rocky carbonate ridge",
+          "planetaryFeature": "Shackleton–de Gerlache ridge rim NAC view",
+          "sharedObservation": "Both scoped features are documented as impact-related terrain with rocky or blocky obstacles relevant to interpreting traverses and access routes.",
+          "limitation": "The sources do not establish matched slopes, block distributions, or equal physical footprints; the Earth coordinate is a base-camp context reference.",
+          "earthLocator": "NASA Figures 22, 28 and 29; Locale 7 about 2 km northwest of HMP base camp",
+          "planetaryLocator": "LROC 750 m rim scene centered at 89.684 S, 196.739 E positive east",
+          "scaleNote": "Earth feature footprint not digitized; lunar image width is 750 m.",
+          "sourceIds": [
+            "R02",
+            "R03"
+          ],
+          "reviewStatus": "desk_screened"
+        },
+        {
+          "id": "E01-G01",
+          "dimension": "geology",
+          "earthFeature": "Haughton Site A / Locale 7 rocky carbonate ridge",
+          "planetaryFeature": "Shackleton–de Gerlache ridge rim NAC view",
+          "sharedObservation": "Both records identify surface materials or blocks associated with impact settings and describe the materials used to interpret the selected terrain.",
+          "limitation": "Haughton carbonate marker beds and lunar regolith or interpreted ejecta are not demonstrated to be compositionally equivalent; lunar block composition is unmeasured in the cited view.",
+          "earthLocator": "NASA Figures 22, 28 and 29; carbonate marker beds and blocks",
+          "planetaryLocator": "LROC rim image and geomorphic map; regolith and likely ejecta interpretation",
+          "scaleNote": "Material classes are source-described; no matched mineral or geochemical sample dataset.",
+          "sourceIds": [
+            "R02",
+            "R03"
+          ],
+          "reviewStatus": "desk_screened"
+        }
+      ],
+      "practice": [
+        {
+          "id": "impact-observation",
+          "label": "Impact-landform observation",
+          "reason": "NASA and LROC sources document impact-related landforms, blocks, crater textures, and feature interpretation at the selected scopes.",
+          "sourceIds": [
+            "R02",
+            "R03"
+          ],
+          "status": "possible",
+          "limitations": "This supports observation practice only; it does not validate scientific equivalence or field safety."
+        },
+        {
+          "id": "robotic-mapping",
+          "label": "Robotic mapping",
+          "reason": "NASA documents field mapping and rover-access work at Haughton, while LROC provides a mapped Shackleton rim view for traverse planning.",
+          "sourceIds": [
+            "R02",
+            "R03"
+          ],
+          "status": "possible",
+          "limitations": "Earth operations do not reproduce lunar gravity, vacuum, lighting, or communication conditions."
+        },
+        {
+          "id": "traverse-planning",
+          "label": "Traverse planning",
+          "reason": "The paired sources describe bouldered or blocky terrain and access or traverse interpretation at each feature scope.",
+          "sourceIds": [
+            "R02",
+            "R03"
+          ],
+          "status": "possible",
+          "limitations": "No matched slope, obstacle-density, route-clearance, or landing-site analysis has been completed."
+        }
+      ],
       "limits": [
         "Locale 7 carbonates vs interpreted lunar regolith/ejecta; complex terrestrial vs simple lunar crater; no matched slopes",
         "Haughton carbonate stratigraphy is not Moon regolith",
@@ -303,7 +372,7 @@
       "coverage": 2,
       "rankEligible": true,
       "rankOrder": 1,
-      "explanation": "Terrain is rated Moderate: Compare bouldered ridge, shelf and crater blocks with image-scale warning; terrain Moderate from previous dated desk review. Geology is rated Weak: Locale 7 carbonate markers vs unmeasured lunar regolith / likely ejecta; geology Weak from existing desk review. No practice activity has per-tag evidence yet. Important differences: Locale 7 carbonates vs interpreted lunar regolith/ejecta; complex terrestrial vs simple lunar crater; no matched slopes Haughton carbonate stratigraphy is not Moon regolith",
+      "explanation": "Terrain is rated Moderate: Compare bouldered ridge, shelf and crater blocks with image-scale warning; terrain Moderate from previous dated desk review. Geology is rated Weak: Locale 7 carbonate markers vs unmeasured lunar regolith / likely ejecta; geology Weak from existing desk review. Similarity: Both scoped features are documented as impact-related terrain with rocky or blocky obstacles relevant to interpreting traverses and access routes..  A possible use to assess is impact-landform observation. Important differences: Locale 7 carbonates vs interpreted lunar regolith/ejecta; complex terrestrial vs simple lunar crater; no matched slopes Haughton carbonate stratigraphy is not Moon regolith",
       "explanationSourceIds": [
         "R02",
         "R03"

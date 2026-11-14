@@ -43,11 +43,27 @@ export interface Dimension {
   missingReason: string | null
 }
 
+export interface SimilarityEvidence {
+  id: string
+  dimension: 'terrain' | 'geology'
+  earthFeature: string
+  planetaryFeature: string
+  sharedObservation: string
+  limitation: string
+  earthLocator: string
+  planetaryLocator: string
+  scaleNote: string
+  sourceIds: string[]
+  reviewStatus: string
+}
+
 export interface Practice {
   id: string
   label: string
   reason: string
   sourceIds: string[]
+  status: 'possible' | 'not_supported'
+  limitations: string
 }
 
 export interface Visual {
@@ -67,8 +83,10 @@ export interface Comparison {
   reviewDate: string | null
   relationship: string
   relationshipSourceIds: string[]
+  similaritySummary: string
   terrain: Dimension
   geology: Dimension
+  similarities: SimilarityEvidence[]
   practice: Practice[]
   limits: string[]
   limitSourceIds: string[]

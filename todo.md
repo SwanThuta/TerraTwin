@@ -8,7 +8,7 @@ Status: the new CSV package feeds a P01-only preview on `codex/csv-dimensions-on
 - [x] Use C01/C02 as the only scored dimensions, keep other criteria contextual or unavailable, and preserve the P01 Moderate/Weak → Weak desk screening.
 - [x] Mark the HMP station point as context rather than a verified Locale 7 coordinate, and generate P01 website/PDF data from the same validated record.
 - [ ] Import P02–P08 after the P01 preview is reviewed; keep their CSV review states and missing evidence intact.
-- [ ] Verify the original citations, image rights, and per-tag evidence before adding images or practice tags.
+- [x] Add P01 pair-specific similarity evidence and possible practice objectives with source IDs and limitations; keep ratings unchanged.
 
 ## Ownership
 
@@ -59,7 +59,7 @@ Gate: one Earth-to-planet and planet-to-Earth workflow succeeds with traceable e
 - [ ] Run bounded automated search and save its inputs, methods, and outputs.
 - [ ] Surface at least one candidate beyond the curated list, labeled for review.
 - [ ] Add search-method and profile details to the UI.
-- [ ] Add practice objective tag filtering after the new CSV practice proposals have per-tag evidence references.
+- [x] Add practice objective tag filtering after the new CSV practice proposals have per-tag evidence references.
 - [ ] Compare two Earth sites for one planetary target using their existing comparisons, method details, and individual PDFs.
 - [ ] Preserve selection across 2D/globe changes and search-direction changes.
 - [x] Add responsive layouts, loading, empty, map-layer-failure, and insufficient-evidence states.

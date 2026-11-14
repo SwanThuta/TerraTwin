@@ -62,10 +62,18 @@ def write_report(record: dict, dataset: dict, path: Path) -> None:
         ]
         if dimension["missingReason"]:
             story.append(_paragraph(f"Missing review: {dimension['missingReason']}", note))
+    story += [_paragraph("Documented similarity", heading), _paragraph(record["similaritySummary"], body)]
+    for similarity in record["similarities"]:
+        story.append(_paragraph(
+            f"{similarity['id']} · {similarity['dimension'].title()} similarity: {similarity['sharedObservation']} "
+            f"Limitation: {similarity['limitation']} "
+            f"Earth locator: {similarity['earthLocator']} Planetary locator: {similarity['planetaryLocator']} "
+            f"Scale: {similarity['scaleNote']} Sources: {', '.join(similarity['sourceIds'])}", body
+        ))
     story += [_paragraph("Explanation and practice", heading), _paragraph(record["explanation"], body)]
     if record["practice"]:
         for tag in record["practice"]:
-            story.append(_paragraph(f"{tag['label']}: {tag['reason']} [{', '.join(tag['sourceIds'])}]", body))
+            story.append(_paragraph(f"{tag['label']} ({tag['status']}): {tag['reason']} Limitations: {tag['limitations']} [{', '.join(tag['sourceIds'])}]", body))
     else:
         story.append(_paragraph("No practice tag has been approved for this unreviewed candidate.", note))
     story.append(_paragraph("Limits and missing imagery", heading))
@@ -81,6 +89,7 @@ def write_report(record: dict, dataset: dict, path: Path) -> None:
         _paragraph(f"Review: {record['reviewStatus']} | {record['reviewer'] or 'pending'} | Date: {record['reviewDate'] or 'pending'} | Rank eligible: {'yes' if record['rankEligible'] else 'no'}", body),
     ]
     used = set(record["relationshipSourceIds"] + record["terrain"]["sourceIds"] + record["geology"]["sourceIds"] + record["limitSourceIds"])
+    used.update(source for similarity in record["similarities"] for source in similarity["sourceIds"])
     used.update(source for tag in record["practice"] for source in tag["sourceIds"])
     used.update([earth["mapPointSourceId"], target["mapPointSourceId"], record["visuals"]["earth"]["sourceId"], record["visuals"]["target"]["sourceId"]])
     for source_id in sorted(used):
