@@ -1,0 +1,36 @@
+# Local environment and credentials
+.env
+.env.*
+!.env.example
+.aws/
+*.pem
+*.key
+
+# JavaScript
+node_modules/
+dist/
+coverage/
+*.tsbuildinfo
+
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# Local tools and operating system
+.idea/
+.vscode/
+.DS_Store
+Thumbs.db
+*.log
+
+# Large local geospatial inputs
+data/raw/*
+!data/raw/.gitkeep
+!data/raw/*.md
+!data/raw/*manifest*.json
+!data/raw/*manifest*.csv
