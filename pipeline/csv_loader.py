@@ -131,7 +131,7 @@ def load_p01() -> Dataset:
             "difference": pair["material_difference"],
             "sourceIds": geology_sources, "missingReason": None,
         },
-        "similaritySummary": " ".join(row["shared_observation"] for row in similarity_rows),
+        "similaritySummary": "Both locations are documented in impact settings with rocky or blocky terrain and source-described surface materials.",
         "similarities": similarities,
         "practice": practice,
         "limits": [pair["critical_difference"], pair["material_difference"],
