@@ -1,0 +1,310 @@
+{
+  "datasetVersion": "p01-p07-2026-11-14",
+  "reviewProfile": "terrain-geology-qual-v1",
+  "orderingProfile": "terrain-first-v1",
+  "sources": [
+    {
+      "id": "S01",
+      "provider": "NASA",
+      "title": "Evaluation of Robotic Systems to Carry Out Traverse Execution, Opportunistic Science, and Landing Site Evaluation Tasks",
+      "url": "https://ntrs.nasa.gov/api/citations/20110011887/downloads/20110011887.pdf?attachment=true",
+      "locator": "Table 3; Figure 13",
+      "accessDate": "2026-11-14"
+    },
+    {
+      "id": "S12",
+      "provider": "USGS",
+      "title": "Copper Canyon Fan",
+      "url": "https://www.usgs.gov/media/images/copper-canyon-fan",
+      "locator": "Image and detailed description",
+      "accessDate": "2026-11-14"
+    },
+    {
+      "id": "S13",
+      "provider": "USGS",
+      "title": "Alluvial Fans in the Death Valley Region, California and Nevada",
+      "url": "https://pubs.usgs.gov/pp/0466/report.pdf",
+      "locator": "Copper Canyon fan study and area estimate",
+      "accessDate": "2026-11-14"
+    },
+    {
+      "id": "S14",
+      "provider": "Palucis et al., JGR Planets",
+      "title": "The origin and evolution of the Peace Vallis fan system",
+      "url": "https://agupubs.onlinelibrary.wiley.com/doi/full/10.1002/2013JE004583",
+      "locator": "Figures 2 and 5; Table 2",
+      "accessDate": "2026-11-14"
+    },
+    {
+      "id": "S19",
+      "provider": "LROC / Arizona State University",
+      "title": "Traversing the Shackleton-de Gerlache Ridge",
+      "url": "https://lroc.im-ldi.com/images/1247",
+      "locator": "750 m rim detail and linked 1:8,000 map",
+      "accessDate": "2026-11-14"
+    },
+    {
+      "id": "S21",
+      "provider": "Zuber et al. / NASA NTRS",
+      "title": "Constraints on the volatile distribution within Shackleton crater",
+      "url": "https://ntrs.nasa.gov/api/citations/20120013758/downloads/20120013758.pdf",
+      "locator": "Figure 1 and pages 1–2",
+      "accessDate": "2026-11-14"
+    },
+    {
+      "id": "S22",
+      "provider": "Fong et al. / NASA NTRS",
+      "title": "Robotic Follow-up for Human Exploration",
+      "url": "https://ntrs.nasa.gov/api/citations/20110008151/downloads/20110008151.pdf",
+      "locator": "Figures 22, 28 and 29; printed pages 19–21",
+      "accessDate": "2026-11-14"
+    },
+    {
+      "id": "S26",
+      "provider": "NASA NTRS",
+      "title": "TRIDENT Drill Validation at Mars and Lunar Analog Field Sites",
+      "url": "https://ntrs.nasa.gov/citations/20240000585",
+      "locator": "Haughton crater regional center, 75°22′N 89°41′W",
+      "accessDate": "2026-11-14"
+    },
+    {
+      "id": "S27",
+      "provider": "AnyplaceAmerica, citing USGS GNIS",
+      "title": "Copper Canyon, Inyo County, California",
+      "url": "https://www.anyplaceamerica.com/directory/ca/inyo-county-06027/valleys/copper-canyon-240905/",
+      "locator": "GNIS valley mouth point, 36.1285645°N 116.7536577°W",
+      "accessDate": "2026-11-14"
+    },
+    {
+      "id": "S28",
+      "provider": "National Park Service",
+      "title": "Death Valley National Park rules and regulations",
+      "url": "https://www.nps.gov/deva/learn/management/rules-and-regulations.htm",
+      "locator": "Copper Canyon public-access closure",
+      "accessDate": "2026-11-14"
+    }
+  ],
+  "sites": [
+    {
+      "id": "earth-haughton",
+      "name": "Haughton Crater · Locale 7",
+      "body": "earth",
+      "region": "Devon Island, Nunavut, Canada",
+      "feature": "Rocky lower shelf and ridge at Site A, Locale 7",
+      "locator": "NASA field map Figure 22 and field photos Figure 28; about 2 km northwest of HMP base camp",
+      "mapPoint": [
+        -89.683333,
+        75.366667
+      ],
+      "mapPointKind": "Haughton crater regional center, not Locale 7",
+      "mapPointSourceId": "S26"
+    },
+    {
+      "id": "earth-copper",
+      "name": "Copper Canyon Fan",
+      "body": "earth",
+      "region": "Death Valley, California, USA",
+      "feature": "Named Copper Canyon alluvial fan deposits",
+      "locator": "USGS fan photo and Professional Paper 466; fan outline not digitized",
+      "mapPoint": [
+        -116.7536577,
+        36.1285645
+      ],
+      "mapPointKind": "Copper Canyon valley mouth, not a surveyed fan centroid",
+      "mapPointSourceId": "S27"
+    },
+    {
+      "id": "moon-shackleton",
+      "name": "Shackleton rim",
+      "body": "moon",
+      "region": "Lunar south pole",
+      "feature": "Rim and Shackleton–de Gerlache ridge intersection",
+      "locator": "LROC 750 m image at 89.684°S, 196.739°E (positive east)",
+      "mapPoint": null,
+      "mapPointKind": "Planetary point; never shown on Earth map",
+      "mapPointSourceId": "S19"
+    },
+    {
+      "id": "mars-peace",
+      "name": "Peace Vallis Fan",
+      "body": "mars",
+      "region": "Gale Crater, Mars",
+      "feature": "Mapped upper and lower fan deposits",
+      "locator": "Palucis et al. Figures 2 and 5; Table 2",
+      "mapPoint": null,
+      "mapPointKind": "Planetary feature; never shown on Earth map",
+      "mapPointSourceId": "S14"
+    }
+  ],
+  "comparisons": [
+    {
+      "id": "P01",
+      "earthId": "earth-haughton",
+      "targetId": "moon-shackleton",
+      "status": "reviewed",
+      "reviewer": "Codex",
+      "reviewDate": "2026-11-14",
+      "relationship": "NASA documents a Haughton–Shackleton analogy at whole-crater and operations levels; this record narrows the field comparison to Locale 7 and one Shackleton rim image.",
+      "relationshipSourceIds": [
+        "S01",
+        "S22",
+        "S19"
+      ],
+      "terrain": {
+        "rating": "Moderate",
+        "evidence": "Locale 7 has a rocky ridge, lower shelf and boulders that complicated rover access. The Shackleton rim detail shows blocks, small craters and impact-related surface textures.",
+        "difference": "The sources do not establish matching slopes, block distributions or a safe lunar route. Haughton is a modified complex impact structure; Shackleton is a well-preserved simple crater.",
+        "sourceIds": [
+          "S22",
+          "S19",
+          "S01",
+          "S21"
+        ],
+        "missingReason": null
+      },
+      "geology": {
+        "rating": "Weak",
+        "evidence": "Locale 7 investigated carbonate host-rock layers and blocks. The lunar rim map describes upper regolith; the blocks are interpreted as likely ejecta, without measured composition in that source.",
+        "difference": "The documented carbonate host rock differs materially from the lunar regolith and ejecta interpretation.",
+        "sourceIds": [
+          "S22",
+          "S19"
+        ],
+        "missingReason": null
+      },
+      "practice": [
+        {
+          "id": "impact-observation",
+          "label": "Impact-landform observation",
+          "reason": "Both sources support interpreting impact-related terrain from mapped features.",
+          "sourceIds": [
+            "S22",
+            "S19"
+          ]
+        },
+        {
+          "id": "robotic-mapping",
+          "label": "Robotic mapping and traverse planning",
+          "reason": "NASA tested field mapping and rover access at Site A; LROC prepared the lunar map for traverse planning.",
+          "sourceIds": [
+            "S22",
+            "S19"
+          ]
+        }
+      ],
+      "limits": [
+        "Earth erosion, glaciation, permafrost and carbonates differ from lunar regolith.",
+        "Lunar vacuum, gravity, radiation and polar lighting are not reproduced at Haughton.",
+        "No landing-site, route-safety or permanent-base suitability follows from this review."
+      ],
+      "limitSourceIds": [
+        "S01",
+        "S21"
+      ],
+      "visuals": {
+        "earth": {
+          "localPath": null,
+          "sourceId": "S22",
+          "scale": "Ground width unknown",
+          "credit": "Fong et al. / NASA NTRS",
+          "missingReason": "Field photographs will be imported later."
+        },
+        "target": {
+          "localPath": null,
+          "sourceId": "S19",
+          "scale": "750 m scene width; source scale bar 0–300 m",
+          "credit": "NASA/GSFC/Arizona State University",
+          "missingReason": "LROC rim image will be imported later."
+        }
+      },
+      "reviewNotes": "Source-based desk screening; figure locators, not equal-area polygons or measured terrain metrics.",
+      "overall": "Weak",
+      "coverage": 2,
+      "rankEligible": true,
+      "rankOrder": 1,
+      "explanation": "Terrain is rated Moderate: Locale 7 has a rocky ridge, lower shelf and boulders that complicated rover access. The Shackleton rim detail shows blocks, small craters and impact-related surface textures. Geology is rated Weak: Locale 7 investigated carbonate host-rock layers and blocks. The lunar rim map describes upper regolith; the blocks are interpreted as likely ejecta, without measured composition in that source. A possible use to assess is impact-landform observation. Important differences: The sources do not establish matching slopes, block distributions or a safe lunar route. Haughton is a modified complex impact structure; Shackleton is a well-preserved simple crater. The documented carbonate host rock differs materially from the lunar regolith and ejecta interpretation.",
+      "explanationSourceIds": [
+        "S01",
+        "S19",
+        "S21",
+        "S22"
+      ],
+      "reportPath": "/reports/P01-p01-p07-2026-11-14.pdf"
+    },
+    {
+      "id": "P07",
+      "earthId": "earth-copper",
+      "targetId": "mars-peace",
+      "status": "sourced-candidate",
+      "reviewer": null,
+      "reviewDate": null,
+      "relationship": "The specific Copper Canyon–Peace Vallis pairing is TerraTwin's proposal. Published sources document each named fan, but no completed pair review is recorded.",
+      "relationshipSourceIds": [
+        "S12",
+        "S13",
+        "S14"
+      ],
+      "terrain": {
+        "rating": null,
+        "evidence": "USGS describes Copper Canyon's radial drainage. Palucis et al. map Peace Vallis upper and lower fan units and channels.",
+        "difference": "The whole fans are about 5.2 km² and 80 km² respectively; matching feature scales and preservation have not been assessed.",
+        "sourceIds": [
+          "S12",
+          "S13",
+          "S14"
+        ],
+        "missingReason": "Terrain evidence has not been reviewed together under the P07 rubric."
+      },
+      "geology": {
+        "rating": null,
+        "evidence": "USGS describes Copper Canyon sediment sources; Palucis et al. describe Peace Vallis fan deposits.",
+        "difference": "Corresponding deposit classes and material uncertainty have not been reviewed at selected units.",
+        "sourceIds": [
+          "S13",
+          "S14"
+        ],
+        "missingReason": "Geology evidence has not been reviewed together under the P07 rubric."
+      },
+      "practice": [],
+      "limits": [
+        "The named-fan analogy is proposed, not a published assessment of these two fans together.",
+        "Current Martian conditions differ from terrestrial rainfall and sediment transport.",
+        "Copper Canyon public access is restricted; do not treat this candidate as an approved field site (NPS S28).",
+        "No traversability or base suitability claim follows from this candidate."
+      ],
+      "limitSourceIds": [
+        "S14",
+        "S28"
+      ],
+      "visuals": {
+        "earth": {
+          "localPath": null,
+          "sourceId": "S12",
+          "scale": "Source aerial photo 1:48,000; no display scale bar",
+          "credit": "U.S. Geological Survey",
+          "missingReason": "USGS fan image will be imported later."
+        },
+        "target": {
+          "localPath": null,
+          "sourceId": "S14",
+          "scale": "Published CTX Figure 2 approximately 6 m/pixel; no display scale bar",
+          "credit": "NASA/JPL-Caltech/MSSS; Palucis et al. (2014)",
+          "missingReason": "Peace Vallis image will be imported after reuse review."
+        }
+      },
+      "reviewNotes": "No P07 rating or completed review. Whole-fan area estimates are context, not a percentage score.",
+      "overall": "Insufficient evidence",
+      "coverage": 0,
+      "rankEligible": false,
+      "rankOrder": null,
+      "explanation": "The specific Copper Canyon–Peace Vallis pairing is TerraTwin's proposal. Published sources document each named fan, but no completed pair review is recorded. Terrain lead: USGS describes Copper Canyon's radial drainage. Palucis et al. map Peace Vallis upper and lower fan units and channels. Geology lead: USGS describes Copper Canyon sediment sources; Palucis et al. describe Peace Vallis fan deposits. The pair remains unranked because Terrain evidence has not been reviewed together under the P07 rubric. Geology evidence has not been reviewed together under the P07 rubric.",
+      "explanationSourceIds": [
+        "S12",
+        "S13",
+        "S14",
+        "S28"
+      ],
+      "reportPath": "/reports/P07-p01-p07-2026-11-14.pdf"
+    }
+  ]
+}
