@@ -1,51 +1,48 @@
 # TerraTwin
 
-An interactive Earth analog explorer for Moon and Mars field preparation. Find Earth sites with comparable terrain, supported by geological evidence, where teams could practice relevant field tasks. View sourced terrain imagery, filter by practice objective, compare two Earth sites, and inspect the evidence and limits through a 2D map and 3D globe.
+TerraTwin is an Earth analog explorer for Moon and Mars field-practice research. This branch contains a working P01/P07 first slice with qualitative evidence, an offline Earth locator, and matching evidence PDFs. It has no user accounts, database, or model API requirement.
 
-Official repository: [SwanThuta/TerraTwin](https://github.com/SwanThuta/TerraTwin).
+## Current evidence
 
-**Project status:** project documentation and directory structure are in place. Application code, datasets, dependencies, and run commands have not been created yet.
+- **P01:** Haughton Crater Locale 7 ↔ Shackleton rim. Reviewed desk screening: terrain Moderate, geology Weak, overall Weak.
+- **P07:** Copper Canyon Fan ↔ Peace Vallis Fan. Sourced candidate with no completed pair review: terrain and geology unrated, overall Insufficient evidence, excluded from ranking.
+- Earth markers are regional locators, not verified feature polygons. Terrain images have not been imported; the app shows source links, published scale information, credit, and a missing-image reason.
 
-## Documents
+These are heuristic research labels, not measured similarity percentages, route-safety findings, or field-access approvals.
 
-- [spec.md](spec.md): scope, recommended stack, data contracts, scoring, resources, and acceptance criteria.
-- [design.md](design.md): interface, visual direction, and interaction behavior.
-- [todo.md](todo.md): six-person ownership, delivery sequence, and completion checklist.
-- [data/source-register.md](data/source-register.md): verified source catalogs, proposed site evidence, access leads, and gaps before scoring.
-- [agents.md](agents.md): shared coding-agent instructions and scientific integrity rules.
-- [claude.md](claude.md): Claude entry instructions referencing the shared rules.
+## Run locally
 
-## Planned technology
+The team version baseline is recorded in [.nvmrc](.nvmrc), [.python-version](.python-version), and [spec.md](spec.md). The build was verified here with Node.js 24.19.0 and Python 3.12.4; exact pinned runtimes 24.22.3 and 3.14.10 remain to be checked.
 
-React, TypeScript, and Vite for the frontend; MapLibre GL JS for Earth maps and globe view; Python for data preparation, scoring, and per-comparison PDF reports; versioned JSON/GeoJSON for the first demo. Add a FastAPI service when integrating external APIs later. See the specification for rationale and constraints.
+From the repository root in PowerShell:
 
-The team version baseline is in [spec.md](spec.md#shared-toolchain-and-package-versions). `.nvmrc` pins Node.js 24.22.3 and `.python-version` pins Python 3.14.10. Dependency manifests and lockfiles will be committed when the application is scaffolded.
-
-## Repository layout
-
-```text
-web/                 React application
-pipeline/            Python preprocessing, scoring, candidate search, and PDF generation
-data/raw/            Small permitted source extracts and retrieval manifests
-data/processed/      Validated sites, observations, comparisons, and search runs
-data/schemas/        Documented JSON data contracts
-tests/               Scientific logic and pipeline checks
+```powershell
+python -m venv .venv
+.\.venv\Scripts\python.exe -m pip install -r pipeline\requirements.txt
+.\.venv\Scripts\python.exe -m pipeline.build
+.\.venv\Scripts\python.exe -m pytest -q
 ```
 
-These directories currently contain placeholder files so Git tracks the agreed structure. Add implementation files within the existing directories as each team member begins work.
+From `web/`:
 
-`tests/` will hold Python checks for scoring, missing evidence, ranking, and generated explanations. Frontend interaction checks can live alongside the React code in `web/`; both search directions and the map projection switch need a focused check. The placeholder in `tests/` is not a test suite yet.
+```powershell
+npm ci
+npm run dev -- --host 127.0.0.1
+npm run build
+```
 
-Large source rasters stay outside version control; commit retrieval instructions and small reproducible extracts where licensing allows. The implementation should export processed assets into the frontend's public data directory through one documented command.
+The generator validates [data/sites.json](data/sites.json) and writes the same JSON to `data/processed/atlas.json` and `web/public/data/atlas.json`, plus one PDF per comparison in `web/public/reports/`. Run it after changing source data. The web app consumes only those generated public files. The Natural Earth land layer is bundled in `web/public/maps/` with attribution; no basemap key is needed.
 
-## Getting started
+## Repository guide
 
-Read the specification and select a role in the task list. The first implementation milestone establishes the shared schema, one sourced comparison, the frontend scaffold, and the map projection prototype. Once those exist, replace this section with verified prerequisites, installation, data-generation, development, test, and build commands.
+- [spec.md](spec.md): product, science, data, and acceptance contract.
+- [design.md](design.md): current qualitative atlas interface contract.
+- [source.md](source.md): P01/P07 research notes and source register.
+- [todo.md](todo.md): team ownership and verified work checklist.
+- [pipeline/models.py](pipeline/models.py): validated records, rating rule, coverage, ranking, and explanations.
+- [pipeline/build.py](pipeline/build.py): static atlas and PDF generation.
+- [web/src/App.tsx](web/src/App.tsx): search and comparison interface.
+- [web/src/MapPanel.tsx](web/src/MapPanel.tsx): flat/globe Earth locator.
+- [tests/test_science.py](tests/test_science.py): high-impact scientific behavior checks.
 
-## Research approach
-
-Similarity is an explainable heuristic that prioritizes comparable terrain and uses geology as supporting evidence. Each selected comparison shows where its values came from, how they were processed and scored, and a downloadable PDF with the same evidence. Sourced terrain images show scale and attribution; evidence-backed practice tags filter results without changing scores. Users can inspect two Earth sites against one planetary target, each with its own method and PDF. Thermal observations can add context but do not affect the first score. Earth sites do not reproduce lunar or Martian gravity, atmosphere, or radiation. Initial explanations are generated from evidence templates; a model API can be added later. The app has no account or sign-in flow, and the first demo needs no model key. External basemaps may still require connectivity or a provider configuration.
-
-## Agent instruction filenames
-
-Files use the lowercase names requested by the team. Agent tools may look for case-sensitive conventional names such as `AGENTS.md` or `CLAUDE.md`; on such systems, configure the tool to read these files or rename them to its expected casing before relying on automatic discovery.
+The first slice still needs permitted and georeferenced image imports, a reviewed P07 rating, more sites for two-Earth comparison, and a reproducible bounded candidate search. Large rasters stay outside Git. Read [agents.md](agents.md) before changing product or scientific behavior.

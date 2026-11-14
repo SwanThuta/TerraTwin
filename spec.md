@@ -1,6 +1,6 @@
 # TerraTwin specification
 
-Status: agreed product direction; implementation has not started.
+Status: agreed product direction; a local P01/P07 first slice is implemented on `codex/build-p01-p07`. The wider product acceptance criteria remain open.
 
 ## Purpose
 
