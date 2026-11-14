@@ -93,11 +93,35 @@ Limits: the Marius Hills interpretation does not provide complete underground ge
 
 ### P05: Lake Salda - Jezero
 
-NASA directly compares Lake Salda with Jezero, including carbonate deposits, alluvial fans and sedimentary processes [S06]. This is a documented geological/process analog, not a claim that either all minerals or all surface forms are identical.
+NASA directly compares Lake Salda with Jezero, including carbonate deposits, shoreline and terrace sediments, alluvial fans and sedimentary processes [S06]. The comparison is a documented geological/process analog, not a claim that all minerals, landforms or surface conditions are identical.
 
-Choose exposed shoreline, terrace or fan deposits rather than the whole lake. Pair each with an explicitly selected Jezero feature. Candidate practice tags: sedimentary observation and sample-site selection research. Add mineral categories only at the level supported by published evidence.
+**Selected scope and locators:** On Earth, use an exposed Lake Salda shoreline deposit or terrace rather than the whole lake. NASA's source identifies beach sediments along the northeastern shore, a shallow hydromagnesite carbonate bench extending about 40 m offshore, an exposed microbialite island, alluvial-fan delta deposits, an ancient-stream outcrop and a terrace deposit on the southwest peninsula [S06]. On Mars, use a named Jezero shoreline/delta feature with a source-backed locator. NASA identifies carbonate-bearing material along the western crater margins as possible ancient-shoreline deposits [S06] and identifies the delta's fan-shaped sedimentary setting, layered outcrops, Hogwallow Flats and Skinner Ridge in the Perseverance panorama and transcript [S08]. These are source-backed feature leads, not matched polygons, rover routes or proof that a Salda deposit is equivalent to a selected Jezero outcrop.
 
-Limits: lake-water surfaces do not supply lakebed terrain measurements, and Earth microbialites do not establish Martian life. Do not compare Salda's current climate with ancient Jezero as though both were simultaneous observations.
+**Terrain/landform evidence — pending feature review (`terrain-geology-qual-v1`):** both sources document water-related depositional settings, including Lake Salda alluvial fans, terraces and shoreline deposits and the Jezero delta's fan-shaped sedimentary deposits [S06, S08]. This supports a possible comparison of depositional form and sediment organization. The sources do not yet define one bounded Salda footprint and one bounded Jezero footprint with comparable area, relief, slope, roughness or image scale. Do not rate the lake surface as lakebed terrain, and do not infer a terrain score from visual resemblance alone.
+
+**Geology/materials — pending feature review (`terrain-geology-qual-v1`):** NASA reports hydromagnesite and other carbonate-rich sediments around Lake Salda, including sediments associated with microbialites, and describes possible carbonate-bearing material on the western margins of Jezero [S06]. NASA's Jezero source also documents layered sedimentary rocks and finer-grained delta deposits, including the Hogwallow Flats and Skinner Ridge areas [S08]. This supports a material/process comparison at the documented category level. It does not establish identical mineralogy, microbial origin, grain-size distribution or depositional history; any mineral label must remain tied to the cited source and selected feature.
+
+**Current implementation: qualitative heuristic comparison.** Apply `terrain-geology-qual-v1` from `spec.md`; no elevation raster, DEM download, slope/roughness calculation or lakebed measurement is required for the first review. P05 remains outside ranked results until both named features are selected, both dimensions are reviewed, and the review status is recorded. No numeric similarity percentage is required or implied.
+
+**Required P05 evidence:**
+
+| Dimension | Lake Salda evidence | Jezero evidence | Review requirement |
+| --- | --- | --- | --- |
+| Terrain/landform | Select one exposed shoreline, terrace, alluvial-fan delta or stream-deposit feature from the locators in [S06] | Select one named shoreline or delta/outcrop feature from [S06, S08] | Record feature locators, physical scale, depositional form, meaningful differences and scale uncertainty; do not use open water as terrain |
+| Geology/materials | Hydromagnesite/carbonate sediments, microbialite-related deposits or documented sediment layers [S06] | Possible carbonate-bearing western-margin deposits and layered/fine-grained delta sediments [S06, S08] | Compare only source-supported material categories; do not infer life, identical minerals or unmeasured composition |
+| Practice context (unscored) | Shoreline/fan/terrace observations and sample-site selection research [S06] | Perseverance delta observation, abrasion and core-sampling context [S08] | Justify each tag from evidence and state that Earth activities do not approve Mars operations |
+
+**Completion steps for the current profile:**
+
+1. Choose one bounded exposed Lake Salda feature and one bounded Jezero feature; record source page, figure, caption, panorama region or map locator for each.
+2. Record terrain and geology claims separately with source IDs, exact locators, similarities, differences and uncertainties. Keep climate, biology and water/ice as context rather than terrain-score inputs.
+3. Review both dimensions as Strong, Moderate, Weak or null with an insufficient-evidence reason. Record reviewer, date and rubric version; apply the overall-label and `terrain-first-v1` ordering rules from `spec.md`.
+4. Select Earth and Mars visual assets only when coverage, attribution, reuse terms and scale/field of view are known. Label different or unknown display scales.
+5. Create one validated P05 comparison record and generate the website explanation and PDF from it, preserving source references, limitations, practice-tag rationale and review status.
+
+**Practice use and limits:** possible tags are **sedimentary observation**, **shoreline/fan mapping** and **sample-site selection research**, subject to selected-feature review. Lake Salda's microbialites can inform questions about carbonate deposition and biosignature search locations, but Earth microbialites do not establish Martian life. Lake-water surfaces do not supply lakebed terrain measurements. Salda's current hydrology, climate, biology, gravity and atmosphere differ from ancient Jezero conditions; the analogy does not establish habitability, safety or permanent-base suitability.
+
+**Images and optional terrain data:** [S06] supplies NASA Earth Observatory photographs of Salda shoreline sediments, the carbonate bench, microbialites, alluvial-fan deposits and a terrace; [S08] supplies a NASA/JPL/Caltech/ASU/MSSS Jezero panorama/video context assembled from Mastcam-Z images acquired on June 12, 13, 16, 17 and 20, 2022. These source pages provide attribution, but image reuse terms and calibrated display scales must be checked before importing assets. Do not present a panorama or lake photograph as a measured terrain product. No DEM is required for the first qualitative review; numerical terrain work would require selected-window coverage, units, datum, quality masks and comparable physical scales.
 
 ### P06: San Pedro delta, Atacama - Jezero
 
