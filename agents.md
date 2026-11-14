@@ -2,7 +2,7 @@
 
 ## Context and source of truth
 
-Read `spec.md`, `design.md`, and `todo.md` before implementation. This is a six-person hackathon project with a little over 24 hours and beginner-to-intermediate developers. The product combines research comparisons with a website for Earth analogs of Moon and Mars sites.
+Read `spec.md`, `design.md`, and `todo.md` before implementation. TerraTwin is a six-person hackathon project with a little over 24 hours and beginner-to-intermediate developers. The product combines research comparisons with a website for Earth analogs of Moon and Mars sites. The official repository is `https://github.com/SwanThuta/TerraTwin`.
 
 Follow explicit user instructions first. Treat `spec.md` as the product and scientific contract, `design.md` as the interface contract, and `todo.md` as the delivery checklist. Keep all affected documents consistent when scope changes. Avoid adding unrequested features.
 

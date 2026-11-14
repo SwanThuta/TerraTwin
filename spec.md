@@ -1,4 +1,4 @@
-# AstroCoders specification
+# TerraTwin specification
 
 Status: agreed product direction; implementation has not started.
 

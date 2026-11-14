@@ -9,7 +9,7 @@ Use a system sans-serif font, clear labels, restrained borders, and consistent s
 ## Desktop layout
 
 ```text
-Header: AstroCoders | Explore | Method & sources
+Header: TerraTwin | Explore | Method & sources
 Search direction: Find Earth analogs / Explore planetary matches
 Planet selector: Moon / Mars       Site selector: fixed sourced list
 ------------------------------------------------------------------

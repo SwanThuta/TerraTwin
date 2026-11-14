@@ -1,6 +1,8 @@
-# AstroCoders
+# TerraTwin
 
 An Earth analog explorer for Moon and Mars research. Find comparable Earth environments, inspect the evidence and limitations, and explore candidates through a 2D map and 3D globe.
+
+Official repository: [SwanThuta/TerraTwin](https://github.com/SwanThuta/TerraTwin).
 
 **Project status:** project documentation and Git repository configuration. Application code, datasets, dependencies, and run commands have not been created yet.
 
