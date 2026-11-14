@@ -1,4 +1,4 @@
-"""Checks for high-impact qualitative rating and provenance behavior."""
+"""Checks for the CSV-backed P01 screening and its published artifacts."""
 
 import json
 from pathlib import Path
@@ -6,12 +6,9 @@ from pathlib import Path
 import pytest
 from pydantic import ValidationError
 
-from pipeline.build import INPUT, build
-from pipeline.models import Dataset, coverage, explanation, overall_rating, publishable, rank_key
-
-
-def dataset() -> Dataset:
-    return Dataset.model_validate_json(INPUT.read_text(encoding="utf-8"))
+from pipeline.build import build
+from pipeline.csv_loader import load_p01, rows
+from pipeline.models import Dataset, coverage, overall_rating, publishable, rank_key
 
 
 @pytest.mark.parametrize(
@@ -33,65 +30,59 @@ def test_fixed_overall_rule(terrain, geology, expected):
     assert overall_rating(terrain, geology) == expected
 
 
-def test_candidate_is_not_ranked_or_treated_as_weak():
-    records = {item.id: item for item in dataset().comparisons}
-    assert coverage(records["P01"]) == 2
-    assert coverage(records["P07"]) == 0
-    assert overall_rating(records["P07"].terrain.rating, records["P07"].geology.rating) == "Insufficient evidence"
-    with pytest.raises(ValueError, match="fully reviewed"):
-        rank_key(records["P07"])
+def test_p01_uses_csv_review_and_criteria_only():
+    source_pair = next(row for row in rows("analog_pairs.csv") if row["pair_id"] == "P01")
+    dataset = load_p01()
+    item = dataset.comparisons[0]
+    assert len(dataset.comparisons) == 1
+    assert (item.terrain.rating, item.geology.rating) == (
+        source_pair["terrain_rating"], source_pair["geology_rating"]
+    )
+    assert item.terrain.sourceIds == source_pair["terrain_evidence"].split(";")
+    assert item.geology.sourceIds == source_pair["geology_evidence"].split(";")
+    assert {criterion.key for criterion in dataset.criteria if criterion.role == "primary_qualitative"} == {"terrain", "geology"}
+    assert len(dataset.criteria) == len(rows("comparison_criteria.csv"))
+    assert coverage(item) == 2
+    assert {similarity.dimension for similarity in item.similarities} == {"terrain", "geology"}
+    assert len(item.practice) == 3
+    assert all(tag.status == "possible" for tag in item.practice)
+    assert publishable(dataset)["comparisons"][0]["overall"] == source_pair["overall_rating"]
+    assert rank_key(item) == (1, 2, "E01")
 
 
-def test_rank_is_terrain_first_then_geology_then_stable_site_id():
-    first = dataset().comparisons[0]
-    strong_geology = first.model_copy(deep=True)
-    strong_geology.geology.rating = "Strong"
-    strong_geology.earthId = "earth-z"
-    assert rank_key(strong_geology) < rank_key(first)
-    stable_tie = first.model_copy(deep=True)
-    stable_tie.earthId = "earth-a"
-    assert rank_key(stable_tie) < rank_key(first)
+def test_research_station_is_context_not_locale_7():
+    earth, moon = load_p01().sites
+    assert earth.mapPoint == (-89.86666666666666, 75.43333333333334)
+    assert "not a verified feature point" in earth.mapPointKind
+    assert "No exact Locale 7 GPS found" in earth.coordinateNote
+    assert moon.mapPoint is None
+    assert "positive East" in moon.coordinateConvention
 
 
-def test_missing_reason_and_unknown_sources_are_rejected():
-    raw = json.loads(INPUT.read_text(encoding="utf-8"))
-    raw["comparisons"][1]["terrain"]["missingReason"] = None
+def test_missing_evidence_and_unknown_sources_are_rejected():
+    raw = load_p01().model_dump(mode="json")
+    raw["comparisons"][0]["terrain"]["rating"] = None
     with pytest.raises(ValidationError, match="missing reason"):
         Dataset.model_validate(raw)
-    raw = json.loads(INPUT.read_text(encoding="utf-8"))
+    raw = load_p01().model_dump(mode="json")
     raw["comparisons"][0]["geology"]["sourceIds"] = ["made-up"]
     with pytest.raises(ValidationError, match="unknown sources"):
         Dataset.model_validate(raw)
 
 
-def test_explanations_have_source_references_and_review_status():
-    data = dataset()
-    output = {item["id"]: item for item in publishable(data)["comparisons"]}
-    assert "carbonate" in explanation(data.comparisons[0]).lower()
-    assert set(data.comparisons[0].terrain.sourceIds).issubset(output["P01"]["explanationSourceIds"])
-    assert set(data.comparisons[0].geology.sourceIds).issubset(output["P01"]["explanationSourceIds"])
-    assert output["P01"]["rankEligible"] is True
-    assert output["P01"]["rankOrder"] == 1
-    assert output["P07"]["rankEligible"] is False
-    assert output["P07"]["rankOrder"] is None
-    assert "unranked" in output["P07"]["explanation"]
-
-
-def test_generated_pdf_and_web_record_share_ratings_and_references():
+def test_explanation_and_report_reuse_selected_csv_record():
     output = build()
     root = Path(__file__).resolve().parents[1]
     web = json.loads((root / "web/public/data/atlas.json").read_text(encoding="utf-8"))
     assert web == output
-    for item in web["comparisons"]:
-        pdf = root / "web/public" / item["reportPath"].lstrip("/")
-        body = pdf.read_bytes()
-        assert body.startswith(b"%PDF")
-        assert item["id"].encode() in body
-        assert output["reviewProfile"].encode() in body
-        assert item["status"].encode() in body
-        for source_id in item["terrain"]["sourceIds"] + item["geology"]["sourceIds"]:
-            assert source_id.encode() in body
-        assert item["overall"].encode() in body
-        for dimension in (item["terrain"], item["geology"]):
-            if dimension["missingReason"]:
-                assert dimension["missingReason"].encode() in body
+    item = web["comparisons"][0]
+    assert item["rankEligible"] is True and item["rankOrder"] == 1
+    assert set(item["terrain"]["sourceIds"] + item["geology"]["sourceIds"]).issubset(item["explanationSourceIds"])
+    assert set(source for similarity in item["similarities"] for source in similarity["sourceIds"]).issubset(item["explanationSourceIds"])
+    pdf = root / "web/public" / item["reportPath"].lstrip("/")
+    body = pdf.read_bytes()
+    assert body.startswith(b"%PDF")
+    for expected in (item["id"], item["overall"], item["reviewStatus"], item["terrain"]["rating"],
+                     item["geology"]["rating"], output["reviewProfile"], "C01", "C02",
+                     "HMP research station", "Impact-landform observation", "E01-T01", *item["terrain"]["sourceIds"]):
+        assert expected.encode() in body

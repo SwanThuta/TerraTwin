@@ -1,0 +1,9 @@
+﻿feature_id,observation_key,value,unit,observation_kind,source_id,source_locator,scope_note
+E07,whole_fan_area_km2,5.2,km2,approximate_published_context,R19,Copper Canyon fan described as ~2 square miles; conversion rounded,"Entire fan, not compared window, not measured here"
+M03,whole_fan_area_km2,80,km2,published_measurement,R22,Palucis Table 2,"Entire Peace Vallis fan, not compared window"
+M03,upper_fan_area_km2,49,km2,published_measurement,R22,Palucis Table 2,"Upper fan, not Earth analog site"
+M03,lower_fan_area_km2,31,km2,published_measurement,R22,Palucis Table 2,"Lower fan, not Earth analog site"
+L02,pit_depth_atlas_m,40,m,published_stereo_estimate,R04,"LROC Pit Atlas row, depth field",Atlas stereo estimate at pit; not subsurface tube length
+L02,inner_pit_min_diameter_m,49,m,published_measurement,R04,LROC Pit Atlas row,One pit axis dimension; unrelated to Earth tube size
+L02,inner_pit_max_diameter_m,55,m,published_measurement,R04,LROC Pit Atlas row,One pit axis dimension; unrelated to Earth tube size
+L01,source_image_field_width_m,750,m,image_context,R03,LROC 750-m-wide view,"Image field width, not analog physical sampling area"

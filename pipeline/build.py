@@ -1,4 +1,4 @@
-"""Build the static atlas and matching evidence reports from validated JSON."""
+"""Build the P01 static atlas and report from the supplied CSVs."""
 
 from __future__ import annotations
 
@@ -12,11 +12,12 @@ from reportlab.lib.styles import ParagraphStyle, getSampleStyleSheet
 from reportlab.lib.units import inch
 from reportlab.platypus import Paragraph, SimpleDocTemplate, Spacer
 
-from pipeline.models import Dataset, publishable
+from pipeline.csv_loader import CSV_DIR, load_p01
+from pipeline.models import publishable
 
 
 ROOT = Path(__file__).resolve().parents[1]
-INPUT = ROOT / "data" / "sites.json"
+INPUT = CSV_DIR / "analog_pairs.csv"
 PROCESSED = ROOT / "data" / "processed" / "atlas.json"
 PUBLIC = ROOT / "web" / "public" / "data" / "atlas.json"
 REPORTS = ROOT / "web" / "public" / "reports"
@@ -29,6 +30,7 @@ def _paragraph(text: str, style: ParagraphStyle) -> Paragraph:
 def write_report(record: dict, dataset: dict, path: Path) -> None:
     sites = {site["id"]: site for site in dataset["sites"]}
     sources = {source["id"]: source for source in dataset["sources"]}
+    criteria = {criterion["key"]: criterion for criterion in dataset["criteria"]}
     earth, target = sites[record["earthId"]], sites[record["targetId"]]
     styles = getSampleStyleSheet()
     title = ParagraphStyle("TTTitle", parent=styles["Title"], fontSize=18, leading=22, textColor=colors.HexColor("#142a43"), spaceAfter=10)
@@ -43,23 +45,35 @@ def write_report(record: dict, dataset: dict, path: Path) -> None:
         _paragraph("Qualitative screening judgment; no similarity percentage or route-safety assessment.", note),
         _paragraph("Feature scope", heading),
         _paragraph(f"Earth: {earth['feature']}. Locator: {earth['locator']}", body),
+        _paragraph(f"Earth map marker: {earth['mapPointKind']}. Coordinate note: {earth['coordinateNote']}. Convention: {earth['coordinateConvention']}", note),
         _paragraph(f"{target['body'].title()}: {target['feature']}. Locator: {target['locator']}", body),
+        _paragraph(f"Planetary coordinate convention: {target['coordinateConvention']}. {target['coordinateNote']}", note),
         _paragraph(f"Relationship: {record['relationship']} [{', '.join(record['relationshipSourceIds'])}]", body),
     ]
-    for key, label in (("terrain", "Terrain / landform"), ("geology", "Geology / materials")):
+    for key in ("terrain", "geology"):
         dimension = record[key]
+        criterion = criteria[key]
         story += [
-            _paragraph(label, heading),
+            _paragraph(f"{criterion['id']} - {criterion['title']}", heading),
+            _paragraph(f"Question: {criterion['question']} | Readiness: {criterion['readiness']}", note),
             _paragraph(f"Rating: {dimension['rating'] or 'Insufficient evidence'} | Sources: {', '.join(dimension['sourceIds'])}", body),
             _paragraph(f"Evidence: {dimension['evidence']}", body),
             _paragraph(f"Difference: {dimension['difference']}", body),
         ]
         if dimension["missingReason"]:
             story.append(_paragraph(f"Missing review: {dimension['missingReason']}", note))
+    story += [_paragraph("Documented similarity", heading), _paragraph(record["similaritySummary"], body)]
+    for similarity in record["similarities"]:
+        story.append(_paragraph(
+            f"{similarity['id']} · {similarity['dimension'].title()} similarity: {similarity['sharedObservation']} "
+            f"Limitation: {similarity['limitation']} "
+            f"Earth locator: {similarity['earthLocator']} Planetary locator: {similarity['planetaryLocator']} "
+            f"Scale: {similarity['scaleNote']} Sources: {', '.join(similarity['sourceIds'])}", body
+        ))
     story += [_paragraph("Explanation and practice", heading), _paragraph(record["explanation"], body)]
     if record["practice"]:
         for tag in record["practice"]:
-            story.append(_paragraph(f"{tag['label']}: {tag['reason']} [{', '.join(tag['sourceIds'])}]", body))
+            story.append(_paragraph(f"{tag['label']} ({tag['status']}): {tag['reason']} Limitations: {tag['limitations']} [{', '.join(tag['sourceIds'])}]", body))
     else:
         story.append(_paragraph("No practice tag has been approved for this unreviewed candidate.", note))
     story.append(_paragraph("Limits and missing imagery", heading))
@@ -72,14 +86,15 @@ def write_report(record: dict, dataset: dict, path: Path) -> None:
     story += [
         _paragraph("Method and source register", heading),
         _paragraph(record["reviewNotes"], body),
-        _paragraph(f"Review: {record['reviewer'] or 'pending'} | Date: {record['reviewDate'] or 'pending'} | Rank eligible: {'yes' if record['rankEligible'] else 'no'}", body),
+        _paragraph(f"Review: {record['reviewStatus']} | {record['reviewer'] or 'pending'} | Date: {record['reviewDate'] or 'pending'} | Rank eligible: {'yes' if record['rankEligible'] else 'no'}", body),
     ]
     used = set(record["relationshipSourceIds"] + record["terrain"]["sourceIds"] + record["geology"]["sourceIds"] + record["limitSourceIds"])
+    used.update(source for similarity in record["similarities"] for source in similarity["sourceIds"])
     used.update(source for tag in record["practice"] for source in tag["sourceIds"])
     used.update([earth["mapPointSourceId"], target["mapPointSourceId"], record["visuals"]["earth"]["sourceId"], record["visuals"]["target"]["sourceId"]])
     for source_id in sorted(used):
         source = sources[source_id]
-        story.append(_paragraph(f"{source_id} | {source['provider']} | {source['title']} | {source['locator']} | Accessed {source['accessDate']}", note))
+        story.append(_paragraph(f"{source_id} | {source['provider']} | {source['title']} | {source['locator']}", note))
         story.append(Paragraph(f'<link href="{escape(source["url"], quote=True)}" color="#176b87">{escape(source["url"])}</link>', note))
     path.parent.mkdir(parents=True, exist_ok=True)
     doc = SimpleDocTemplate(str(path), pagesize=(8.5 * inch, 11 * inch), rightMargin=0.65 * inch, leftMargin=0.65 * inch, topMargin=0.65 * inch, bottomMargin=0.65 * inch, title=f"TerraTwin {record['id']} evidence report", pageCompression=0)
@@ -87,7 +102,7 @@ def write_report(record: dict, dataset: dict, path: Path) -> None:
 
 
 def build() -> dict:
-    dataset = Dataset.model_validate_json(INPUT.read_text(encoding="utf-8"))
+    dataset = load_p01()
     output = publishable(dataset)
     serialized = json.dumps(output, indent=2, ensure_ascii=False) + "\n"
     PROCESSED.parent.mkdir(parents=True, exist_ok=True)

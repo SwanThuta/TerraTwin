@@ -7,7 +7,18 @@ export interface Source {
   title: string
   url: string
   locator: string
-  accessDate: string
+  accessDate: string | null
+}
+
+export interface Criterion {
+  id: string
+  key: string
+  role: string
+  title: string
+  question: string
+  unitOrRating: string
+  rule: string
+  readiness: string
 }
 
 export interface Site {
@@ -20,6 +31,8 @@ export interface Site {
   mapPoint: [number, number] | null
   mapPointKind: string
   mapPointSourceId: string
+  coordinateNote: string
+  coordinateConvention: string
 }
 
 export interface Dimension {
@@ -30,11 +43,27 @@ export interface Dimension {
   missingReason: string | null
 }
 
+export interface SimilarityEvidence {
+  id: string
+  dimension: 'terrain' | 'geology'
+  earthFeature: string
+  planetaryFeature: string
+  sharedObservation: string
+  limitation: string
+  earthLocator: string
+  planetaryLocator: string
+  scaleNote: string
+  sourceIds: string[]
+  reviewStatus: string
+}
+
 export interface Practice {
   id: string
   label: string
   reason: string
   sourceIds: string[]
+  status: 'possible' | 'not_supported'
+  limitations: string
 }
 
 export interface Visual {
@@ -54,13 +83,16 @@ export interface Comparison {
   reviewDate: string | null
   relationship: string
   relationshipSourceIds: string[]
+  similaritySummary: string
   terrain: Dimension
   geology: Dimension
+  similarities: SimilarityEvidence[]
   practice: Practice[]
   limits: string[]
   limitSourceIds: string[]
   visuals: { earth: Visual; target: Visual }
   reviewNotes: string
+  reviewStatus: string
   overall: 'Strong' | 'Moderate' | 'Weak' | 'Insufficient evidence'
   coverage: number
   rankEligible: boolean
@@ -75,6 +107,7 @@ export interface Atlas {
   reviewProfile: string
   orderingProfile: string
   sources: Source[]
+  criteria: Criterion[]
   sites: Site[]
   comparisons: Comparison[]
 }

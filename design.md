@@ -1,6 +1,6 @@
 # TerraTwin interface design
 
-Status: P01/P07 first slice implemented on `codex/build-p01-p07`; imagery and broader discovery remain pending.
+Status: P01-only CSV preview on `codex/csv-dimensions-one-pair`; imagery, the remaining CSV pairs and broader discovery remain pending.
 
 ## Visual direction
 
@@ -16,7 +16,7 @@ Use a dark navy planetary atlas with cyan accents for navigation and evidence, r
 
 ## Comparison evidence
 
-- Name both reviewed features and their source locators. Show terrain and geology as Strong, Moderate, Weak, or Not rated, with cited evidence, differences, and missing-review reasons.
+- Name both reviewed features and their source locators. Show the CSV's C01 Named landform and subfeatures and C02 Surface material / deposit classes as Strong, Moderate, Weak, or Not rated, with cited evidence, differences, and missing-review reasons. The Method page lists the remaining CSV criteria with readiness and does not treat unavailable metrics as scores.
 - Show the fixed overall qualitative label, evidence completeness as a count of supported dimensions, review state, versioned method, and explanation source links. A count is not a similarity percentage or confidence estimate.
 - Show sourced practice possibilities separately from ratings, followed by analogy limits. Practice filters do not alter the rating.
 - Show Earth and planetary image cards with credit, source link, and published scale information. Until rights, files, and georeferencing are checked, show explicit image-pending cards. Never imply that unmatched source images share a displayed scale.
@@ -24,7 +24,7 @@ Use a dark navy planetary atlas with cyan accents for navigation and evidence, r
 
 ## Current dataset boundary
 
-P01 is a reviewed Haughton Locale 7 ↔ Shackleton rim desk screening: terrain Moderate, geology Weak, overall Weak. P07 is a sourced Copper Canyon Fan ↔ Peace Vallis Fan candidate: both dimensions are unrated and the overall status is Insufficient evidence. Neither record supports route safety or permanent-base suitability. Image assets will be supplied later.
+P01 is the only imported pair: the CSV's dated Haughton Locale 7 ↔ Shackleton rim desk screening gives terrain Moderate, geology Weak, overall Weak. The HMP research station is a context marker, not a Locale 7 point. The preview shows two pair-specific similarity statements and three possible practice uses from the evidence CSV, each with sources and limitations. Mars search is empty in this preview. No route safety or permanent-base suitability follows from P01. Image assets will be supplied later.
 
 ## Follow-on design work
 
