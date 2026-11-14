@@ -19,9 +19,9 @@ Follow explicit user instructions first. Treat `spec.md` as the product and scie
 
 - Use the recommended stack in `spec.md` unless the user changes it or a concrete incompatibility requires an adjustment.
 - Establish a small working end-to-end comparison before expanding the dataset.
-- Implement both search directions, Earth flat/globe views, fixed scoring, generated explanations, and bounded candidate discovery.
+- Implement both search directions, Earth flat/globe views, sourced terrain visuals, evidence-backed practice tags, two-Earth-site comparison, fixed scoring, generated explanations, and bounded candidate discovery.
 - The app has no user accounts or sign-in flow. Keep the first demo usable without model API keys. Use deterministic evidence templates now; add model-provider integration later.
-- Do not add a chatbot, downloadable reports, weight sliders, authentication, a database, or a second frontend framework without a product requirement.
+- Include an on-page source-to-score explanation and a downloadable PDF for the selected comparison. Do not add a chatbot, weight sliders, authentication, a database, or a second frontend framework without a product requirement.
 - Use a single Python scoring implementation and generated JSON outputs initially. Avoid parallel scoring implementations that can disagree.
 - Keep API credentials server-side when providers are added. Document configuration variable names with empty placeholders, never actual secrets.
 - Verify map provider attribution and product licensing before distributing assets. Cache only where terms allow.
@@ -29,6 +29,8 @@ Follow explicit user instructions first. Treat `spec.md` as the product and scie
 ## Scientific integrity
 
 - Every scientific measurement and factual site claim needs a traceable source. Separate measured values, published interpretations, heuristic assumptions, and illustrative fixtures.
+- Preserve source-to-score provenance in both the website and PDF; generate the report from the same validated comparison record, including missing evidence and candidate-search boundaries.
+- Show image scale and attribution, and label mismatched scales. Practice tags need evidence references and must not change scores. The two-site view reuses individual comparisons rather than calculating a new score.
 - Never invent coordinates, measurements, citations, similarity percentages, data availability, or discovery claims.
 - Clearly label demonstration fixtures; exclude them from scientific rankings and research claims.
 - Preserve units, coordinate conventions, scale, time range, processing method, and quality notes. Missing evidence is null with a reason, never an implicit zero.
@@ -39,7 +41,7 @@ Follow explicit user instructions first. Treat `spec.md` as the product and scie
 
 ## Verification and completion
 
-Test the high-impact scientific behavior: identical numeric values, tolerance boundaries, missing/incompatible observations, coverage eligibility, deterministic ranking, and explanation references. Verify the two search directions and projection switching through a focused interaction check.
+Test the high-impact scientific behavior: identical numeric values, tolerance boundaries, missing/incompatible observations, coverage eligibility, deterministic ranking, and explanation references. Verify report values and source references match the selected comparison. Verify the two search directions, tag filtering, two-site selection, and projection switching through a focused interaction check.
 
 Run available typecheck/build and relevant tests after implementation changes. If tools or dependencies prevent a check, report the limitation accurately. Do not add tests that merely repeat low-impact markup.
 

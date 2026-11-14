@@ -7,10 +7,10 @@ Status: documentation prepared; implementation tasks below are pending. Times ar
 | Member | Primary responsibility | Main files / handoff |
 | --- | --- | --- |
 | 1 | Frontend shell and integration | `web/` app shell, shared state, build configuration |
-| 2 | Map and globe | `web/` map components, marker interactions, projection prototype |
-| 3 | Scientific source research | Evidence records, source manifests, target/site review |
-| 4 | Data pipeline and scoring | `pipeline/`, schemas, generated comparisons, scientific tests |
-| 5 | Comparison UI and explanations | Comparison panels, template explanations, evidence display |
+| 2 | Map and globe | `web/` map components, marker interactions, projection prototype, two-site highlighting |
+| 3 | Scientific source research | Evidence records, source manifests, terrain image provenance/licensing, target/site review |
+| 4 | Data pipeline and scoring | `pipeline/`, schemas, generated comparisons, PDF reports, scientific tests |
+| 5 | Comparison UI and explanations | Comparison panels, two-site view, practice tags, template explanations, provenance and report download |
 | 6 | Candidate discovery and demo validation | Search pipeline, reproducibility notes, accessibility and demo rehearsal |
 
 Member 4 coordinates schema changes; member 1 coordinates frontend integration. Member 6 and member 4 agree on shared pipeline interfaces before editing. These are human team roles, not instructions to launch automated sub-agents.
@@ -20,6 +20,8 @@ Member 4 coordinates schema changes; member 1 coordinates frontend integration. 
 - [ ] Assign members and agree on a shared branch/integration workflow.
 - [ ] Confirm proposed site counts, named planetary targets, and first data products.
 - [ ] Define schema, sample records, profile version, and missing-data representation.
+- [ ] Define observation input locators, processing versions, and source-to-score provenance fields for on-page method details and PDFs.
+- [ ] Define visual-asset metadata and the versioned practice objective tag catalog with evidence references.
 - [ ] Verify actual product retrieval, licensing, terrain units and resolution; verify temperature type if used as context.
 - [ ] Scaffold React/TypeScript/Vite and minimal Python pipeline.
 - [ ] Apply the exact versions in `spec.md` to dependency manifests, commit the npm lockfile and any Python lockfile, and verify clean installs with the pinned runtimes.
@@ -36,6 +38,8 @@ Gate: a sourced comparison record can be loaded by the frontend; both map projec
 - [ ] Show markers and synchronize list, selection, and comparison panel.
 - [ ] Generate evidence-based explanation text for one comparison.
 - [ ] Display source links, units, scale, missing evidence, limitations, and an evidence-grounded field-practice use.
+- [ ] Show sourced Earth/planetary terrain images with scale, date when known, attribution, and a missing-image state.
+- [ ] Show how the selected pair's inputs were retrieved, processed, and scored; generate and download a matching PDF report.
 - [ ] Confirm end-to-end slice works without a runtime model API.
 
 Gate: one Earth-to-planet and planet-to-Earth workflow succeeds with traceable evidence.
@@ -47,6 +51,8 @@ Gate: one Earth-to-planet and planet-to-Earth workflow succeeds with traceable e
 - [ ] Run bounded automated search and save its inputs, methods, and outputs.
 - [ ] Surface at least one candidate beyond the curated list, labeled for review.
 - [ ] Add search-method and profile details to the UI.
+- [ ] Add practice objective tag filtering without changing scores or result ordering.
+- [ ] Compare two Earth sites for one planetary target using their existing comparisons, method details, and individual PDFs.
 - [ ] Preserve selection across 2D/globe changes and search-direction changes.
 - [ ] Add responsive layouts, loading, empty, tile-failure, and insufficient-evidence states.
 
@@ -56,6 +62,8 @@ Gate: both bodies have useful sourced comparisons, and bounded discovery is repr
 
 - [ ] Test numeric boundaries, missing values, categorical compatibility, terrain-first weights, coverage, and tie ordering.
 - [ ] Verify explanation evidence references and absence of unsupported claims.
+- [ ] Check each PDF against its selected comparison values, source links, method versions, and missing-evidence status.
+- [ ] Verify image scale/attribution, tag evidence references, unchanged scoring under filters, and two-site selection through projection switching.
 - [ ] Run frontend typecheck and production build.
 - [ ] Exercise both search directions and flat/globe switching.
 - [ ] Check keyboard controls, text contrast, mobile layout, and map/list parity.
@@ -67,7 +75,7 @@ Gate: both bodies have useful sourced comparisons, and bounded discovery is repr
 
 - [ ] Freeze features and resolve demo-blocking defects.
 - [ ] Prepare a production build and small local demonstration dataset.
-- [ ] Rehearse: choose a Mars target, inspect an Earth match and possible field-practice task, reverse the search, switch map views, and explain a newly surfaced candidate.
+- [ ] Rehearse: choose a Mars target, inspect sourced terrain visuals and a practice tag, compare two Earth sites and their PDFs, reverse the search, switch map views, and explain a newly surfaced candidate.
 - [ ] Prepare a lunar example and clearly state the limits of Earth analogs.
 - [ ] Record methodology, evidence gaps, and bounded-search limits for judge questions.
 - [ ] Prepare hosting configuration; publish only when deployment is requested or authorized.
@@ -78,4 +86,4 @@ Gate: both bodies have useful sourced comparisons, and bounded discovery is repr
 - [ ] Add external data APIs after verifying authentication, quotas, and product access.
 - [ ] Expand candidate coverage and validate scoring against documented analog cases.
 
-If time gets tight, reduce the number of sites and visual polish first. Keep source traceability, honest scores, both search directions, both Earth map views, generated explanations, and the smallest reproducible candidate-search demonstration.
+If time gets tight, reduce the number of sites and visual polish first. Keep source traceability, honest scores, both search directions, both Earth map views, sourced terrain visuals, evidence-backed practice tags, two-site comparison, generated explanations, matching downloadable PDFs, and the smallest reproducible candidate-search demonstration.

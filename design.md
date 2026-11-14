@@ -17,7 +17,8 @@ Results list       | Earth map / globe          | Selected comparison
 Match + coverage   | 2D / Globe toggle          | Why it matches
 Curated/candidate  | Earth markers              | Evidence and scores
 Evidence gaps      | Selected-site highlight    | Differences and use
-                   |                           | Source links
+Practice tags      | Two-site highlight         | Terrain images / PDF
+                   |                           | How calculated
 ------------------------------------------------------------------
 Status: dataset version | scoring method | search boundary
 ```
@@ -31,6 +32,10 @@ In “Find Earth analogs,” select Moon or Mars and a fixed planetary target. R
 In “Explore planetary matches,” select an Earth site. Show relevant lunar and Martian targets with profile labels, keeping scores from different profiles in separate groups. The Earth marker remains selected while planetary cards change.
 
 Switching direction should preserve a valid selected pair when possible. Switching body clears an incompatible target and selects a valid one. Update results and explanations together so text never describes a previously selected pair.
+
+In the Moon/Mars-first direction, “Compare another Earth site” lets users choose one additional result for the same target. Keep the primary and second Earth sites highlighted on the map and show both comparison cards. Changing target or direction clears an invalid second site; flat/globe switching keeps both. In Earth-first search, use one Earth site at a time.
+
+When a practice tag filters results, keep selected sites that remain in the filtered list. If the primary site is filtered out, select the first remaining result; clear a filtered-out second site. If nothing matches, show the empty state and a way to clear the tag.
 
 ## Map and globe
 
@@ -46,11 +51,18 @@ If tiles fail, retain markers on a plain background and keep the results list us
 2. Heuristic similarity score, evidence coverage, and profile label.
 3. Terrain and geology values with units, score, source, scale, and quality notes; show any thermal observation as unscored context.
 4. Generated explanation: why it matches, where it differs, possible field-practice use, and evidence gaps.
-5. Method details: profile/tolerance version, search boundary when applicable, and original sources.
+5. “How this comparison was made”: source product and link, retrieval date, input values, extraction method, scale, tolerance/category table, weights, and score calculation; include search boundary for candidates.
+6. “Download report (PDF)” for the selected pair, including insufficient-evidence and unreviewed candidate states.
+7. Sourced Earth and planetary terrain images with scale or field of view, acquisition date when known, attribution, and a clear note when their scales differ.
+8. Evidence-backed practice objective tags; selecting a tag filters results without changing their scores.
 
 A score may appear as “Heuristic terrain and geology similarity: 74/100; evidence: 2/2 dimensions.” This is example interface copy, not a research result. Show “Insufficient comparable evidence” when either scored dimension is unavailable. Never display a coverage percentage as confidence.
 
 Use compact horizontal bars with numerical labels for criterion scores. Avoid charts that hide missing values or imply precision beyond the evidence. Keep explanatory text close to the relevant comparison.
+
+Keep the method section readable without a download. Update its contents and PDF link together whenever the selected pair changes. On mobile, place both in the Comparison tab; keep the download keyboard accessible and name the pair in its accessible label.
+
+For a two-site comparison, show the same fields for each Earth–planetary pair, including its own method section and PDF link. Use side-by-side cards on wide screens and stacked cards on small screens. Do not display a new score comparing the two Earth sites directly. If a terrain image is missing, show a labeled placeholder and retain the data comparison.
 
 ## Explanations
 
@@ -80,7 +92,11 @@ All selectors, cards, tabs, and map controls need keyboard focus and accessible 
 | Tiles unavailable | Plain map background plus working list and details |
 | Optional explanation API unavailable later | Use evidence-template explanation |
 | Invalid data | Exclude invalid result and provide a useful error state |
+| Report unavailable | Explain the download failure while keeping the comparison and method visible |
+| Terrain image unavailable | Show source/availability note and keep measurements and source links usable |
+| Practice tag has no matches | Show an empty-results message and a clear way to remove the filter |
+| Only one Earth site available | Disable the second-site control with an explanation |
 
 ## Demo story
 
-Begin with a Moon or Mars field-practice question. Select a target, inspect its strongest Earth comparison, explain a meaningful difference, switch between flat map and globe, then show an unexpected candidate and how the bounded search identified it. Finish by showing evidence, a possible practice task, and the analogy's limits.
+Begin with a Moon or Mars field-practice question. Select a target, inspect its strongest Earth comparison and sourced terrain images, then select a practice tag and compare a second Earth site. Open each source-to-score method and PDF, explain a meaningful difference, switch between flat map and globe, then show an unexpected candidate and how the bounded search identified it. Finish with the analogy's limits.
