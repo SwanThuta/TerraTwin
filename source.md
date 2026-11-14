@@ -1,27 +1,36 @@
-# TerraTwin: dimensions, eight analog pairs, and source plan
+# TerraTwin: evidence for qualitative analog ratings
 
 Research review date: 2026-11-14.
 
-Status: research shortlist and implementation plan. Public sources support the facts and interpretations identified below; they do not establish eight measured terrain matches. This document supplies research inputs for `spec.md`, not a replacement scoring profile. No similarity percentages, approved footprints, or completed retrievals are claimed here.
+Status: research shortlist for eight proposed pairs. This file records what each source supports, what needs review, and the limits of each proposed analogy. It does not claim that any pair has been reviewed or rated. The first product uses sourced qualitative ratings; DEM-derived similarity percentages are outside its scope.
 
 ## Selected dimensions
 
 | Dimension | First implementation | Evidence required |
 | --- | --- | --- |
-| Terrain and topography | Primary scored dimension: slope, local relief for interpretation, and/or one explicitly defined roughness metric | Comparable DEM-derived measurements, study footprints, physical scales, units, quality masks, and processing versions |
-| Geology and surface materials | Second scored dimension: documented geological units and material classes | Geological maps or published observations for the selected footprint; a reviewed, versioned compatibility table |
+| Terrain and topography | Primary qualitative rating: named landform, visible subfeatures, and scale relevant to field practice; optional slope/roughness context | Sources and locators for both selected features, image/map scales when known, and documented similarities and differences |
+| Geology and surface materials | Second qualitative rating: documented deposit/material classes and uncertainty | Geological maps or published observations applying to both selected features |
 | Geological processes | Qualitative explanation: impacts, lava emplacement, erosion, sediment transport and deposition | Published evidence connecting a process to each selected feature; distinguish observations from interpretations |
-| Exploration activities | Evidence-backed practice tags, not another score | A cited reason the selected evidence could support sampling, mapping, instrument trials or terrain-navigation research |
+| Exploration activities | Evidence-backed practice tags, not another rating dimension | A cited reason the selected evidence could support sampling, mapping, instrument trials or terrain-navigation research |
 
-Mineralogy can support geology when measured or published; it is not inferred from image color. Terrain includes landform shape, but a crater, cave or fan label alone is not a numeric terrain measurement. Local relief describes elevation differences within a footprint; absolute elevation against different planetary datums is not a direct similarity criterion.
+Mineralogy can support geology when measured or published; it is not inferred from image color. Terrain includes landform shape, but a shared crater, cave or fan label alone cannot justify a Strong rating. Local relief describes elevation differences within a footprint; absolute elevation against different planetary datums is not a direct similarity criterion.
 
-Temperature/illumination, water/ice, biology/habitability, and cave geometry remain optional context or specialized evidence. They do not affect the first score. In particular, a surface DEM does not measure underground passage dimensions or the bottom of a water-covered lake. Earth does not reproduce lunar or Martian gravity, atmosphere/vacuum, or radiation.
+Temperature/illumination, water/ice, biology/habitability, and cave geometry remain optional context or specialized evidence. They do not affect the first rating. In particular, a surface DEM does not measure underground passage dimensions or the bottom of a water-covered lake. Earth does not reproduce lunar or Martian gravity, atmosphere/vacuum, or radiation.
 
-### Scoring contract
+### Rating method: `terrain-geology-qual-v1`
 
-Follow `spec.md`: fixed heuristic weights are 2/3 terrain and 1/3 geology. Both dimensions must be comparable before ranking; otherwise coverage is below 1, the overall score is `null`, and the record appears as insufficient evidence. Missing evidence is never zero. Disclose missing slope/roughness subcriteria even when a terrain dimension is available. Do not add relief, process or practice-tag weights without changing and reviewing the scoring contract.
+For each pair, review one identifiable Earth feature and one Moon/Mars feature. Rate **terrain/landform** and **geology/surface materials** separately, with a source reference, short rationale and meaningful difference for each. Use the same labels and rules as `spec.md`:
 
-A numeric criterion uses the specification's documented tolerance rule. Tolerances and geological category compatibility are heuristic choices requiring justification and versioning. Do not turn descriptions such as "basaltic" or "impact crater" into invented similarity percentages. Practice filters do not change scores. Use the same validated record and provenance for the website and PDF.
+- **Strong:** specific cited features have closely corresponding landforms and subfeatures, or corresponding deposit/material classes, at a meaningful scale for the proposed practice use.
+- **Moderate:** sources support a shared broad landform or material/process family, but details, interpretation or scale differ or remain uncertain.
+- **Weak:** both features are identified, but sourced differences materially limit the analogy.
+- **Insufficient evidence:** one feature or its applicable evidence is missing. Store a null dimension rating and reason, not Weak.
+
+Overall: both Strong gives Strong; both at least Moderate with one Moderate gives Moderate; any Weak gives Weak when both dimensions are rated; a null dimension gives Insufficient evidence. Reviewed pairs with both dimensions rated are ordered by terrain label, then geology label, then stable ID (`terrain-first-v1`). Unreviewed candidates and insufficient-evidence pairs stay outside ranked results. Show `0/2`, `1/2`, or `2/2 dimensions supported` separately from review status; it is not a confidence estimate.
+
+Do not turn descriptions such as "basaltic" or "impact crater" into invented similarity percentages. A broad regional analogy alone does not validate a specific pair. Exact equal-area polygons, DEM retrieval and numerical terrain processing are optional follow-up. Practice filters do not change ratings. Use the same reviewed evidence record for the website and PDF.
+
+For each pair, record: the two named features and their source-backed locators; terrain label, cited evidence, rationale and differences; geology label, cited evidence, rationale and differences; overall label or missing-evidence reason; proposed practice tags with citations; review status, reviewer and date; image scale/credits; and rubric/ordering versions. Published measurements may be included as context with units and scale, but they do not need to be collected to complete this record.
 
 ## Four planetary targets and eight Earth sites
 
@@ -35,9 +44,9 @@ The requested Earth regions are represented by Haughton, Death Valley, Antarctic
 | P02 | Marius Hills: volcanic surfaces | Mauna Ulu lava-flow area, Kilauea, Hawaii | Documented lava-tube development and broader lunar volcanic analog work [S02, S03] | Proposed specific Marius pairing; terrain/geology candidate |
 | P03 | Marius Hills: volcanic surfaces and vents | Fagradalsfjall lava-flow terrain, Iceland | NASA studies these flows/vents for lunar and Martian comparisons [S04] | Proposed specific Marius pairing; terrain/geology candidate |
 | P04 | Marius Hills pit region: volcanic cave exploration | Lava Beds National Monument, California, USA | Lunar cave-detection research near Medicine Lake Volcano and documented lava tubes [S03, S05] | Proposed specific Marius pairing; feature/process evidence first |
-| P05 | Jezero: carbonate-bearing margin and sedimentary features | Lake Salda, Turkiye | Explicit Jezero comparison involving carbonates and sediment deposition [S06] | Strong geological/process lead; exposed terrain footprint still needed |
+| P05 | Jezero: carbonate-bearing margin and sedimentary features | Lake Salda, Turkiye | Explicit Jezero comparison involving carbonates and sediment deposition [S06] | Well-documented geological/process lead; identify matching exposed features |
 | P06 | Jezero: deltaic deposits | San Pedro River delta, Salar de Atacama, Chile | Earth delta documented by USGS [S07]; Jezero delta documented by NASA [S08] | Proposed comparison, not a source-validated exact pair |
-| P07 | Gale: river-fan deposits | Death Valley alluvial-fan terrain, California, USA | Explicit Death Valley-Gale comparison by a Curiosity scientist [S09] | Priority terrain/geology candidate; choose one named fan footprint |
+| P07 | Gale: Peace Vallis alluvial fan | Copper Canyon fan, Death Valley, California, USA | Published Death Valley-Gale fan analogy [S09]; Copper Canyon-Peace Vallis is TerraTwin's proposed specific pairing | Priority qualitative candidate; compare cited fan features and scale differences |
 | P08 | Gale: possible ancient ice-covered lake conditions | Lake Untersee, Antarctica | Explicit published Antarctic analogy for ancient Gale lakes [S10] | Context/process case; not currently eligible for terrain ranking |
 
 The distribution is intentionally one Earth site for Shackleton, three for Marius Hills, two for Jezero, and two for Gale. Eight Earth sites do not imply two equally strong or rankable sites for every target. The two-Earth-site UI should operate where two eligible records actually exist; it must not manufacture a second ranked match.
@@ -48,7 +57,7 @@ The distribution is intentionally one Earth site for Shackleton, three for Mariu
 
 NASA's 2011 technical report explicitly identifies Haughton's crater scale, impact features and outpost/traverse relevance to Shackleton. See Table 3, PDF page 27 [S01]. The report also identifies substantial material differences; it is not evidence of equivalent rock composition or all crater morphology. Haughton is a modified terrestrial complex impact structure, so whole-crater similarity must not be assumed.
 
-Select a mapped rim, terrace or traverse segment on each body before extracting slope/roughness. Review impact breccias and target-rock evidence separately. Candidate practice tags: impact-landform observation, geological sampling procedures and robotic mapping research. These need selected-feature evidence before use in the app.
+Identify a mapped rim, terrace or traverse segment on each body. Review impact breccias and target-rock evidence separately from landform shape. Candidate practice tags: impact-landform observation, geological sampling procedures and robotic mapping research. These need selected-feature evidence before use in the app.
 
 Limits: terrestrial weathering, geology, atmosphere and lighting; no recreation of Shackleton's permanent shadow, vacuum or thermal environment. Analog outpost research does not establish actual base suitability.
 
@@ -56,7 +65,7 @@ Limits: terrestrial weathering, geology, atmosphere and lighting; no recreation 
 
 USGS documents lava-tube development in the Mauna Ulu eruption field [S02]. NASA describes Kilauea as a lunar volcanic fieldwork analog, but its gallery example uses Hadley Rille rather than validating a Marius Hills match [S03]. Assigning Mauna Ulu to Marius Hills is TerraTwin's proposed process comparison, supported by the lunar volcanic/pit interpretation in [S11].
 
-Select a dated, mapped flow surface. Compare surface slope and roughness at a defensible common scale, then review mapped materials. Candidate practice tags: lava-surface mapping and geological observation. Do not infer equivalent cave dimensions from the surrounding surface.
+Identify a dated, mapped flow surface and a corresponding lunar volcanic feature. Compare documented surface form and material interpretations, including their age and scale limits. Candidate practice tags: lava-surface mapping and geological observation. Do not infer equivalent cave dimensions from the surrounding surface.
 
 Limits: eruption age, weathering, material details, gravity and flow-emplacement conditions. An Earth flow is not a replica of the entire Marius volcanic complex.
 
@@ -66,13 +75,13 @@ NASA's GIFT fieldwork account describes study of Fagradalsfjall vents and lava f
 
 Choose a particular eruption/flow footprint with an acquisition date. Use surface volcanic terrain for the first comparison; do not substitute Vatnajokull glacier topography or treat Iceland as one site. Candidate practice tags: volcanic-landform mapping and instrument characterization, supported by the fieldwork description.
 
-Limits: fresh Earth lava can differ strongly from ancient lunar surfaces in weathering, cover and preservation. The selected DEM must postdate the flow being assessed; mosaic dates require checking.
+Limits: fresh Earth lava can differ strongly from ancient lunar surfaces in weathering, cover and preservation. If a DEM is used later, its acquisition date must postdate the flow being assessed; mosaic dates require checking.
 
 ### P04: Lava Beds - Marius Hills pit
 
 NPS documents lava flows and lava tubes at Lava Beds [S05]. NASA documents lunar cave-detection research near Medicine Lake Volcano [S03]. These establish relevant feature/process research; the specific Marius pairing remains proposed, and the exact NASA field site must not be assumed to coincide with a chosen park cave without checking its locator.
 
-Select a documented cave and surrounding surface footprint. A surface DEM can support a surface-only terrain comparison. Interior geometry requires a cave survey, lidar or other suitable measurements. Candidate practice tags: cave-detection instrument research and geological observation, conditional on source/site verification.
+Identify a documented cave and surrounding surface feature. Rate only the visible/sourced surface and process evidence; do not rate underground geometry without cave surveys or equivalent evidence. Candidate practice tags: cave-detection instrument research and geological observation, conditional on source/site verification.
 
 Limits: the Marius Hills interpretation does not provide complete underground geometry [S11]. No roof stability, habitat suitability, passage-size or safety equivalence is established.
 
@@ -92,11 +101,19 @@ Select depositional features, identify their geological setting, exclude mining 
 
 Limits: salt-flat chemistry, episodic flows, depositional history and preservation may differ. Do not label the entire Atacama Desert a Jezero delta analog.
 
-### P07: Death Valley fans - Gale
+### P07: Copper Canyon fan - Peace Vallis fan
 
-NASA/JPL explicitly compares Death Valley alluvial fans with fan deposits at Gale, explaining channels, erosion and sediment transport [S09]. This is the recommended first complete comparison because the intended process and landform are identified on both bodies.
+NASA/JPL explicitly compares Death Valley alluvial fans with fan deposits at Gale, explaining channels, erosion and sediment transport [S09]. Copper Canyon-Peace Vallis is TerraTwin's proposed specific pairing, not a published assessment of these two named fans together. This remains the recommended first comparison because the intended process and landform are documented on both bodies.
 
-Use the source imagery/transcript to identify one Earth fan and the corresponding Gale study area; record the locator rather than guessing the fan name. Review selected deposits, derive comparable terrain measurements, and document scale limitations. Candidate practice tags: channel/fan mapping, sedimentary observation and terrain-navigation research.
+The USGS identifies Copper Canyon as an alluvial fan with radial drainage and downslope sediment grading [S12]. Its regional study describes the fan and its sediment sources [S13]. Palucis et al. map the Peace Vallis fan and report approximately 80 km2 total area, comprising 49 km2 upper and 31 km2 lower fan [S14]. The USGS estimates the entire Copper Canyon fan at about 2 square miles (approximately 5.2 km2) [S13]. These whole-fan area estimates show a meaningful scale difference; they are context, not rating inputs that produce a percentage.
+
+Qualitative review plan: use the named Copper Canyon and Peace Vallis fan deposits as the feature scope, citing the USGS image/study and Palucis et al.'s mapped fan. Distinguish fan deposits from their source channels and adjacent terrain. Record fan form, radial/channel features, deposit classes, the large whole-fan scale difference, and uncertainty. Candidate practice tags: channel/fan mapping, sedimentary observation and terrain-navigation research; attach only after selected-feature evidence review.
+
+Optional elevation leads for a later quantitative study are NASA's SRTMGL1 tile **N36W117.SRTMGL1.hgt** [S16] and the USGS **MSL_Gale_DEM_Mosaic_1m_v3** [S17]. Neither raster has been retrieved or checked at a selected fan window. The previously proposed HiRISE DTM **DTEED_062963_1760_062172_1760_A01** is described as **channel** terrain [S15, S18], so it is not confirmed fan-deposit coverage. None of these DEM checks is needed for the first qualitative review.
+
+Visual leads: the USGS Copper Canyon fan image states a 1:48,000 source scale and public-domain use [S12]. Palucis et al., Figure 2, identifies CTX image P22_009571_1756_XI_04S222W at 6 m/pixel [S14]. Those source scales are not calibrated scale bars for a displayed thumbnail. Verify image coverage, georeferencing and reuse terms before cropping or publishing; label differing display scales.
+
+P07 rating checks: confirm the cited terrain and geology evidence applies to both named fan deposits, record corresponding features and meaningful differences, then assign the two rubric labels and overall label with reviewer/date and references. Use the same record for web/PDF provenance. Until this review is recorded, show P07 as a sourced candidate without a ranked rating.
 
 Limits: Earth rainfall and sediment transport do not reproduce current Martian conditions; a fan is not automatically a delta or lakebed. Quantitative mobility claims require finer terrain and surface-property evidence than broad topography alone.
 
@@ -104,11 +121,11 @@ Limits: Earth rainfall and sediment transport do not reproduce current Martian c
 
 The NASA-hosted research abstract explicitly discusses Lake Untersee in a cold-climate hypothesis for ancient Gale lakes [S10]. This supports studying how liquid water could persist beneath ice under specified model conditions.
 
-Keep this pair as an unranked process/context case unless compatible terrain and geology are obtained independently. Cite the model assumptions in the explanation. Lake-ice or hydrological observations cannot replace the two required scoring dimensions.
+Keep this pair as an unranked process/context case unless the named terrain and geology features on both bodies can be identified and reviewed independently. Cite the model assumptions in the explanation. Lake-ice or hydrological observations cannot replace the two required rating dimensions.
 
 Limits: this is a hypothesis about ancient environmental conditions, not proof that Gale's lake was ice-covered or that modern surfaces match. A DEM over lake ice does not measure the submerged sedimentary surface.
 
-## Data products: retrieval leads, not downloaded inputs
+## Optional terrain data products: retrieval leads, not downloaded inputs
 
 | Use | Starting product/source | Required checks |
 | --- | --- | --- |
@@ -121,19 +138,17 @@ Limits: this is a hypothesis about ancient environmental conditions, not proof t
 
 SRTM coverage is approximately 60 degrees N to 56 degrees S; it cannot cover Haughton, Iceland or Antarctica. ArcticDEM and REMA are digital surface models, so the measured surface and acquisition time must be recorded. Do not upsample a coarse DEM and describe the output as newly measured fine terrain.
 
-For planetary data, use body-appropriate coordinates/projections. Recompute slope/roughness consistently on comparable physical supports; a shared metric name or output pixel size does not establish equivalent spatial resolution. Retain no-data and quality masks, and record the valid-data fraction.
+For optional numerical terrain work, use body-appropriate coordinates/projections. Recompute slope/roughness consistently on comparable physical supports; a shared metric name or output pixel size does not establish equivalent spatial resolution. Retain no-data and quality masks, and record the valid-data fraction. These products are not required for the first qualitative rating.
 
-## Manual collection and review workflow
+## Manual qualitative collection and review workflow
 
-1. Start with P07, then a volcanic surface pair. Choose one bounded feature on each body, its coordinate convention, physical area and geological objective. Approve footprints before deriving values.
-2. Follow the product catalog to the covering granules/tiles. For SRTM, use Earthdata Login if required by the provider; this does not add a login flow to TerraTwin. Download the data and associated labels/metadata. Record an actual successful retrieval before marking access verified.
-3. Inspect rasters in GIS software: body, projection, units, scale factors, date, no-data, quality masks, footprint coverage and effective resolution. Planetary layers must not be assigned an Earth coordinate system.
-4. Select a common defensible analysis scale and one terrain method. Keep source resolution, resampling method, output spacing and roughness neighborhood explicit. Mask invalid data and account for edge effects. Choose a higher-resolution source or leave the result unscored when scale is inadequate.
-5. Identify mapped geology or published interpretation at the selected footprint. Record the exact page, figure, map unit or table. Review category compatibility and document both similarities and mismatches.
-6. Save provenance: source/product IDs and versions, URLs, access and acquisition dates, checksum, coordinate reference, units, footprint, processing settings/version, quality notes, license and attribution. Keep large rasters outside Git; commit permitted manifests and reproducible processing instructions.
-7. Populate observations without invented values. Use null plus a reason for absent/incompatible evidence. Apply the specification's coverage rules before generating rankings, explanations or PDFs.
-8. Review imagery separately: acquisition date, spatial scale/field of view, license and credits. Mark scale mismatches; illustrative photos are not numeric measurements.
-9. Generate web/PDF output from the same validated comparison. Show evidence gaps, proposed versus documented relationships, and why a record is unranked. Review practice tags for evidence and avoid implying training approval or safety.
+1. Start with P07, then a volcanic surface pair. Name one bounded feature on each body and record a source-backed locator, such as a map unit, figure or image footprint. State the proposed field-practice use.
+2. Collect primary geology and terrain/landform evidence for each feature. Record exact pages, figures, units or image IDs, source URLs, publication dates, scale/field of view when known, and attribution.
+3. For each dimension, write the corresponding evidence, meaningful differences and uncertainty. Apply the Strong/Moderate/Weak/Insufficient rubric in `spec.md`; use null plus a reason when evidence is absent. Record reviewer and review date.
+4. Apply the overall-label and terrain-first ordering rules only to reviewed records with both dimensions rated. Keep unreviewed candidates and insufficient-evidence records separate. Do not use inferred percentages or treat a regional analogy as validation of a selected pair.
+5. Review imagery separately: acquisition date, spatial scale/field of view, license and credits. Mark scale mismatches. If an image contributes to a terrain judgment, its location and scale must be known.
+6. Generate web/PDF output from the same validated comparison. Show feature locators, evidence gaps, proposed versus documented relationships, practice-tag support, and why a record is unranked when applicable.
+7. If numerical terrain work is added later, follow the product catalog to exact tiles and retrieve the rasters. Inspect coordinates, projection, units, no-data, local source resolution and quality; choose comparable physical scales before computing values. Record successful retrieval and processing provenance. Keep large rasters outside Git.
 
 ## Source index and claim boundaries
 
@@ -147,18 +162,24 @@ These are primary agency/research sources reviewed in the conversation on 2026-1
 - **S06 - NASA Earth Observatory (2021):** [What a Lake in Turkey Can Tell Us about Mars](https://science.nasa.gov/blogs/earth-matters/2021/02/17/what-a-lake-in-turkey-can-tell-us-about-mars/). Direct Lake Salda-Jezero carbonate and depositional comparison; no proof of Martian life or identical terrain.
 - **S07 - USGS EROS:** [Salar de Atacama, Chile](https://eros.usgs.gov/earthshots/salar-de-atacama-chile). Documents the San Pedro River delta and basin setting; not direct validation against Jezero.
 - **S08 - NASA:** [Perseverance Explores the Jezero Crater Delta](https://science.nasa.gov/resource/perseverance-explores-the-jezero-crater-delta/). Supports the Martian delta/sedimentary interpretation and imagery context.
-- **S09 - NASA/JPL (2012):** [River Fans on Earth and Mars](https://www.jpl.nasa.gov/videos/river-fans-on-earth-and-mars/). Direct Death Valley-Gale alluvial-fan comparison; use the transcript and visual locator to choose the footprint.
+- **S09 - NASA/JPL (2012):** [River Fans on Earth and Mars](https://www.jpl.nasa.gov/videos/river-fans-on-earth-and-mars/). Direct Death Valley-Gale alluvial-fan comparison; does not validate the specific Copper Canyon-Peace Vallis pair.
 - **S10 - NASA NTRS research abstract:** [The Antarctic Analogy for Ancient Lakes at Gale Crater, Mars](https://ntrs.nasa.gov/search.jsp?R=20190025827). Direct Lake Untersee process/model analogy; no confirmation of an ice-covered Gale lake or terrain equivalence.
 - **S11 - NASA APOD (2017):** [Marius Hills: Holes in the Moon](https://science.nasa.gov/image-article/apod-2017-october-25-marius-hills-holes-in-the-moon/). Supports the pit/lava-tube interpretation, not complete measured underground geometry or verified habitation conditions.
+- **S12 - USGS:** [Copper Canyon Fan](https://www.usgs.gov/media/images/copper-canyon-fan). Describes fan morphology, drainage and sediment grading; supplies source-image scale and use status, not a measured Mars match.
+- **S13 - USGS (1965):** [Alluvial Fans in the Death Valley Region, California and Nevada](https://pubs.usgs.gov/pp/0466/report.pdf), Professional Paper 466. Describes Copper Canyon fan geology and estimates its total area at about 2 square miles; use the mapped fan rather than assuming adjacent canyon terrain is part of the deposit.
+- **S14 - Palucis et al. (2014):** [The origin and evolution of the Peace Vallis fan system that drains to the Curiosity landing area, Gale Crater, Mars](https://agupubs.onlinelibrary.wiley.com/doi/full/10.1002/2013JE004583), Journal of Geophysical Research: Planets. Table 2 gives whole-fan areas; Figure 2 identifies CTX imagery, and Figure 5 maps upper/lower fan units.
+- **S15 - HiRISE:** [Peace Vallis in Gale Crater stereo DTM catalog entry](https://www.uahirise.org/dtm/ESP_062963_1760). Lists DTEED_062963_1760_062172_1760_A01 and its center/map scale; these do not establish fan coverage.
+- **S16 - NASA LP DAAC:** [SRTMGL1 v003 Earthdata granule search](https://search.earthdata.nasa.gov/search/granules?p=C2763266360-LPCLOUD&pg[0][v]=f&pg[0][id]=*N36W117*&pg[0][gsk]=-start_date&q=SRTMGL1) returns N36W117.SRTMGL1.hgt; the [SRTM Collection User Guide](https://lpdaac.usgs.gov/documents/179/SRTM_User_Guide_V3.pdf) defines tile naming, posting, units and EGM96 reference. Catalog presence is not a successful download or pixel-validity check.
+- **S17 - USGS Astrogeology:** [Mars MSL Gale Merged DEM 1m, version 3](https://astrogeology.usgs.gov/search/map/mars_msl_gale_merged_dem_1m). Catalog gives bounds, coordinate convention, grid spacing, units, source mix and lower-resolution fallback. Its broad bounds do not establish selected-window coverage or local effective resolution.
+- **S18 - HiRISE:** [April 2020 DTM release summary](https://www.uahirise.org/dtm/summaries/HIRISE_DTM_PDS_April_2020.pdf). Labels the ESP_062963_1760 DTM as Peace Vallis channel terrain, not verified fan deposits.
 
-## Ready-to-score checklist
+## Ready-to-rate checklist
 
-- [ ] Both study footprints are selected, sourced and reviewed.
-- [ ] Actual input files/records are retrieved and identifiable by product version and checksum where applicable.
-- [ ] Terrain units, method, effective scale and quality are comparable.
-- [ ] Geological evidence applies to the selected features; category compatibility has been reviewed.
-- [ ] Tolerances, profile, processing and category-table versions are recorded.
-- [ ] Both scoring dimensions are available; otherwise the result is null and unranked.
+- [ ] Both named features have source-backed locators and a recorded review.
+- [ ] Terrain/landform evidence applies to both features; similarities, differences and scale limits are stated.
+- [ ] Geological evidence applies to both features; corresponding deposit/material classes and uncertainty are stated.
+- [ ] Both dimension labels cite evidence, give rationale and use the versioned rubric; missing labels have null reasons.
+- [ ] The overall label and terrain-first order follow the rubric; unreviewed and insufficient-evidence records stay outside ranked results.
 - [ ] Explanation, practice tags, imagery and PDF preserve evidence references and limitations.
 
 All checklist items are pending. The eight curated pairs do not satisfy the separate bounded automated-discovery milestone in `spec.md`; that requires additional candidate inputs and a reproducible search beyond this list.

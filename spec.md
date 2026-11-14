@@ -13,13 +13,13 @@ The team has six beginner-to-intermediate software developers familiar with Reac
 1. Choose Moon or Mars, then a target from a fixed list; see ranked Earth analogs.
 2. Alternatively, choose an Earth site and see relevant Moon and Mars targets.
 3. Explore Earth results in a 2D map or 3D globe, preserving selection when switching.
-4. Open a comparison with measurements, criterion scores, source links, missing data, limitations, and evidence-grounded field-practice uses.
-5. Inspect how the selected comparison was made: source products, retrieval and processing steps, comparable input values, tolerances, weights, and calculation versions. Download a PDF report for that selected Earth–planetary pair.
+4. Open a comparison with a qualitative terrain-and-geology rating, source links, missing evidence, limitations, and evidence-grounded field-practice uses.
+5. Inspect how the selected rating was made: the reviewed site features, source evidence, rubric decisions, and method version. Download a PDF report for that selected Earth–planetary pair.
 6. Read an explanation generated from structured comparison evidence. Connect a model API later; explanations must work without it.
 7. Inspect a small set of additional Earth candidates identified through an automated, reproducible search within a bounded region or candidate pool.
 8. View sourced Earth and planetary terrain images together, explore evidence-backed practice objective tags, and compare two Earth sites against the same planetary target.
 
-Users do not adjust scoring weights. No chatbot is required. The app has no user accounts or sign-in flow. Paid services and API keys are deferred.
+Users do not adjust the rating rubric. No chatbot is required. The app has no user accounts or sign-in flow. Paid services and API keys are deferred.
 
 ## Delivery boundaries
 
@@ -66,61 +66,66 @@ The runtime versions are recorded in `.nvmrc` and `.python-version`. When scaffo
 
 Version references: [Node.js 24.22.3](https://nodejs.org/en/blog/release/v24.22.3/), [Python 3.14.10](https://www.python.org/downloads/release/python-31410/), [npm React](https://www.npmjs.com/package/react), [npm React DOM](https://www.npmjs.com/package/react-dom), [npm TypeScript](https://www.npmjs.com/package/typescript), [npm Vite](https://www.npmjs.com/package/vite), [npm React plugin](https://www.npmjs.com/package/%40vitejs/plugin-react), [npm MapLibre](https://www.npmjs.com/package/maplibre-gl), [PyPI Pydantic](https://pypi.org/project/pydantic/), [PyPI Pytest](https://pypi.org/project/pytest/), [PyPI ReportLab](https://pypi.org/project/reportlab/), [PyPI NumPy](https://pypi.org/project/numpy/), [PyPI Pandas](https://pypi.org/project/pandas/), [PyPI FastAPI](https://pypi.org/project/fastapi/).
 
-A runtime Python server is not required for the first demo. Precompute comparisons and their PDFs in Python and serve both as static assets to the frontend, keeping one authoritative scoring implementation. Do not add Next.js alongside Vite.
+A runtime Python server is not required for the first demo. Precompute comparisons and their PDFs in Python and serve both as static assets to the frontend, keeping one authoritative rating implementation. Do not add Next.js alongside Vite.
 
 Verify that the selected MapLibre release supports the intended projection switching before committing the map implementation. The initial globe represents Earth; show Moon and Mars targets in a selector and comparison panel. Separate planetary globes and detailed 3D terrain are outside the first version. Basemap imagery is a separate service dependency: verify terms, attribution, quotas, and key requirements. Provide markers on a plain background and a usable results list if tiles fail.
 
 ## Scientific comparison
 
-The first scoring profile has two dimensions: terrain (slope and/or roughness at comparable scales) and geology/surface materials. Terrain is the primary match for field practice; geology helps distinguish surfaces that may look similar but have different material evidence. Show thermal conditions, water/ice, and dryness as contextual observations when sourced, without adding them to the first score. Gravity, atmosphere/vacuum, and radiation are analogy limits, not Earth-terrain scoring criteria.
+The first rating profile has two dimensions: terrain/landform and geology/surface materials. Terrain is the primary match for field practice; geology helps distinguish surfaces that may look similar but have different material evidence. Show thermal conditions, water/ice, and dryness as contextual observations when sourced, without using them to set the rating. Gravity, atmosphere/vacuum, and radiation are analogy limits, not rating criteria.
 
-Do not force unlike measurements into the same score. Slope and roughness require comparable spatial scales. If temperature is shown as context, distinguish surface from air temperature. Absolute elevation relative to different planetary datums is not a direct similarity measure. Store units, acquisition period, spatial resolution, processing method, and uncertainty or quality notes.
+Rate a named, bounded feature on each body rather than an entire region. Record a locator (coordinates, map unit, image footprint, or a cited figure) that lets another reviewer identify the feature. Exact equal-area polygons and DEM downloads are optional for this qualitative profile. If numeric observations such as slope or roughness are available, show their units, acquisition period, spatial resolution, processing method, and quality notes, but use them in a rating only when their scales and meanings are comparable. If temperature is shown as context, distinguish surface from air temperature. Absolute elevation against different planetary datums is not a direct similarity measure.
 
-For a numeric criterion with justified comparison tolerance `t > 0`, use `s = max(0, 1 - abs(earth - target) / t)`. Define and cite the tolerance or label it as a heuristic. Terrain may combine separately documented slope and roughness scores. For geology, use an explicit evidence-backed category compatibility table; do not invent percentages from descriptive text.
+Use rubric **`terrain-geology-qual-v1`** for **each** dimension. This is a team screening judgment, not a measured percentage:
 
-For the first profile, use fixed heuristic weights of 2/3 for terrain and 1/3 for geology. This prioritizes terrain for field practice; the weights are a product choice, not a validated scientific finding. Version every profile, tolerance, compatibility table, and algorithm. Describe the resulting score as heuristic terrain-and-geology similarity, never probability, scientific validation, or base suitability.
+- **Strong:** specific features on both bodies are identified and cited; sources document closely corresponding landforms and visible subfeatures (terrain), or corresponding deposit/material classes (geology), at a scale meaningful for the stated field-practice use. Relevant differences are recorded.
+- **Moderate:** sources document the same broad landform or material/process family on both bodies, but feature details, material interpretation, or scale differ or remain uncertain. Record the uncertainty.
+- **Weak:** both features are identified, but sourced differences materially limit the proposed terrain or geology analogy. State the differences.
+- **Insufficient evidence:** one feature is not identified at the stated scope, the supporting sources do not apply to it, or available evidence cannot support a comparison. Store a null dimension rating and the reason; do not turn missing evidence into Weak.
 
-For missing or incompatible criteria, record a missing score, not zero. Compute `coverage = available weight / total profile weight`. Rank only records with both terrain and geology comparable (coverage = 1); set the overall score to null otherwise and show those records separately as insufficient evidence. Sort eligible results by score, then stable site ID. Show coverage beside the score. Coverage measures completeness, not confidence or correctness; also disclose missing slope or roughness subcriteria within an otherwise available terrain dimension.
+The overall rating is **Strong** only when both dimensions are Strong; **Moderate** when both are at least Moderate and at least one is Moderate; **Weak** when both dimensions are rated and either is Weak; and **Insufficient evidence** when either dimension is null. This is an explicit ordinal rule, not a weighted average. Display terrain and geology ratings with their evidence and rationale, so the overall label does not hide a weak dimension. Do not invent similarity percentages from descriptive text.
 
-For reverse search, rank compatible planetary targets for the selected Earth site and show the profile used. Separate target profiles if their dimensions or tolerances differ; their overall scores are not automatically comparable.
+Only reviewed comparisons with both dimensions rated enter ranked results. Sort first by terrain rating (Strong, Moderate, Weak), then geology rating in the same order, then stable site ID. This **`terrain-first-v1`** ordering is a product choice and may place two comparisons with the same overall label in a documented order. Show insufficient-evidence and unreviewed candidates separately. Display evidence completeness as `0/2`, `1/2`, or `2/2 dimensions supported`; it measures coverage of the rubric, not confidence or correctness. Keep the review status separate from this count. Version the rubric, review criteria, and ordering rule.
+
+For reverse search, order compatible planetary targets for the selected Earth site and show the rubric version used. Separate targets when their feature scope or rating profile differs; their labels are not automatically equivalent.
 
 Present terrain evidence first, then geology and other sourced context. Suggest practice tasks only when the selected comparison supports them, such as terrain traversal, geological observation, sampling procedures, or instrument trials. These are possibilities to assess, not approved training plans. Always explain relevant analogy limits: gravity, atmosphere/vacuum, radiation, biology, scale, and seasonality as applicable. A terrain or geological match does not establish thermal suitability or safety for a permanent base.
 
 ## Data contract
 
 - `Site`: stable ID, name, body (`earth`, `moon`, `mars`), latitude/longitude, coordinate convention, study footprint/scale, description, evidence IDs, curated/candidate status, review status.
-- `Observation`: ID, site ID, metric, numeric or categorical value, unit, time range, spatial resolution, method and processing version, input record/file locator, uncertainty/quality note, source ID. Missing values are explicit nulls with a reason.
+- `Observation`: ID, site ID, observed feature or optional numeric/categorical value, unit when applicable, time range, spatial resolution or map scale when known, method, input record/file locator, uncertainty/quality note, source ID. Missing values are explicit nulls with a reason.
 - `Source`: ID, agency/provider, title, original URL, dataset/product identifier and version when available, access date, license/attribution, retrieval/query notes, and local input checksum when applicable.
 - `VisualAsset`: stable ID, site ID, image type, original URL or permitted local path, source ID, footprint or field of view, spatial resolution/display scale, acquisition date when known, processing notes, and license/attribution.
-- `Comparison`: stable ID, Earth ID, planetary target ID, profile/algorithm version, per-criterion input values and scores, missing reasons, coverage, overall score or null, rank eligibility, limitations, evidence-backed practice objective IDs and supporting evidence references, visual asset IDs, and report asset path.
+- `Comparison`: stable ID, Earth ID, planetary target ID, rubric/ordering version, reviewed feature locators, terrain and geology ratings or null with evidence references and rationale, missing reasons, evidence completeness, overall rating, review/rank eligibility, limitations, evidence-backed practice objective IDs and supporting evidence references, visual asset IDs, and report asset path.
 - `Explanation`: comparison ID, text, evidence references, generation mode (`template` or later `model`), and generation version.
-- `SearchRun`: region/candidate-pool definition, input dataset versions, extraction method, filters, scoring version, output IDs, run time, and review notes.
+- `SearchRun`: region/candidate-pool definition, input source versions, extraction method, filters, screening/rubric version, output IDs, run time, and review notes.
 
 GeoJSON Earth coordinates use `[longitude, latitude]`. Planetary coordinates must explicitly identify body, longitude direction/range, and latitude convention. Never place planetary coordinates on the Earth map.
 
 ## Comparison provenance and PDF report
 
-For each selected pair, show a readable “How this comparison was made” section. Trace each scored input from its original source URL and product version through the retrieved record or file, extraction/processing method, units and scale, to its criterion score. Show the tolerance or category-table version, the fixed 2/3 terrain and 1/3 geology weights, coverage, and the final calculation. Label heuristic assumptions and missing or incompatible observations explicitly. Link to original sources and include license/attribution and retrieval date. For candidates, also show the bounded `SearchRun` inputs, filters, and unreviewed status.
+For each selected pair, show a readable “How this comparison was made” section. Identify the two reviewed features and trace each terrain/geology judgment to its source URL, exact page/figure/map unit or product when available, scale, and stated differences. Show the rubric version, the two dimension ratings, evidence completeness, and how the overall label and terrain-first order follow from the rules. Label heuristic assumptions and missing or incompatible observations explicitly. Link to original sources and include license/attribution and access date. For candidates, also show the bounded `SearchRun` inputs, filters, and unreviewed status.
 
-Generate one PDF per comparison from the same validated comparison and provenance records used by the website. Include the selected sites, score or insufficient-evidence status, input values with units, calculation and profile versions, sources, processing steps, practice use, limitations, and candidate-search boundary when relevant. The download must follow the currently selected pair in either search direction. A source that cannot be redistributed is linked and described rather than copied into the PDF. Keep the report asset path/version tied to its comparison data so a stale report cannot be served with a newer score.
+Generate one PDF per comparison from the same validated comparison and provenance records used by the website. Include the selected sites, dimension and overall ratings or insufficient-evidence status, cited feature evidence, rubric version, sources, practice use, limitations, and candidate-search boundary when relevant. Include optional measurements with units and methods when used. The download must follow the currently selected pair in either search direction. A source that cannot be redistributed is linked and described rather than copied into the PDF. Keep the report asset path/version tied to its comparison data so a stale report cannot be served with a newer rating.
 
 ## Terrain visuals and practice planning
 
-Show an Earth terrain image beside a Moon or Mars terrain image for the selected pair. Use sourced imagery with a visible scale bar or field of view, acquisition date when known, and attribution. Match displayed spatial scales when the source data supports it; otherwise label the scale difference prominently and do not imply that similar appearance proves comparable terrain. If a licensed or adequately documented image is unavailable, keep the measurement-based comparison usable and explain why the visual is missing. Images illustrate the comparison; they do not author scores.
+Show an Earth terrain image beside a Moon or Mars terrain image for the selected pair. Use sourced imagery with a visible scale bar or field of view, acquisition date when known, and attribution. Match displayed spatial scales when the source data supports it; otherwise label the scale difference prominently and do not imply that similar appearance proves comparable terrain. If a licensed or adequately documented image is unavailable, keep the evidence-based comparison usable and explain why the visual is missing. Images can support a documented terrain judgment when their locations and scales are known; appearance alone does not establish a match.
 
-Use a small versioned catalog of practice objective tags, such as terrain traversal, geological observation, and sampling procedures. Attach a tag to a comparison only when its evidence supports that possible use, and show the supporting evidence and caveats. Selecting a tag filters the result list without changing scores, weights, or rank order among remaining results. These tags suggest activities to evaluate, not approved training plans.
+Use a small versioned catalog of practice objective tags, such as terrain traversal, geological observation, and sampling procedures. Attach a tag to a comparison only when its evidence supports that possible use, and show the supporting evidence and caveats. Selecting a tag filters the result list without changing ratings or order among remaining results. These tags suggest activities to evaluate, not approved training plans.
 
-In the Moon/Mars-first workflow, allow the user to select a second Earth site for the same planetary target. Show both existing comparisons side by side: terrain and geology evidence, scores and coverage, imagery, practice tags, limitations, method details, and each pair's PDF download. Do not calculate a new head-to-head score. Keep both Earth selections through flat/globe switching; changing the target or switching to Earth-first search clears the second selection when it is no longer valid. On narrow screens, stack the two comparisons while preserving the same information.
+In the Moon/Mars-first workflow, allow the user to select a second Earth site for the same planetary target. Show both existing comparisons side by side: terrain and geology evidence, ratings and completeness, imagery, practice tags, limitations, method details, and each pair's PDF download. Do not calculate a new head-to-head rating. Keep both Earth selections through flat/globe switching; changing the target or switching to Earth-first search clears the second selection when it is no longer valid. On narrow screens, stack the two comparisons while preserving the same information.
 
 ## Generated explanations
 
 First implementation: deterministic text assembled from comparison values, strong/weak dimensions, missing evidence, limitations, and linked sources. Explanations update when the selected pair changes. A useful structure is: why it matches, where it differs, a possible field-practice use, and evidence gaps.
 
-Later integration: a server-side model adapter accepts the same structured evidence and returns grounded text. It cannot set scores, invent measurements, or silently add claims. Validate referenced evidence IDs, retain the template fallback, and label the generation mode. Never send secrets to browser code.
+Later integration: a server-side model adapter accepts the same structured evidence and returns grounded text. It cannot set ratings, invent measurements, or silently add claims. Validate referenced evidence IDs, retain the template fallback, and label the generation mode. Never send secrets to browser code.
 
 ## Bounded automated search
 
-Choose one accessible source and a limited region or finite pool of candidate footprints. Extract or load actual documented features, filter for a declared environment, and score against one planetary target using the same comparison engine. Save inputs, method, and generated candidate records so the demo is reproducible without a live provider.
+Choose one accessible source and a limited region or finite pool of candidate features. Extract or load actual documented features and filter for a declared environment and planetary target using published feature descriptors. Save inputs, method, and generated candidate records so the demo is reproducible without a live provider. Review the evidence and apply the same rubric before assigning ratings; automated candidates remain unreviewed and outside the ranked results until then.
 
 Demonstrate at least one newly surfaced candidate, explain why the algorithm selected it, and mark it unreviewed until checked. Reordering the curated sites alone does not meet this milestone. If using a finite preselected pool, disclose that boundary. Never claim a site is previously unknown without a literature review.
 
@@ -150,12 +155,12 @@ Technical references: [Vite](https://vite.dev/guide/), [MapLibre](https://maplib
 
 - Both search directions work for curated Earth, Moon, and Mars records.
 - 2D/globe switching preserves the selected Earth site and result list.
-- Every displayed measurement has traceable evidence, units, and scale notes.
-- A selected comparison shows its source-to-score steps, and its downloadable PDF matches the on-screen pair, values, versions, and missing-evidence status.
+- Every displayed measurement has traceable evidence, units, and scale notes; qualitative judgments cite the features they describe.
+- A selected comparison shows its source-to-rating steps, and its downloadable PDF matches the on-screen pair, ratings, evidence, rubric version, and missing-evidence status.
 - Selected Earth and planetary terrain visuals show source, scale, date when known, and attribution; missing visuals do not hide the evidence-based comparison.
-- Practice objective tags have supporting evidence, filter results without changing scores, and communicate limitations.
+- Practice objective tags have supporting evidence, filter results without changing ratings, and communicate limitations.
 - A user can compare two Earth sites for one planetary target, see each pair's evidence and PDF, and retain both selections when switching the Earth map projection.
-- Fixed scores are reproducible, disclose coverage, and handle missing/incompatible data as specified.
+- Fixed rubric ratings and ordering are reproducible, disclose evidence completeness, and handle missing/incompatible evidence as specified; no similarity percentages are displayed.
 - Comparisons show strong matches, differences, and a concrete, evidence-grounded field-practice use.
 - Generated explanations work without API credentials and identify their evidence.
 - A reproducible bounded search produces candidates beyond the curated list.
