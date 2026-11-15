@@ -25,6 +25,7 @@ function dimension(value: unknown): Dimension {
 function visual(value: unknown): Visual {
   const source = row(value), path = text(source.localPath)
   return {...source, localPath:safeUrl(path) ? path : null, sourceId:text(source.sourceId), scale:text(source.scale), credit:text(source.credit),
+    scope:text(source.scope), caption:text(source.caption), usage:text(source.usage), acquired:text(source.acquired),
     missingReason:typeof source.missingReason === 'string' ? source.missingReason : !path ? 'Site imagery has not been supplied.' : null}
 }
 function point(value: unknown): [number, number] | null {

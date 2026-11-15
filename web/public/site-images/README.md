@@ -8,7 +8,7 @@ Use `01` for the main image and `02`, `03`, etc. for additional views. Keep the 
 
 - `web/public/site-images/earth/E01-01.jpg` — first image of Haughton Site A / Locale 7.
 - `web/public/site-images/moon/L02-01.png` — first image of Marius Hills Pit.
-- `web/public/site-images/mars/M02-01.webp` — first image of the Jezero western delta.
+- `web/public/site-images/mars/M02-01.jpg` — first image of the Jezero western delta.
 
 The matching public URLs start with `/site-images/`, for example `/site-images/earth/E01-01.jpg`. One site can appear in multiple comparisons; name its image for the site ID, not for a pair ID.
 
@@ -41,4 +41,4 @@ Mars (`mars/`):
 
 Provide the original image or a permitted copy, the source page or product URL, the required credit, reuse/license terms, the acquisition date if known, and what area the image actually shows. Include the image scale or resolution if published; otherwise say `scale unknown`. State whether the view covers the selected feature or only a wider context region. A file name alone does not verify that an image depicts the selected feature.
 
-The app currently has no imported site images. Adding a file to these folders does not publish it in a comparison by itself; the image path and provenance must be connected to the validated atlas export after the files arrive. Keep global planet textures in `web/public/textures/` separate from site evidence images.
+All 14 compared sites now have a main image. Their original URLs, source pages, credits, use notes, view scopes and scale notes are in `data/site-images.json`. The atlas builder checks each declared file and publishes the image metadata to the website and PDF. Several views show a larger region than the selected feature; those are labeled **Wider context view**. Keep global planet textures in `web/public/textures/` separate from site evidence images.

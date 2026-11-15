@@ -19,9 +19,15 @@ async function openComparison(page,world){
   const page=await browser.newPage({viewport:{width,height:1000},reducedMotion:'reduce'});page.on('pageerror',e=>errors.push(e.message));
   await openComparison(page,world);
   const names=await page.locator(`${cards} h3`).allTextContents();assert.deepEqual(names,world==='earth'?[earth.name,target.name]:[target.name,earth.name]);
-  assert.equal(await page.locator(`${cards} .review-region-placeholder`).count(),2);
+  await page.waitForFunction(()=>[...document.querySelectorAll('.review-region-image img')].length===2&&[...document.querySelectorAll('.review-region-image img')].every(img=>img.complete&&img.naturalWidth>0));
+  assert.equal(await page.locator(`${cards} .review-region-placeholder`).count(),0);
   const expected=world==='earth'?[first.visuals.earth,first.visuals.target]:[first.visuals.target,first.visuals.earth];
-  for(let i=0;i<2;i++)assert.equal(await page.locator(cards).nth(i).getByRole('link',{name:/Open imagery source/}).getAttribute('href'),actual.sources.find(s=>s.id===expected[i].sourceId).url);
+  for(let i=0;i<2;i++){
+   const card=page.locator(cards).nth(i);
+   assert.equal(await card.locator('img').getAttribute('src'),expected[i].localPath);
+   assert((await card.locator('small').innerText()).includes(expected[i].scope));
+   assert.equal(await card.locator('details a').first().getAttribute('href'),actual.sources.find(s=>s.id===expected[i].sourceId).url);
+  }
   const [a,b]=await Promise.all([page.locator(cards).nth(0).boundingBox(),page.locator(cards).nth(1).boundingBox()]);
   assert.equal(a.height,b.height);assert.equal(a.width,b.width);
   if(width>660){assert.equal(a.y,b.y);assert(b.x>a.x)}else{assert.equal(a.x,b.x);assert(b.y>=a.y+a.height)}
@@ -37,7 +43,7 @@ async function openComparison(page,world){
   await page.screenshot({path:`artifacts/overview-regions/${width}-${world}.png`,fullPage:true});
   await page.getByRole('tab',{name:'Evidence',exact:true}).click();assert.equal(await page.locator('.review-grid .review-visual').count(),2);
   await page.getByRole('button',{name:'Close comparison',exact:true}).click();await page.getByRole('complementary',{name:'Site details'}).waitFor();
-  await page.close();console.log('Real pair order, source fallback, fixed frames, scrolling, tabs and close passed',width,world);
+  await page.close();console.log('Real pair order, loaded site images, fixed frames, scrolling, tabs and close passed',width,world);
  }
  const fixture=structuredClone(actual),pair=fixture.comparisons[0];
  pair.visuals.earth={...pair.visuals.earth,localPath:'/__test-earth.svg',missingReason:null};

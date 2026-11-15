@@ -75,6 +75,10 @@ export interface Visual {
   scale: string
   credit: string
   missingReason: string | null
+  scope?: string
+  caption?: string
+  usage?: string
+  acquired?: string
 }
 
 export interface Comparison {

@@ -78,8 +78,8 @@ function VisualBlock({atlas,visual}:{atlas:Atlas;visual?:Visual}){
   const [broken,setBroken]=useState(false)
   useEffect(()=>setBroken(false),[visual?.localPath])
   return <div className="review-visual">{visual?.localPath&&!broken?<img src={assetUrl(visual.localPath)} alt="Site evidence" onError={()=>setBroken(true)}/>:<strong>Site imagery unavailable</strong>}
-    {visual?.localPath&&<small>{visual.credit}</small>}
-    {visual&&<details><summary>Image source and scale</summary><p>{visual.scale}</p>{visual.missingReason&&<p>{visual.missingReason}</p>}<Refs atlas={atlas} ids={[visual.sourceId]}/></details>}
+    {visual?.localPath&&<small>{visual.scope ? `${visual.scope} · ` : ''}{visual.credit}</small>}
+    {visual&&<details><summary>Image source and scale</summary>{visual.caption&&<p>{visual.caption}</p>}<p>{visual.scale}</p>{visual.acquired&&<p>Acquired: {visual.acquired}</p>}{visual.usage&&<p>{visual.usage}</p>}{visual.missingReason&&<p>{visual.missingReason}</p>}<Refs atlas={atlas} ids={[visual.sourceId]}/></details>}
   </div>
 }
 
@@ -92,13 +92,14 @@ function RegionCard({atlas,site,visual}:{atlas:Atlas;site:RecordSite;visual:Visu
   return <article className="review-card review-region-card" aria-label={`${site.name} region card`}>
     <div className="review-region-image">
       {visual.localPath&&!imageFailed?
-        <img src={assetUrl(visual.localPath)} alt={`${site.name} — source imagery`} onError={()=>setImageFailed(true)}/>:
+        <img src={assetUrl(visual.localPath)} alt={`${site.name} — ${visual.scope || 'source imagery'}: ${visual.caption || ''}`} onError={()=>setImageFailed(true)}/>:
         <div className="review-region-placeholder"><strong>Site imagery unavailable</strong>
           {imageSource&&<a href={imageSource.url} target="_blank" rel="noreferrer" aria-label={`Open imagery source for ${site.name}`}>View cited imagery source ↗</a>}
         </div>}
     </div>
     <div className="review-region-details" role="region" aria-label={`${site.name} details`} tabIndex={0}>
-      <small>{world.name}</small><h3>{site.name}</h3>
+      <small>{world.name}{visual.scope&&` · ${visual.scope}`}</small><h3>{site.name}</h3>
+      {visual.caption&&<p>{visual.caption}</p>}
       {site.region&&<p>{site.region}</p>}{description&&<p>{description}</p>}
       <details><summary>Location and imagery sources</summary>
         {site.locator&&description!==site.locator&&<p>{site.locator}</p>}
@@ -107,6 +108,8 @@ function RegionCard({atlas,site,visual}:{atlas:Atlas;site:RecordSite;visual:Visu
         {site.mapPointKind&&<p>{site.mapPointKind}</p>}
         {visual.credit&&<p><strong>Image credit:</strong> {visual.credit}</p>}
         {visual.scale&&<p><strong>Scale:</strong> {visual.scale}</p>}
+        {visual.acquired&&<p><strong>Acquired:</strong> {visual.acquired}</p>}
+        {visual.usage&&<p><strong>Use:</strong> {visual.usage}</p>}
         {imageFailed?<p>The supplied image could not be loaded.</p>:visual.missingReason&&<p>{visual.missingReason}</p>}
         <Refs atlas={atlas} ids={[visual.sourceId,site.mapPointSourceId,...(site.sourceIds||[])]}/>
       </details>

@@ -11,7 +11,8 @@ from reportlab.lib import colors
 from reportlab.lib.enums import TA_LEFT
 from reportlab.lib.styles import ParagraphStyle, getSampleStyleSheet
 from reportlab.lib.units import inch
-from reportlab.platypus import Paragraph, SimpleDocTemplate
+from reportlab.lib.utils import ImageReader
+from reportlab.platypus import Image, Paragraph, SimpleDocTemplate
 
 from pipeline.csv_loader import load_dataset
 from pipeline.models import publishable
@@ -76,13 +77,20 @@ def write_report(record: dict, dataset: dict, path: Path) -> None:
             story.append(_paragraph(f"{tag['label']} ({tag['status']}): {tag['reason']} Limitations: {tag['limitations']} [{', '.join(tag['sourceIds'])}]", body))
     else:
         story.append(_paragraph("No evidence-backed practice tag is assigned to this comparison.", note))
-    story.append(_paragraph("Limits and missing imagery", heading))
+    story.append(_paragraph("Limits and site imagery", heading))
     for limit in record["limits"]:
         story.append(_paragraph(f"- {limit}", body))
     story.append(_paragraph(f"Limit sources: {', '.join(record['limitSourceIds'])}", note))
     for side, name in (("earth", "Earth"), ("target", "Planetary")):
         visual = record["visuals"][side]
-        story.append(_paragraph(f"{name} image: {visual['missingReason'] or visual['localPath']} Scale: {visual['scale']}. Credit: {visual['credit']}. [{visual['sourceId']}]", note))
+        story.append(_paragraph(f"{name} image: {visual.get('scope', '')}. {visual.get('caption', '')} Scale: {visual['scale']}. Acquired: {visual.get('acquired', '')}. Credit: {visual['credit']}. Usage: {visual.get('usage', '')}. [{visual['sourceId']}]", note))
+        if visual["localPath"]:
+            image_path = ROOT / "web" / "public" / visual["localPath"].lstrip("/")
+            width, height = ImageReader(str(image_path)).getSize()
+            ratio = min(3.4 * inch / width, 1.55 * inch / height)
+            story.append(Image(str(image_path), width=width * ratio, height=height * ratio))
+        elif visual["missingReason"]:
+            story.append(_paragraph(visual["missingReason"], note))
     story += [
         _paragraph("Method and source register", heading),
         _paragraph(record["reviewNotes"], body),

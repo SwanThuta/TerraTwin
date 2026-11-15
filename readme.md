@@ -16,7 +16,7 @@ Older `MapPanel.tsx` and `LocatorFallback.tsx` files are retained but are not in
 
 ## Overview region cards
 
-Comparisons now show both regions' images and details immediately in Overview, above Documented similarity. The cards follow globe order, use equal fixed image frames and scrolling details, and stack at the existing mobile breakpoint. The real export currently has no imported pair images, so its cited-source fallbacks are shown. Valid `visual.localPath` images appear automatically when published; no frontend edit is needed. This is an intentional addition after the original reference-port comparison captures.
+Comparisons now show both regions' images and details immediately in Overview, above Documented similarity. The cards follow globe order, use equal fixed image frames and scrolling details, and stack at the existing mobile breakpoint. All 14 compared sites have source-backed photos or orbital views. A visible **Wider context view** label marks images that do not identify the exact selected feature. Captions, scale notes, credits and use terms come from `data/site-images.json`; the same validated visual record is used by the website and PDF. This is an intentional addition after the original reference-port comparison captures.
 
 Targeted browser checks and screenshots are in `artifacts/overview-regions/`. To rerun with the local server running:
 
@@ -24,7 +24,7 @@ Targeted browser checks and screenshots are in `artifacts/overview-regions/`. To
 PLAYWRIGHT_CORE=/tmp/terratwin-browser/node_modules/playwright-core node web/tests/overview-regions.browser.cjs
 ```
 
-The script uses real data for both directions and test-only intercepted image/data responses for successful image loads, failed image loads, and comparison-state resets. It does not change production data.
+The script uses real data for both directions and image loading, then test-only intercepted image/data responses for failed image loads and comparison-state resets. It does not change production data.
 
 The current eight-pair export was also checked in Chrome with `web/tests/multi-pair.browser.cjs`. It opens the three Marius Hills comparisons, checks ranked and incomplete states from both search directions, and verifies each selected PDF is served. On Windows PowerShell with the local Vite server running:
 
@@ -75,7 +75,7 @@ Run that command in the Python environment described above. The exporter writes 
 
 The current release publishes P01–P08 from the supplied CSVs. P01 and P05–P07 have two rated dimensions and appear in rankings; P02–P04 and P08 retain missing dimensions and are unranked. P02–P08 are AI source desk screens requiring independent expert review. Both Moon and Mars worlds now have comparisons. The HMP research-station marker and other nearby or derived coordinates are shown only as labeled context anchors, not verified feature points; scene coordinates and conventions remain in the evidence. The ordinal scientific rules remain in `pipeline/models.py`.
 
-For upcoming location images, use the ID-based folders and naming guide in `web/public/site-images/README.md`. Images still need source, credit, scope, and scale metadata before the atlas export can display them.
+For location image provenance and naming, see `data/site-images.json` and `web/public/site-images/README.md`. The images can be refreshed with `python -m pipeline.fetch_site_images` when network access is available. On this machine, the atlas was regenerated with `& 'C:\Users\User\.cache\codex-runtimes\codex-primary-runtime\dependencies\python\python.exe' -m pipeline.build`, then checked with 20 Python tests, `npm --prefix web test`, `npm --prefix web run build`, and the focused `overview-regions.browser.cjs` and `multi-pair.browser.cjs` browser checks. Each of the eight generated PDFs was checked for two embedded images and matching image source IDs.
 
 ## Reference comparison and interaction checks
 
@@ -87,6 +87,6 @@ Run the browser scripts with Chrome installed and `PLAYWRIGHT_CORE` pointing to 
 
 ## Current limits
 
-Global textures and their higher-resolution layers provide orientation, not street/building coverage or verified terrain measurements. Pair-specific images remain unavailable unless supplied in the destination export with their source, credit and scale. No feature boundary is inferred from a context pin. The broader research leads still need review before publication. Vite emits an advisory warning for the Three.js bundle size.
+Global textures and their higher-resolution layers provide orientation, not street/building coverage or verified terrain measurements. The 14 site images are visual context, not measurements or proof of a terrain match; the source manifest identifies feature and wider context views. No feature boundary is inferred from a context pin. Image rights should be reviewed for any commercial use, especially curated LROC imagery. The broader research leads still need expert review before publication. Vite emits an advisory warning for the Three.js bundle size.
 
 See `agents.md`, `spec.md`, `design.md` and `todo.md` for the project contract and scientific delivery checklist.

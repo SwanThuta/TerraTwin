@@ -8,8 +8,8 @@
 ## Site image intake
 
 - [x] Create Earth, Moon, and Mars image folders and document stable site-ID file names.
-- [ ] Receive and verify source, credit, reuse terms, feature scope, and scale for each supplied image.
-- [ ] Connect verified image paths and metadata to the atlas export and confirm the website and PDF show the correct selected site.
+- [x] Source 14 site images and record credit, use terms, feature scope, and scale or stated scale limits in `data/site-images.json`.
+- [x] Connect image paths and metadata to the atlas export; confirm real website images in both search directions and two images with matching source IDs in each PDF.
 
 # Current frontend source port — November 15, 2026
 
@@ -36,7 +36,7 @@ These are the current UI acceptance checks. The earlier milestone entries below 
 - [ ] User reviews the local Design branch before deciding whether to push.
 
 
-Status: the current integration branch publishes P01–P08. Four pairs have two rated dimensions; four retain missing evidence and remain unranked. P02–P08 use AI source desk screens that still need independent expert review. Pair imagery, bounded candidate discovery, and team assignment remain open. Times are relative to the team's development start. Owner numbers are suggested roles; assign member names at kickoff.
+Status: the current integration branch publishes P01–P08. Four pairs have two rated dimensions; four retain missing evidence and remain unranked. P02–P08 use AI source desk screens that still need independent expert review. Fourteen site images are present, with wider context views labeled. Bounded candidate discovery and team assignment remain open. Times are relative to the team's development start. Owner numbers are suggested roles; assign member names at kickoff.
 
 ## New CSV integration preview
 
@@ -83,7 +83,7 @@ Gate: a sourced comparison record can be loaded by the frontend; both map projec
 - [x] Show markers and synchronize list, selection, and comparison panel.
 - [x] Generate evidence-based explanation text for one comparison.
 - [x] Display source links, feature locators, scale, missing evidence, limitations, and an evidence-grounded field-practice use; show units for any optional measurements.
-- [ ] Show sourced Earth/planetary terrain images with scale, date when known, attribution, and a missing-image state.
+- [x] Show sourced Earth/planetary terrain images with scale or scale limits, date when known, attribution, and a missing-image state.
 - [x] Show how the selected pair's evidence was reviewed and rated; generate and download a matching PDF report.
 - [x] Confirm end-to-end slice works without a runtime model API.
 

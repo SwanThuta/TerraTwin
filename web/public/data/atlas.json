@@ -1,5 +1,5 @@
 {
-  "datasetVersion": "csv-2026-11-15-p01-p08-approx-coordinates",
+  "datasetVersion": "csv-2026-11-15-p01-p08-site-images",
   "reviewProfile": "terrain-geology-qual-v1",
   "orderingProfile": "terrain-first-v1",
   "sources": [
@@ -241,6 +241,118 @@
       "title": "Perseverance Explores the Jezero Crater Delta",
       "url": "https://science.nasa.gov/resource/perseverance-explores-the-jezero-crater-delta/",
       "locator": "Mastcam-Z panorama acquired June 12, 13, 16, 17 and 20, 2022; delta-front transcript and named outcrops",
+      "accessDate": null
+    },
+    {
+      "id": "IMG_E01",
+      "provider": "NASA Photojournal",
+      "title": "Haughton impact terrain on Devon Island",
+      "url": "https://science.nasa.gov/photojournal/hills-in-arctic-canada-with-impact-origin/",
+      "locator": "Haughton impact terrain; the selected Locale 7 ridge is not identified in this image. Tents provide a visual size cue; no numeric image scale is published on the source page. Acquired: Not stated by source page. Usage: NASA image-use guidelines; check source-specific third-party rights before redistribution.",
+      "accessDate": null
+    },
+    {
+      "id": "IMG_E02",
+      "provider": "USGS",
+      "title": "Mauna Ulu shield and volcanic vent",
+      "url": "https://www.usgs.gov/media/images/hawaii-volcanoes-a-view-mauna-ulu-shield-volcanic-vent",
+      "locator": "Ground view of Mauna Ulu shield and vent area. Ground photograph; no numeric scale stated on the source page. Acquired: Not stated by source page. Usage: Public domain per USGS image page.",
+      "accessDate": null
+    },
+    {
+      "id": "IMG_E03",
+      "provider": "NASA Earth Observatory",
+      "title": "Fagradalsfjall lava flows",
+      "url": "https://science.nasa.gov/earth/earth-observatory/lava-flows-from-fagradalsfjall-148312/",
+      "locator": "Landsat view of the 2021 Fagradalsfjall eruption area; vent 5b is not separately identified. Landsat 8 regional view; source page does not state a displayed scale. Acquired: 2021-05-09. Usage: NASA image-use guidelines; credit USGS Landsat data.",
+      "accessDate": null
+    },
+    {
+      "id": "IMG_E04",
+      "provider": "USGS",
+      "title": "Skull Cave entrance",
+      "url": "https://www.usgs.gov/media/images/a-photo-skull-cave",
+      "locator": "Ground photograph of the Skull Cave entrance. Ground photograph; no numeric scale stated on the source page. Acquired: Not stated by source page. Usage: USGS Multimedia Gallery public domain unless otherwise noted.",
+      "accessDate": null
+    },
+    {
+      "id": "IMG_E05",
+      "provider": "NASA Photojournal",
+      "title": "Lake Salda beach",
+      "url": "https://science.nasa.gov/photojournal/lake-salda-beach/",
+      "locator": "Lake Salda shoreline; the selected terrace candidate is not located in this photograph. Ground photograph; no numeric scale stated on the source page. Acquired: Not stated by source page. Usage: NASA image-use guidelines; verify any third-party photo rights on source page.",
+      "accessDate": null
+    },
+    {
+      "id": "IMG_E06",
+      "provider": "USGS Earthshots",
+      "title": "Salar de Atacama Landsat view",
+      "url": "https://eros.usgs.gov/earthshots/salar-de-atacama-chile",
+      "locator": "Salar de Atacama basin in 1991; the San Pedro River delta is not separately delineated. Regional Landsat view; page does not specify display scale for this image. Acquired: 1991-12-28 (source image filename). Usage: USGS public domain unless otherwise noted; retain attribution.",
+      "accessDate": null
+    },
+    {
+      "id": "IMG_E07",
+      "provider": "USGS",
+      "title": "Copper Canyon alluvial fan",
+      "url": "https://www.usgs.gov/media/images/copper-canyon-fan",
+      "locator": "Aerial photograph of Copper Canyon fan. Source page states image scale 1:48,000. Acquired: Not stated by source page. Usage: Public domain per USGS image page.",
+      "accessDate": null
+    },
+    {
+      "id": "IMG_E08",
+      "provider": "NASA Earth Observatory",
+      "title": "Lake Untersee and surrounding ice",
+      "url": "https://science.nasa.gov/earth/earth-observatory/a-most-unusual-lake/",
+      "locator": "Landsat view of Lake Untersee and its surroundings; the image does not show the lake floor. Landsat 9 regional view; source page does not state a displayed scale. Acquired: 2026-02-16. Usage: NASA image-use guidelines; credit USGS Landsat data.",
+      "accessDate": null
+    },
+    {
+      "id": "IMG_L01",
+      "provider": "LROC, Arizona State University",
+      "title": "Shackleton-de Gerlache ridge NAC view",
+      "url": "https://lroc.im-ldi.com/images/1247",
+      "locator": "LROC NAC view of the selected lunar ridge and blocks. Source page states the view is about 750 m wide. Acquired: Not stated by source page. Usage: LROC featured image: educational use with credit; commercial use requires permission.",
+      "accessDate": null
+    },
+    {
+      "id": "IMG_L02",
+      "provider": "LROC, Arizona State University",
+      "title": "Marius Hills Pit NAC image",
+      "url": "https://lroc.im-ldi.com/atlases/pits/1",
+      "locator": "LROC NAC view of Marius Hills Pit. LROC pit atlas lists a 200 m-wide frame and 0.44 m/pixel source resolution. Acquired: Not stated by source page. Usage: LROC atlas image: educational use with credit; commercial use requires permission.",
+      "accessDate": null
+    },
+    {
+      "id": "IMG_M01",
+      "provider": "NASA Earth Observatory",
+      "title": "Jezero Crater CTX mosaic",
+      "url": "https://science.nasa.gov/earth/earth-observatory/jez-like-mars-147041/",
+      "locator": "CTX mosaic of Jezero Crater; the selected western carbonate margin is not separately marked. Crater-wide CTX mosaic; source page does not state a displayed scale. Acquired: Not stated by source page. Usage: NASA image-use guidelines; retain credited contributors.",
+      "accessDate": null
+    },
+    {
+      "id": "IMG_M02",
+      "provider": "NASA Photojournal",
+      "title": "Perseverance view of Jezero delta",
+      "url": "https://science.nasa.gov/photojournal/perseverance-view-of-the-delta-in-jezero-crater/",
+      "locator": "Perseverance Mastcam-Z view of the Jezero delta remnant from its landing site; the selected western sediment exposures are not separately marked. The source page identifies a 200 m-wide visible delta remnant about 2.3 km from the rover; annotated view includes a 10 m scale bar. Acquired: 2021-02-22. Usage: NASA image-use guidelines; retain mission and instrument credits.",
+      "accessDate": null
+    },
+    {
+      "id": "IMG_M03",
+      "provider": "Smithsonian National Air and Space Museum",
+      "title": "Peace Vallis alluvial fan from Curiosity",
+      "url": "https://airandspace.si.edu/research/projects/alluvial-fans-mars",
+      "locator": "Curiosity rover view of the Peace Vallis fan from Vera Rubin Ridge; white-balanced. Rover panorama; source page does not state a numeric scale. Acquired: Not stated by source page. Usage: NASA mission image reproduced by Smithsonian; retain source credit.",
+      "accessDate": null
+    },
+    {
+      "id": "IMG_M04",
+      "provider": "NASA Photojournal",
+      "title": "Gale Crater mound from Mars Odyssey",
+      "url": "https://science.nasa.gov/photojournal/gale-crater-mound/",
+      "locator": "Modern Gale Crater mound; the hypothesized ancient ice-covered lake is not visible or established by this image. THEMIS orbital image; source page does not state a displayed scale. Acquired: Not stated by source page. Usage: NASA image-use guidelines; retain mission credit.",
       "accessDate": null
     }
   ],
@@ -729,18 +841,26 @@
       ],
       "visuals": {
         "earth": {
-          "localPath": null,
-          "sourceId": "R02",
-          "scale": "No imported image scale",
-          "credit": "See cited source",
-          "missingReason": "The package supplies citations but no verified, imported terrain image."
+          "localPath": "/site-images/earth/E01-01.jpg",
+          "sourceId": "IMG_E01",
+          "scale": "Tents provide a visual size cue; no numeric image scale is published on the source page.",
+          "credit": "NASA/JPL/Arizona State University; source: Dr. James Rice, ASU",
+          "missingReason": null,
+          "scope": "Wider context view",
+          "caption": "Haughton impact terrain; the selected Locale 7 ridge is not identified in this image.",
+          "usage": "NASA image-use guidelines; check source-specific third-party rights before redistribution.",
+          "acquired": "Not stated by source page"
         },
         "target": {
-          "localPath": null,
-          "sourceId": "R03",
-          "scale": "No imported image scale",
-          "credit": "See cited source",
-          "missingReason": "The package supplies citations but no verified, imported terrain image."
+          "localPath": "/site-images/moon/L01-01.png",
+          "sourceId": "IMG_L01",
+          "scale": "Source page states the view is about 750 m wide.",
+          "credit": "NASA/GSFC/Arizona State University",
+          "missingReason": null,
+          "scope": "Feature view",
+          "caption": "LROC NAC view of the selected lunar ridge and blocks.",
+          "usage": "LROC featured image: educational use with credit; commercial use requires permission.",
+          "acquired": "Not stated by source page"
         }
       },
       "reviewNotes": "Original source-based 2026-11-14 desk review retained only for P01; new coordinates do not automatically change ratings Next validation: Publish source-map figure locator; acquire site GPS and comparable bounded footprints if numerical analysis planned",
@@ -754,7 +874,7 @@
         "R02",
         "R03"
       ],
-      "reportPath": "/reports/P01-csv-2026-11-15-p01-p08-approx-coordinates.pdf"
+      "reportPath": "/reports/P01-csv-2026-11-15-p01-p08-site-images.pdf"
     },
     {
       "id": "P02",
@@ -840,18 +960,26 @@
       ],
       "visuals": {
         "earth": {
-          "localPath": null,
-          "sourceId": "R04",
-          "scale": "No imported image scale",
-          "credit": "See cited source",
-          "missingReason": "The package supplies citations but no verified, imported terrain image."
+          "localPath": "/site-images/earth/E02-01.jpg",
+          "sourceId": "IMG_E02",
+          "scale": "Ground photograph; no numeric scale stated on the source page.",
+          "credit": "USGS",
+          "missingReason": null,
+          "scope": "Feature view",
+          "caption": "Ground view of Mauna Ulu shield and vent area.",
+          "usage": "Public domain per USGS image page.",
+          "acquired": "Not stated by source page"
         },
         "target": {
-          "localPath": null,
-          "sourceId": "R06",
-          "scale": "No imported image scale",
-          "credit": "See cited source",
-          "missingReason": "The package supplies citations but no verified, imported terrain image."
+          "localPath": "/site-images/moon/L02-01.png",
+          "sourceId": "IMG_L02",
+          "scale": "LROC pit atlas lists a 200 m-wide frame and 0.44 m/pixel source resolution.",
+          "credit": "NASA/GSFC/Arizona State University",
+          "missingReason": null,
+          "scope": "Feature view",
+          "caption": "LROC NAC view of Marius Hills Pit.",
+          "usage": "LROC atlas image: educational use with credit; commercial use requires permission.",
+          "acquired": "Not stated by source page"
         }
       },
       "reviewNotes": "AI source desk screen; both dimensions remain null because feature footprints and paired material evidence are insufficient. Next validation: Select one dated Mauna Ulu flow/tube feature and check a map locator; retain the lunar pit as a surface feature unless subsurface continuity is independently established.",
@@ -866,7 +994,7 @@
         "R06",
         "R40"
       ],
-      "reportPath": "/reports/P02-csv-2026-11-15-p01-p08-approx-coordinates.pdf"
+      "reportPath": "/reports/P02-csv-2026-11-15-p01-p08-site-images.pdf"
     },
     {
       "id": "P03",
@@ -959,18 +1087,26 @@
       ],
       "visuals": {
         "earth": {
-          "localPath": null,
-          "sourceId": "R07",
-          "scale": "No imported image scale",
-          "credit": "See cited source",
-          "missingReason": "The package supplies citations but no verified, imported terrain image."
+          "localPath": "/site-images/earth/E03-01.jpg",
+          "sourceId": "IMG_E03",
+          "scale": "Landsat 8 regional view; source page does not state a displayed scale.",
+          "credit": "NASA Earth Observatory / Joshua Stevens; Landsat data from USGS",
+          "missingReason": null,
+          "scope": "Wider context view",
+          "caption": "Landsat view of the 2021 Fagradalsfjall eruption area; vent 5b is not separately identified.",
+          "usage": "NASA image-use guidelines; credit USGS Landsat data.",
+          "acquired": "2021-05-09"
         },
         "target": {
-          "localPath": null,
-          "sourceId": "R41",
-          "scale": "No imported image scale",
-          "credit": "See cited source",
-          "missingReason": "The package supplies citations but no verified, imported terrain image."
+          "localPath": "/site-images/moon/L02-01.png",
+          "sourceId": "IMG_L02",
+          "scale": "LROC pit atlas lists a 200 m-wide frame and 0.44 m/pixel source resolution.",
+          "credit": "NASA/GSFC/Arizona State University",
+          "missingReason": null,
+          "scope": "Feature view",
+          "caption": "LROC NAC view of Marius Hills Pit.",
+          "usage": "LROC atlas image: educational use with credit; commercial use requires permission.",
+          "acquired": "Not stated by source page"
         }
       },
       "reviewNotes": "AI source desk screen; terrain is Weak because the identified landforms differ; geology is not rated. Next validation: Obtain a readable, site-specific eruption material record and feature-applicable lunar geologic evidence before rating geology.",
@@ -987,7 +1123,7 @@
         "R40",
         "R41"
       ],
-      "reportPath": "/reports/P03-csv-2026-11-15-p01-p08-approx-coordinates.pdf"
+      "reportPath": "/reports/P03-csv-2026-11-15-p01-p08-site-images.pdf"
     },
     {
       "id": "P04",
@@ -1078,18 +1214,26 @@
       ],
       "visuals": {
         "earth": {
-          "localPath": null,
-          "sourceId": "R09",
-          "scale": "No imported image scale",
-          "credit": "See cited source",
-          "missingReason": "The package supplies citations but no verified, imported terrain image."
+          "localPath": "/site-images/earth/E04-01.jpg",
+          "sourceId": "IMG_E04",
+          "scale": "Ground photograph; no numeric scale stated on the source page.",
+          "credit": "USGS",
+          "missingReason": null,
+          "scope": "Feature view",
+          "caption": "Ground photograph of the Skull Cave entrance.",
+          "usage": "USGS Multimedia Gallery public domain unless otherwise noted.",
+          "acquired": "Not stated by source page"
         },
         "target": {
-          "localPath": null,
-          "sourceId": "R04",
-          "scale": "No imported image scale",
-          "credit": "See cited source",
-          "missingReason": "The package supplies citations but no verified, imported terrain image."
+          "localPath": "/site-images/moon/L02-01.png",
+          "sourceId": "IMG_L02",
+          "scale": "LROC pit atlas lists a 200 m-wide frame and 0.44 m/pixel source resolution.",
+          "credit": "NASA/GSFC/Arizona State University",
+          "missingReason": null,
+          "scope": "Feature view",
+          "caption": "LROC NAC view of Marius Hills Pit.",
+          "usage": "LROC atlas image: educational use with credit; commercial use requires permission.",
+          "acquired": "Not stated by source page"
         }
       },
       "reviewNotes": "AI source desk screen; the cave record remains insufficient rather than being assigned a Weak rating. Next validation: Verify a readable cave map/description and source-located cave-mouth footprint; do not infer lunar subsurface continuity or stability.",
@@ -1105,7 +1249,7 @@
         "R10",
         "R40"
       ],
-      "reportPath": "/reports/P04-csv-2026-11-15-p01-p08-approx-coordinates.pdf"
+      "reportPath": "/reports/P04-csv-2026-11-15-p01-p08-site-images.pdf"
     },
     {
       "id": "P05",
@@ -1216,18 +1360,26 @@
       ],
       "visuals": {
         "earth": {
-          "localPath": null,
-          "sourceId": "R11",
-          "scale": "No imported image scale",
-          "credit": "See cited source",
-          "missingReason": "The package supplies citations but no verified, imported terrain image."
+          "localPath": "/site-images/earth/E05-01.jpg",
+          "sourceId": "IMG_E05",
+          "scale": "Ground photograph; no numeric scale stated on the source page.",
+          "credit": "NASA/JPL-Caltech",
+          "missingReason": null,
+          "scope": "Wider context view",
+          "caption": "Lake Salda shoreline; the selected terrace candidate is not located in this photograph.",
+          "usage": "NASA image-use guidelines; verify any third-party photo rights on source page.",
+          "acquired": "Not stated by source page"
         },
         "target": {
-          "localPath": null,
-          "sourceId": "R13",
-          "scale": "No imported image scale",
-          "credit": "See cited source",
-          "missingReason": "The package supplies citations but no verified, imported terrain image."
+          "localPath": "/site-images/mars/M01-01.jpg",
+          "sourceId": "IMG_M01",
+          "scale": "Crater-wide CTX mosaic; source page does not state a displayed scale.",
+          "credit": "NASA/JPL-Caltech/MSSS/Tanya Harrison",
+          "missingReason": null,
+          "scope": "Wider context view",
+          "caption": "CTX mosaic of Jezero Crater; the selected western carbonate margin is not separately marked.",
+          "usage": "NASA image-use guidelines; retain credited contributors.",
+          "acquired": "Not stated by source page"
         }
       },
       "reviewNotes": "AI qualitative source desk-screening based on NASA/IUGS sources; not an independent expert or field review. Next validation: Keep the source-described NE Salda shore/bench and possible Jezero western-margin deposits as the qualitative scope; georeference feature windows before any numerical terrain comparison.",
@@ -1242,7 +1394,7 @@
         "R12",
         "R13"
       ],
-      "reportPath": "/reports/P05-csv-2026-11-15-p01-p08-approx-coordinates.pdf"
+      "reportPath": "/reports/P05-csv-2026-11-15-p01-p08-site-images.pdf"
     },
     {
       "id": "P06",
@@ -1347,18 +1499,26 @@
       ],
       "visuals": {
         "earth": {
-          "localPath": null,
-          "sourceId": "R16",
-          "scale": "No imported image scale",
-          "credit": "See cited source",
-          "missingReason": "The package supplies citations but no verified, imported terrain image."
+          "localPath": "/site-images/earth/E06-01.png",
+          "sourceId": "IMG_E06",
+          "scale": "Regional Landsat view; page does not specify display scale for this image.",
+          "credit": "USGS EROS",
+          "missingReason": null,
+          "scope": "Wider context view",
+          "caption": "Salar de Atacama basin in 1991; the San Pedro River delta is not separately delineated.",
+          "usage": "USGS public domain unless otherwise noted; retain attribution.",
+          "acquired": "1991-12-28 (source image filename)"
         },
         "target": {
-          "localPath": null,
-          "sourceId": "R42",
-          "scale": "No imported image scale",
-          "credit": "See cited source",
-          "missingReason": "The package supplies citations but no verified, imported terrain image."
+          "localPath": "/site-images/mars/M02-01.jpg",
+          "sourceId": "IMG_M02",
+          "scale": "The source page identifies a 200 m-wide visible delta remnant about 2.3 km from the rover; annotated view includes a 10 m scale bar.",
+          "credit": "NASA/JPL-Caltech/ASU/MSSS",
+          "missingReason": null,
+          "scope": "Wider context view",
+          "caption": "Perseverance Mastcam-Z view of the Jezero delta remnant from its landing site; the selected western sediment exposures are not separately marked.",
+          "usage": "NASA image-use guidelines; retain mission and instrument credits.",
+          "acquired": "2021-02-22"
         }
       },
       "reviewNotes": "AI qualitative source desk-screening using published Landsat context and rover observations; not an independent field review. Next validation: Use the USGS-named northern San Pedro delta and NASA's named Jezero delta-front panorama/outcrops; retain regional map anchors as context rather than feature coordinates.",
@@ -1372,7 +1532,7 @@
         "R16",
         "R42"
       ],
-      "reportPath": "/reports/P06-csv-2026-11-15-p01-p08-approx-coordinates.pdf"
+      "reportPath": "/reports/P06-csv-2026-11-15-p01-p08-site-images.pdf"
     },
     {
       "id": "P07",
@@ -1485,18 +1645,26 @@
       ],
       "visuals": {
         "earth": {
-          "localPath": null,
-          "sourceId": "R18",
-          "scale": "No imported image scale",
-          "credit": "See cited source",
-          "missingReason": "The package supplies citations but no verified, imported terrain image."
+          "localPath": "/site-images/earth/E07-01.jpg",
+          "sourceId": "IMG_E07",
+          "scale": "Source page states image scale 1:48,000.",
+          "credit": "USGS",
+          "missingReason": null,
+          "scope": "Feature view",
+          "caption": "Aerial photograph of Copper Canyon fan.",
+          "usage": "Public domain per USGS image page.",
+          "acquired": "Not stated by source page"
         },
         "target": {
-          "localPath": null,
-          "sourceId": "R23",
-          "scale": "No imported image scale",
-          "credit": "See cited source",
-          "missingReason": "The package supplies citations but no verified, imported terrain image."
+          "localPath": "/site-images/mars/M03-01.jpg",
+          "sourceId": "IMG_M03",
+          "scale": "Rover panorama; source page does not state a numeric scale.",
+          "credit": "NASA/JPL-Caltech/MSSS",
+          "missingReason": null,
+          "scope": "Feature view",
+          "caption": "Curiosity rover view of the Peace Vallis fan from Vera Rubin Ridge; white-balanced.",
+          "usage": "NASA mission image reproduced by Smithsonian; retain source credit.",
+          "acquired": "Not stated by source page"
         }
       },
       "reviewNotes": "AI qualitative source desk-screening; no matched raster measurements or independent field review. Next validation: Reported whole-fan areas differ substantially (about 5.2 km2 vs 80 km2); keep canyon/valley map points labeled as context and do not infer matched slopes or travel safety.",
@@ -1512,7 +1680,7 @@
         "R22",
         "R23"
       ],
-      "reportPath": "/reports/P07-csv-2026-11-15-p01-p08-approx-coordinates.pdf"
+      "reportPath": "/reports/P07-csv-2026-11-15-p01-p08-site-images.pdf"
     },
     {
       "id": "P08",
@@ -1598,18 +1766,26 @@
       ],
       "visuals": {
         "earth": {
-          "localPath": null,
-          "sourceId": "R24",
-          "scale": "No imported image scale",
-          "credit": "See cited source",
-          "missingReason": "The package supplies citations but no verified, imported terrain image."
+          "localPath": "/site-images/earth/E08-01.jpg",
+          "sourceId": "IMG_E08",
+          "scale": "Landsat 9 regional view; source page does not state a displayed scale.",
+          "credit": "NASA Earth Observatory / Michala Garrison; Landsat data from USGS",
+          "missingReason": null,
+          "scope": "Wider context view",
+          "caption": "Landsat view of Lake Untersee and its surroundings; the image does not show the lake floor.",
+          "usage": "NASA image-use guidelines; credit USGS Landsat data.",
+          "acquired": "2026-02-16"
         },
         "target": {
-          "localPath": null,
-          "sourceId": "R36",
-          "scale": "No imported image scale",
-          "credit": "See cited source",
-          "missingReason": "The package supplies citations but no verified, imported terrain image."
+          "localPath": "/site-images/mars/M04-01.jpg",
+          "sourceId": "IMG_M04",
+          "scale": "THEMIS orbital image; source page does not state a displayed scale.",
+          "credit": "NASA/JPL/Arizona State University",
+          "missingReason": null,
+          "scope": "Wider context view",
+          "caption": "Modern Gale Crater mound; the hypothesized ancient ice-covered lake is not visible or established by this image.",
+          "usage": "NASA image-use guidelines; retain mission credit.",
+          "acquired": "Not stated by source page"
         }
       },
       "reviewNotes": "AI source desk-screening; the hypothesized Gale ice-covered lake is not treated as an observed site. Next validation: Retain P08 as unscored process context unless comparable surface deposits are identified and sourced on both bodies.",
@@ -1624,7 +1800,7 @@
         "R25",
         "R36"
       ],
-      "reportPath": "/reports/P08-csv-2026-11-15-p01-p08-approx-coordinates.pdf"
+      "reportPath": "/reports/P08-csv-2026-11-15-p01-p08-site-images.pdf"
     }
   ]
 }

@@ -3,6 +3,7 @@
 from __future__ import annotations
 
 import csv
+import json
 from pathlib import Path
 
 from pipeline.models import Comparison, Dataset, coverage, overall_rating
@@ -67,6 +68,28 @@ def load_dataset() -> Dataset:
     locations = {row["feature_id"]: row for row in rows("locations.csv")}
     source_rows = rows("sources.csv")
     source_ids = {row["source_id"] for row in source_rows}
+    image_rows = json.loads((ROOT / "data" / "site-images.json").read_text(encoding="utf-8"))
+    images = {row["siteId"]: row for row in image_rows}
+    if len(images) != len(image_rows):
+        raise ValueError("site image manifest contains duplicate site IDs")
+
+    def image_for(feature_id: str, fallback_source_id: str) -> dict:
+        if feature_id not in images:
+            return {"localPath": None, "sourceId": fallback_source_id, "scale": "No imported image scale",
+                    "credit": "See cited source", "missingReason": "No verified site image has been imported for this location."}
+        entry = images[feature_id]
+        body = {"E": "earth", "L": "moon", "M": "mars"}[feature_id[0]]
+        files = list((ROOT / "web" / "public" / "site-images" / body).glob(f"{feature_id}-01.*"))
+        if len(files) != 1:
+            raise ValueError(f"{feature_id} requires exactly one imported main image")
+        for field in ("title", "provider", "pageUrl", "imageUrl", "scope", "caption", "scale", "credit", "usage", "acquired"):
+            if not entry.get(field):
+                raise ValueError(f"{feature_id} image lacks {field}")
+        if entry["scope"] not in ("Feature view", "Wider context view"):
+            raise ValueError(f"{feature_id} has unknown image scope")
+        return {"localPath": f"/site-images/{body}/{files[0].name}", "sourceId": f"IMG_{feature_id}",
+                "scale": entry["scale"], "credit": entry["credit"], "scope": entry["scope"],
+                "caption": entry["caption"], "usage": entry["usage"], "acquired": entry["acquired"], "missingReason": None}
     evidence_by_pair: dict[str, list[dict[str, str]]] = {}
     for row in rows("comparison_evidence.csv"):
         evidence_by_pair.setdefault(row["pair_id"], []).append(row)
@@ -166,8 +189,8 @@ def load_dataset() -> Dataset:
                        earth["surface_cave_or_ice_warning"], target["surface_cave_or_ice_warning"]],
             "limitSourceIds": evidence_sources,
             "visuals": {
-                "earth": {"localPath": None, "sourceId": terrain_sources[0], "scale": "No imported image scale", "credit": "See cited source", "missingReason": "The package supplies citations but no verified, imported terrain image."},
-                "target": {"localPath": None, "sourceId": terrain_sources[-1], "scale": "No imported image scale", "credit": "See cited source", "missingReason": "The package supplies citations but no verified, imported terrain image."},
+                "earth": image_for(earth["feature_id"], terrain_sources[0]),
+                "target": image_for(target["feature_id"], terrain_sources[-1]),
             },
             "reviewNotes": f"{pair['review_scope_note']} Next validation: {pair['next_validation']}",
         }
@@ -182,19 +205,26 @@ def load_dataset() -> Dataset:
             raise ValueError(f"{pair_id} derived columns disagree with the authoritative Python rating rule")
 
     unknown = referenced - source_ids
+    if not set(images) <= pair_sites:
+        raise ValueError(f"site image manifest has unused locations: {sorted(set(images) - pair_sites)}")
     if unknown:
         raise ValueError(f"unknown CSV source IDs: {sorted(unknown)}")
     if not any(row["pair_id"] == PAIR_ID for row in pairs):
         raise ValueError(f"required comparison {PAIR_ID} is missing")
 
     dataset = Dataset.model_validate({
-        "datasetVersion": "csv-2026-11-15-p01-p08-approx-coordinates",
+        "datasetVersion": "csv-2026-11-15-p01-p08-site-images",
         "reviewProfile": pair["rubric_version"], "orderingProfile": pair["sort_version"],
         "sources": [
             {"id": row["source_id"], "provider": row["provider"],
              "title": row["title"], "url": row["url"],
              "locator": row["exact_locator"], "accessDate": None}
             for row in source_rows if row["source_id"] in referenced
+        ] + [
+            {"id": f"IMG_{row['siteId']}", "provider": row["provider"], "title": row["title"],
+             "url": row["pageUrl"], "locator": f"{row['caption']} {row['scale']} Acquired: {row['acquired']}. Usage: {row['usage']}",
+             "accessDate": None}
+            for row in image_rows if row["siteId"] in pair_sites
         ],
         "criteria": criteria,
         "sites": [site(locations[feature_id]) for feature_id in sorted(pair_sites)],

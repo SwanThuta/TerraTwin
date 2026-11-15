@@ -92,6 +92,10 @@ class Visual(BaseModel):
     scale: str
     credit: str
     missingReason: str | None
+    scope: str = ""
+    caption: str = ""
+    usage: str = ""
+    acquired: str = ""
 
     @model_validator(mode="after")
     def consistent_image_state(self) -> Visual:
