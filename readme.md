@@ -26,6 +26,14 @@ PLAYWRIGHT_CORE=/tmp/terratwin-browser/node_modules/playwright-core node web/tes
 
 The script uses real data for both directions and test-only intercepted image/data responses for successful image loads, failed image loads, and comparison-state resets. It does not change production data.
 
+The current eight-pair export was also checked in Chrome with `web/tests/multi-pair.browser.cjs`. It opens the three Marius Hills comparisons, checks ranked and incomplete states from both search directions, and verifies each selected PDF is served. On Windows PowerShell with the local Vite server running:
+
+```powershell
+$env:PLAYWRIGHT_CORE='C:\Users\User\.cache\codex-runtimes\codex-primary-runtime\dependencies\node\node_modules\playwright-core'
+$env:CHROME_PATH='C:\Program Files\Google\Chrome\Application\chrome.exe'
+node web/tests/multi-pair.browser.cjs
+```
+
 ## Run and verify
 
 Root scripts forward to the existing Vite application in `web/`. Keep the versions in `.nvmrc`, `.python-version` and the dependency manifests. No framework or deployment configuration was replaced for this port.
@@ -48,13 +56,15 @@ PYTHONPATH=/tmp/terratwin-python python3 -m pytest -q
 
 For a fresh environment, install `pipeline/requirements.txt` into a virtual environment and run `python -m pytest -q` there. The existing obsolete `.venv` should not be relied on.
 
+The current integration passed 19 Python tests with the bundled Python runtime and a temporary pytest installation, plus `npm --prefix web test`, `npm run build`, and the Chrome interaction script above. The temporary pytest files are not part of the repository.
+
 ## Backend and publishing data
 
 This port preserves the destination backend, CSV research inputs, scientific rules, exporter, reports and deployment setup. It does not import the reference's demo datasets or terrain photographs.
 
 The authoritative frontend endpoint in this checkout is **`/data/atlas.json`**. The reference used `/data/reviewed-atlas.json`; the destination uses its own existing export through `web/src/atlas.ts`. `VITE_ATLAS_URL` can select a different JSON endpoint at build time; external endpoints must allow the frontend origin through CORS.
 
-Add stable feature IDs to `TerraTwin_Earth_Moon_Mars_Analog_Data_2026-11-14/locations.csv` and complete the related source, workflow, comparison-evidence and practice rows. Pairs must be explicitly reviewed, with `review_status=reviewed_source_desk_screening`, reviewer/date, supported qualitative ratings and consistent derived columns. The current `load_reviewed()` exporter imports all complete pairs with that status; unreviewed candidates remain excluded from this frontend. It validates the two-dimension profile and six workflow steps.
+Add stable feature IDs to `TerraTwin_Earth_Moon_Mars_Analog_Data_2026-11-14/locations.csv` and complete the related source, workflow, comparison-evidence and practice rows. The `load_dataset()` exporter joins `analog_pairs.csv` with the separate `pair_review_overrides.csv`, validates the two-dimension profile, source references and six workflow steps, and publishes reviewed records with their missing evidence intact. Unreviewed candidates remain outside the active frontend and rankings.
 
 ```bash
 ATLAS_DATASET_VERSION=your-reviewed-release python3 -m pipeline.build
@@ -63,7 +73,7 @@ npm run build
 
 Run that command in the Python environment described above. The exporter writes `data/processed/atlas.json`, `web/public/data/atlas.json` and the matching reports under `web/public/reports/`. Change the dataset version when updating published evidence. Deploy `web/dist/` through the existing deployment process after regeneration. New valid published records require **zero frontend source edits**.
 
-The current scientific input still publishes only P01: Haughton Site A / Locale 7 ↔ Shackleton–de Gerlache ridge rim NAC view. Terrain is Moderate, geology Weak, overall Weak, with two reviewed dimensions. Mars remains navigable with an honest empty state. The HMP research-station marker is a context locator, not a verified Locale 7 feature point; scene coordinates and conventions remain in the evidence. The ordinal scientific rules remain in `pipeline/models.py`.
+The current release publishes P01–P08 from the supplied CSVs. P01 and P05–P07 have two rated dimensions and appear in rankings; P02–P04 and P08 retain missing dimensions and are unranked. P02–P08 are AI source desk screens requiring independent expert review. Both Moon and Mars worlds now have comparisons. The HMP research-station marker and other nearby or derived coordinates are shown only as labeled context anchors, not verified feature points; scene coordinates and conventions remain in the evidence. The ordinal scientific rules remain in `pipeline/models.py`.
 
 ## Reference comparison and interaction checks
 

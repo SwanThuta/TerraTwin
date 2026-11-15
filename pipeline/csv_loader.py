@@ -1,11 +1,11 @@
-"""Build the P01 review slice directly from the supplied research CSVs."""
+"""Build the reviewed comparison dataset from the research CSVs."""
 
 from __future__ import annotations
 
 import csv
 from pathlib import Path
 
-from pipeline.models import Dataset, coverage, overall_rating
+from pipeline.models import Comparison, Dataset, coverage, overall_rating
 
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -32,6 +32,20 @@ def site(row: dict[str, str]) -> dict:
         if is_earth and row["map_anchor_lon_deg"] and row["map_anchor_lat_deg"]
         else None
     )
+    feature_point = (
+        [float(row["feature_lon_deg"]), float(row["feature_lat_deg"])]
+        if is_earth and row["feature_lon_deg"] and row["feature_lat_deg"]
+        else None
+    )
+    coordinate_status = row["feature_coordinates_status"]
+    if feature_point and coordinate_status == "source_coordinate":
+        map_point = feature_point
+        point_kind = f"Source-located point ({coordinate_status}): {row['coordinate_note']}"
+    else:
+        map_point = anchor
+        point_kind = f"Context reference: {row['anchor_represents']} ({row['anchor_quality']}); not a verified feature point"
+        if coordinate_status.startswith("approximate_"):
+            point_kind += "; approximate feature proxy is not plotted"
     return {
         "id": row["feature_id"],
         "name": row["feature_name"],
@@ -39,49 +53,30 @@ def site(row: dict[str, str]) -> dict:
         "region": row["country_or_region"],
         "feature": row["feature_name"],
         "locator": f"{row['host_target']}; {row['coordinate_note']} Footprint: {row['footprint_status']}.",
-        "mapPoint": anchor,
-        "mapPointKind": f"Context reference: {row['anchor_represents']} ({row['anchor_quality']}); not a verified feature point",
+        "mapPoint": map_point,
+        "mapPointKind": point_kind,
         "mapPointSourceId": source_ids[0],
         "coordinateNote": row["coordinate_note"],
         "coordinateConvention": f"{row['longitude_convention']}; {row['latitude_convention']}",
     }
 
 
-def load_pair(pair_id: str) -> Dataset:
-    pair = next(row for row in rows("analog_pairs.csv") if row["pair_id"] == pair_id)
+def load_dataset() -> Dataset:
+    pairs = rows("analog_pairs.csv")
+    overrides = {row["pair_id"]: row for row in rows("pair_review_overrides.csv")}
     locations = {row["feature_id"]: row for row in rows("locations.csv")}
-    workflow = {
-        int(row["step_number"]): row
-        for row in rows("location_workflows.csv")
-        if row["pair_id"] == pair_id
-    }
-    similarity_rows = [row for row in rows("comparison_evidence.csv") if row["pair_id"] == pair_id]
-    practice_rows = [row for row in rows("practice_objectives.csv") if row["pair_id"] == pair_id]
-    if {row["dimension"] for row in similarity_rows} != {"terrain", "geology"}:
-        raise ValueError(f"{pair_id} requires one terrain and one geology similarity evidence row")
-    if not practice_rows:
-        raise ValueError(f"{pair_id} requires at least one practice objective row")
-    if set(workflow) != set(range(1, 7)):
-        raise ValueError(f"{pair_id} requires all six source workflow steps")
-    if pair["rubric_version"] != "terrain-geology-qual-v1" or pair["sort_version"] != "terrain-first-v1":
-        raise ValueError("unsupported CSV rubric or ordering version")
-    earth = locations[pair["earth_feature_id"]]
-    target = locations[pair["planetary_feature_id"]]
-    terrain_sources = ids(pair["terrain_evidence"])
-    geology_sources = ids(pair["geology_evidence"])
-    if not terrain_sources or not geology_sources:
-        raise ValueError(f"{pair_id} requires evidence IDs for both dimensions")
     source_rows = rows("sources.csv")
     source_ids = {row["source_id"] for row in source_rows}
-    referenced = set(
-        terrain_sources + geology_sources + ids(earth["coordinate_source_id"])
-        + ids(target["coordinate_source_id"])
-        + [source for step in workflow.values() for source in ids(step["source_ids"])]
-        + [source for row in similarity_rows for source in ids(row["source_ids"])]
-        + [source for row in practice_rows for source in ids(row["evidence_ids"])]
-    )
-    if referenced - source_ids:
-        raise ValueError(f"unknown CSV source IDs: {sorted(referenced - source_ids)}")
+    evidence_by_pair: dict[str, list[dict[str, str]]] = {}
+    for row in rows("comparison_evidence.csv"):
+        evidence_by_pair.setdefault(row["pair_id"], []).append(row)
+    practice_by_pair: dict[str, list[dict[str, str]]] = {}
+    for row in rows("practice_objectives.csv"):
+        practice_by_pair.setdefault(row["pair_id"], []).append(row)
+    workflow_by_pair: dict[str, dict[int, dict[str, str]]] = {}
+    for row in rows("location_workflows.csv"):
+        workflow_by_pair.setdefault(row["pair_id"], {})[int(row["step_number"])] = row
+
     criteria = [
         {
             "id": row["criterion_id"], "key": row["criterion_key"],
@@ -92,59 +87,108 @@ def load_pair(pair_id: str) -> Dataset:
         }
         for row in rows("comparison_criteria.csv")
     ]
-    if pair["review_status"] != "reviewed_source_desk_screening":
-        raise ValueError(f"{pair_id} is no longer the supplied reviewed desk screening")
-    if pair["terrain_rating"] not in {"Strong", "Moderate", "Weak"} or pair["geology_rating"] not in {"Strong", "Moderate", "Weak"}:
-        raise ValueError(f"{pair_id} must have both CSV ratings")
-    similarities = [
-        {
-            "id": row["evidence_id"], "dimension": row["dimension"],
-            "earthFeature": row["earth_feature"], "planetaryFeature": row["planetary_feature"],
-            "sharedObservation": row["shared_observation"], "limitation": row["limitation"],
-            "earthLocator": row["earth_locator"], "planetaryLocator": row["planetary_locator"],
-            "scaleNote": row["scale_note"], "sourceIds": ids(row["source_ids"]),
-            "reviewStatus": row["review_status"],
+    comparisons = []
+    referenced = set()
+    pair_sites = set()
+    for original in pairs:
+        pair = {**original, **overrides.get(original["pair_id"], {})}
+        pair_id = pair["pair_id"]
+        earth = locations[pair["earth_feature_id"]]
+        target = locations[pair["planetary_feature_id"]]
+        pair_sites.update((earth["feature_id"], target["feature_id"]))
+        terrain_sources = ids(pair["terrain_evidence"])
+        geology_sources = ids(pair["geology_evidence"])
+        similarity_rows = evidence_by_pair.get(pair_id, [])
+        if {row["dimension"] for row in similarity_rows} != {"terrain", "geology"}:
+            raise ValueError(f"{pair_id} requires one terrain and one geology evidence row")
+        if not terrain_sources or not geology_sources:
+            raise ValueError(f"{pair_id} requires source IDs for both dimensions")
+        workflow = workflow_by_pair.get(pair_id, {})
+        if set(workflow) != set(range(1, 7)):
+            raise ValueError(f"{pair_id} requires all six source workflow steps")
+        if pair["rubric_version"] != "terrain-geology-qual-v1" or pair["sort_version"] != "terrain-first-v1":
+            raise ValueError(f"{pair_id} uses an unsupported rubric or ordering version")
+
+        practice_rows = practice_by_pair.get(pair_id, [])
+        similarities = [
+            {
+                "id": row["evidence_id"], "dimension": row["dimension"],
+                "earthFeature": row["earth_feature"], "planetaryFeature": row["planetary_feature"],
+                "sharedObservation": row["shared_observation"], "limitation": row["limitation"],
+                "earthLocator": row["earth_locator"], "planetaryLocator": row["planetary_locator"],
+                "scaleNote": row["scale_note"], "sourceIds": ids(row["source_ids"]),
+                "reviewStatus": row["review_status"],
+            }
+            for row in similarity_rows
+        ]
+        practice = [
+            {
+                "id": row["objective_id"], "label": row["label"], "reason": row["support_reason"],
+                "sourceIds": ids(row["evidence_ids"]), "status": row["status"],
+                "limitations": row["limitations"],
+            }
+            for row in practice_rows
+        ]
+        terrain_row = next(row for row in similarity_rows if row["dimension"] == "terrain")
+        geology_row = next(row for row in similarity_rows if row["dimension"] == "geology")
+        reviewed = pair["review_status"] == "reviewed_source_desk_screening"
+        reviewer = pair["reviewer"] if reviewed else None
+        review_date = pair["review_date"] if reviewed else None
+        terrain_rating = pair["terrain_rating"] or None
+        geology_rating = pair["geology_rating"] or None
+        missing_reason = pair["missing_evidence_reason"] or None
+        evidence_sources = sorted(set(terrain_sources + geology_sources))
+        referenced.update(evidence_sources)
+        referenced.update(ids(earth["coordinate_source_id"]) + ids(target["coordinate_source_id"]))
+        referenced.update(source for row in similarity_rows for source in ids(row["source_ids"]))
+        referenced.update(source for row in practice_rows for source in ids(row["evidence_ids"]))
+
+        record = {
+            "id": pair_id, "earthId": earth["feature_id"], "targetId": target["feature_id"],
+            "status": "reviewed" if reviewed else "sourced-candidate", "reviewStatus": pair["review_status"],
+            "reviewer": reviewer, "reviewDate": review_date,
+            "relationship": f"{pair['relationship_status']}. Theme: {pair['analog_theme']}.",
+            "relationshipSourceIds": evidence_sources,
+            "terrain": {
+                "rating": terrain_rating, "evidence": terrain_row["shared_observation"],
+                "difference": pair["critical_difference"],
+                "sourceIds": terrain_sources, "missingReason": missing_reason if terrain_rating is None else None,
+            },
+            "geology": {
+                "rating": geology_rating, "evidence": geology_row["shared_observation"],
+                "difference": pair["material_difference"],
+                "sourceIds": geology_sources, "missingReason": missing_reason if geology_rating is None else None,
+            },
+            "similaritySummary": " ".join(row["shared_observation"] for row in similarity_rows),
+            "similarities": similarities,
+            "practice": practice,
+            "limits": [pair["critical_difference"], pair["material_difference"],
+                       earth["surface_cave_or_ice_warning"], target["surface_cave_or_ice_warning"]],
+            "limitSourceIds": evidence_sources,
+            "visuals": {
+                "earth": {"localPath": None, "sourceId": terrain_sources[0], "scale": "No imported image scale", "credit": "See cited source", "missingReason": "The package supplies citations but no verified, imported terrain image."},
+                "target": {"localPath": None, "sourceId": terrain_sources[-1], "scale": "No imported image scale", "credit": "See cited source", "missingReason": "The package supplies citations but no verified, imported terrain image."},
+            },
+            "reviewNotes": f"{pair['review_scope_note']} Next validation: {pair['next_validation']}",
         }
-        for row in similarity_rows
-    ]
-    practice = [
-        {
-            "id": row["objective_id"], "label": row["label"], "reason": row["support_reason"],
-            "sourceIds": ids(row["evidence_ids"]), "status": row["status"],
-            "limitations": row["limitations"],
-        }
-        for row in practice_rows
-    ]
-    record = {
-        "id": pair_id, "earthId": earth["feature_id"], "targetId": target["feature_id"],
-        "status": "reviewed", "reviewStatus": pair["review_status"],
-        "reviewer": pair["reviewer"], "reviewDate": pair["review_date"],
-        "relationship": f"{pair['relationship_status']}. Theme: {pair['analog_theme']}.",
-        "relationshipSourceIds": sorted(set(terrain_sources + geology_sources)),
-        "terrain": {
-            "rating": pair["terrain_rating"], "evidence": workflow[3]["precise_instruction"],
-            "difference": pair["critical_difference"],
-            "sourceIds": terrain_sources, "missingReason": None,
-        },
-        "geology": {
-            "rating": pair["geology_rating"], "evidence": workflow[4]["precise_instruction"],
-            "difference": pair["material_difference"],
-            "sourceIds": geology_sources, "missingReason": None,
-        },
-        "similaritySummary": " ".join(row["shared_observation"] for row in similarity_rows),
-        "similarities": similarities,
-        "practice": practice,
-        "limits": [pair["critical_difference"], pair["material_difference"],
-                   earth["surface_cave_or_ice_warning"], target["surface_cave_or_ice_warning"]],
-        "limitSourceIds": sorted(set(terrain_sources + geology_sources)),
-        "visuals": {
-            "earth": {"localPath": None, "sourceId": terrain_sources[0], "scale": "No imported image scale", "credit": "NASA NTRS", "missingReason": "CSV package supplies citations but no redistributable terrain image."},
-            "target": {"localPath": None, "sourceId": terrain_sources[-1], "scale": "750 m NAC scene cited in CSV workflow; no image imported", "credit": "LROC / NASA GSFC / ASU", "missingReason": "CSV package supplies an image locator but no imported image."},
-        },
-        "reviewNotes": f"{pair['review_scope_note']} Next validation: {pair['next_validation']}",
-    }
+        comparisons.append(record)
+        comparison = Comparison.model_validate(record)
+
+        if (
+            overall_rating(comparison.terrain.rating, comparison.geology.rating) != pair["overall_rating"]
+            or coverage(comparison) != int(pair["supported_dimensions_count"])
+            or (reviewed and coverage(comparison) == 2) != (pair["rank_eligible"].lower() == "true")
+        ):
+            raise ValueError(f"{pair_id} derived columns disagree with the authoritative Python rating rule")
+
+    unknown = referenced - source_ids
+    if unknown:
+        raise ValueError(f"unknown CSV source IDs: {sorted(unknown)}")
+    if not any(row["pair_id"] == PAIR_ID for row in pairs):
+        raise ValueError(f"required comparison {PAIR_ID} is missing")
+
     dataset = Dataset.model_validate({
-        "datasetVersion": f"csv-2026-11-14-{pair_id.lower()}",
+        "datasetVersion": "csv-2026-11-15-p01-p08-approx-coordinates",
         "reviewProfile": pair["rubric_version"], "orderingProfile": pair["sort_version"],
         "sources": [
             {"id": row["source_id"], "provider": row["provider"],
@@ -153,46 +197,19 @@ def load_pair(pair_id: str) -> Dataset:
             for row in source_rows if row["source_id"] in referenced
         ],
         "criteria": criteria,
-        "sites": [site(earth), site(target)],
-        "comparisons": [record],
+        "sites": [site(locations[feature_id]) for feature_id in sorted(pair_sites)],
+        "comparisons": comparisons,
     })
-    comparison = dataset.comparisons[0]
-    if (
-        overall_rating(comparison.terrain.rating, comparison.geology.rating) != pair["overall_rating"]
-        or coverage(comparison) != int(pair["supported_dimensions_count"])
-        or pair["rank_eligible"].lower() != "true"
-    ):
-        raise ValueError(f"{pair_id} CSV derived columns disagree with the authoritative Python rating rule")
     return dataset
 
 
 def load_p01() -> Dataset:
-    """Compatibility entry point for the existing review fixture."""
-    return load_pair(PAIR_ID)
-
-
-def load_reviewed() -> Dataset:
-    """Publish only explicitly reviewed CSV records; validate every joined pair."""
-    reviewed = [row for row in rows("analog_pairs.csv")
-                if row["review_status"] == "reviewed_source_desk_screening"]
-    if not reviewed:
-        return Dataset.model_validate({
-            "datasetVersion": "csv-2026-11-14-reviewed",
-            "reviewProfile": "terrain-geology-qual-v1",
-            "orderingProfile": "terrain-first-v1",
-            "sources": [], "criteria": [], "sites": [], "comparisons": [],
-        })
-    slices = [load_pair(row["pair_id"]) for row in reviewed]
-    output = slices[0].model_dump(mode="json")
-    # Preserve the existing report/version path for the current single-pair export.
-    if len(slices) > 1 or reviewed[0]["pair_id"] != PAIR_ID:
-        output["datasetVersion"] = "csv-2026-11-14-reviewed"
-    for key in ("sources", "sites", "comparisons"):
-        records = {}
-        for dataset in slices:
-            for record in dataset.model_dump(mode="json")[key]:
-                if record["id"] in records and records[record["id"]] != record:
-                    raise ValueError(f"Conflicting {key} ID: {record['id']}")
-                records[record["id"]] = record
-        output[key] = list(records.values())
-    return Dataset.model_validate(output)
+    """Keep the original single-comparison loader available to existing callers."""
+    dataset = load_dataset()
+    comparison = next(item for item in dataset.comparisons if item.id == PAIR_ID)
+    site_ids = {comparison.earthId, comparison.targetId}
+    return Dataset.model_validate({
+        **dataset.model_dump(mode="python"),
+        "sites": [site for site in dataset.sites if site.id in site_ids],
+        "comparisons": [comparison.model_dump(mode="python")],
+    })

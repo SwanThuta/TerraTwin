@@ -33,8 +33,14 @@ export function longitudeSigned(lonEast360) {
 /** Do not silently substitute context coordinates for true feature positions. */
 export function getFeaturePin(locationRow, { allowContext = false } = {}) {
   const fLat = locationRow.feature_lat_deg, fLon = locationRow.feature_lon_deg;
-  if (fLat !== '' && fLon !== '' && fLat != null && fLon != null)
-    return { latitude: Number(fLat), longitude: Number(fLon), type: 'source_feature', warning: locationRow.coordinate_note };
+  if (fLat !== '' && fLon !== '' && fLat != null && fLon != null) {
+    const approximate = String(locationRow.feature_coordinates_status ?? '').startsWith('approximate_');
+    return {
+      latitude: Number(fLat), longitude: Number(fLon),
+      type: approximate ? 'approximate_reference_NOT_surveyed' : 'source_feature',
+      warning: locationRow.coordinate_note,
+    };
+  }
   if (allowContext && locationRow.map_anchor_lat_deg !== '' && locationRow.map_anchor_lon_deg !== '' &&
       locationRow.map_anchor_lat_deg != null && locationRow.map_anchor_lon_deg != null)
     return { latitude: Number(locationRow.map_anchor_lat_deg), longitude: Number(locationRow.map_anchor_lon_deg),

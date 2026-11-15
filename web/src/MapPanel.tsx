@@ -95,7 +95,7 @@ export default function MapPanel({ sites, selectedId, onSelect, projection }: Pr
       const button = document.createElement('button')
       button.type = 'button'
       button.className = `site-marker${site.id === selectedId ? ' selected' : ''}`
-      button.setAttribute('aria-label', `Select ${site.name}; regional map locator`)
+      button.setAttribute('aria-label', `Select ${site.name}; ${site.mapPointKind}`)
       button.title = `${site.name} · ${site.mapPointKind}`
       button.addEventListener('click', () => onSelect(site.id))
       const marker = new maplibregl.Marker({ element: button })

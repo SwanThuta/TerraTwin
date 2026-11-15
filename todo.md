@@ -30,14 +30,15 @@ These are the current UI acceptance checks. The earlier milestone entries below 
 - [ ] User reviews the local Design branch before deciding whether to push.
 
 
-Status: the new CSV package feeds a P01-only preview on `codex/csv-dimensions-one-pair`. Earlier checklist checks describe the initial P01/P07 milestone; this branch still needs the remaining CSV pairs, per-tag evidence, imagery, candidate discovery, and team assignment. Times are relative to the team's development start. Owner numbers are suggested roles; assign member names at kickoff.
+Status: the current integration branch publishes P01–P08. Four pairs have two rated dimensions; four retain missing evidence and remain unranked. P02–P08 use AI source desk screens that still need independent expert review. Pair imagery, bounded candidate discovery, and team assignment remain open. Times are relative to the team's development start. Owner numbers are suggested roles; assign member names at kickoff.
 
 ## New CSV integration preview
 
 - [x] Create an isolated branch and read P01, its locations, cited sources, workflow steps, and comparison criteria from the new CSV directory.
 - [x] Use C01/C02 as the only scored dimensions, keep other criteria contextual or unavailable, and preserve the P01 Moderate/Weak → Weak desk screening.
 - [x] Mark the HMP station point as context rather than a verified Locale 7 coordinate, and generate P01 website/PDF data from the same validated record.
-- [ ] Import P02–P08 after the P01 preview is reviewed; keep their CSV review states and missing evidence intact.
+- [x] Import P02–P08 with separate desk-screen overrides; keep missing evidence and rank eligibility intact.
+- [x] Browser-check the eight-pair UI, Marius Hills match switching, both Earth/Mars directions, evidence labels, and the selected PDF links.
 - [x] Add P01 pair-specific similarity evidence and possible practice objectives with source IDs and limitations; keep ratings unchanged.
 
 ## Ownership

@@ -1,6 +1,6 @@
 # TerraTwin specification
 
-Status: `codex/csv-dimensions-one-pair` imports P01 directly from the 2026-11-14 CSV package as a reviewable preview. The remaining seven pairs and wider product acceptance criteria remain open.
+Status: this branch builds all eight proposed comparisons. P01 keeps its supplied desk-screen; P02-P08 use a separate AI source-desk override layer that preserves the original proposed-pair rows. P01 and P05-P07 have two rated dimensions and are rank-eligible; P03 has Weak terrain with geology not rated; P02, P04, and P08 have neither dimension rated. All AI screens still need independent expert review. Imagery, validated raster measurements, and bounded candidate discovery remain open.
 
 ## Purpose
 
@@ -73,7 +73,7 @@ Verify that the selected MapLibre release supports the intended projection switc
 
 ## Scientific comparison
 
-The current P01 preview reads `TerraTwin_Earth_Moon_Mars_Analog_Data_2026-11-14/` as its research input, without using `source.md` or legacy `data/sites.json`. `comparison_criteria.csv` defines C01 **Named landform and subfeatures** and C02 **Surface material / deposit classes** as the two primary qualitative dimensions. Its other 14 criteria are explanatory, contextual, optional quantitative, or metadata checks; they are displayed with readiness but do not alter the rating. The CSV package contains no validated raster measurements for P01. `analog_pairs.csv` supplies P01's existing desk-screening ratings and source IDs, `locations.csv` supplies feature and context-anchor distinctions, and `location_workflows.csv` supplies the review instructions. `comparison_evidence.csv` supplies pair-specific shared observations and limitations, while `practice_objectives.csv` supplies possible uses with supporting source IDs and caveats. This is a one-pair integration sample, not a new scientific review of the pair.
+The comparison builder reads `TerraTwin_Earth_Moon_Mars_Analog_Data_2026-11-14/` as its research input, without using `source.md` or legacy `data/sites.json`. `comparison_criteria.csv` defines C01 **Named landform and subfeatures** and C02 **Surface material / deposit classes** as the two primary qualitative dimensions. Its other 14 criteria are explanatory, contextual, optional quantitative, or metadata checks; they are displayed with readiness but do not alter the rating. No validated raster measurements or imported terrain images are provided. `analog_pairs.csv` retains the eight proposed-pair rows; `pair_review_overrides.csv` supplies separate AI desk-screen ratings and evidence coverage for P02-P08. `locations.csv` supplies feature and context-anchor distinctions, while `location_workflows.csv` supplies the review instructions. `comparison_evidence.csv` supplies pair-specific observations and limitations, and `practice_objectives.csv` supplies possible uses with source IDs and caveats. AI desk-screen status is not independent expert review. The app builds all eight records, but only fully rated comparisons are ranked.
 
 The first rating profile has two dimensions: terrain/landform and geology/surface materials. Terrain is the primary match for field practice; geology helps distinguish surfaces that may look similar but have different material evidence. Show thermal conditions, water/ice, and dryness as contextual observations when sourced, without using them to set the rating. Gravity, atmosphere/vacuum, and radiation are analogy limits, not rating criteria.
 
@@ -96,7 +96,7 @@ Present terrain evidence first, then geology and other sourced context. Suggest 
 
 ## Data contract
 
-- `Site`: stable ID, name, body (`earth`, `moon`, `mars`), latitude/longitude, coordinate convention, study footprint/scale, description, evidence IDs, curated/candidate status, review status.
+- `Site`: stable ID, name, body (`earth`, `moon`, `mars`), latitude/longitude, coordinate status (`source` or explicitly approximate reference), coordinate convention, study footprint/scale, description, evidence IDs, curated/candidate status, review status.
 - `Observation`: ID, site ID, observed feature or optional numeric/categorical value, unit when applicable, time range, spatial resolution or map scale when known, method, input record/file locator, uncertainty/quality note, source ID. Missing values are explicit nulls with a reason.
 - `Source`: ID, agency/provider, title, original URL, dataset/product identifier and version when available, access date, license/attribution, retrieval/query notes, and local input checksum when applicable.
 - `Criterion`: CSV ID, key, role, title, question, units or rating type, rule, and readiness. Only C01/C02 are scored in the current profile.
@@ -172,6 +172,6 @@ Technical references: [Vite](https://vite.dev/guide/), [MapLibre](https://maplib
 - Keyboard users can select sites and read comparisons without interacting with the map.
 - The frontend builds, scientific logic checks pass, and the demo workflow has been rehearsed.
 
-Frontend publication update: `pipeline.csv_loader.load_reviewed()` now imports all complete CSV pairs explicitly marked `reviewed_source_desk_screening`; the current research input still yields only P01. The frontend normalizes the generated `/data/atlas.json` through one loader and builds both relationship directions from stable IDs. New reviewed rows no longer require a frontend or pair-ID loader change. `ATLAS_DATASET_VERSION` can version regenerated JSON and reports.
+Frontend publication update: `pipeline.csv_loader.load_dataset()` joins the proposed pairs with the separate source desk-screen overrides and publishes all eight validated records. P01 and P05–P07 are rank-eligible; P02–P04 and P08 retain missing dimensions and remain unranked. The frontend normalizes `/data/atlas.json` through one loader and builds both relationship directions from stable IDs. Approximate feature proxies remain research input, while map markers use source-located feature points or explicitly labeled context anchors. `ATLAS_DATASET_VERSION` can version regenerated JSON and reports.
 
 Frontend source-port update (November 15, 2026): the active UI now directly ports Sites revision `19ce48affaf49194359a6b57a36b0d91f8882999`, including its world routes, renderer, responsive Home carousel, full-width zoom and evidence tabs. The destination backend, research inputs, scientific rules, exporter and deployment configuration remain authoritative and unchanged by this port. This supersedes the earlier recreated UI. Additional-match controls use explicit backend target ordering and stable dataset order otherwise; the frontend does not recalculate ordinal ranking.

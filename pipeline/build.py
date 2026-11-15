@@ -1,4 +1,4 @@
-"""Build the P01 static atlas and report from the supplied CSVs."""
+"""Build the static atlas and reports from the supplied CSVs."""
 
 from __future__ import annotations
 
@@ -11,14 +11,13 @@ from reportlab.lib import colors
 from reportlab.lib.enums import TA_LEFT
 from reportlab.lib.styles import ParagraphStyle, getSampleStyleSheet
 from reportlab.lib.units import inch
-from reportlab.platypus import Paragraph, SimpleDocTemplate, Spacer
+from reportlab.platypus import Paragraph, SimpleDocTemplate
 
-from pipeline.csv_loader import CSV_DIR, load_reviewed
+from pipeline.csv_loader import load_dataset
 from pipeline.models import publishable
 
 
 ROOT = Path(__file__).resolve().parents[1]
-INPUT = CSV_DIR / "analog_pairs.csv"
 PROCESSED = ROOT / "data" / "processed" / "atlas.json"
 PUBLIC = ROOT / "web" / "public" / "data" / "atlas.json"
 REPORTS = ROOT / "web" / "public" / "reports"
@@ -76,7 +75,7 @@ def write_report(record: dict, dataset: dict, path: Path) -> None:
         for tag in record["practice"]:
             story.append(_paragraph(f"{tag['label']} ({tag['status']}): {tag['reason']} Limitations: {tag['limitations']} [{', '.join(tag['sourceIds'])}]", body))
     else:
-        story.append(_paragraph("No practice tag has been approved for this unreviewed candidate.", note))
+        story.append(_paragraph("No evidence-backed practice tag is assigned to this comparison.", note))
     story.append(_paragraph("Limits and missing imagery", heading))
     for limit in record["limits"]:
         story.append(_paragraph(f"- {limit}", body))
@@ -103,7 +102,7 @@ def write_report(record: dict, dataset: dict, path: Path) -> None:
 
 
 def build() -> dict:
-    dataset = load_reviewed()
+    dataset = load_dataset()
     dataset.datasetVersion = os.environ.get("ATLAS_DATASET_VERSION", dataset.datasetVersion)
     output = publishable(dataset)
     serialized = json.dumps(output, indent=2, ensure_ascii=False) + "\n"
@@ -118,4 +117,4 @@ def build() -> dict:
 
 if __name__ == "__main__":
     result = build()
-    print(f"Built {len(result['comparisons'])} comparison records and PDFs from {INPUT}")
+    print(f"Built {len(result['comparisons'])} comparison records and PDFs from the research CSVs")

@@ -57,7 +57,11 @@ function World({body,atlas}:{body:Body;atlas:Atlas}){
           )}{!pairs.length&&<p>No reviewed comparisons for this site yet.</p>}</div>
         </>:<><h2>{body.name} overview</h2><p>{body.description}</p>
           <dl className="review-facts"><div><dt>Diameter</dt><dd>{body.diameter}</dd></div><div><dt>Gravity</dt><dd>{body.gravity}</dd></div></dl>
-          {sites.length?<div className="review-sites">{sites.map(item=><button key={item.id} onClick={()=>select(item.id)}><strong>{item.name}</strong><small>{item.region} ›</small></button>)}</div>:<p>No reviewed sites in this dataset.</p>}</>}
+          {sites.length?<div className="review-sites">{sites.map(item=>{
+            const related=matches(atlas,item.id)
+            const ranked=related.filter(pair=>pair.rankEligible).length
+            return <button key={item.id} onClick={()=>select(item.id)}><strong>{item.name}</strong><small>{item.region} · {ranked} ranked / {related.length} comparisons ›</small></button>
+          })}</div>:<p>No reviewed sites in this dataset.</p>}</>}
       </aside>
     </div>
   </>
@@ -135,11 +139,11 @@ function Comparison({atlas,pair,first,choices,onPair,close}:{atlas:Atlas;pair:Pa
       if(event.key==='ArrowLeft'||event.key==='ArrowRight'){event.preventDefault();onPair(choices[(position+(event.key==='ArrowRight'?1:choices.length-1))%choices.length].id)}
     }}>
       <button aria-label="Previous match" onClick={()=>onPair(choices[(position+choices.length-1)%choices.length].id)}>←</button>
-      <label>Match {position+1} of {choices.length} <select aria-label="Select matching site" value={pair.id} onChange={event=>onPair(event.target.value)}>{choices.map(item=><option key={item.id} value={item.id}>{counterpart(item)?.name} · {item.id}</option>)}</select></label>
+      <label>Match {position+1} of {choices.length} <select aria-label="Select matching site" value={pair.id} onChange={event=>onPair(event.target.value)}>{choices.map(item=><option key={item.id} value={item.id}>{counterpart(item)?.name} · {item.id} · {item.rankEligible?'ranked':'evidence incomplete'}</option>)}</select></label>
       <button aria-label="Next match" onClick={()=>onPair(choices[(position+1)%choices.length].id)}>→</button>
     </div>}
     <section className="review-card review-comparison">
-      <div className="review-top"><small>{pair.id} · {pair.status}</small>{pair.reportPath&&safeUrl(pair.reportPath)&&<a className="review-report" href={assetUrl(pair.reportPath)} download>Download evidence PDF ↓</a>}</div>
+      <div className="review-top"><small>{pair.id} · {pair.reviewer?.includes('AI')||pair.reviewer?.startsWith('Copilot')?'AI source desk screening':'Source desk screening'} · {pair.rankEligible?'ranked':'unranked: evidence incomplete'}</small>{pair.reportPath&&safeUrl(pair.reportPath)&&<a className="review-report" href={assetUrl(pair.reportPath)} download>Download evidence PDF ↓</a>}</div>
       <h1>{ordered[0].name} <span>VS</span> {ordered[1].name}</h1>
       <div className="review-ratings">{[['Terrain',pair.terrain.rating],['Geology',pair.geology.rating],['Overall',pair.overall]].map(([label,value])=>
         <div key={label}><small>{label}</small><strong data-rating={value??undefined}>{value??'Insufficient evidence'}</strong></div>)}

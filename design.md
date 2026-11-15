@@ -26,7 +26,9 @@ A single eligible pair renders the reference layout with the Overview region-car
 
 The destination's existing `/data/atlas.json` export is authoritative, loaded and normalized by `web/src/atlas.ts`; `VITE_ATLAS_URL` can configure a different deployment endpoint. Read criteria, metadata, publication counts and source register from that payload. Preserve credits separately from pair evidence. Missing optional fields use the reference placeholders and disclosures; malformed joins are excluded locally without breaking other records. Unreviewed candidates are not promoted.
 
-The current P01 record remains Moderate terrain, Weak geology, Weak overall and two reviewed dimensions. The HMP research-station marker remains a context locator. Lunar scene coordinates are not invented as a verified feature point. Pair imagery remains explicitly unavailable until sourced files are supplied. Detailed street imagery and scientific feature polygons are not synthesized from the globe textures.
+The current release includes P01–P08. P01 remains Moderate terrain, Weak geology and Weak overall. P05–P07 are fully rated Moderate comparisons; P02–P04 and P08 have missing dimensions and stay unranked. The latter seven records come from an AI source desk screen and still need independent expert review. The world lists show ranked/total comparison counts, and the match selector and comparison heading distinguish ranked from incomplete evidence.
+
+The HMP research-station marker and other approximate proxies remain context locators; derived or nearby coordinates are not presented as verified feature points. Planetary scene coordinates are not placed on the Earth map. Pair imagery remains explicitly unavailable until sourced files are supplied. Detailed street imagery and scientific feature polygons are not synthesized from the globe textures.
 
 ## Verification
 

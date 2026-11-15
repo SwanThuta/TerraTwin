@@ -1,0 +1,508 @@
+%PDF-1.4
+%“Œ‹ž ReportLab Generated PDF document (opensource)
+1 0 obj
+<<
+/F1 2 0 R /F2 3 0 R
+>>
+endobj
+2 0 obj
+<<
+/BaseFont /Helvetica /Encoding /WinAnsiEncoding /Name /F1 /Subtype /Type1 /Type /Font
+>>
+endobj
+3 0 obj
+<<
+/BaseFont /Helvetica-Bold /Encoding /WinAnsiEncoding /Name /F2 /Subtype /Type1 /Type /Font
+>>
+endobj
+4 0 obj
+<<
+/Contents 15 0 R /MediaBox [ 0 0 612 792 ] /Parent 14 0 R /Resources <<
+/Font 1 0 R /ProcSet [ /PDF /Text /ImageB /ImageC /ImageI ]
+>> /Rotate 0 /Trans <<
+
+>> 
+  /Type /Page
+>>
+endobj
+5 0 obj
+<<
+/Contents 16 0 R /MediaBox [ 0 0 612 792 ] /Parent 14 0 R /Resources <<
+/Font 1 0 R /ProcSet [ /PDF /Text /ImageB /ImageC /ImageI ]
+>> /Rotate 0 /Trans <<
+
+>> 
+  /Type /Page
+>>
+endobj
+6 0 obj
+<<
+/A <<
+/S /URI /Type /Action /URI (https://lroc.im-ldi.com/atlases/pits/1)
+>> /Border [ 0 0 0 ] /Rect [ 52.8 699.075 192.84 711.075 ] /Subtype /Link /Type /Annot
+>>
+endobj
+7 0 obj
+<<
+/A <<
+/S /URI /Type /Action /URI (https://link.springer.com/article/10.1007/s11069-022-05798-7)
+>> /Border [ 0 0 0 ] /Rect [ 52.8 651.075 295.413 663.075 ] /Subtype /Link /Type /Annot
+>>
+endobj
+8 0 obj
+<<
+/A <<
+/S /URI /Type /Action /URI (https://science.nasa.gov/solar-system/planetary-analogs/nasas-goddard-instrument-field-team-iceland-2025/)
+>> /Border [ 0 0 0 ] /Rect [ 52.8 615.075 483.963 627.075 ] /Subtype /Link /Type /Annot
+>>
+endobj
+9 0 obj
+<<
+/A <<
+/S /URI /Type /Action /URI (https://astrogeology.usgs.gov/search/map/Moon/Geology/Unified_Geologic_Map_of_the_Moon_GIS_v2/)
+>> /Border [ 0 0 0 ] /Rect [ 52.8 567.075 469.005 579.075 ] /Subtype /Link /Type /Annot
+>>
+endobj
+10 0 obj
+<<
+/A <<
+/S /URI /Type /Action /URI (https://science.nasa.gov/solar-system/planetary-analogs/nasas-goddard-instrument-field-team-iceland-2025/team-lava/)
+>> /Border [ 0 0 0 ] /Rect [ 52.8 519.075 525.975 531.075 ] /Subtype /Link /Type /Annot
+>>
+endobj
+11 0 obj
+<<
+/Annots [ 6 0 R 7 0 R 8 0 R 9 0 R 10 0 R ] /Contents 17 0 R /MediaBox [ 0 0 612 792 ] /Parent 14 0 R /Resources <<
+/Font 1 0 R /ProcSet [ /PDF /Text /ImageB /ImageC /ImageI ]
+>> /Rotate 0 
+  /Trans <<
+
+>> /Type /Page
+>>
+endobj
+12 0 obj
+<<
+/PageMode /UseNone /Pages 14 0 R /Type /Catalog
+>>
+endobj
+13 0 obj
+<<
+/Author (\(anonymous\)) /CreationDate (D:20261115102550+06'00') /Creator (\(unspecified\)) /Keywords () /ModDate (D:20261115102550+06'00') /Producer (ReportLab PDF Library - \(opensource\)) 
+  /Subject (\(unspecified\)) /Title (TerraTwin P03 evidence report) /Trapped /False
+>>
+endobj
+14 0 obj
+<<
+/Count 3 /Kids [ 4 0 R 5 0 R 11 0 R ] /Type /Pages
+>>
+endobj
+15 0 obj
+<<
+/Length 5032
+>>
+stream
+1 0 0 1 0 0 cm  BT /F1 12 Tf 14.4 TL ET
+q
+1 0 0 1 52.8 717.2 cm
+q
+.078431 .164706 .262745 rg
+BT 1 0 0 1 0 4 Tm /F2 18 Tf 22 TL 116.652 0 Td (TerraTwin evidence report - P03) Tj T* -116.652 0 Td ET
+Q
+Q
+q
+1 0 0 1 52.8 686.2 cm
+q
+.082353 .345098 .415686 rg
+BT 1 0 0 1 0 4 Tm /F2 14 Tf 18 TL (Fagradalsfjall 2021 vent 5b and Marius Hills Pit \(LROC Pits Atlas\)) Tj T* ET
+Q
+Q
+q
+1 0 0 1 52.8 667.2 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 3 Tm /F1 10 Tf 13 TL (Status: reviewed | Overall: Insufficient evidence | Evidence: 1/2 dimensions supported) Tj T* ET
+Q
+Q
+q
+1 0 0 1 52.8 649.2 cm
+q
+.254902 .32549 .419608 rg
+BT 1 0 0 1 0 3 Tm /F1 9 Tf 12 TL (Dataset csv-2026-11-15-p01-p08-approx-coordinates | Rubric terrain-geology-qual-v1 | Order terrain-first-v1) Tj T* ET
+Q
+Q
+q
+1 0 0 1 52.8 631.2 cm
+q
+.254902 .32549 .419608 rg
+BT 1 0 0 1 0 3 Tm /F1 9 Tf 12 TL (Qualitative screening judgment; no similarity percentage or route-safety assessment.) Tj T* ET
+Q
+Q
+q
+1 0 0 1 52.8 600.2 cm
+q
+.082353 .345098 .415686 rg
+BT 1 0 0 1 0 4 Tm /F2 14 Tf 18 TL (Feature scope) Tj T* ET
+Q
+Q
+q
+1 0 0 1 52.8 568.2 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 16 Tm /F1 10 Tf 13 TL (Earth: Fagradalsfjall 2021 vent 5b. Locator: Fagradalsfjall; 2021 vent location; lava flow perimeter and DEM) Tj T* (observation epoch must be separately mapped. Footprint: not_digitized.) Tj T* ET
+Q
+Q
+q
+1 0 0 1 52.8 526.2 cm
+q
+.254902 .32549 .419608 rg
+BT 1 0 0 1 0 27 Tm /F1 9 Tf 12 TL (Earth map marker: Source-located point \(source_coordinate\): 2021 vent location; lava flow perimeter and DEM observation) Tj T* (epoch must be separately mapped.. Coordinate note: 2021 vent location; lava flow perimeter and DEM observation epoch must) Tj T* (be separately mapped.. Convention: WGS84 signed East [-180,180]; WGS84 geodetic) Tj T* ET
+Q
+Q
+q
+1 0 0 1 52.8 494.2 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 16 Tm /F1 10 Tf 13 TL (Moon: Marius Hills Pit \(LROC Pits Atlas\). Locator: Marius Hills; Use LROC precision; separate from 2009 JAXA) Tj T* (approximate 14.2 N 303.3 E. Footprint: not_digitized.) Tj T* ET
+Q
+Q
+q
+1 0 0 1 52.8 464.2 cm
+q
+.254902 .32549 .419608 rg
+BT 1 0 0 1 0 15 Tm /F1 9 Tf 12 TL (Planetary coordinate convention: positive East [0,360]; planetocentric unless product label specifies otherwise; verify. Use) Tj T* (LROC precision; separate from 2009 JAXA approximate 14.2 N 303.3 E.) Tj T* ET
+Q
+Q
+q
+1 0 0 1 52.8 432.2 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 16 Tm /F1 10 Tf 13 TL (Relationship: NASA Iceland lunar/mars broad comparison; exact Marius connection proposed. Theme: fresh) Tj T* (eruptive vent / lunar volcanic terrain. [R04, R07, R08, R40, R41]) Tj T* ET
+Q
+Q
+q
+1 0 0 1 52.8 401.2 cm
+q
+.082353 .345098 .415686 rg
+BT 1 0 0 1 0 4 Tm /F2 14 Tf 18 TL (C01 - Named landform and subfeatures) Tj T* ET
+Q
+Q
+q
+1 0 0 1 52.8 371.2 cm
+q
+.254902 .32549 .419608 rg
+BT 1 0 0 1 0 15 Tm /F1 9 Tf 12 TL (Question: Cross-section/planform, visible subfeatures, area/scale, meaningfully corresponding features | Readiness:) Tj T* (not_numerical) Tj T* ET
+Q
+Q
+q
+1 0 0 1 52.8 352.2 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 3 Tm /F1 10 Tf 13 TL (Rating: Weak | Sources: R07, R08, R41) Tj T* ET
+Q
+Q
+q
+1 0 0 1 52.8 320.2 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 16 Tm /F1 10 Tf 13 TL (Evidence: Both source records identify volcanic openings, but the selected terrestrial feature is an eruptive vent) Tj T* (and the lunar feature is a collapse pit in a sinuous rille.) Tj T* ET
+Q
+Q
+q
+1 0 0 1 52.8 288.2 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 16 Tm /F1 10 Tf 13 TL (Difference: A terrestrial eruptive vent and a lunar collapse pit in a sinuous rille are materially different landforms for) Tj T* (surface-terrain comparison.) Tj T* ET
+Q
+Q
+q
+1 0 0 1 52.8 257.2 cm
+q
+.082353 .345098 .415686 rg
+BT 1 0 0 1 0 4 Tm /F2 14 Tf 18 TL (C02 - Surface material / deposit classes) Tj T* ET
+Q
+Q
+q
+1 0 0 1 52.8 227.2 cm
+q
+.254902 .32549 .419608 rg
+BT 1 0 0 1 0 15 Tm /F1 9 Tf 12 TL (Question: Published lithology, regolith, layers, sediment size, bedrock context, mineral analyses if measured | Readiness:) Tj T* (not_numerical) Tj T* ET
+Q
+Q
+q
+1 0 0 1 52.8 208.2 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 3 Tm /F1 10 Tf 13 TL (Rating: Insufficient evidence | Sources: R07, R04, R40) Tj T* ET
+Q
+Q
+q
+1 0 0 1 52.8 176.2 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 16 Tm /F1 10 Tf 13 TL (Evidence: Sources establish a terrestrial eruption and a lunar volcanic setting but do not describe corresponding) Tj T* (material classes at both selected features.) Tj T* ET
+Q
+Q
+q
+1 0 0 1 52.8 144.2 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 16 Tm /F1 10 Tf 13 TL (Difference: Earth vent/flow material is not characterized in an accessible feature-specific source, and the lunar) Tj T* (pit-wall material is unmeasured.) Tj T* ET
+Q
+Q
+q
+1 0 0 1 52.8 114.2 cm
+q
+.254902 .32549 .419608 rg
+BT 1 0 0 1 0 15 Tm /F1 9 Tf 12 TL (Missing review: No feature-specific evidence establishes corresponding surface-material classes at vent 5b and the lunar pit;) Tj T* (the regional volcanic setting alone is insufficient.) Tj T* ET
+Q
+Q
+q
+1 0 0 1 52.8 83.2 cm
+q
+.082353 .345098 .415686 rg
+BT 1 0 0 1 0 4 Tm /F2 14 Tf 18 TL (Documented similarity) Tj T* ET
+Q
+Q
+ 
+endstream
+endobj
+16 0 obj
+<<
+/Length 5569
+>>
+stream
+1 0 0 1 0 0 cm  BT /F1 12 Tf 14.4 TL ET
+q
+1 0 0 1 52.8 700.2 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 29 Tm /F1 10 Tf 13 TL (Both source records identify volcanic openings, but the selected terrestrial feature is an eruptive vent and the lunar) Tj T* -0.0525 Tw (feature is a collapse pit in a sinuous rille. Sources establish a terrestrial eruption and a lunar volcanic setting but do) Tj T* 0 Tw (not describe corresponding material classes at both selected features.) Tj T* ET
+Q
+Q
+q
+1 0 0 1 52.8 616.2 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 68 Tm /F1 10 Tf 13 TL (E03-T01 \267 Terrain similarity: Both source records identify volcanic openings, but the selected terrestrial feature is) Tj T* (an eruptive vent and the lunar feature is a collapse pit in a sinuous rille. Limitation: A vent and a possible skylight) Tj T* (have materially different surface forms; the shared volcanic context does not remove that difference. Earth locator:) Tj T* (Published 2021 vent 5b locator in Barsotti et al.; NASA Iceland fieldwork context Planetary locator: LROC Marius) Tj T* (Hills Pit atlas Scale: Feature names are source-backed; comparable surface windows and scales have not been) Tj T* (established. Sources: R04, R07, R41) Tj T* ET
+Q
+Q
+q
+1 0 0 1 52.8 545.2 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 55 Tm /F1 10 Tf 13 TL (E03-G01 \267 Geology similarity: Sources establish a terrestrial eruption and a lunar volcanic setting but do not) Tj T* (describe corresponding material classes at both selected features. Limitation: The cited Earth vent material and) Tj T* (lunar pit-wall material are not sufficiently characterized for a geology rating. Earth locator: Barsotti et al. 2021) Tj T* (eruption record; NASA Team Lava fieldwork Planetary locator: LROC pit atlas and USGS lunar geologic map) Tj T* (Scale: Regional volcanic context is not direct feature-specific material evidence. Sources: R04, R07, R40, R41) Tj T* ET
+Q
+Q
+q
+1 0 0 1 52.8 514.2 cm
+q
+.082353 .345098 .415686 rg
+BT 1 0 0 1 0 4 Tm /F2 14 Tf 18 TL (Explanation and practice) Tj T* ET
+Q
+Q
+q
+1 0 0 1 52.8 391.2 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 107 Tm /F1 10 Tf 13 TL (Terrain is rated Weak: Both source records identify volcanic openings, but the selected terrestrial feature is an) Tj T* (eruptive vent and the lunar feature is a collapse pit in a sinuous rille. Geology is not rated: No feature-specific) Tj T* (evidence establishes corresponding surface-material classes at vent 5b and the lunar pit; the regional volcanic) Tj T* (setting alone is insufficient. Evidence context: Both source records identify volcanic openings, but the selected) Tj T* (terrestrial feature is an eruptive vent and the lunar feature is a collapse pit in a sinuous rille. No evidence-backed) Tj T* (practice activity is assigned. Important differences: A terrestrial eruptive vent and a lunar collapse pit in a sinuous) Tj T* (rille are materially different landforms for surface-terrain comparison. Earth vent/flow material is not characterized) Tj T* (in an accessible feature-specific source, and the lunar pit-wall material is unmeasured. This desk-reviewed) Tj T* (comparison remains outside ranked results because one or both dimensions lack sufficient evidence.) Tj T* ET
+Q
+Q
+q
+1 0 0 1 52.8 373.2 cm
+q
+.254902 .32549 .419608 rg
+BT 1 0 0 1 0 3 Tm /F1 9 Tf 12 TL (No evidence-backed practice tag is assigned to this comparison.) Tj T* ET
+Q
+Q
+q
+1 0 0 1 52.8 342.2 cm
+q
+.082353 .345098 .415686 rg
+BT 1 0 0 1 0 4 Tm /F2 14 Tf 18 TL (Limits and missing imagery) Tj T* ET
+Q
+Q
+q
+1 0 0 1 52.8 310.2 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 16 Tm /F1 10 Tf 13 TL (- A terrestrial eruptive vent and a lunar collapse pit in a sinuous rille are materially different landforms for) Tj T* (surface-terrain comparison.) Tj T* ET
+Q
+Q
+q
+1 0 0 1 52.8 278.2 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 16 Tm /F1 10 Tf 13 TL (- Earth vent/flow material is not characterized in an accessible feature-specific source, and the lunar pit-wall) Tj T* (material is unmeasured.) Tj T* ET
+Q
+Q
+q
+1 0 0 1 52.8 259.2 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 3 Tm /F1 10 Tf 13 TL (- Vent point does not define full extent of flow) Tj T* ET
+Q
+Q
+q
+1 0 0 1 52.8 240.2 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 3 Tm /F1 10 Tf 13 TL (- No physical entry, tube continuity or habitability established) Tj T* ET
+Q
+Q
+q
+1 0 0 1 52.8 222.2 cm
+q
+.254902 .32549 .419608 rg
+BT 1 0 0 1 0 3 Tm /F1 9 Tf 12 TL (Limit sources: R04, R07, R08, R40, R41) Tj T* ET
+Q
+Q
+q
+1 0 0 1 52.8 192.2 cm
+q
+.254902 .32549 .419608 rg
+BT 1 0 0 1 0 15 Tm /F1 9 Tf 12 TL (Earth image: The package supplies citations but no verified, imported terrain image. Scale: No imported image scale. Credit:) Tj T* (See cited source. [R07]) Tj T* ET
+Q
+Q
+q
+1 0 0 1 52.8 162.2 cm
+q
+.254902 .32549 .419608 rg
+BT 1 0 0 1 0 15 Tm /F1 9 Tf 12 TL (Planetary image: The package supplies citations but no verified, imported terrain image. Scale: No imported image scale.) Tj T* (Credit: See cited source. [R41]) Tj T* ET
+Q
+Q
+q
+1 0 0 1 52.8 131.2 cm
+q
+.082353 .345098 .415686 rg
+BT 1 0 0 1 0 4 Tm /F2 14 Tf 18 TL (Method and source register) Tj T* ET
+Q
+Q
+q
+1 0 0 1 52.8 86.2 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 29 Tm /F1 10 Tf 13 TL (AI source desk screen; terrain is Weak because the identified landforms differ; geology is not rated. Next) Tj T* (validation: Obtain a readable, site-specific eruption material record and feature-applicable lunar geologic evidence) Tj T* (before rating geology.) Tj T* ET
+Q
+Q
+q
+1 0 0 1 52.8 54.2 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 16 Tm /F1 10 Tf 13 TL (Review: reviewed_source_desk_screening | Copilot \(AI source desk-screening\) | Date: 2026-11-15 | Rank eligible:) Tj T* (no) Tj T* ET
+Q
+Q
+ 
+endstream
+endobj
+17 0 obj
+<<
+/Length 2178
+>>
+stream
+1 0 0 1 0 0 cm  BT /F1 12 Tf 14.4 TL ET
+q
+1 0 0 1 52.8 715.2 cm
+q
+.254902 .32549 .419608 rg
+BT 1 0 0 1 0 15 Tm /F1 9 Tf 12 TL (R04 | LROC / NASA GSFC / ASU | Pits Atlas: Marius Hills Pit | Marius Hills Pit lat 14.0917 lon 303.2299,) Tj T* (NAC_DTM_MARIUSPIT01) Tj T* ET
+Q
+Q
+q
+1 0 0 1 52.8 697.2 cm
+q
+.090196 .419608 .529412 rg
+BT 1 0 0 1 0 3 Tm /F1 9 Tf 12 TL (https://lroc.im-ldi.com/atlases/pits/1) Tj T* ET
+Q
+Q
+q
+1 0 0 1 52.8 667.2 cm
+q
+.254902 .32549 .419608 rg
+BT 1 0 0 1 0 15 Tm /F1 9 Tf 12 TL -0.015783 Tw (R07 | Barsotti et al. Natural Hazards | The eruption in Fagradalsfjall \(2021 Iceland\) | Table 3 vent 5b and section 4.3: 63.8906 N) Tj T* 0 Tw (-22.2691 W) Tj T* ET
+Q
+Q
+q
+1 0 0 1 52.8 649.2 cm
+q
+.090196 .419608 .529412 rg
+BT 1 0 0 1 0 3 Tm /F1 9 Tf 12 TL (https://link.springer.com/article/10.1007/s11069-022-05798-7) Tj T* ET
+Q
+Q
+q
+1 0 0 1 52.8 631.2 cm
+q
+.254902 .32549 .419608 rg
+BT 1 0 0 1 0 3 Tm /F1 9 Tf 12 TL (R08 | NASA | NASA Fieldwork Spotlight Iceland GIFT | Fagradalsfjall vents / lava flows) Tj T* ET
+Q
+Q
+q
+1 0 0 1 52.8 613.2 cm
+q
+.090196 .419608 .529412 rg
+BT 1 0 0 1 0 3 Tm /F1 9 Tf 12 TL (https://science.nasa.gov/solar-system/planetary-analogs/nasas-goddard-instrument-field-team-iceland-2025/) Tj T* ET
+Q
+Q
+q
+1 0 0 1 52.8 583.2 cm
+q
+.254902 .32549 .419608 rg
+BT 1 0 0 1 0 15 Tm /F1 9 Tf 12 TL (R40 | USGS Astrogeology | Unified Geologic Map of the Moon 1:5M edition 2 | Global lunar geologic units and contacts;) Tj T* (1:5,000,000 scale) Tj T* ET
+Q
+Q
+q
+1 0 0 1 52.8 565.2 cm
+q
+.090196 .419608 .529412 rg
+BT 1 0 0 1 0 3 Tm /F1 9 Tf 12 TL (https://astrogeology.usgs.gov/search/map/Moon/Geology/Unified_Geologic_Map_of_the_Moon_GIS_v2/) Tj T* ET
+Q
+Q
+q
+1 0 0 1 52.8 535.2 cm
+q
+.254902 .32549 .419608 rg
+BT 1 0 0 1 0 15 Tm /F1 9 Tf 12 TL (R41 | NASA Goddard Instrument Field Team | Iceland Team Lava 2025 fieldwork | Fagradalsfjall vents, lava flows, drone) Tj T* (topography, thermal mapping and rock observations) Tj T* ET
+Q
+Q
+q
+1 0 0 1 52.8 517.2 cm
+q
+.090196 .419608 .529412 rg
+BT 1 0 0 1 0 3 Tm /F1 9 Tf 12 TL (https://science.nasa.gov/solar-system/planetary-analogs/nasas-goddard-instrument-field-team-iceland-2025/team-lava/) Tj T* ET
+Q
+Q
+ 
+endstream
+endobj
+xref
+0 18
+0000000000 65535 f 
+0000000061 00000 n 
+0000000102 00000 n 
+0000000209 00000 n 
+0000000321 00000 n 
+0000000516 00000 n 
+0000000711 00000 n 
+0000000893 00000 n 
+0000001098 00000 n 
+0000001348 00000 n 
+0000001587 00000 n 
+0000001848 00000 n 
+0000002087 00000 n 
+0000002157 00000 n 
+0000002454 00000 n 
+0000002527 00000 n 
+0000007611 00000 n 
+0000013232 00000 n 
+trailer
+<<
+/ID 
+[<1bbe6a4730de856eb8c7617a6e4f41d2><1bbe6a4730de856eb8c7617a6e4f41d2>]
+% ReportLab generated PDF document -- digest (opensource)
+
+/Info 13 0 R
+/Root 12 0 R
+/Size 18
+>>
+startxref
+15462
+%%EOF
