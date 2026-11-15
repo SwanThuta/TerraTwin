@@ -177,7 +177,6 @@ function Comparison({atlas,pair,first,choices,onPair,close}:{atlas:Atlas;pair:Pa
             return <section key={String(name)} className="review-card"><h2>{String(name)}</h2><p>{rating.evidence}</p><h3>Difference</h3><p>{rating.difference}</p>{rating.missingReason&&<p>{rating.missingReason}</p>}<Refs atlas={atlas} ids={rating.sourceIds}/></section>
           })}</div>
           {pair.similarities.map(item=><details key={item.id}><summary>{item.dimension==='terrain'?'Terrain':'Geology'} observations and scale</summary><p>{item.sharedObservation}</p><p>{item.limitation}</p><p>{item.earthLocator}</p><p>{item.planetaryLocator}</p><p>{item.scaleNote}</p><Refs atlas={atlas} ids={item.sourceIds}/></details>)}
-          <div className="review-grid"><VisualBlock atlas={atlas} visual={pair.visuals.earth}/><VisualBlock atlas={atlas} visual={pair.visuals.target}/></div>
         </>}
         {tab==='Field practice'&&<><h2>Possible field practice</h2>
           {!pair.practice.length&&<p>No documented field practice supplied.</p>}{pair.practice.map(item=><details key={item.id}><summary>{item.label}</summary><p>{item.reason}</p><p>{item.limitations}</p><Refs atlas={atlas} ids={item.sourceIds}/></details>)}

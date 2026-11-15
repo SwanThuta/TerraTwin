@@ -16,7 +16,7 @@ Older `MapPanel.tsx` and `LocatorFallback.tsx` files are retained but are not in
 
 ## Overview region cards
 
-Comparisons now show both regions' images and details immediately in Overview, above Documented similarity. The cards follow globe order, use equal fixed image frames and scrolling details, and stack at the existing mobile breakpoint. All 14 compared sites have source-backed photos or orbital views. A visible **Wider context view** label marks images that do not identify the exact selected feature. Captions, scale notes, credits and use terms come from `data/site-images.json`; the same validated visual record is used by the website and PDF. This is an intentional addition after the original reference-port comparison captures.
+Comparisons now show both regions' images and details immediately in Overview, above Documented similarity. The cards follow globe order, use equal fixed image frames and scrolling details, and stack at the existing mobile breakpoint. The Evidence tab keeps the terrain and geology observations, scale notes and citations without repeating those photos. All 14 compared sites have source-backed photos or orbital views. A visible **Wider context view** label marks images that do not identify the exact selected feature. Captions, scale notes, credits and use terms come from `data/site-images.json`; the same validated visual record is used by the website and PDF. This is an intentional addition after the original reference-port comparison captures.
 
 Targeted browser checks and screenshots are in `artifacts/overview-regions/`. To rerun with the local server running:
 

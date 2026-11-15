@@ -41,7 +41,10 @@ async function openComparison(page,world){
   await page.locator(`${cards} details`).evaluateAll(elements=>elements.forEach(el=>{el.open=false}));
   await page.locator('.review-region-details').evaluateAll(elements=>elements.forEach(el=>{el.scrollTop=0}));
   await page.screenshot({path:`artifacts/overview-regions/${width}-${world}.png`,fullPage:true});
-  await page.getByRole('tab',{name:'Evidence',exact:true}).click();assert.equal(await page.locator('.review-grid .review-visual').count(),2);
+  await page.getByRole('tab',{name:'Evidence',exact:true}).click();
+  assert.equal(await page.locator('.review-visual').count(),0);
+  assert.equal(await page.getByText('Terrain observations and scale',{exact:true}).count(),1);
+  assert.equal(await page.getByText('Geology observations and scale',{exact:true}).count(),1);
   await page.getByRole('button',{name:'Close comparison',exact:true}).click();await page.getByRole('complementary',{name:'Site details'}).waitFor();
   await page.close();console.log('Real pair order, loaded site images, fixed frames, scrolling, tabs and close passed',width,world);
  }
