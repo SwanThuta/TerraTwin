@@ -4,6 +4,8 @@ import {bodies} from './bodies'
 import {Globe} from './Globe'
 import {Space} from './Space'
 import {ReviewedAtlas} from './ReviewedAtlas'
+import {animateChange} from './motion'
+import {SlidingTabs} from './SlidingTabs'
 import './style.css'
 
 function Arrow(){return <svg aria-hidden="true" width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M4 12 12 4m-6 0h6v6" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/></svg>}
@@ -12,7 +14,7 @@ function Route(){
   const [route,setRoute]=useState(location.hash||'#/')
   const main=useRef<HTMLDivElement>(null)
   useEffect(()=>{
-    function change(){setRoute(location.hash||'#/');window.scrollTo(0,0)}
+    function change(){animateChange(()=>{setRoute(location.hash||'#/');window.scrollTo(0,0)})}
     window.addEventListener('hashchange',change)
     return ()=>window.removeEventListener('hashchange',change)
   },[])
@@ -23,8 +25,8 @@ function Route(){
   return <div className="app" data-home={!body&&!atlas&&!method}>
     <Space/>
     <header className="masthead"><div className="shell nav"><Logo/>
-      {!body&&!atlas&&!method&&<span className="home-brand-label">Planetary Field Atlas</span>}
-    <nav aria-label="Main navigation"><a href="#/" aria-current={!body&&!method?'page':undefined}>Home</a><a href="#/atlas" aria-current={body?'page':undefined}>Explore</a><a href="#/method" aria-current={method?'page':undefined}>Method &amp; sources</a></nav></div></header>
+      <span className="home-brand-label">Planetary Field Atlas</span>
+    <SlidingTabs as="nav" label="Main navigation" selectedKey={route}><a href="#/" aria-current={!body&&!method?'page':undefined}>Home</a><a href="#/atlas" aria-current={body?'page':undefined}>Explore</a><a href="#/method" aria-current={method?'page':undefined}>Method &amp; sources</a></SlidingTabs></div></header>
     <div key={body||atlas||method?route:"worlds"} ref={main} tabIndex={-1} className="route">
       {method?<ReviewedAtlas/>:body?<ReviewedAtlas body={body}/>:<Planetarium/>}
     </div>

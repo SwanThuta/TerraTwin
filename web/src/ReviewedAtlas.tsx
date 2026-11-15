@@ -1,5 +1,12 @@
 import {useEffect,useMemo,useState} from 'react'
 import {Globe} from './Globe'
+import {AtlasLoader} from './Astronaut'
+import {BackIcon,ChevronIcon} from './Icons'
+import {useMotionState} from './motion'
+import {groupCriteria} from './criteria'
+import {SlidingTabs} from './SlidingTabs'
+import {CriterionVisual} from './CriterionVisual'
+import {ReviewRule} from './Equation'
 import {bodies,textureSources,type Body} from './bodies'
 import type {Site} from './globeTypes'
 import type {Atlas, Comparison as Pair, Site as RecordSite, Dimension as Rating, Visual} from './types'
@@ -16,7 +23,7 @@ export function ReviewedAtlas({body}:{body?:Body}){
   },[retry])
   return <main className="shell review-shell">
     {atlas?(body?<World key={body.id} body={body} atlas={atlas}/>:<Method atlas={atlas}/>):
-      failed?<p role="alert">Evidence could not load. <button onClick={()=>{setFailed(false);setRetry(n=>n+1)}}>Retry</button></p>:<p role="status">Loading the atlas…</p>}
+      failed?<p role="alert">Evidence could not load. <button onClick={()=>{setFailed(false);setRetry(n=>n+1)}}>Retry</button></p>:<AtlasLoader label={body?`Preparing ${body.name} field notes…`:'Gathering methods and sources…'}/>}
   </main>
 }
 
@@ -26,8 +33,8 @@ function marker(site:RecordSite):Site{
 }
 
 function World({body,atlas}:{body:Body;atlas:Atlas}){
-  const [selected,setSelected]=useState<string>()
-  const [activePair,setPair]=useState<string>()
+  const [selected,setSelected]=useMotionState<string|undefined>(undefined)
+  const [activePair,setPair]=useMotionState<string|undefined>(undefined)
   const [rotating,setRotating]=useState(()=>!matchMedia('(prefers-reduced-motion: reduce)').matches)
   const sites=atlas.sites.filter(site=>site.body===body.id)
   const site=sites.find(item=>item.id===selected)
@@ -38,8 +45,10 @@ function World({body,atlas}:{body:Body;atlas:Atlas}){
   const counterpart=(item:Pair)=>atlas.sites.find(s=>s.id===(item.earthId===selected?item.targetId:item.earthId))
   if(pair&&site)return <Comparison atlas={atlas} pair={pair} first={site} choices={pairs.filter(item=>counterpart(item)?.body===counterpart(pair)?.body)} onPair={setPair} close={()=>setPair(undefined)}/>
   return <>
-    <a className="back" href="#/">← All worlds</a>
-    <h1 className="review-title">{body.name}</h1>
+    <div className="review-page-heading"><a className="back icon-back" href="#/" aria-label="Back to all worlds" title="All worlds"><BackIcon/></a>
+      <div><span className="page-kicker">Explore the atlas</span><h1 className="review-title">{body.name}</h1></div>
+      <span className="page-count">{sites.length} published {sites.length===1?'region':'regions'}</span>
+    </div>
     <div className="review-world">
       <section className="review-globe">
         <div className="review-sphere"><Globe fillOnZoom body={body} spinning={rotating} sites={points}
@@ -47,8 +56,8 @@ function World({body,atlas}:{body:Body;atlas:Atlas}){
         <div className="review-controls"><button onClick={()=>setRotating(v=>!v)}>{rotating?'Pause rotation':'Auto-rotate'}</button>
           {points.length>0&&<small>Regional locators</small>}</div>
       </section>
-      <aside className="review-card review-site" aria-label={site?'Site details':'World overview'}>
-        {site?<><button className="review-back" onClick={()=>setSelected(undefined)}>← {body.name} sites</button>
+      <aside key={site?.id||'overview'} className="review-card review-site content-enter" aria-label={site?'Site details':'World overview'}>
+        {site?<><button className="review-back" onClick={()=>setSelected(undefined)}><BackIcon/>{body.name} sites</button>
           <h2>{site.name}</h2><p>{site.region}</p>{site.description&&<p>{site.description}</p>}
           <VisualBlock atlas={atlas} visual={pairs[0]?.visuals[site.body==='earth'?'earth':'target']}/>
           <details><summary>Location and source</summary><p>{site.locator}</p><p>{site.mapPointKind}</p><p>{site.coordinateConvention}</p><Refs atlas={atlas} ids={[site.mapPointSourceId,...(site.sourceIds||[])]}/></details>
@@ -56,6 +65,7 @@ function World({body,atlas}:{body:Body;atlas:Atlas}){
             <button className="review-cta" key={world.id} onClick={()=>setPair(pairs.find(item=>counterpart(item)?.body===world.id)!.id)}>Compare with {world.name} ↗</button>
           )}{!pairs.length&&<p>No reviewed comparisons for this site yet.</p>}</div>
         </>:<><h2>{body.name} overview</h2><p>{body.description}</p>
+          <div className="world-atlas-stats"><div><strong>{sites.length}</strong><span>Published regions</span></div><div><strong>{atlas.comparisons.filter(pair=>sites.some(site=>site.id===pair.earthId||site.id===pair.targetId)).length}</strong><span>Reviewed comparisons</span></div></div>
           <dl className="review-facts"><div><dt>Diameter</dt><dd>{body.diameter}</dd></div><div><dt>Gravity</dt><dd>{body.gravity}</dd></div></dl>
           {sites.length?<div className="review-sites">{sites.map(item=>{
             const related=matches(atlas,item.id)
@@ -125,7 +135,7 @@ function Comparison({atlas,pair,first,choices,onPair,close}:{atlas:Atlas;pair:Pa
   const counterpart=(item:Pair)=>atlas.sites.find(site=>site.id===(item.earthId===first.id?item.targetId:item.earthId))
   const counterpartSites=choices.map(counterpart).filter((site):site is RecordSite=>!!site).filter((site,index,list)=>list.findIndex(item=>item.id===site.id)===index)
   return <>
-    <div className="review-top"><button className="review-back" onClick={close}>← Back to site</button><button aria-label="Close comparison" onClick={close}>×</button></div>
+    <div className="review-top"><button className="review-back" onClick={close}><BackIcon/>Back to site</button><button aria-label="Close comparison" onClick={close}>×</button></div>
     <div className="review-pair-globes">{ordered.map(site=>{
       const body=bodies.find(item=>item.id===site.body)!
       const points=(site.id===first.id?[site]:counterpartSites).filter(item=>item.mapPoint).map(marker)
@@ -138,9 +148,10 @@ function Comparison({atlas,pair,first,choices,onPair,close}:{atlas:Atlas;pair:Pa
       if((event.target as HTMLElement).tagName==='SELECT')return
       if(event.key==='ArrowLeft'||event.key==='ArrowRight'){event.preventDefault();onPair(choices[(position+(event.key==='ArrowRight'?1:choices.length-1))%choices.length].id)}
     }}>
-      <button aria-label="Previous match" onClick={()=>onPair(choices[(position+choices.length-1)%choices.length].id)}>←</button>
+      <button aria-label="Previous match" onClick={()=>onPair(choices[(position+choices.length-1)%choices.length].id)}><ChevronIcon direction="left"/></button>
       <label>Match {position+1} of {choices.length} <select aria-label="Select matching site" value={pair.id} onChange={event=>onPair(event.target.value)}>{choices.map(item=><option key={item.id} value={item.id}>{counterpart(item)?.name} · {item.id} · {item.rankEligible?'ranked':'evidence incomplete'}</option>)}</select></label>
-      <button aria-label="Next match" onClick={()=>onPair(choices[(position+1)%choices.length].id)}>→</button>
+      <button aria-label="Next match" onClick={()=>onPair(choices[(position+1)%choices.length].id)}><ChevronIcon/></button>
+
     </div>}
     <section className="review-card review-comparison">
       <div className="review-top"><small>{pair.id} · {pair.reviewer?.includes('AI')||pair.reviewer?.startsWith('Copilot')?'AI source desk screening':'Source desk screening'} · {pair.rankEligible?'ranked':'unranked: evidence incomplete'}</small>{pair.reportPath&&safeUrl(pair.reportPath)&&<a className="review-report" href={assetUrl(pair.reportPath)} download>Download evidence PDF ↓</a>}</div>
@@ -148,7 +159,7 @@ function Comparison({atlas,pair,first,choices,onPair,close}:{atlas:Atlas;pair:Pa
       <div className="review-ratings">{[['Terrain',pair.terrain.rating],['Geology',pair.geology.rating],['Overall',pair.overall]].map(([label,value])=>
         <div key={label}><small>{label}</small><strong data-rating={value??undefined}>{value??'Insufficient evidence'}</strong></div>)}
         <div><small>Evidence coverage</small><strong>{pair.coverage} of {atlas.criteria.filter(item=>item.role==='primary_qualitative').length||2} reviewed</strong></div></div>
-      <div className="review-tabs" role="tablist" aria-label="Comparison details">
+      <SlidingTabs className="review-tabs" label="Comparison details" selectedKey={tab}>
         {tabs.map((name,index)=><button key={name} id={'tab-'+index} role="tab" aria-selected={tab===name}
           aria-controls="review-tabpanel" tabIndex={tab===name?0:-1} onClick={()=>setTab(name)}
           onKeyDown={event=>{
@@ -157,8 +168,8 @@ function Comparison({atlas,pair,first,choices,onPair,close}:{atlas:Atlas;pair:Pa
             const next=event.key==='Home'?0:event.key==='End'?tabs.length-1:(index+(event.key==='ArrowRight'?1:tabs.length-1))%tabs.length
             setTab(tabs[next]);document.getElementById('tab-'+next)?.focus()
           }}>{name}</button>)}
-      </div>
-      <div id="review-tabpanel" className="review-tabpanel" role="tabpanel" aria-labelledby={'tab-'+tabs.indexOf(tab)} tabIndex={0}>
+      </SlidingTabs>
+      <div key={`${pair.id}-${tab}`} id="review-tabpanel" className="review-tabpanel" role="tabpanel" aria-labelledby={'tab-'+tabs.indexOf(tab)} tabIndex={0}>
         {tab==='Overview'&&<>
           <div className="review-grid review-region-cards" aria-label="Compared regions">{ordered.map(site=>
             <RegionCard key={`${pair.id}:${site.id}`} atlas={atlas} site={site} visual={site.id===pair.earthId?pair.visuals.earth:pair.visuals.target}/>
@@ -191,16 +202,53 @@ function SourceList({atlas,ids}:{atlas:Atlas;ids?:string[]}){
   </a>)}{missing.map(id=><p key={id}>{id} · Source unavailable</p>)}</div>
 }
 
+function CriteriaCoverage({atlas}:{atlas:Atlas}){
+  const groups=useMemo(()=>groupCriteria(atlas.criteria),[atlas.criteria])
+  const [category,setCategory]=useState<string>(groups[0]?.id||'terrain')
+  const [positions,setPositions]=useState<Record<string,number>>({})
+  const group=groups.find(item=>item.id===category)||groups[0]
+  if(!group)return <section className="review-card criteria-coverage"><h2>Criteria and data coverage</h2><p>No review criteria supplied in this dataset.</p></section>
+  const position=(positions[group.id]||0)%group.items.length
+  const item=group.items[position]
+  const move=(step:number)=>setPositions(previous=>({...previous,[group.id]:(position+step+group.items.length)%group.items.length}))
+  return <section className="review-card criteria-coverage" aria-labelledby="criteria-heading">
+    <div className="method-section-heading"><div><span className="page-kicker">The review framework</span><h2 id="criteria-heading">Criteria and data coverage</h2></div><span className="method-count">{atlas.criteria.length} criteria</span></div>
+    <SlidingTabs className="criteria-category-tabs" label="Criteria categories" selectedKey={group.id}>{groups.map((entry,index)=><button key={entry.id} id={`criteria-tab-${entry.id}`} role="tab" aria-selected={entry.id===group.id} tabIndex={entry.id===group.id?0:-1} aria-controls="criteria-panel" onClick={()=>setCategory(entry.id)} onKeyDown={event=>{
+      if(!['ArrowLeft','ArrowRight','Home','End'].includes(event.key))return
+      event.preventDefault()
+      const next=event.key==='Home'?0:event.key==='End'?groups.length-1:(index+(event.key==='ArrowRight'?1:groups.length-1))%groups.length
+      setCategory(groups[next].id);document.getElementById(`criteria-tab-${groups[next].id}`)?.focus()
+    }}>{entry.label}<small>{entry.items.length}</small></button>)}</SlidingTabs>
+    <div id="criteria-panel" role="tabpanel" aria-labelledby={`criteria-tab-${group.id}`} tabIndex={0} className="criteria-stage">
+      <div key={item.id} className="criterion-slide content-enter">
+        <div className="criterion-copy"><div className="criterion-topline"><span>{item.id} / {group.label}</span><span className="criterion-status">{item.role.replaceAll('_',' ')}</span></div>
+        <h3>{item.title}</h3><p className="criterion-question">{item.question}</p>
+        <div className="criterion-guidance"><span>Review rule</span><ReviewRule rule={item.rule}/></div>
+        <div className="criterion-metadata">{item.unitOrRating&&<span>{item.unitOrRating}</span>}{item.readiness&&<span>{item.readiness.replaceAll('_',' ')}</span>}</div></div>
+        <CriterionVisual criterionKey={item.key}/>
+      </div>
+    </div>
+    <div className="criteria-pagination">{group.items.length>1&&<div className="criterion-pager" role="group" aria-label={`${group.label} criteria`}>
+      <button onClick={()=>move(-1)} aria-label="Previous criterion"><ChevronIcon direction="left"/></button>
+      <span className="criterion-position">{position+1} / {group.items.length}</span>
+      <div className="criterion-dots">{group.items.map((entry,index)=><button key={entry.id} aria-label={`Show criterion ${entry.id}`} aria-pressed={index===position} onClick={()=>setPositions(previous=>({...previous,[group.id]:index}))}/>)}</div>
+      <button onClick={()=>move(1)} aria-label="Next criterion"><ChevronIcon/></button>
+    </div>}<p>{group.note}</p></div>
+  </section>
+}
+
 function Method({atlas}:{atlas:Atlas}){
-  return <><a className="back" href="#/">← All worlds</a><h1 className="review-title">Method &amp; sources</h1>
-    <div className="review-grid">{atlas.criteria.filter(item=>item.role==='primary_qualitative').map(item=><section key={item.id} className="review-card"><small>{item.key}</small><h2>{item.title}</h2><p>{item.question}</p></section>)}</div>
-    <section className="review-card review-method"><h2>Qualitative ratings</h2><dl className="review-rule">
-      <div><dt>Strong</dt><dd>Both dimensions are Strong.</dd></div><div><dt>Moderate</dt><dd>Both dimensions are at least Moderate.</dd></div>
-      <div><dt>Weak</dt><dd>At least one reviewed dimension is Weak.</dd></div><div><dt>Insufficient evidence</dt><dd>A dimension is unavailable.</dd></div>
-    </dl><small>Evidence coverage counts reviewed dimensions. {atlas.datasetVersion} · {atlas.reviewProfile}</small></section>
-    <section className="review-card review-method"><h2>Source register</h2><SourceList atlas={atlas}/>
-      <details><summary>Criteria and data coverage</summary><p>{atlas.comparisons.length} published comparison{atlas.comparisons.length===1?'':'s'}. Quantitative criteria require validated measurements.</p>
-        {atlas.criteria.map(item=><div className="review-criterion" key={item.id}><strong>{item.id} · {item.title}</strong><p>{item.question}</p><small>{item.rule} · {item.unitOrRating} · {item.readiness.replaceAll('_',' ')}</small></div>)}</details>
-      <details><summary>Globe imagery credits</summary><div className="review-refs">{textureSources.map(([name,url])=><a key={url} href={url}>{name} ↗</a>)}</div></details>
-    </section></>
+  return <div className="method-page">
+    <div className="review-page-heading"><a className="back icon-back" href="#/" aria-label="Back to all worlds" title="All worlds"><BackIcon/></a><div><span className="page-kicker">Evidence before similarity</span><h1 className="review-title">Method &amp; sources</h1></div></div>
+    <div className="method-intro"><p>Follow the observations behind each comparison. Understand the review rules, the data we have, and where the analogy ends.</p><div className="method-release"><span>Dataset <strong>{atlas.datasetVersion}</strong></span><span><strong>{atlas.comparisons.length}</strong> published {atlas.comparisons.length===1?'comparison':'comparisons'}</span><span><strong>{atlas.sources.length}</strong> source records</span></div></div>
+    <CriteriaCoverage atlas={atlas}/>
+    <div className="method-support-grid">
+      <section className="review-card review-method rating-guide"><div className="method-section-heading"><div><span className="page-kicker">Reading the labels</span><h2>Qualitative ratings</h2></div><span className="method-count">Ordinal, not percentages</span></div><dl className="review-rule">
+        <div data-rating="Strong"><dt><i/>Strong</dt><dd>Both dimensions are Strong.</dd></div><div data-rating="Moderate"><dt><i/>Moderate</dt><dd>Both dimensions are at least Moderate.</dd></div>
+        <div data-rating="Weak"><dt><i/>Weak</dt><dd>At least one reviewed dimension is Weak.</dd></div><div data-rating="missing"><dt><i/>Insufficient evidence</dt><dd>A dimension is unavailable.</dd></div>
+      </dl><p className="method-footnote">Evidence coverage counts reviewed dimensions, not confidence. Quantitative comparisons require validated measurements at comparable scales.</p><small>Review profile · {atlas.reviewProfile}</small></section>
+      <section className="review-card review-method imagery-guide"><span className="page-kicker">A map is a starting point</span><h2>Imagery &amp; attribution</h2><p>The globes help you find your bearings. Pair-specific imagery carries its own source, credit and scale in each comparison.</p><div className="imagery-credit-links">{textureSources.map(([name,url])=><a key={url} href={url} target="_blank" rel="noreferrer"><span>{name}</span><ChevronIcon/></a>)}</div><small>Global textures do not establish site-scale evidence.</small></section>
+    </div>
+    <section className="review-card review-method method-source-register"><div className="method-section-heading"><div><span className="page-kicker">Trace the research</span><h2>Source register</h2></div><span className="method-count">{atlas.sources.length} linked records</span></div><p>Original publications, image locators and data products referenced by this release.</p><SourceList atlas={atlas}/></section>
+  </div>
 }

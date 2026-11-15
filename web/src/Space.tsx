@@ -1,4 +1,5 @@
 import type {CSSProperties} from 'react'
+import {Astronaut} from './Astronaut'
 
 const stars=Array.from({length:110},(_,index)=>{
   const scatter=(salt:number)=>{
@@ -18,6 +19,7 @@ export function Space(){
   return <div className="space" aria-hidden="true">
     <div className="nebula-drift"/>
     {stars.map((style,index)=><i key={index} style={style}/>)}
+    <div className="space-crew">{[0,1,2,3].map(index=><div className={`floating-astronaut crew-${index}`} key={index}><Astronaut accent={index%2?'lilac':'cyan'}/></div>)}</div>
     <b className="meteor meteor-first"/><b className="meteor meteor-second"/>
   </div>
 }
