@@ -642,13 +642,17 @@ summary{cursor:pointer;color:#bacce2;font-size:12px}
 
 /* Overview region cards keep imagery fixed while long source details scroll. */
 .review-region-cards{margin-bottom:18px;align-items:stretch}
-.review-region-card.review-card{padding:0;height:360px;display:grid;grid-template-rows:160px minmax(0,1fr);overflow:hidden}
-.review-region-image{min-width:0;overflow:hidden;background:#102238;border-bottom:1px solid #28445d}
-.review-region-image img{display:block;width:100%;height:100%;object-fit:contain}
+.review-region-card.review-card{padding:0;height:430px;display:grid;grid-template-rows:190px minmax(0,1fr);overflow:hidden}
+.review-region-image{position:relative;min-width:0;overflow:hidden;background:#102238;border-bottom:1px solid #28445d}
+.review-region-image img{display:block;width:100%;height:100%}
+.review-region-image-backdrop{position:absolute;inset:0;object-fit:cover;filter:blur(7px) brightness(.58) saturate(.85);transform:scale(1.06)}
+.review-region-image-main{position:relative;object-fit:contain;filter:drop-shadow(0 3px 8px #08132199)}
 .review-region-placeholder{height:100%;padding:16px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:12px;text-align:center;font-size:13px}
 .review-region-placeholder a{color:#a7ecf8;font-size:12px;text-decoration:underline;text-underline-offset:3px}
-.review-region-details{min-height:0;overflow-y:auto;padding:14px;overscroll-behavior:contain;scrollbar-width:thin;scrollbar-color:#486889 #102238}
+.review-region-details{min-height:0;overflow-y:auto;padding:18px 20px 20px;overscroll-behavior:contain;scrollbar-width:thin;scrollbar-color:#486889 #102238}
 .review-region-details h3{font-size:18px;line-height:1.22;margin:5px 0 7px}
+.review-region-details details{margin-top:16px;padding:11px 12px;border:1px solid #2b4966;border-radius:9px;background:#102238}
+.review-region-details summary{font-weight:600}
 .review-region-details::-webkit-scrollbar{width:6px}
 .review-region-details::-webkit-scrollbar-track{background:#102238}
 .review-region-details::-webkit-scrollbar-thumb{background:#486889;border-radius:6px}

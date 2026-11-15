@@ -19,19 +19,19 @@ async function openComparison(page,world){
   const page=await browser.newPage({viewport:{width,height:1000},reducedMotion:'reduce'});page.on('pageerror',e=>errors.push(e.message));
   await openComparison(page,world);
   const names=await page.locator(`${cards} h3`).allTextContents();assert.deepEqual(names,world==='earth'?[earth.name,target.name]:[target.name,earth.name]);
-  await page.waitForFunction(()=>[...document.querySelectorAll('.review-region-image img')].length===2&&[...document.querySelectorAll('.review-region-image img')].every(img=>img.complete&&img.naturalWidth>0));
+  await page.waitForFunction(()=>[...document.querySelectorAll('.review-region-image-main')].length===2&&[...document.querySelectorAll('.review-region-image-main')].every(img=>img.complete&&img.naturalWidth>0));
   assert.equal(await page.locator(`${cards} .review-region-placeholder`).count(),0);
   const expected=world==='earth'?[first.visuals.earth,first.visuals.target]:[first.visuals.target,first.visuals.earth];
   for(let i=0;i<2;i++){
    const card=page.locator(cards).nth(i);
-   assert.equal(await card.locator('img').getAttribute('src'),expected[i].localPath);
+   assert.equal(await card.locator('.review-region-image-main').getAttribute('src'),expected[i].localPath);
    assert((await card.locator('small').innerText()).includes(expected[i].scope));
    assert.equal(await card.locator('details a').first().getAttribute('href'),actual.sources.find(s=>s.id===expected[i].sourceId).url);
   }
   const [a,b]=await Promise.all([page.locator(cards).nth(0).boundingBox(),page.locator(cards).nth(1).boundingBox()]);
   assert.equal(a.height,b.height);assert.equal(a.width,b.width);
   if(width>660){assert.equal(a.y,b.y);assert(b.x>a.x)}else{assert.equal(a.x,b.x);assert(b.y>=a.y+a.height)}
-  const frames=await page.locator('.review-region-image').evaluateAll(elements=>elements.map(e=>e.getBoundingClientRect().height));assert.deepEqual(frames,[160,160]);
+  const frames=await page.locator('.review-region-image').evaluateAll(elements=>elements.map(e=>e.getBoundingClientRect().height));assert.deepEqual(frames,[190,190]);
   assert(await page.locator('.review-region-cards').evaluate(el=>!!(el.compareDocumentPosition([...el.parentElement.children].find(e=>e.tagName==='H2'))&Node.DOCUMENT_POSITION_FOLLOWING)));
   await page.locator(cards).first().locator('summary').click();
   const frameBefore=await page.locator('.review-region-image').first().boundingBox();
@@ -45,6 +45,19 @@ async function openComparison(page,world){
   await page.getByRole('button',{name:'Close comparison',exact:true}).click();await page.getByRole('complementary',{name:'Site details'}).waitFor();
   await page.close();console.log('Real pair order, loaded site images, fixed frames, scrolling, tabs and close passed',width,world);
  }
+ const spacingPage=await browser.newPage({viewport:{width:1040,height:800},reducedMotion:'reduce'});
+ await spacingPage.goto(`${base}/#/world/earth`);
+ await spacingPage.locator('.review-sites button').filter({hasText:'Copper Canyon alluvial fan'}).click();
+ await spacingPage.getByRole('button',{name:'Compare with Mars ↗',exact:true}).click();
+ await spacingPage.waitForFunction(()=>[...document.querySelectorAll('.review-region-image-main')].length===2&&[...document.querySelectorAll('.review-region-image-main')].every(img=>img.complete&&img.naturalWidth>0));
+ for(const card of await spacingPage.locator(cards).all()){
+  const bounds=await card.locator('.review-region-details').boundingBox();
+  const source=await card.locator('summary').boundingBox();
+  assert(source.y+source.height<bounds.y+bounds.height-8,'source disclosure should fit comfortably inside the card');
+ }
+ await spacingPage.locator('.review-region-cards').screenshot({path:'artifacts/overview-regions/copper-canyon-peace-vallis.png'});
+ await spacingPage.close();
+ console.log('Copper Canyon / Peace Vallis image fill and source spacing passed');
  const fixture=structuredClone(actual),pair=fixture.comparisons[0];
  pair.visuals.earth={...pair.visuals.earth,localPath:'/__test-earth.svg',missingReason:null};
  pair.visuals.target={...pair.visuals.target,localPath:'/__test-moon.svg',missingReason:null};
@@ -54,9 +67,10 @@ async function openComparison(page,world){
  await page.route('**/data/atlas.json',route=>route.fulfill({json:fixture}));
  await page.route('**/__test-*.svg',route=>route.request().url().includes('broken')?route.fulfill({status:404,body:'Missing'}):route.fulfill({contentType:'image/svg+xml',body:'<svg xmlns="http://www.w3.org/2000/svg" width="240" height="100"><rect width="240" height="100" fill="#55d6e8"/></svg>'}));
  await openComparison(page,'moon');
- const imageSources=await page.locator(`${cards} img`).evaluateAll(images=>images.map(img=>new URL(img.src).pathname));assert.deepEqual(imageSources,['/__test-moon.svg','/__test-earth.svg']);
- await page.waitForFunction(()=>[...document.querySelectorAll('.review-region-image img')].every(img=>img.complete&&img.naturalWidth>0));
- assert.equal(await page.locator(`${cards} img`).first().evaluate(img=>getComputedStyle(img).objectFit),'contain');
+ const imageSources=await page.locator(`${cards} .review-region-image-main`).evaluateAll(images=>images.map(img=>new URL(img.src).pathname));assert.deepEqual(imageSources,['/__test-moon.svg','/__test-earth.svg']);
+ await page.waitForFunction(()=>[...document.querySelectorAll('.review-region-image-main')].every(img=>img.complete&&img.naturalWidth>0));
+ assert.equal(await page.locator(`${cards} .review-region-image-main`).first().evaluate(img=>getComputedStyle(img).objectFit),'contain');
+ assert.equal(await page.locator(`${cards} .review-region-image-backdrop`).first().evaluate(img=>getComputedStyle(img).objectFit),'cover');
  await page.screenshot({path:'artifacts/overview-regions/image-present-test-only.png',fullPage:true});
  await openComparison(page,'earth');
  await page.locator(cards).first().locator('summary').click();
@@ -65,11 +79,11 @@ async function openComparison(page,world){
  assert.equal(await page.locator(cards).first().getByRole('link',{name:/Open imagery source/}).count(),1);
  assert.equal(await page.locator(`${cards} h3`).nth(1).innerText(),'Test second lunar region');
  assert.equal(await page.locator(`${cards} details[open]`).count(),0);
- assert.equal(await page.locator('.review-region-image').first().evaluate(el=>el.getBoundingClientRect().height),160);
+ assert.equal(await page.locator('.review-region-image').first().evaluate(el=>el.getBoundingClientRect().height),190);
  await page.getByRole('button',{name:'Previous match',exact:true}).click();
- await page.waitForFunction(()=>[...document.querySelectorAll('.review-region-image img')].length===2&&[...document.querySelectorAll('.review-region-image img')].every(img=>img.complete&&img.naturalWidth>0));
+ await page.waitForFunction(()=>[...document.querySelectorAll('.review-region-image-main')].length===2&&[...document.querySelectorAll('.review-region-image-main')].every(img=>img.complete&&img.naturalWidth>0));
  assert.equal(await page.locator(`${cards} details[open]`).count(),0);
- assert.equal(await page.locator(`${cards} img`).first().evaluate(img=>new URL(img.src).pathname),'/__test-earth.svg');
+ assert.equal(await page.locator(`${cards} .review-region-image-main`).first().evaluate(img=>new URL(img.src).pathname),'/__test-earth.svg');
  console.log('Test-only real-image loading, reverse-order visual binding, broken-image fallback and pair-scoped error/disclosure resets passed');
  assert.deepEqual(errors,[]);await browser.close();
 })().catch(e=>{console.error(e);process.exit(1)});

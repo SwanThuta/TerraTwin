@@ -88,11 +88,14 @@ function RegionCard({atlas,site,visual}:{atlas:Atlas;site:RecordSite;visual:Visu
   const [imageFailed,setImageFailed]=useState(false)
   const imageSource=atlas.sources.find(source=>source.id===visual.sourceId&&source.url)
   const world=bodies.find(body=>body.id===site.body)!
-  const description=site.description||(site.feature!==site.name?site.feature:'')||site.locator
+  const description=site.description||(site.feature!==site.name?site.feature:'')
   return <article className="review-card review-region-card" aria-label={`${site.name} region card`}>
     <div className="review-region-image">
       {visual.localPath&&!imageFailed?
-        <img src={assetUrl(visual.localPath)} alt={`${site.name} — ${visual.scope || 'source imagery'}: ${visual.caption || ''}`} onError={()=>setImageFailed(true)}/>:
+        <>
+          <img className="review-region-image-backdrop" src={assetUrl(visual.localPath)} alt="" aria-hidden="true"/>
+          <img className="review-region-image-main" src={assetUrl(visual.localPath)} alt={`${site.name} — ${visual.scope || 'source imagery'}: ${visual.caption || ''}`} onError={()=>setImageFailed(true)}/>
+        </>:
         <div className="review-region-placeholder"><strong>Site imagery unavailable</strong>
           {imageSource&&<a href={imageSource.url} target="_blank" rel="noreferrer" aria-label={`Open imagery source for ${site.name}`}>View cited imagery source ↗</a>}
         </div>}
