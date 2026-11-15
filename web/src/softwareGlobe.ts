@@ -3,7 +3,7 @@ type GeoPoint = [number,number]
 const TAU=2*Math.PI
 
 /** Orthographic sphere renderer for browsers without WebGL. */
-export function softwareGlobe(canvas:HTMLCanvasElement,textureUrl:string,angles:()=>Navigation,paintMarkers?:(ctx:CanvasRenderingContext2D,project:(point:GeoPoint)=>GeoPoint|null)=>void,cinematic?:'earth'|'moon'|'mars',magnification=()=>1,offset=()=>({x:0,y:0}),detailUrl?:string){
+export function softwareGlobe(canvas:HTMLCanvasElement,textureUrl:string,angles:()=>Navigation,paintMarkers?:(ctx:CanvasRenderingContext2D,project:(point:GeoPoint)=>GeoPoint|null)=>void,cinematic?:'earth'|'moon'|'mars',magnification=()=>1,offset=()=>({x:0,y:0}),detailUrl?:string,onTextureState?:(loaded:boolean)=>void){
   const ctx=canvas.getContext('2d')!
   const image=new Image()
   let map:ImageData|undefined
@@ -101,7 +101,8 @@ export function softwareGlobe(canvas:HTMLCanvasElement,textureUrl:string,angles:
     scratch.drawImage(asset,0,0)
     return scratch.getImageData(0,0,buffer.width,buffer.height)
   }
-  image.onload=()=>{map=readImage(image);draw()}
+  image.onload=()=>{try{map=readImage(image);draw();onTextureState?.(true)}catch{onTextureState?.(false)}}
+  image.onerror=()=>onTextureState?.(false)
   image.src=textureUrl
-  return {draw,dispose:()=>{resize.disconnect();image.onload=null;if(detailImage)detailImage.onload=null}}
+  return {draw,dispose:()=>{resize.disconnect();image.onload=null;image.onerror=null;if(detailImage)detailImage.onload=null}}
 }

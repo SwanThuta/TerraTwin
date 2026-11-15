@@ -2,9 +2,27 @@
 
 A planetary field atlas for exploring Earth, the Moon and Mars and reading source-backed comparisons of Earth analogs with planetary targets.
 
+## Criteria visuals and sliding highlights
+
+The Method card now uses a distinct vector concept diagram for every published criterion, occupying the right desktop column and stacking below the text on mobile. Previous/next controls are grouped on the left as requested. Six source rules render as native MathML with fractions, roots, powers, sums and inverse tangent; their original text remains available in an expandable disclosure. No frontend scoring or formula evaluation was added.
+
+A continuous 720ms highlight follows hover, keyboard focus and selection in the criteria tabs, comparison tabs and header navigation. Pointer preview never changes the selected content; actual focus/selection stays responsive. Reduced motion moves the highlight immediately.
+
+Verification and screenshots are in `artifacts/criteria-polish/`; the focused regression is `web/tests/criteria-polish.browser.cjs`. These additions originated on `ui_method_sources` and are integrated on `codex/ui-method-sources-update`.
+
+The combined branch passed `npm --prefix web test`, `npm --prefix web run build`, and the `astronaut-refresh.browser.cjs`, `criteria-polish.browser.cjs`, `overview-regions.browser.cjs` and `multi-pair.browser.cjs` checks in Chrome. Python tests were not rerun for this merge because `pytest` is not installed in the current runtime; the Python files are unchanged from `main`.
+
+## Local visual refresh
+
+The visual refresh from `ui_method_sources` is integrated with the current `main` on `codex/ui-method-sources-update`. A shared header now has the same dimensions on Home, Explore and Method, and the workspace uses the viewport with responsive gutters. Small original SVG astronauts drift behind the content and appear while atlas data or globe textures load. State changes use short View Transitions where supported, with CSS entry/interaction feedback and reduced-motion support.
+
+Method & sources now presents dataset criteria in category tabs with a paginated criterion deck, followed by the ordinal rating guide, imagery attribution and source cards. All criteria remain dataset-driven; grouping is presentational and does not change ratings or review roles. Card transparency is shared with the explorer. Back navigation uses accessible SVG icons.
+
+Screenshots and verification notes: `artifacts/astronaut-refresh/`. The focused browser regression is `web/tests/astronaut-refresh.browser.cjs`; the frontend test suite includes criteria-group coverage.
+
 ## Frontend reference
 
-The active UI is ported directly from the Sites source revision `19ce48affaf49194359a6b57a36b0d91f8882999`, the version of [TerraTwin Field Explorer](https://terratwin-field-explorer.dryhill3.chatgpt.site) specified in the frontend brief.
+The original frontend baseline was ported directly from the Sites source revision `19ce48affaf49194359a6b57a36b0d91f8882999`, the version of [TerraTwin Field Explorer](https://terratwin-field-explorer.dryhill3.chatgpt.site) specified in the frontend brief.
 
 - Reference checkout used: `/tmp/terratwin-reference/.sites-checkout`.
 - Destination: `/home/dell/Desktop/TerraTwin`.

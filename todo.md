@@ -1,3 +1,25 @@
+## Integrate Method UI with current main
+
+- [x] Create `codex/ui-method-sources-update` from the photo-backed `main` and merge `ui_method_sources`.
+- [x] Preserve the current site images, image manifest, generated reports and Overview screenshots.
+- [x] Pass the combined frontend test suite, production build and focused browser checks for Method, astronaut states, Overview and multi-pair navigation.
+
+## Criteria card polish — local review
+
+- [x] Add a continuously sliding hover/focus/selected highlight to criteria, comparison and navigation groups.
+- [x] Give all 16 current criteria distinct subject-related concept diagrams with a responsive layout.
+- [x] Move the previous/next criterion pager to the left, following the user's correction.
+- [x] Typeset the six source arithmetic rules in native MathML while preserving original text and operator structure.
+- [x] Pass build/typecheck, 8 frontend tests and targeted desktop/mobile browser checks for animation, math, diagrams, keyboard and reduced motion.
+
+## Local astronaut and workspace refresh
+
+- [x] Add original chibi SVG crew and shared astronaut loaders for actual data/texture requests.
+- [x] Unify header dimensions, widen Explore/Method workspaces and use icon back navigation.
+- [x] Categorize all dataset criteria with keyboard-accessible paging and consistent translucent cards.
+- [x] Add route/site/comparison/tab transitions and reduced-motion/unsupported-browser behavior.
+- [x] Verify 320/390/768/1440px layouts, all 16 criteria, six frontend tests, build/typecheck and existing region-card browser regressions.
+
 ## Overview region cards
 
 - [x] Add pair-ID/site-ID keyed image/details cards at the start of Overview, matching globe order.

@@ -3,6 +3,7 @@ import * as THREE from 'three'
 import type { Site } from './globeTypes'
 import type { Body } from './bodies'
 import {softwareGlobe} from './softwareGlobe'
+import {AtlasLoader} from './Astronaut'
 
 export function Globe({body, open, spinning=false, reset=0,sites=[],activeSite,initialSite,onSite,highlight=[],fillOnZoom=false}: {body:Body; open?:()=>void; spinning?:boolean; reset?:number; sites?:Site[]; activeSite?:Site; initialSite?:Site; onSite?:(site:Site)=>void; highlight?:string[]; fillOnZoom?:boolean;}) {
   const viewport=useRef<HTMLDivElement>(null)
@@ -33,6 +34,7 @@ export function Globe({body, open, spinning=false, reset=0,sites=[],activeSite,i
   const draw = useRef<()=>void>(()=>{})
   const gesture = useRef<{id:number;x:number;y:number;moved:boolean;lastX:number;lastY:number}|null>(null)
   const [fallback,setFallback] = useState(false)
+  const [textureState,setTextureState]=useState<'loading'|'ready'|'failed'>('loading')
   const rate = body.id==='earth' ? .00026 : body.id==='mars' ? .00022 : .00018
   const cpu = useRef<HTMLCanvasElement>(null)
   useEffect(()=>{motion.current=spinning},[spinning])
@@ -82,6 +84,8 @@ export function Globe({body, open, spinning=false, reset=0,sites=[],activeSite,i
 
   useEffect(()=>{
     const container=host.current!
+    let disposed=false
+    setTextureState('loading')
     let renderer:THREE.WebGLRenderer
     try {renderer=new THREE.WebGLRenderer({antialias:true,alpha:true,powerPreference:'low-power'})}
     catch {setFallback(true);return}
@@ -95,7 +99,7 @@ export function Globe({body, open, spinning=false, reset=0,sites=[],activeSite,i
     const camera=new THREE.PerspectiveCamera(32,1,.1,100)
     camera.position.z=4.05
     const geometry=new THREE.SphereGeometry(1,64,48)
-    const texture=new THREE.TextureLoader().load('/textures/'+body.texture+'.jpg',()=>draw.current())
+    const texture=new THREE.TextureLoader().load('/textures/'+body.texture+'.jpg',()=>{if(!disposed){setTextureState('ready');draw.current()}},undefined,()=>{if(!disposed)setTextureState('failed')})
     texture.colorSpace=THREE.SRGBColorSpace
     texture.anisotropy=renderer.capabilities.getMaxAnisotropy()
     const material=new THREE.MeshStandardMaterial({map:texture,roughness:.96,bumpMap:body.id==='earth'?null:texture,bumpScale:body.id==='moon'?.026:.013})
@@ -122,7 +126,6 @@ export function Globe({body, open, spinning=false, reset=0,sites=[],activeSite,i
 
     let detail:THREE.Texture|undefined
     let requestedDetail=false
-    let disposed=false
     const drawWebGL=()=>{
       if(zoom.current>=1.5&&!requestedDetail&&renderer.capabilities.maxTextureSize>=(body.id==='moon'?4096:8192)){
         requestedDetail=true
@@ -200,7 +203,7 @@ export function Globe({body, open, spinning=false, reset=0,sites=[],activeSite,i
       const point=project(coords)
       const canvas=ctx.canvas
       return point?[point[0]*canvas.clientWidth/canvas.width,point[1]*canvas.clientHeight/canvas.height]:null
-    }),body.id,renderedZoom,()=>cameraOffset.current,'/textures/'+body.texture+'-detail.webp')
+    }),body.id,renderedZoom,()=>cameraOffset.current,'/textures/'+body.texture+'-detail.webp',loaded=>setTextureState(loaded?'ready':'failed'))
     draw.current=renderer.draw
     let previous=performance.now(),id=0
     function loop(now:number){
@@ -284,7 +287,9 @@ export function Globe({body, open, spinning=false, reset=0,sites=[],activeSite,i
     }
     if(open&&(e.key==='Enter'||e.key===' ')){e.preventDefault();open()}
   }
-  return <div className="globe-frame" data-zoomed={magnification>1}>
+  return <div className="globe-frame" data-zoomed={magnification>1} data-loading={textureState==='loading'}>
+    {textureState==='loading'&&<div className="globe-loading"><AtlasLoader compact label={`Loading ${body.name}…`}/></div>}
+    {textureState==='failed'&&<span className="globe-load-error">Globe imagery unavailable</span>}
     <div ref={viewport} className="globe" role={open?'button':'group'} tabIndex={0}
     aria-label={open?`Open ${body.name} details. Arrow keys rotate the globe.`:`Rotate ${body.name} with the arrow keys`}
     onPointerDown={down} onPointerMove={move} onPointerUp={up} onPointerCancel={cancel} onLostPointerCapture={cancel} onKeyDown={key}>
