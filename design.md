@@ -12,7 +12,7 @@ Preserve the reference header label and navigation, logo, footer, line breaks, c
 
 ## Worlds and sites
 
-Retain the reference world title, globe card, overlay zoom/reset controls and adjacent overview/details card. Use the original renderer and software fallback, including the full-width zoom behavior and bundled detail layers. Populate the reference site-list items and pins from the destination export. Plot only valid mapped points, preserve source-defined locator meaning and keep sites without points selectable from the list.
+Retain the reference world title, globe card, overlay zoom/reset controls and adjacent overview/details card. Use the original renderer and software fallback, including the full-width zoom behavior and bundled detail layers. Populate the reference site-list items and pins from the destination export. Plot valid Earth, Moon and Mars points only on their own globes, preserve source-defined locator meaning, and keep sites without points selectable from the list. Planetary source longitude remains positive East 0–360 in the citation details; globe display uses signed East -180–180. Context pins must say they are not verified feature points.
 
 Site selection pauses automatic rotation and opens the original details/imagery/source treatment. Comparison actions are grouped by counterpart world: one action each for Moon or Mars from Earth, and Earth from either planetary world. Sites with no eligible pairs have an explicit empty state. All three worlds remain available.
 

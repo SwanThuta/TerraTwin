@@ -54,7 +54,7 @@ function World({body,atlas}:{body:Body;atlas:Atlas}){
         <div className="review-sphere"><Globe fillOnZoom body={body} spinning={rotating} sites={points}
           activeSite={points.find(point=>point.id===selected)} initialSite={points[0]} onSite={point=>select(point.id)}/></div>
         <div className="review-controls"><button onClick={()=>setRotating(v=>!v)}>{rotating?'Pause rotation':'Auto-rotate'}</button>
-          {points.length>0&&<small>Regional locators</small>}</div>
+          {points.length>0&&<small>Site and context locators</small>}</div>
       </section>
       <aside key={site?.id||'overview'} className="review-card review-site content-enter" aria-label={site?'Site details':'World overview'}>
         {site?<><button className="review-back" onClick={()=>setSelected(undefined)}><BackIcon/>{body.name} sites</button>
@@ -148,7 +148,7 @@ function Comparison({atlas,pair,first,choices,onPair,close}:{atlas:Atlas;pair:Pa
       const active=points.find(point=>point.id===site.id)
       return <section key={site.id}><h2>{body.name}</h2><div className="review-sphere">
         <Globe fillOnZoom body={body} sites={points} activeSite={active} onSite={point=>{const selected=choices.find(item=>counterpart(item)?.id===point.id);if(selected)onPair(selected.id)}}/>
-      </div><small>{points.length?'Regional context pin':'Scene coordinates in Evidence'}</small></section>
+      </div><small>{points.length?'Site or context pin · see location details':'Scene coordinates in Evidence'}</small></section>
     })}</div>
     {choices.length>1&&<div className="review-controls review-match-controls" role="group" aria-label="Matching comparisons" onKeyDown={event=>{
       if((event.target as HTMLElement).tagName==='SELECT')return

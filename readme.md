@@ -2,6 +2,23 @@
 
 A planetary field atlas for exploring Earth, the Moon and Mars and reading source-backed comparisons of Earth analogs with planetary targets.
 
+## Planetary globe locators and supplied regional data
+
+Moon and Mars globes now use the cited coordinates in `TerraTwin_Earth_Moon_Mars_Analog_Data_2026-11-14/locations.csv`. Lunar image/pit points are source-located; Martian crater, valley and image centers are labeled as context references. The exporter converts positive-East 0–360 longitude to signed-East longitude for the globe and retains the source convention in site details and PDFs. The five CSVs from the supplied `data.zip` are preserved in `TerraTwin_Earth_Moon_Mars_Analog_Data_2026-11-14/supplemental_2026-11-15/` with their units, methods and quality notes. They describe broader areas than the selected comparison features, so they do not fill feature-level measurements or alter the fixed qualitative scores.
+
+This branch was checked with the Python suite (21 passed), `npm --prefix web test` (9 passed), `npm --prefix web run build`, the existing multi-pair browser check, and `web/tests/planetary-pins.browser.cjs` in Chrome. The Python runner was installed only in a temporary directory. From the repository root on this Windows machine, the verified commands were:
+
+```powershell
+$env:PYTHONPATH="$env:TEMP\terratwin-pytest"
+& 'C:\Users\User\.cache\codex-runtimes\codex-primary-runtime\dependencies\python\python.exe' -m pytest -q
+& 'C:\Users\User\.cache\codex-runtimes\codex-primary-runtime\dependencies\python\python.exe' -m pipeline.build
+npm --prefix web test
+npm --prefix web run build
+$env:PLAYWRIGHT_CORE='C:\Users\User\.cache\codex-runtimes\codex-primary-runtime\dependencies\node\node_modules\playwright-core'
+$env:CHROME_PATH='C:\Program Files\Google\Chrome\Application\chrome.exe'
+node web/tests/planetary-pins.browser.cjs
+```
+
 ## Criteria visuals and sliding highlights
 
 The Method card now uses a distinct vector concept diagram for every published criterion, occupying the right desktop column and stacking below the text on mobile. Previous/next controls are grouped on the left as requested. Six source rules render as native MathML with fractions, roots, powers, sums and inverse tangent; their original text remains available in an expandable disclosure. No frontend scoring or formula evaluation was added.

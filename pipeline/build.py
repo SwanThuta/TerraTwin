@@ -48,7 +48,7 @@ def write_report(record: dict, dataset: dict, path: Path) -> None:
         _paragraph(f"Earth: {earth['feature']}. Locator: {earth['locator']}", body),
         _paragraph(f"Earth map marker: {earth['mapPointKind']}. Coordinate note: {earth['coordinateNote']}. Convention: {earth['coordinateConvention']}", note),
         _paragraph(f"{target['body'].title()}: {target['feature']}. Locator: {target['locator']}", body),
-        _paragraph(f"Planetary coordinate convention: {target['coordinateConvention']}. {target['coordinateNote']}", note),
+        _paragraph(f"Planetary globe marker: {target['mapPointKind']}. Convention: {target['coordinateConvention']}. {target['coordinateNote']}", note),
         _paragraph(f"Relationship: {record['relationship']} [{', '.join(record['relationshipSourceIds'])}]", body),
     ]
     for key in ("terrain", "geology"):

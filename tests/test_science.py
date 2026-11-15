@@ -89,8 +89,10 @@ def test_approximate_locale_7_point_is_not_plotted_as_a_feature():
     assert "approximate feature proxy is not plotted" in earth.mapPointKind
     assert "assumed 315-degree NW bearing" in earth.coordinateNote
     assert "no Locale 7 GPS" in earth.coordinateNote
-    assert moon.mapPoint is None
+    assert moon.mapPoint == pytest.approx((-163.261, -89.684))
+    assert moon.mapPointKind.startswith("Source-located point")
     assert "positive East" in moon.coordinateConvention
+    assert "signed East" in moon.coordinateConvention
 
 
 def test_approximate_coordinate_rows_are_filled_and_labeled():
@@ -108,6 +110,23 @@ def test_approximate_coordinate_rows_are_filled_and_labeled():
     for feature_id in ("E04", "E05", "E06", "E07"):
         assert sites[feature_id].mapPointKind.startswith("Context reference:")
         assert "approximate feature proxy is not plotted" in sites[feature_id].mapPointKind
+    for feature_id in ("M01", "M02", "M03", "M04"):
+        assert sites[feature_id].mapPoint is not None
+        assert sites[feature_id].mapPointKind.startswith("Context reference:")
+        assert "not a verified feature point" in sites[feature_id].mapPointKind
+
+
+def test_planetary_globe_points_keep_source_scope_and_longitude_convention():
+    sites = {site.id: site for site in load_dataset().sites}
+    assert sites["L02"].mapPoint == pytest.approx((-56.7701, 14.0917))
+    assert sites["L02"].mapPointKind.startswith("Source-located point")
+    assert sites["M01"].mapPoint == pytest.approx((77.69, 18.41))
+    assert sites["M04"].mapPoint == pytest.approx((137.7, -5.44))
+    assert all("signed East" in sites[id].coordinateConvention for id in ("L01", "L02", "M01", "M02", "M03", "M04"))
+    raw = load_p01().model_dump(mode="json")
+    raw["sites"][1]["mapPoint"] = [196.739, -89.684]
+    with pytest.raises(ValidationError, match="invalid globe coordinates"):
+        Dataset.model_validate(raw)
 
 
 def test_missing_evidence_and_unknown_sources_are_rejected():
@@ -133,6 +152,9 @@ def test_explanations_and_reports_reuse_all_selected_csv_records():
         pdf = root / "web/public" / item["reportPath"].lstrip("/")
         body = pdf.read_bytes()
         assert body.startswith(b"%PDF")
+        target = next(site for site in output["sites"] if site["id"] == item["targetId"])
+        assert b"Planetary globe marker" in body
+        assert target["mapPointSourceId"].encode() in body
         for expected in (
             item["id"], item["overall"], item["reviewStatus"],
             item["terrain"]["rating"] or "Insufficient evidence",

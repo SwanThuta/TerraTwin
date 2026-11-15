@@ -3,6 +3,7 @@
 from __future__ import annotations
 
 from typing import Literal
+from math import isfinite
 
 from pydantic import BaseModel, Field, model_validator
 
@@ -47,6 +48,16 @@ class Site(BaseModel):
     mapPointSourceId: str
     coordinateNote: str = ""
     coordinateConvention: str = ""
+
+    @model_validator(mode="after")
+    def valid_globe_point(self) -> Site:
+        if self.mapPoint is not None:
+            lon, lat = self.mapPoint
+            if not (isfinite(lon) and isfinite(lat) and -180 <= lon <= 180 and -90 <= lat <= 90):
+                raise ValueError(f"invalid globe coordinates for {self.id}")
+            if self.body != "earth" and "positive East [0,360]" not in self.coordinateConvention:
+                raise ValueError(f"planetary longitude convention is missing for {self.id}")
+        return self
 
 
 class Dimension(BaseModel):
@@ -162,8 +173,6 @@ class Dataset(BaseModel):
         for site in self.sites:
             if site.mapPointSourceId not in sources:
                 raise ValueError(f"unknown coordinate source for {site.id}")
-            if site.body != "earth" and site.mapPoint is not None:
-                raise ValueError("planetary sites must not have Earth map points")
         for item in self.comparisons:
             if item.earthId not in sites or sites[item.earthId].body != "earth":
                 raise ValueError(f"invalid Earth site in {item.id}")

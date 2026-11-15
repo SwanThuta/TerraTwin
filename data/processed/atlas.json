@@ -1,5 +1,5 @@
 {
-  "datasetVersion": "csv-2026-11-15-p01-p08-site-images",
+  "datasetVersion": "csv-2026-11-15-p01-p08-planetary-pins",
   "reviewProfile": "terrain-geology-qual-v1",
   "orderingProfile": "terrain-first-v1",
   "sources": [
@@ -654,11 +654,14 @@
       "region": "Lunar south pole",
       "feature": "Shackleton–de Gerlache ridge rim NAC view",
       "locator": "Shackleton crater; Image view location at rim/ridge intersection; center or scene location published, not polygon / safe route. Footprint: not_digitized.",
-      "mapPoint": null,
-      "mapPointKind": "Context reference: center of selected 750m-wide LROC NAC image (published_selected_image_locator_not_point_sample); not a verified feature point",
+      "mapPoint": [
+        -163.261,
+        -89.684
+      ],
+      "mapPointKind": "Source-located point (source_coordinate): Image view location at rim/ridge intersection; center or scene location published, not polygon / safe route.",
       "mapPointSourceId": "R03",
       "coordinateNote": "Image view location at rim/ridge intersection; center or scene location published, not polygon / safe route.",
-      "coordinateConvention": "positive East [0,360]; planetocentric unless product label specifies otherwise; verify"
+      "coordinateConvention": "positive East [0,360]; planetocentric unless product label specifies otherwise; verify; globe display uses signed East [-180,180]"
     },
     {
       "id": "L02",
@@ -667,11 +670,14 @@
       "region": "Marius Hills, Moon",
       "feature": "Marius Hills Pit (LROC Pits Atlas)",
       "locator": "Marius Hills; Use LROC precision; separate from 2009 JAXA approximate 14.2 N 303.3 E. Footprint: not_digitized.",
-      "mapPoint": null,
-      "mapPointKind": "Context reference: LROC Pits Atlas pit center (published_pit_feature_coordinate); not a verified feature point",
+      "mapPoint": [
+        -56.7701,
+        14.0917
+      ],
+      "mapPointKind": "Source-located point (source_coordinate): Use LROC precision; separate from 2009 JAXA approximate 14.2 N 303.3 E.",
       "mapPointSourceId": "R04",
       "coordinateNote": "Use LROC precision; separate from 2009 JAXA approximate 14.2 N 303.3 E.",
-      "coordinateConvention": "positive East [0,360]; planetocentric unless product label specifies otherwise; verify"
+      "coordinateConvention": "positive East [0,360]; planetocentric unless product label specifies otherwise; verify; globe display uses signed East [-180,180]"
     },
     {
       "id": "M01",
@@ -680,11 +686,14 @@
       "region": "Jezero, Mars",
       "feature": "Jezero western carbonate-bearing crater margin (deposit pending)",
       "locator": "Jezero crater; Approximate regional locator reuses the IAU Jezero crater center; it does not locate the western carbonate unit or a sampled exposure. Footprint: not_digitized.",
-      "mapPoint": null,
+      "mapPoint": [
+        77.69,
+        18.41
+      ],
       "mapPointKind": "Context reference: IAU Jezero crater center (NOT carbonate margin) (host_crater_center_only); not a verified feature point; approximate feature proxy is not plotted",
       "mapPointSourceId": "R14",
       "coordinateNote": "Approximate regional locator reuses the IAU Jezero crater center; it does not locate the western carbonate unit or a sampled exposure.",
-      "coordinateConvention": "positive East [0,360]; planetocentric unless product label specifies otherwise; verify"
+      "coordinateConvention": "positive East [0,360]; planetocentric unless product label specifies otherwise; verify; globe display uses signed East [-180,180]"
     },
     {
       "id": "M02",
@@ -693,11 +702,14 @@
       "region": "Jezero, Mars",
       "feature": "Jezero western delta sediment exposures (feature pending)",
       "locator": "Jezero crater; Approximate locator uses the 2023 THEMIS VIS frame center that includes the western delta; it is not an outcrop or geologic centroid. Footprint: not_digitized.",
-      "mapPoint": null,
+      "mapPoint": [
+        77.436,
+        18.449
+      ],
       "mapPointKind": "Context reference: THEMIS image footprint center (NOT measured delta feature) (source_image_center_not_geologic_feature); not a verified feature point; approximate feature proxy is not plotted",
       "mapPointSourceId": "R15",
       "coordinateNote": "Approximate locator uses the 2023 THEMIS VIS frame center that includes the western delta; it is not an outcrop or geologic centroid.",
-      "coordinateConvention": "positive East [0,360]; planetocentric unless product label specifies otherwise; verify"
+      "coordinateConvention": "positive East [0,360]; planetocentric unless product label specifies otherwise; verify; globe display uses signed East [-180,180]"
     },
     {
       "id": "M03",
@@ -706,11 +718,14 @@
       "region": "Gale, Mars",
       "feature": "Peace Vallis alluvial fan deposit (mapped units)",
       "locator": "Gale crater; Approximate locator uses the IAU Peace Vallis named-feature point as a nearby regional reference; it is not the downstream fan center or mapped fan boundary. Footprint: not_digitized.",
-      "mapPoint": null,
+      "mapPoint": [
+        137.23,
+        -4.21
+      ],
       "mapPointKind": "Context reference: IAU Peace Vallis valley named-feature center (NOT fan) (host_valley_point_not_fan); not a verified feature point; approximate feature proxy is not plotted",
       "mapPointSourceId": "R21",
       "coordinateNote": "Approximate locator uses the IAU Peace Vallis named-feature point as a nearby regional reference; it is not the downstream fan center or mapped fan boundary.",
-      "coordinateConvention": "positive East [0,360]; planetocentric unless product label specifies otherwise; verify"
+      "coordinateConvention": "positive East [0,360]; planetocentric unless product label specifies otherwise; verify; globe display uses signed East [-180,180]"
     },
     {
       "id": "M04",
@@ -719,11 +734,14 @@
       "region": "Gale, Mars",
       "feature": "Hypothesized ancient Gale ice-covered lake system",
       "locator": "Gale crater; Approximate regional locator reuses the IAU Gale crater center; NASA's lake model is a hypothesis and supplies no selected lake-surface or lakebed coordinate. Footprint: not_digitized.",
-      "mapPoint": null,
+      "mapPoint": [
+        137.7,
+        -5.44
+      ],
       "mapPointKind": "Context reference: IAU Gale crater center, NOT ancient lake deposit (host_crater_center_only); not a verified feature point; approximate feature proxy is not plotted",
       "mapPointSourceId": "R26",
       "coordinateNote": "Approximate regional locator reuses the IAU Gale crater center; NASA's lake model is a hypothesis and supplies no selected lake-surface or lakebed coordinate.",
-      "coordinateConvention": "positive East [0,360]; planetocentric unless product label specifies otherwise; verify"
+      "coordinateConvention": "positive East [0,360]; planetocentric unless product label specifies otherwise; verify; globe display uses signed East [-180,180]"
     }
   ],
   "comparisons": [
@@ -874,7 +892,7 @@
         "R02",
         "R03"
       ],
-      "reportPath": "/reports/P01-csv-2026-11-15-p01-p08-site-images.pdf"
+      "reportPath": "/reports/P01-csv-2026-11-15-p01-p08-planetary-pins.pdf"
     },
     {
       "id": "P02",
@@ -994,7 +1012,7 @@
         "R06",
         "R40"
       ],
-      "reportPath": "/reports/P02-csv-2026-11-15-p01-p08-site-images.pdf"
+      "reportPath": "/reports/P02-csv-2026-11-15-p01-p08-planetary-pins.pdf"
     },
     {
       "id": "P03",
@@ -1123,7 +1141,7 @@
         "R40",
         "R41"
       ],
-      "reportPath": "/reports/P03-csv-2026-11-15-p01-p08-site-images.pdf"
+      "reportPath": "/reports/P03-csv-2026-11-15-p01-p08-planetary-pins.pdf"
     },
     {
       "id": "P04",
@@ -1249,7 +1267,7 @@
         "R10",
         "R40"
       ],
-      "reportPath": "/reports/P04-csv-2026-11-15-p01-p08-site-images.pdf"
+      "reportPath": "/reports/P04-csv-2026-11-15-p01-p08-planetary-pins.pdf"
     },
     {
       "id": "P05",
@@ -1394,7 +1412,7 @@
         "R12",
         "R13"
       ],
-      "reportPath": "/reports/P05-csv-2026-11-15-p01-p08-site-images.pdf"
+      "reportPath": "/reports/P05-csv-2026-11-15-p01-p08-planetary-pins.pdf"
     },
     {
       "id": "P06",
@@ -1532,7 +1550,7 @@
         "R16",
         "R42"
       ],
-      "reportPath": "/reports/P06-csv-2026-11-15-p01-p08-site-images.pdf"
+      "reportPath": "/reports/P06-csv-2026-11-15-p01-p08-planetary-pins.pdf"
     },
     {
       "id": "P07",
@@ -1680,7 +1698,7 @@
         "R22",
         "R23"
       ],
-      "reportPath": "/reports/P07-csv-2026-11-15-p01-p08-site-images.pdf"
+      "reportPath": "/reports/P07-csv-2026-11-15-p01-p08-planetary-pins.pdf"
     },
     {
       "id": "P08",
@@ -1800,7 +1818,7 @@
         "R25",
         "R36"
       ],
-      "reportPath": "/reports/P08-csv-2026-11-15-p01-p08-site-images.pdf"
+      "reportPath": "/reports/P08-csv-2026-11-15-p01-p08-planetary-pins.pdf"
     }
   ]
 }

@@ -22,6 +22,7 @@ The `longitude_convention` for planetary records is positive-east **0–360** de
 | `formulas.csv` | Registry of formulas and conditions, including source-based ordinal rubric and optional metrics. |
 | `published_observations.csv` | Published whole-site measurements/context only; not newly computed digital elevation or analog scores. |
 | `metric_measurements_template.csv` | Empty measurement slots; **do not populate without raster footprint, units, quality and provenance**. |
+| `supplemental_2026-11-15/` | Five user-supplied regional measurement/ranking CSVs, preserved with a scope and quality note in its README; these do not fill feature-level measurement slots or change app scores. |
 | `data_products.csv` | Candidate NASA/USGS/PGC datasets. All catalog entries show `downloaded_and_checked=False`. |
 | `nasa_haughton_ops_points.csv` | 8 NASA historical TRPF route waypoints, 4 2010 imagery-footprint corners, plus field-station coordinates extracted from the attached NASA PDF; these are NOT Locale 7 locations. |
 | `scoring.py` | Python qualitative methods, DEM metric formulas, disabled-by-default experimental similarity and historical NASA traffic zoning. |

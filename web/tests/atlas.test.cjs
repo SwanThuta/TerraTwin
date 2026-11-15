@@ -28,6 +28,17 @@ test('all eight reviewed desk screens resolve in both directions with incomplete
   assert.equal(atlas.sites.find(site => site.id === 'E01').mapPointKind.startsWith('Context reference:'), true)
 })
 
+test('Moon and Mars source and context coordinates survive atlas normalization', async () => {
+  const {normalizeAtlas} = await modulePromise
+  const sites = new Map(normalizeAtlas(actual).sites.map(site => [site.id, site]))
+  assert.deepEqual(sites.get('L01').mapPoint, [-163.261, -89.684])
+  assert.deepEqual(sites.get('L02').mapPoint, [-56.7701, 14.0917])
+  for (const id of ['M01', 'M02', 'M03', 'M04']) {
+    assert.ok(sites.get(id).mapPoint)
+    assert.match(sites.get(id).mapPointKind, /^Context reference:/)
+  }
+})
+
 test('additional sites, both planets, multiple matches and missing options normalize safely', async () => {
   const {normalizeAtlas, matches} = await modulePromise
   const {raw, pair} = onePairFixture()

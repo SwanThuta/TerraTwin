@@ -28,15 +28,24 @@ def site(row: dict[str, str]) -> dict:
     if not source_ids:
         raise ValueError(f"{row['feature_id']} lacks a coordinate source")
     is_earth = row["body"].lower() == "earth"
+    if not is_earth and row["longitude_convention"] != "positive East [0,360]":
+        raise ValueError(f"{row['feature_id']} uses an unsupported planetary longitude convention")
+
+    def globe_point(lon: str, lat: str) -> list[float] | None:
+        if not lon or not lat:
+            return None
+        longitude = float(lon)
+        if not is_earth:
+            if not 0 <= longitude <= 360:
+                raise ValueError(f"{row['feature_id']} longitude is outside positive-East 0–360")
+            longitude = round(((longitude + 180) % 360) - 180, 8)
+        return [longitude, float(lat)]
+
     anchor = (
-        [float(row["map_anchor_lon_deg"]), float(row["map_anchor_lat_deg"])]
-        if is_earth and row["map_anchor_lon_deg"] and row["map_anchor_lat_deg"]
-        else None
+        globe_point(row["map_anchor_lon_deg"], row["map_anchor_lat_deg"])
     )
     feature_point = (
-        [float(row["feature_lon_deg"]), float(row["feature_lat_deg"])]
-        if is_earth and row["feature_lon_deg"] and row["feature_lat_deg"]
-        else None
+        globe_point(row["feature_lon_deg"], row["feature_lat_deg"])
     )
     coordinate_status = row["feature_coordinates_status"]
     if feature_point and coordinate_status == "source_coordinate":
@@ -58,7 +67,8 @@ def site(row: dict[str, str]) -> dict:
         "mapPointKind": point_kind,
         "mapPointSourceId": source_ids[0],
         "coordinateNote": row["coordinate_note"],
-        "coordinateConvention": f"{row['longitude_convention']}; {row['latitude_convention']}",
+        "coordinateConvention": f"{row['longitude_convention']}; {row['latitude_convention']}"
+        + ("; globe display uses signed East [-180,180]" if not is_earth else ""),
     }
 
 
@@ -213,7 +223,7 @@ def load_dataset() -> Dataset:
         raise ValueError(f"required comparison {PAIR_ID} is missing")
 
     dataset = Dataset.model_validate({
-        "datasetVersion": "csv-2026-11-15-p01-p08-site-images",
+        "datasetVersion": "csv-2026-11-15-p01-p08-planetary-pins",
         "reviewProfile": pair["rubric_version"], "orderingProfile": pair["sort_version"],
         "sources": [
             {"id": row["source_id"], "provider": row["provider"],

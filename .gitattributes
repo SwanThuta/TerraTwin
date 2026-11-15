@@ -7,3 +7,4 @@
 *.tsx text eol=lf
 *.css text eol=lf
 *.pdf binary
+TerraTwin_Earth_Moon_Mars_Analog_Data_2026-11-14/supplemental_2026-11-15/*.csv -text whitespace=cr-at-eol
