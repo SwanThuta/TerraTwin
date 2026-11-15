@@ -47,22 +47,22 @@ def site(row: dict[str, str]) -> dict:
     }
 
 
-def load_p01() -> Dataset:
-    pair = next(row for row in rows("analog_pairs.csv") if row["pair_id"] == PAIR_ID)
+def load_pair(pair_id: str) -> Dataset:
+    pair = next(row for row in rows("analog_pairs.csv") if row["pair_id"] == pair_id)
     locations = {row["feature_id"]: row for row in rows("locations.csv")}
     workflow = {
         int(row["step_number"]): row
         for row in rows("location_workflows.csv")
-        if row["pair_id"] == PAIR_ID
+        if row["pair_id"] == pair_id
     }
-    similarity_rows = [row for row in rows("comparison_evidence.csv") if row["pair_id"] == PAIR_ID]
-    practice_rows = [row for row in rows("practice_objectives.csv") if row["pair_id"] == PAIR_ID]
+    similarity_rows = [row for row in rows("comparison_evidence.csv") if row["pair_id"] == pair_id]
+    practice_rows = [row for row in rows("practice_objectives.csv") if row["pair_id"] == pair_id]
     if {row["dimension"] for row in similarity_rows} != {"terrain", "geology"}:
-        raise ValueError("P01 requires one terrain and one geology similarity evidence row")
+        raise ValueError(f"{pair_id} requires one terrain and one geology similarity evidence row")
     if not practice_rows:
-        raise ValueError("P01 requires at least one practice objective row")
+        raise ValueError(f"{pair_id} requires at least one practice objective row")
     if set(workflow) != set(range(1, 7)):
-        raise ValueError("P01 requires all six source workflow steps")
+        raise ValueError(f"{pair_id} requires all six source workflow steps")
     if pair["rubric_version"] != "terrain-geology-qual-v1" or pair["sort_version"] != "terrain-first-v1":
         raise ValueError("unsupported CSV rubric or ordering version")
     earth = locations[pair["earth_feature_id"]]
@@ -70,7 +70,7 @@ def load_p01() -> Dataset:
     terrain_sources = ids(pair["terrain_evidence"])
     geology_sources = ids(pair["geology_evidence"])
     if not terrain_sources or not geology_sources:
-        raise ValueError("P01 requires evidence IDs for both dimensions")
+        raise ValueError(f"{pair_id} requires evidence IDs for both dimensions")
     source_rows = rows("sources.csv")
     source_ids = {row["source_id"] for row in source_rows}
     referenced = set(
@@ -93,9 +93,9 @@ def load_p01() -> Dataset:
         for row in rows("comparison_criteria.csv")
     ]
     if pair["review_status"] != "reviewed_source_desk_screening":
-        raise ValueError("P01 is no longer the supplied reviewed desk screening")
+        raise ValueError(f"{pair_id} is no longer the supplied reviewed desk screening")
     if pair["terrain_rating"] not in {"Strong", "Moderate", "Weak"} or pair["geology_rating"] not in {"Strong", "Moderate", "Weak"}:
-        raise ValueError("P01 must have both CSV ratings")
+        raise ValueError(f"{pair_id} must have both CSV ratings")
     similarities = [
         {
             "id": row["evidence_id"], "dimension": row["dimension"],
@@ -116,7 +116,7 @@ def load_p01() -> Dataset:
         for row in practice_rows
     ]
     record = {
-        "id": PAIR_ID, "earthId": earth["feature_id"], "targetId": target["feature_id"],
+        "id": pair_id, "earthId": earth["feature_id"], "targetId": target["feature_id"],
         "status": "reviewed", "reviewStatus": pair["review_status"],
         "reviewer": pair["reviewer"], "reviewDate": pair["review_date"],
         "relationship": f"{pair['relationship_status']}. Theme: {pair['analog_theme']}.",
@@ -131,7 +131,7 @@ def load_p01() -> Dataset:
             "difference": pair["material_difference"],
             "sourceIds": geology_sources, "missingReason": None,
         },
-        "similaritySummary": "Both locations are documented in impact settings with rocky or blocky terrain and source-described surface materials.",
+        "similaritySummary": " ".join(row["shared_observation"] for row in similarity_rows),
         "similarities": similarities,
         "practice": practice,
         "limits": [pair["critical_difference"], pair["material_difference"],
@@ -144,7 +144,7 @@ def load_p01() -> Dataset:
         "reviewNotes": f"{pair['review_scope_note']} Next validation: {pair['next_validation']}",
     }
     dataset = Dataset.model_validate({
-        "datasetVersion": "csv-2026-11-14-p01",
+        "datasetVersion": f"csv-2026-11-14-{pair_id.lower()}",
         "reviewProfile": pair["rubric_version"], "orderingProfile": pair["sort_version"],
         "sources": [
             {"id": row["source_id"], "provider": row["provider"],
@@ -162,5 +162,37 @@ def load_p01() -> Dataset:
         or coverage(comparison) != int(pair["supported_dimensions_count"])
         or pair["rank_eligible"].lower() != "true"
     ):
-        raise ValueError("P01 CSV derived columns disagree with the authoritative Python rating rule")
+        raise ValueError(f"{pair_id} CSV derived columns disagree with the authoritative Python rating rule")
     return dataset
+
+
+def load_p01() -> Dataset:
+    """Compatibility entry point for the existing review fixture."""
+    return load_pair(PAIR_ID)
+
+
+def load_reviewed() -> Dataset:
+    """Publish only explicitly reviewed CSV records; validate every joined pair."""
+    reviewed = [row for row in rows("analog_pairs.csv")
+                if row["review_status"] == "reviewed_source_desk_screening"]
+    if not reviewed:
+        return Dataset.model_validate({
+            "datasetVersion": "csv-2026-11-14-reviewed",
+            "reviewProfile": "terrain-geology-qual-v1",
+            "orderingProfile": "terrain-first-v1",
+            "sources": [], "criteria": [], "sites": [], "comparisons": [],
+        })
+    slices = [load_pair(row["pair_id"]) for row in reviewed]
+    output = slices[0].model_dump(mode="json")
+    # Preserve the existing report/version path for the current single-pair export.
+    if len(slices) > 1 or reviewed[0]["pair_id"] != PAIR_ID:
+        output["datasetVersion"] = "csv-2026-11-14-reviewed"
+    for key in ("sources", "sites", "comparisons"):
+        records = {}
+        for dataset in slices:
+            for record in dataset.model_dump(mode="json")[key]:
+                if record["id"] in records and records[record["id"]] != record:
+                    raise ValueError(f"Conflicting {key} ID: {record['id']}")
+                records[record["id"]] = record
+        output[key] = list(records.values())
+    return Dataset.model_validate(output)

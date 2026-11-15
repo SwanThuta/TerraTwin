@@ -1,0 +1,146 @@
+[
+  {
+    "state": "1440-evidence-reference",
+    "sameDimensions": true,
+    "meanAbsoluteChannelDifference": 0.0,
+    "exactPixels": true
+  },
+  {
+    "state": "1440-home-reference",
+    "sameDimensions": true,
+    "meanAbsoluteChannelDifference": 0.0,
+    "exactPixels": true
+  },
+  {
+    "state": "1440-method-reference",
+    "sameDimensions": true,
+    "meanAbsoluteChannelDifference": 0.000316,
+    "exactPixels": false
+  },
+  {
+    "state": "1440-overview-reference",
+    "sameDimensions": true,
+    "meanAbsoluteChannelDifference": 0.0,
+    "exactPixels": true
+  },
+  {
+    "state": "1440-practice-reference",
+    "sameDimensions": true,
+    "meanAbsoluteChannelDifference": 0.0,
+    "exactPixels": true
+  },
+  {
+    "state": "1440-site-reference",
+    "sameDimensions": true,
+    "meanAbsoluteChannelDifference": 0.0,
+    "exactPixels": true
+  },
+  {
+    "state": "1440-sources-reference",
+    "sameDimensions": true,
+    "meanAbsoluteChannelDifference": 0.0,
+    "exactPixels": true
+  },
+  {
+    "state": "1440-world-reference",
+    "sameDimensions": true,
+    "meanAbsoluteChannelDifference": 0.0,
+    "exactPixels": true
+  },
+  {
+    "state": "390-evidence-reference",
+    "sameDimensions": true,
+    "meanAbsoluteChannelDifference": 0.0,
+    "exactPixels": true
+  },
+  {
+    "state": "390-home-reference",
+    "sameDimensions": true,
+    "meanAbsoluteChannelDifference": 0.0,
+    "exactPixels": true
+  },
+  {
+    "state": "390-method-reference",
+    "sameDimensions": true,
+    "meanAbsoluteChannelDifference": 0.0,
+    "exactPixels": true
+  },
+  {
+    "state": "390-overview-reference",
+    "sameDimensions": true,
+    "meanAbsoluteChannelDifference": 0.0,
+    "exactPixels": true
+  },
+  {
+    "state": "390-practice-reference",
+    "sameDimensions": true,
+    "meanAbsoluteChannelDifference": 0.0,
+    "exactPixels": true
+  },
+  {
+    "state": "390-site-reference",
+    "sameDimensions": true,
+    "meanAbsoluteChannelDifference": 0.0,
+    "exactPixels": true
+  },
+  {
+    "state": "390-sources-reference",
+    "sameDimensions": true,
+    "meanAbsoluteChannelDifference": 0.0,
+    "exactPixels": true
+  },
+  {
+    "state": "390-world-reference",
+    "sameDimensions": true,
+    "meanAbsoluteChannelDifference": 0.0,
+    "exactPixels": true
+  },
+  {
+    "state": "768-evidence-reference",
+    "sameDimensions": true,
+    "meanAbsoluteChannelDifference": 0.000883,
+    "exactPixels": false
+  },
+  {
+    "state": "768-home-reference",
+    "sameDimensions": true,
+    "meanAbsoluteChannelDifference": 0.0,
+    "exactPixels": true
+  },
+  {
+    "state": "768-method-reference",
+    "sameDimensions": true,
+    "meanAbsoluteChannelDifference": 0.0,
+    "exactPixels": true
+  },
+  {
+    "state": "768-overview-reference",
+    "sameDimensions": true,
+    "meanAbsoluteChannelDifference": 0.001077,
+    "exactPixels": false
+  },
+  {
+    "state": "768-practice-reference",
+    "sameDimensions": true,
+    "meanAbsoluteChannelDifference": 0.001101,
+    "exactPixels": false
+  },
+  {
+    "state": "768-site-reference",
+    "sameDimensions": true,
+    "meanAbsoluteChannelDifference": 0.0,
+    "exactPixels": true
+  },
+  {
+    "state": "768-sources-reference",
+    "sameDimensions": true,
+    "meanAbsoluteChannelDifference": 0.001032,
+    "exactPixels": false
+  },
+  {
+    "state": "768-world-reference",
+    "sameDimensions": true,
+    "meanAbsoluteChannelDifference": 0.0,
+    "exactPixels": true
+  }
+]

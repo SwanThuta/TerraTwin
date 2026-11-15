@@ -1,4 +1,34 @@
+## Overview region cards
+
+- [x] Add pair-ID/site-ID keyed image/details cards at the start of Overview, matching globe order.
+- [x] Verify real Earth/Moon entry, cited-source fallbacks, equal desktop cards, mobile stacking and fixed images with independently scrolling details.
+- [x] Verify test-only valid/broken imagery and pair-switch error/disclosure resets; preserve Evidence and close behavior.
+- [x] Pass production build/typecheck and five frontend data tests.
+
+# Current frontend source port — November 15, 2026
+
+These are the current UI acceptance checks. The earlier milestone entries below retain historical project progress and do not describe the active route tree.
+
+- [x] Retrieve exact reference source commit `19ce48affaf49194359a6b57a36b0d91f8882999` separately from the destination.
+- [x] Port the active route shell, reviewed explorer, galaxy, logo, globe renderer/fallback, carousel and high-resolution texture assets directly.
+- [x] Keep the destination backend/export/deployment configuration; integrate `/data/atlas.json` through one typed loader.
+- [x] Verify one-pair rendering and both directions; group counterpart actions and keep all match-dependent content on one pair ID.
+- [x] Verify test-only multiple matches, both counterpart worlds, empty datasets and missing optional imagery/evidence.
+- [x] Compare matching Home, world, selected site, comparison tabs and Method layouts at 390/768/1440px; retain paired screenshots.
+- [x] Verify 2.5-second carousel motion in both directions, globe entry, zoom/reset, keyboard tabs, software fallback and retry.
+- [x] Pass build/typecheck, 5 frontend tests and 16 Python tests.
+
 # Hackathon delivery checklist
+
+## Local Design presentation review
+
+- [x] Restore the pulled repository's original CSV generator, source data, qualitative profile and science tests unchanged.
+- [x] Use the reference only for visual assets/theme; remove its demo dataset, shortlists, photos and scoring flow.
+- [x] Add a responsive landing with Earth, Moon and Mars, dataset-derived availability and the real P01 feature card.
+- [x] Preserve the original Natural Earth / MapLibre map, projection controls, directions, practice filters, evidence and PDF.
+- [x] Pass build/typecheck and all 14 existing science tests; browser-check both directions, Mars empty state, filters, projection controls, evidence focus, PDF and mobile overflow.
+- [ ] User reviews the local Design branch before deciding whether to push.
+
 
 Status: the new CSV package feeds a P01-only preview on `codex/csv-dimensions-one-pair`. Earlier checklist checks describe the initial P01/P07 milestone; this branch still needs the remaining CSV pairs, per-tag evidence, imagery, candidate discovery, and team assignment. Times are relative to the team's development start. Owner numbers are suggested roles; assign member names at kickoff.
 
@@ -95,3 +125,11 @@ Gate: both bodies have useful sourced comparisons, and bounded discovery is repr
 - [ ] Expand candidate coverage and review rubric decisions against documented analog cases.
 
 If time gets tight, reduce the number of sites and visual polish first. Keep source traceability, honest ratings, both search directions, both Earth map views, sourced terrain visuals, evidence-backed practice tags, two-site comparison, generated explanations, matching downloadable PDFs, and the smallest reproducible candidate-search demonstration.
+
+### November 15 frontend verification
+- [x] World-first Earth/Moon/Mars explorer and pair-ID synchronized evidence.
+- [x] Dynamic counterpart actions, multi-match picker and optional-field states tested with synthetic records outside production data.
+- [x] Exporter supports additional fully reviewed CSV pairs; unreviewed leads remain excluded (automated regression test).
+- [x] Frontend build/typecheck, 3 data-contract tests and 16 Python checks passed.
+- [x] Chrome checked real forward/reverse flow, empty Mars, close preservation and 320/390/768/1440px overflow.
+- [ ] Acquire source-permitted site imagery and higher-resolution map coverage; bundled globes remain global orientation layers.

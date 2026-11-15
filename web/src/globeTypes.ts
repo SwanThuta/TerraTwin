@@ -1,0 +1,1 @@
+export type Site = {id:string;body:'earth'|'mars'|'moon';name:string;region:string;coordinates?:[number,number];status:'curated'|'candidate';landing?:string;image?:string;imageCredit?:string;imageSource?:string;coordinateConvention?:string;material:string;geology:string;scale:string;sources:[string,string][]}

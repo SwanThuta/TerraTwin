@@ -22,6 +22,9 @@ export interface Criterion {
 }
 
 export interface Site {
+  sourceIds?: string[]
+  description?: string
+  thumbnail?: string
   id: string
   name: string
   body: Body

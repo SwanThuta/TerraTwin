@@ -3,6 +3,7 @@
 from __future__ import annotations
 
 import json
+import os
 from html import escape
 from pathlib import Path
 
@@ -12,7 +13,7 @@ from reportlab.lib.styles import ParagraphStyle, getSampleStyleSheet
 from reportlab.lib.units import inch
 from reportlab.platypus import Paragraph, SimpleDocTemplate, Spacer
 
-from pipeline.csv_loader import CSV_DIR, load_p01
+from pipeline.csv_loader import CSV_DIR, load_reviewed
 from pipeline.models import publishable
 
 
@@ -102,7 +103,8 @@ def write_report(record: dict, dataset: dict, path: Path) -> None:
 
 
 def build() -> dict:
-    dataset = load_p01()
+    dataset = load_reviewed()
+    dataset.datasetVersion = os.environ.get("ATLAS_DATASET_VERSION", dataset.datasetVersion)
     output = publishable(dataset)
     serialized = json.dumps(output, indent=2, ensure_ascii=False) + "\n"
     PROCESSED.parent.mkdir(parents=True, exist_ok=True)

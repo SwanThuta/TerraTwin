@@ -1,47 +1,80 @@
 # TerraTwin
 
-This branch is a one-pair preview of the new CSV-backed atlas. The build reads `analog_pairs.csv`, `locations.csv`, `sources.csv`, `comparison_criteria.csv`, `location_workflows.csv`, `comparison_evidence.csv`, and `practice_objectives.csv` from [the new research package](TerraTwin_Earth_Moon_Mars_Analog_Data_2026-11-14/README.md). `source.md` and the legacy `data/sites.json` are not build inputs. The supplied package also contains reference scoring scripts; the app uses only `pipeline/models.py` to calculate its rating and ranking.
+A planetary field atlas for exploring Earth, the Moon and Mars and reading source-backed comparisons of Earth analogs with planetary targets.
 
-## Preview boundary
+## Frontend reference
 
-Only **P01**, Haughton Site A / Locale 7 ↔ Shackleton rim, is published in this slice. The CSV's dated desk screening rates terrain **Moderate** and geology **Weak**, giving an overall **Weak** qualitative label. C01 (named landform and subfeatures) and C02 (surface material / deposit classes) are the two scored dimensions. The other CSV criteria are shown on the Method & sources page with their readiness; they are not silently turned into scores. In particular, no validated raster measurements are supplied. The HMP research station marker is explicitly a context reference, not a Locale 7 feature point.
+The active UI is ported directly from the Sites source revision `19ce48affaf49194359a6b57a36b0d91f8882999`, the version of [TerraTwin Field Explorer](https://terratwin-field-explorer.dryhill3.chatgpt.site) specified in the frontend brief.
 
-The new evidence CSV gives P01 two documented similarity statements and three possible practice objectives, each with source IDs and limitations. These additions make the comparison explainable without changing its Moderate terrain / Weak geology ratings. Images are pending. The other seven pairs are not imported yet, and Mars search has an empty state.
+- Reference checkout used: `/tmp/terratwin-reference/.sites-checkout`.
+- Destination: `/home/dell/Desktop/TerraTwin`.
+- Entry point: `web/src/main.tsx`; active world/comparison/method screens: `web/src/ReviewedAtlas.tsx`.
+- Directly retained: header/footer, Home composition, three-globe 2.5-second carousel, galaxy background, globe renderer and software fallback, full-width zoom, higher-resolution textures, typography, breakpoints and reference CSS.
+- Integration changes: typed destination JSON loading, stable-ID relationships, one action per counterpart world, a compact selector only for multiple matches, and local handling of incomplete optional data. The single-pair layout has no match selector.
 
-## Run locally
+Older `MapPanel.tsx` and `LocatorFallback.tsx` files are retained but are not in the active route tree. The previous `App.tsx` and `Landing.tsx` route implementation has been replaced.
 
-The existing `.venv` in this workspace points at a removed Python installation. The following build and test commands were run successfully here with the bundled Python 3.12.14 and the existing `.venv` packages:
+## Overview region cards
 
-```powershell
-& 'C:\Users\User\.cache\codex-runtimes\codex-primary-runtime\dependencies\python\python.exe' -m pipeline.build
-$env:PYTHONPATH=(Resolve-Path '.venv\Lib\site-packages').Path
-& 'C:\Users\User\.cache\codex-runtimes\codex-primary-runtime\dependencies\python\python.exe' -m pytest -q -p no:cacheprovider
+Comparisons now show both regions' images and details immediately in Overview, above Documented similarity. The cards follow globe order, use equal fixed image frames and scrolling details, and stack at the existing mobile breakpoint. The real export currently has no imported pair images, so its cited-source fallbacks are shown. Valid `visual.localPath` images appear automatically when published; no frontend edit is needed. This is an intentional addition after the original reference-port comparison captures.
+
+Targeted browser checks and screenshots are in `artifacts/overview-regions/`. To rerun with the local server running:
+
+```bash
+PLAYWRIGHT_CORE=/tmp/terratwin-browser/node_modules/playwright-core node web/tests/overview-regions.browser.cjs
 ```
 
-For a fresh environment, use the versions in `.python-version` and `pipeline/requirements.txt`, then run `python -m pipeline.build` and `python -m pytest -q`. This branch has not yet been checked with the exact pinned Python runtime.
+The script uses real data for both directions and test-only intercepted image/data responses for successful image loads, failed image loads, and comparison-state resets. It does not change production data.
 
-From `web/`:
+## Run and verify
 
-```powershell
-npm.cmd run dev -- --host 127.0.0.1
-npm.cmd run build
+Root scripts forward to the existing Vite application in `web/`. Keep the versions in `.nvmrc`, `.python-version` and the dependency manifests. No framework or deployment configuration was replaced for this port.
+
+```bash
+npm --prefix web ci
+npm run dev -- --host 127.0.0.1
+npm run typecheck
+npm --prefix web test
+npm run build
 ```
 
-The generator writes `data/processed/atlas.json`, `web/public/data/atlas.json`, and the matching P01 PDF in `web/public/reports/`. The website and PDF use the same validated comparison record. The frontend build passed with Node.js 24.19.0 and npm 11.17.0; exact pinned Node.js 24.22.3 remains to be checked. Vite reported its existing large MapLibre bundle warning.
+The local app is served at `http://127.0.0.1:5173/`; the production build writes `web/dist/`. Routes are `#/`, `#/atlas`, `#/world/earth`, `#/world/moon`, `#/world/mars` and `#/method`. The reference also supports `#/atlas/<world>` aliases.
 
-The supplied package's `validate.py` also passed its 18-location, eight-pair, 48-workflow-step cross-check. That check does not mean the other seven pairs are reviewed or imported into this preview.
+Python checks in this session use the pinned dependencies installed in `/tmp/terratwin-python`:
 
-## Project files
+```bash
+PYTHONPATH=/tmp/terratwin-python python3 -m pytest -q
+```
 
-- [spec.md](spec.md): product and scientific contract, with this preview boundary.
-- [design.md](design.md): interface contract.
-- [todo.md](todo.md): delivery checklist.
-- [pipeline/csv_loader.py](pipeline/csv_loader.py): P01 CSV joins and coordinate handling.
-- [TerraTwin_Earth_Moon_Mars_Analog_Data_2026-11-14/comparison_evidence.csv](TerraTwin_Earth_Moon_Mars_Analog_Data_2026-11-14/comparison_evidence.csv): pair-specific similarity statements and limits.
-- [TerraTwin_Earth_Moon_Mars_Analog_Data_2026-11-14/practice_objectives.csv](TerraTwin_Earth_Moon_Mars_Analog_Data_2026-11-14/practice_objectives.csv): possible practice uses with evidence and caveats.
-- [pipeline/models.py](pipeline/models.py): validation and ordinal rating.
-- [pipeline/build.py](pipeline/build.py): atlas and PDF generation.
-- [web/src/App.tsx](web/src/App.tsx): search and comparison interface.
-- [tests/test_science.py](tests/test_science.py): scientific and artifact checks.
+For a fresh environment, install `pipeline/requirements.txt` into a virtual environment and run `python -m pytest -q` there. The existing obsolete `.venv` should not be relied on.
 
-The remaining CSV pairs, per-tag evidence, source-permitted terrain imagery, and bounded candidate discovery remain to be integrated. Read [agents.md](agents.md) before changing product or scientific behavior.
+## Backend and publishing data
+
+This port preserves the destination backend, CSV research inputs, scientific rules, exporter, reports and deployment setup. It does not import the reference's demo datasets or terrain photographs.
+
+The authoritative frontend endpoint in this checkout is **`/data/atlas.json`**. The reference used `/data/reviewed-atlas.json`; the destination uses its own existing export through `web/src/atlas.ts`. `VITE_ATLAS_URL` can select a different JSON endpoint at build time; external endpoints must allow the frontend origin through CORS.
+
+Add stable feature IDs to `TerraTwin_Earth_Moon_Mars_Analog_Data_2026-11-14/locations.csv` and complete the related source, workflow, comparison-evidence and practice rows. Pairs must be explicitly reviewed, with `review_status=reviewed_source_desk_screening`, reviewer/date, supported qualitative ratings and consistent derived columns. The current `load_reviewed()` exporter imports all complete pairs with that status; unreviewed candidates remain excluded from this frontend. It validates the two-dimension profile and six workflow steps.
+
+```bash
+ATLAS_DATASET_VERSION=your-reviewed-release python3 -m pipeline.build
+npm run build
+```
+
+Run that command in the Python environment described above. The exporter writes `data/processed/atlas.json`, `web/public/data/atlas.json` and the matching reports under `web/public/reports/`. Change the dataset version when updating published evidence. Deploy `web/dist/` through the existing deployment process after regeneration. New valid published records require **zero frontend source edits**.
+
+The current scientific input still publishes only P01: Haughton Site A / Locale 7 ↔ Shackleton–de Gerlache ridge rim NAC view. Terrain is Moderate, geology Weak, overall Weak, with two reviewed dimensions. Mars remains navigable with an honest empty state. The HMP research-station marker is a context locator, not a verified Locale 7 feature point; scene coordinates and conventions remain in the evidence. The ordinal scientific rules remain in `pipeline/models.py`.
+
+## Reference comparison and interaction checks
+
+Verification artifacts and reproducible Chrome scripts are in `artifacts/reference-port/`. Both apps were run locally using compatible installed runtime dependencies. Reference data requests were intercepted with the destination payload for the visual comparisons, separating UI differences from scientific release-content differences. Neither server's published data was changed by those comparisons.
+
+The checks cover Home, world overview, selected site, all four comparison tabs and Method & sources at matching 390/768/1440px viewports. Source asset checksums, layout measurements, paired screenshots and pixel-comparison results are saved there. Interaction checks cover the real pair in both directions, carousel directions and 2.5-second timing, zoom/reset, keyboard tabs, empty Mars, test-only multiple matches and both counterpart worlds, missing optional data, software rendering and retryable fetch failure. Synthetic records remain in tests or intercepted browser responses.
+
+Run the browser scripts with Chrome installed and `PLAYWRIGHT_CORE` pointing to an installed `playwright-core` module. For `compare.cjs`, serve the exact reference at port 5174 and the destination at 5173. The optional tooling used in this session lives in `/tmp/terratwin-browser` and is not a new application dependency.
+
+## Current limits
+
+Global textures and their higher-resolution layers provide orientation, not street/building coverage or verified terrain measurements. Pair-specific images remain unavailable unless supplied in the destination export with their source, credit and scale. No feature boundary is inferred from a context pin. The broader research leads still need review before publication. Vite emits an advisory warning for the Three.js bundle size.
+
+See `agents.md`, `spec.md`, `design.md` and `todo.md` for the project contract and scientific delivery checklist.

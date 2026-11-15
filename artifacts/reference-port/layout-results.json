@@ -1,0 +1,122 @@
+[
+  {
+    "width": 390,
+    "state": "home",
+    "geometryAndStyles": "identical"
+  },
+  {
+    "width": 390,
+    "state": "world",
+    "geometryAndStyles": "identical"
+  },
+  {
+    "width": 390,
+    "state": "site",
+    "geometryAndStyles": "identical"
+  },
+  {
+    "width": 390,
+    "state": "overview",
+    "geometryAndStyles": "identical"
+  },
+  {
+    "width": 390,
+    "state": "evidence",
+    "geometryAndStyles": "identical"
+  },
+  {
+    "width": 390,
+    "state": "practice",
+    "geometryAndStyles": "identical"
+  },
+  {
+    "width": 390,
+    "state": "sources",
+    "geometryAndStyles": "identical"
+  },
+  {
+    "width": 390,
+    "state": "method",
+    "geometryAndStyles": "identical"
+  },
+  {
+    "width": 768,
+    "state": "home",
+    "geometryAndStyles": "identical"
+  },
+  {
+    "width": 768,
+    "state": "world",
+    "geometryAndStyles": "identical"
+  },
+  {
+    "width": 768,
+    "state": "site",
+    "geometryAndStyles": "identical"
+  },
+  {
+    "width": 768,
+    "state": "overview",
+    "geometryAndStyles": "identical"
+  },
+  {
+    "width": 768,
+    "state": "evidence",
+    "geometryAndStyles": "identical"
+  },
+  {
+    "width": 768,
+    "state": "practice",
+    "geometryAndStyles": "identical"
+  },
+  {
+    "width": 768,
+    "state": "sources",
+    "geometryAndStyles": "identical"
+  },
+  {
+    "width": 768,
+    "state": "method",
+    "geometryAndStyles": "identical"
+  },
+  {
+    "width": 1440,
+    "state": "home",
+    "geometryAndStyles": "identical"
+  },
+  {
+    "width": 1440,
+    "state": "world",
+    "geometryAndStyles": "identical"
+  },
+  {
+    "width": 1440,
+    "state": "site",
+    "geometryAndStyles": "identical"
+  },
+  {
+    "width": 1440,
+    "state": "overview",
+    "geometryAndStyles": "identical"
+  },
+  {
+    "width": 1440,
+    "state": "evidence",
+    "geometryAndStyles": "identical"
+  },
+  {
+    "width": 1440,
+    "state": "practice",
+    "geometryAndStyles": "identical"
+  },
+  {
+    "width": 1440,
+    "state": "sources",
+    "geometryAndStyles": "identical"
+  },
+  {
+    "width": 1440,
+    "state": "method",
+    "geometryAndStyles": "identical"
+  }
+]

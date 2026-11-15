@@ -1,0 +1,67 @@
+[
+  {
+    "path": "src/main.tsx",
+    "identical": true,
+    "sha256": "ae5a65473d92bb88f930c038d6df48d8a8b394872db6b6ad39b14979e715a962"
+  },
+  {
+    "path": "src/Space.tsx",
+    "identical": true,
+    "sha256": "91567843fd1b35e0a0eb5615b29232cca71a5ecde787a5d295846625babec9bf"
+  },
+  {
+    "path": "src/bodies.ts",
+    "identical": true,
+    "sha256": "d460a0ba5059ce892617e309fe4326c919b73385d5c736ec4d49f8b0b17102b7"
+  },
+  {
+    "path": "src/softwareGlobe.ts",
+    "identical": true,
+    "sha256": "f0c52dd5f1603e56c595f12cfa4baa2ba510631dd25e0a422b0312ac9dcef8ec"
+  },
+  {
+    "path": "public/textures/earth_daymap.jpg",
+    "identical": true,
+    "sha256": "d4dc80a6ef571939d0abe04a9bed3d3d1e6cd63e59514be1c5e43a6b069e6f1e"
+  },
+  {
+    "path": "public/textures/moon-detail.webp",
+    "identical": true,
+    "sha256": "9880259f3053d323c67775ede1160ee37eadfdead070a2987c8fb18c402d1f05"
+  },
+  {
+    "path": "public/textures/mars.jpg",
+    "identical": true,
+    "sha256": "a63f5f6d2b31d3b27e367f3198a28ae88aa86242d4454613d253b78b6fe042a6"
+  },
+  {
+    "path": "public/textures/earth_daymap-detail.webp",
+    "identical": true,
+    "sha256": "88cdce23f92c6f501e149d01867c159109f1172620490f5b038e11c8dce60be8"
+  },
+  {
+    "path": "public/textures/moon.jpg",
+    "identical": true,
+    "sha256": "f7130a1822681fa7512d7dcfd40db8c10b9ba4f06777910348698260ed7a2170"
+  },
+  {
+    "path": "public/textures/mars-detail.webp",
+    "identical": true,
+    "sha256": "aa95fe9b9b7ecdf1016a3f97314f5dbc1d1ebfb13702147810c1b96808a66450"
+  },
+  {
+    "path": "public/space/nebula-mobile.webp",
+    "identical": true,
+    "sha256": "cd766ca70e17dbefdb947ffd9d8138ab92ea52986ef2a856b8a3b5edde05ecda"
+  },
+  {
+    "path": "public/space/nebula.webp",
+    "identical": true,
+    "sha256": "d40c84e7e1626927be0cc84cfa3099d618734782549020555bd101d5bc6768b1"
+  },
+  {
+    "path": "public/favicon.svg",
+    "identical": true,
+    "sha256": "cce6665fa7c900c33ba4cb679db46ce9640ac8203c9cdb5e4450873353a6fbc6"
+  }
+]

@@ -33,6 +33,7 @@ Example research leads include Atacama, Haughton Crater, volcanic fields, polar 
 | --- | --- | --- |
 | Frontend | React + TypeScript + Vite | Familiar tools and a static deployment path |
 | Styling | CSS with shared variables and simple components | Keep styling easy to understand and coordinate |
+| Landing visuals | Three.js 0.187.0 with software canvas fallback | Decorative global imagery only; not site measurements |
 | Maps | MapLibre GL JS, with flat and globe projections | Share one mapping engine and selection state |
 | Data preparation | Python scripts; add NumPy/Pandas when useful | Prepare measurements and comparisons before the demo |
 | Storage | Versioned CSV inputs; generated JSON/GeoJSON for the frontend | Keep the research rows editable and publish validated static assets |
@@ -170,3 +171,7 @@ Technical references: [Vite](https://vite.dev/guide/), [MapLibre](https://maplib
 - Loading, empty results, unavailable tiles, and insufficient evidence have useful states.
 - Keyboard users can select sites and read comparisons without interacting with the map.
 - The frontend builds, scientific logic checks pass, and the demo workflow has been rehearsed.
+
+Frontend publication update: `pipeline.csv_loader.load_reviewed()` now imports all complete CSV pairs explicitly marked `reviewed_source_desk_screening`; the current research input still yields only P01. The frontend normalizes the generated `/data/atlas.json` through one loader and builds both relationship directions from stable IDs. New reviewed rows no longer require a frontend or pair-ID loader change. `ATLAS_DATASET_VERSION` can version regenerated JSON and reports.
+
+Frontend source-port update (November 15, 2026): the active UI now directly ports Sites revision `19ce48affaf49194359a6b57a36b0d91f8882999`, including its world routes, renderer, responsive Home carousel, full-width zoom and evidence tabs. The destination backend, research inputs, scientific rules, exporter and deployment configuration remain authoritative and unchanged by this port. This supersedes the earlier recreated UI. Additional-match controls use explicit backend target ordering and stable dataset order otherwise; the frontend does not recalculate ordinal ranking.
