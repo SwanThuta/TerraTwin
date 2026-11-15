@@ -75,6 +75,8 @@ Run that command in the Python environment described above. The exporter writes 
 
 The current release publishes P01–P08 from the supplied CSVs. P01 and P05–P07 have two rated dimensions and appear in rankings; P02–P04 and P08 retain missing dimensions and are unranked. P02–P08 are AI source desk screens requiring independent expert review. Both Moon and Mars worlds now have comparisons. The HMP research-station marker and other nearby or derived coordinates are shown only as labeled context anchors, not verified feature points; scene coordinates and conventions remain in the evidence. The ordinal scientific rules remain in `pipeline/models.py`.
 
+For upcoming location images, use the ID-based folders and naming guide in `web/public/site-images/README.md`. Images still need source, credit, scope, and scale metadata before the atlas export can display them.
+
 ## Reference comparison and interaction checks
 
 Verification artifacts and reproducible Chrome scripts are in `artifacts/reference-port/`. Both apps were run locally using compatible installed runtime dependencies. Reference data requests were intercepted with the destination payload for the visual comparisons, separating UI differences from scientific release-content differences. Neither server's published data was changed by those comparisons.

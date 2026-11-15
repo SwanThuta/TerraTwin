@@ -5,6 +5,12 @@
 - [x] Verify test-only valid/broken imagery and pair-switch error/disclosure resets; preserve Evidence and close behavior.
 - [x] Pass production build/typecheck and five frontend data tests.
 
+## Site image intake
+
+- [x] Create Earth, Moon, and Mars image folders and document stable site-ID file names.
+- [ ] Receive and verify source, credit, reuse terms, feature scope, and scale for each supplied image.
+- [ ] Connect verified image paths and metadata to the atlas export and confirm the website and PDF show the correct selected site.
+
 # Current frontend source port — November 15, 2026
 
 These are the current UI acceptance checks. The earlier milestone entries below retain historical project progress and do not describe the active route tree.
