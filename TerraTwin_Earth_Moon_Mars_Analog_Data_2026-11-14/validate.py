@@ -21,6 +21,9 @@ for loc in locations:
     assert set(loc['coordinate_source_id'].split(';'))<=ids, loc['feature_id']
     if loc['feature_coordinates_status']=='not_source_verified':
         assert loc['feature_lat_deg']=='' and loc['feature_lon_deg']==''
+    if loc['feature_coordinates_status'].startswith('approximate_'):
+        assert loc['feature_lat_deg'] and loc['feature_lon_deg'], loc['feature_id']
+        assert 'approximate' in loc['coordinate_note'].lower(), loc['feature_id']
     if loc['feature_lat_deg']:
         lat=float(loc['feature_lat_deg']);lon=float(loc['feature_lon_deg'])
         assert -90<=lat<=90

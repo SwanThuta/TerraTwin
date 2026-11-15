@@ -1,0 +1,481 @@
+%PDF-1.4
+%“Œ‹ž ReportLab Generated PDF document (opensource)
+1 0 obj
+<<
+/F1 2 0 R /F2 3 0 R
+>>
+endobj
+2 0 obj
+<<
+/BaseFont /Helvetica /Encoding /WinAnsiEncoding /Name /F1 /Subtype /Type1 /Type /Font
+>>
+endobj
+3 0 obj
+<<
+/BaseFont /Helvetica-Bold /Encoding /WinAnsiEncoding /Name /F2 /Subtype /Type1 /Type /Font
+>>
+endobj
+4 0 obj
+<<
+/Contents 14 0 R /MediaBox [ 0 0 612 792 ] /Parent 13 0 R /Resources <<
+/Font 1 0 R /ProcSet [ /PDF /Text /ImageB /ImageC /ImageI ]
+>> /Rotate 0 /Trans <<
+
+>> 
+  /Type /Page
+>>
+endobj
+5 0 obj
+<<
+/Contents 15 0 R /MediaBox [ 0 0 612 792 ] /Parent 13 0 R /Resources <<
+/Font 1 0 R /ProcSet [ /PDF /Text /ImageB /ImageC /ImageI ]
+>> /Rotate 0 /Trans <<
+
+>> 
+  /Type /Page
+>>
+endobj
+6 0 obj
+<<
+/A <<
+/S /URI /Type /Action /URI (https://iugs-geoheritage.org/geoheritage_sites/mars-analog-of-lake-salda/)
+>> /Border [ 0 0 0 ] /Rect [ 52.8 610.075 345.426 622.075 ] /Subtype /Link /Type /Annot
+>>
+endobj
+7 0 obj
+<<
+/A <<
+/S /URI /Type /Action /URI (https://science.nasa.gov/blogs/earth-matters/2021/02/17/what-a-lake-in-turkey-can-tell-us-about-mars/)
+>> /Border [ 0 0 0 ] /Rect [ 52.8 562.075 458.952 574.075 ] /Subtype /Link /Type /Annot
+>>
+endobj
+8 0 obj
+<<
+/A <<
+/S /URI /Type /Action /URI (https://science.nasa.gov/photojournal/lake-salda-beach/)
+>> /Border [ 0 0 0 ] /Rect [ 52.8 526.075 274.911 538.075 ] /Subtype /Link /Type /Annot
+>>
+endobj
+9 0 obj
+<<
+/A <<
+/S /URI /Type /Action /URI (https://planetarynames.wr.usgs.gov/Feature/14300)
+>> /Border [ 0 0 0 ] /Rect [ 52.8 490.075 255.399 502.075 ] /Subtype /Link /Type /Annot
+>>
+endobj
+10 0 obj
+<<
+/Annots [ 6 0 R 7 0 R 8 0 R 9 0 R ] /Contents 16 0 R /MediaBox [ 0 0 612 792 ] /Parent 13 0 R /Resources <<
+/Font 1 0 R /ProcSet [ /PDF /Text /ImageB /ImageC /ImageI ]
+>> /Rotate 0 
+  /Trans <<
+
+>> /Type /Page
+>>
+endobj
+11 0 obj
+<<
+/PageMode /UseNone /Pages 13 0 R /Type /Catalog
+>>
+endobj
+12 0 obj
+<<
+/Author (\(anonymous\)) /CreationDate (D:20261115085458+06'00') /Creator (\(unspecified\)) /Keywords () /ModDate (D:20261115085458+06'00') /Producer (ReportLab PDF Library - \(opensource\)) 
+  /Subject (\(unspecified\)) /Title (TerraTwin P05 evidence report) /Trapped /False
+>>
+endobj
+13 0 obj
+<<
+/Count 3 /Kids [ 4 0 R 5 0 R 10 0 R ] /Type /Pages
+>>
+endobj
+14 0 obj
+<<
+/Length 5154
+>>
+stream
+1 0 0 1 0 0 cm  BT /F1 12 Tf 14.4 TL ET
+q
+1 0 0 1 52.8 717.2 cm
+q
+.078431 .164706 .262745 rg
+BT 1 0 0 1 0 4 Tm /F2 18 Tf 22 TL 116.652 0 Td (TerraTwin evidence report - P05) Tj T* -116.652 0 Td ET
+Q
+Q
+q
+1 0 0 1 52.8 668.2 cm
+q
+.082353 .345098 .415686 rg
+BT 1 0 0 1 0 22 Tm /F2 14 Tf 18 TL (Lake Salda carbonate-rich shoreline / terrace candidate and Jezero western) Tj T* (carbonate-bearing crater margin \(deposit pending\)) Tj T* ET
+Q
+Q
+q
+1 0 0 1 52.8 649.2 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 3 Tm /F1 10 Tf 13 TL (Status: reviewed | Overall: Moderate | Evidence: 2/2 dimensions supported) Tj T* ET
+Q
+Q
+q
+1 0 0 1 52.8 631.2 cm
+q
+.254902 .32549 .419608 rg
+BT 1 0 0 1 0 3 Tm /F1 9 Tf 12 TL (Dataset csv-2026-11-15-p01-p08-approx-coordinates | Rubric terrain-geology-qual-v1 | Order terrain-first-v1) Tj T* ET
+Q
+Q
+q
+1 0 0 1 52.8 613.2 cm
+q
+.254902 .32549 .419608 rg
+BT 1 0 0 1 0 3 Tm /F1 9 Tf 12 TL (Qualitative screening judgment; no similarity percentage or route-safety assessment.) Tj T* ET
+Q
+Q
+q
+1 0 0 1 52.8 582.2 cm
+q
+.082353 .345098 .415686 rg
+BT 1 0 0 1 0 4 Tm /F2 14 Tf 18 TL (Feature scope) Tj T* ET
+Q
+Q
+q
+1 0 0 1 52.8 537.2 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 29 Tm /F1 10 Tf 13 TL (Earth: Lake Salda carbonate-rich shoreline / terrace candidate. Locator: Lake Salda; Approximate locator uses the) Tj T* (IUGS whole-lake reference point; the NASA-described northeastern beach/terrace has no published subfeature) Tj T* (coordinate in the cited source. Footprint: not_digitized.) Tj T* ET
+Q
+Q
+q
+1 0 0 1 52.8 483.2 cm
+q
+.254902 .32549 .419608 rg
+BT 1 0 0 1 0 39 Tm /F1 9 Tf 12 TL (Earth map marker: Approximate reference locator: Approximate locator uses the IUGS whole-lake reference point; the) Tj T* (NASA-described northeastern beach/terrace has no published subfeature coordinate in the cited source.. Coordinate note:) Tj T* (Approximate locator uses the IUGS whole-lake reference point; the NASA-described northeastern beach/terrace has no) Tj T* (published subfeature coordinate in the cited source.. Convention: WGS84 signed East [-180,180]; WGS84 geodetic) Tj T* ET
+Q
+Q
+q
+1 0 0 1 52.8 438.2 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 29 Tm /F1 10 Tf 13 TL (Mars: Jezero western carbonate-bearing crater margin \(deposit pending\). Locator: Jezero crater; Approximate) Tj T* (regional locator reuses the IAU Jezero crater center; it does not locate the western carbonate unit or a sampled) Tj T* (exposure. Footprint: not_digitized.) Tj T* ET
+Q
+Q
+q
+1 0 0 1 52.8 396.2 cm
+q
+.254902 .32549 .419608 rg
+BT 1 0 0 1 0 27 Tm /F1 9 Tf 12 TL (Planetary coordinate convention: positive East [0,360]; planetocentric unless product label specifies otherwise; verify.) Tj T* (Approximate regional locator reuses the IAU Jezero crater center; it does not locate the western carbonate unit or a sampled) Tj T* (exposure.) Tj T* ET
+Q
+Q
+q
+1 0 0 1 52.8 364.2 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 16 Tm /F1 10 Tf 13 TL (Relationship: NASA explicitly compares Lake Salda with Jezero; selected footprints pending. Theme:) Tj T* (Mg-carbonate shoreline / sediment deposition. [R11, R12, R13]) Tj T* ET
+Q
+Q
+q
+1 0 0 1 52.8 333.2 cm
+q
+.082353 .345098 .415686 rg
+BT 1 0 0 1 0 4 Tm /F2 14 Tf 18 TL (C01 - Named landform and subfeatures) Tj T* ET
+Q
+Q
+q
+1 0 0 1 52.8 303.2 cm
+q
+.254902 .32549 .419608 rg
+BT 1 0 0 1 0 15 Tm /F1 9 Tf 12 TL (Question: Cross-section/planform, visible subfeatures, area/scale, meaningfully corresponding features | Readiness:) Tj T* (not_numerical) Tj T* ET
+Q
+Q
+q
+1 0 0 1 52.8 284.2 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 3 Tm /F1 10 Tf 13 TL (Rating: Moderate | Sources: R11, R12, R13) Tj T* ET
+Q
+Q
+q
+1 0 0 1 52.8 252.2 cm
+q
+BT 1 0 0 1 0 16 Tm 13 TL /F1 10 Tf 0 0 0 rg (Evidence: NASA documents exposed Salda shoreline benches and terraces and a possible ancient-shoreline) Tj T* (interpretation for carbonate-bearing deposits on Jezero) Tj (') Tj (s western margin.) Tj T* ET
+Q
+Q
+q
+1 0 0 1 52.8 220.2 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 16 Tm /F1 10 Tf 13 TL (Difference: Both sources identify shoreline benches/terraces and exposed deposits, but they do not provide) Tj T* (matched footprints or comparable physical scales.) Tj T* ET
+Q
+Q
+q
+1 0 0 1 52.8 189.2 cm
+q
+.082353 .345098 .415686 rg
+BT 1 0 0 1 0 4 Tm /F2 14 Tf 18 TL (C02 - Surface material / deposit classes) Tj T* ET
+Q
+Q
+q
+1 0 0 1 52.8 159.2 cm
+q
+.254902 .32549 .419608 rg
+BT 1 0 0 1 0 15 Tm /F1 9 Tf 12 TL (Question: Published lithology, regolith, layers, sediment size, bedrock context, mineral analyses if measured | Readiness:) Tj T* (not_numerical) Tj T* ET
+Q
+Q
+q
+1 0 0 1 52.8 140.2 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 3 Tm /F1 10 Tf 13 TL (Rating: Moderate | Sources: R11, R12, R13) Tj T* ET
+Q
+Q
+q
+1 0 0 1 52.8 108.2 cm
+q
+BT 1 0 0 1 0 16 Tm 13 TL /F1 10 Tf 0 0 0 rg (Evidence: NASA reports Salda beach sediments composed of hydromagnesite and possible carbonate-bearing) Tj T* (material along Jezero) Tj (') Tj (s western margin.) Tj T* ET
+Q
+Q
+q
+1 0 0 1 52.8 76.2 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 16 Tm /F1 10 Tf 13 TL (Difference: Salda hydromagnesite is characterized while Jezero carbonate-bearing western-margin material) Tj T* (remains a possible interpretation; identical mineralogy or biological origin is not established.) Tj T* ET
+Q
+Q
+ 
+endstream
+endobj
+15 0 obj
+<<
+/Length 5717
+>>
+stream
+1 0 0 1 0 0 cm  BT /F1 12 Tf 14.4 TL ET
+q
+1 0 0 1 52.8 721.2 cm
+q
+.082353 .345098 .415686 rg
+BT 1 0 0 1 0 4 Tm /F2 14 Tf 18 TL (Documented similarity) Tj T* ET
+Q
+Q
+q
+1 0 0 1 52.8 689.2 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 16 Tm /F1 10 Tf 13 TL (Evidence summary for Mg-carbonate shoreline / sediment deposition; read each dimension and its limitations) Tj T* (before interpreting the label.) Tj T* ET
+Q
+Q
+q
+1 0 0 1 52.8 592.2 cm
+q
+BT 1 0 0 1 0 81 Tm 13 TL /F1 10 Tf 0 0 0 rg (E05-T01 \267 Terrain similarity: NASA documents exposed Salda shoreline benches and terraces and a possible) Tj T* (ancient-shoreline interpretation for carbonate-bearing deposits on Jezero) Tj (') Tj (s western margin. Limitation: Source) Tj T* (descriptions support a broad shoreline/depositional comparison but do not georeference paired footprints or) Tj T* -0.08 Tw (provide comparable physical scales. Earth locator: NASA Earth Observatory text and PIA24375 description identify) Tj T* 0 Tw (eastern/NE shore benches and old terraces Planetary locator: NASA Earth Observatory identifies possible) Tj T* (carbonate-bearing material on Jezero western margins Scale: Photographs and regional orbital interpretation are) Tj T* (not matched terrain measurements. Sources: R11, R12, R13) Tj T* ET
+Q
+Q
+q
+1 0 0 1 52.8 508.2 cm
+q
+BT 1 0 0 1 0 68 Tm 13 TL /F1 10 Tf 0 0 0 rg (E05-G01 \267 Geology similarity: NASA reports Salda beach sediments composed of hydromagnesite and possible) Tj T* (carbonate-bearing material along Jezero) Tj (') Tj (s western margin. Limitation: Jezero mineral identification is possible) Tj T* (rather than confirmed as the same mineral species; microbialite origin at Salda does not imply Martian life. Earth) Tj T* (locator: NASA Earth Observatory shoreline description; IUGS Lake Salda geoheritage record Planetary locator:) Tj T* (NASA Earth Observatory MRO interpretation of Jezero western margin Scale: No matched mineral analyses,) Tj T* (grain-size data, or sample locations. Sources: R11, R12, R13) Tj T* ET
+Q
+Q
+q
+1 0 0 1 52.8 477.2 cm
+q
+.082353 .345098 .415686 rg
+BT 1 0 0 1 0 4 Tm /F2 14 Tf 18 TL (Explanation and practice) Tj T* ET
+Q
+Q
+q
+1 0 0 1 52.8 354.2 cm
+q
+BT 1 0 0 1 0 107 Tm 13 TL /F1 10 Tf 0 0 0 rg (Terrain is rated Moderate: NASA documents exposed Salda shoreline benches and terraces and a possible) Tj T* (ancient-shoreline interpretation for carbonate-bearing deposits on Jezero) Tj (') Tj (s western margin. Geology is rated) Tj T* (Moderate: NASA reports Salda beach sediments composed of hydromagnesite and possible carbonate-bearing) Tj T* (material along Jezero) Tj (') Tj (s western margin. Evidence context: NASA documents exposed Salda shoreline benches) Tj T* (and terraces and a possible ancient-shoreline interpretation for carbonate-bearing deposits on Jezero) Tj (') Tj (s western) Tj T* (margin. A possible use to assess is shoreline and terrace mapping. Important differences: Both sources identify) Tj T* (shoreline benches/terraces and exposed deposits, but they do not provide matched footprints or comparable) Tj T* (physical scales. Salda hydromagnesite is characterized while Jezero carbonate-bearing western-margin material) Tj T* (remains a possible interpretation; identical mineralogy or biological origin is not established.) Tj T* ET
+Q
+Q
+q
+1 0 0 1 52.8 309.2 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 29 Tm /F1 10 Tf 13 TL (Shoreline and terrace mapping \(possible\): NASA documents exposed Salda shoreline deposits and terraces and a) Tj T* (possible ancient-shoreline context at Jezero. Limitations: This supports comparative observation only; feature) Tj T* (footprints and physical scales are not matched, and it is not an approved Mars field plan. [R12, R13]) Tj T* ET
+Q
+Q
+q
+1 0 0 1 52.8 264.2 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 29 Tm /F1 10 Tf 13 TL (Carbonate and sediment observation \(possible\): Published Salda observations describe hydromagnesite-rich) Tj T* (sediments while NASA identifies possible carbonate-bearing Jezero margin material. Limitations: Jezero mineral) Tj T* (identification is tentative; do not infer identical mineralogy or biological origin. [R11, R12]) Tj T* ET
+Q
+Q
+q
+1 0 0 1 52.8 233.2 cm
+q
+.082353 .345098 .415686 rg
+BT 1 0 0 1 0 4 Tm /F2 14 Tf 18 TL (Limits and missing imagery) Tj T* ET
+Q
+Q
+q
+1 0 0 1 52.8 201.2 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 16 Tm /F1 10 Tf 13 TL (- Both sources identify shoreline benches/terraces and exposed deposits, but they do not provide matched) Tj T* (footprints or comparable physical scales.) Tj T* ET
+Q
+Q
+q
+1 0 0 1 52.8 169.2 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 16 Tm /F1 10 Tf 13 TL (- Salda hydromagnesite is characterized while Jezero carbonate-bearing western-margin material remains a) Tj T* (possible interpretation; identical mineralogy or biological origin is not established.) Tj T* ET
+Q
+Q
+q
+1 0 0 1 52.8 150.2 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 3 Tm /F1 10 Tf 13 TL (- Lake water is not an exposed DEM sample of lakebed) Tj T* ET
+Q
+Q
+q
+1 0 0 1 52.8 131.2 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 3 Tm /F1 10 Tf 13 TL (- Possible ancient shore interpretation not an exact mineral sample GPS) Tj T* ET
+Q
+Q
+q
+1 0 0 1 52.8 113.2 cm
+q
+.254902 .32549 .419608 rg
+BT 1 0 0 1 0 3 Tm /F1 9 Tf 12 TL (Limit sources: R11, R12, R13) Tj T* ET
+Q
+Q
+q
+1 0 0 1 52.8 83.2 cm
+q
+.254902 .32549 .419608 rg
+BT 1 0 0 1 0 15 Tm /F1 9 Tf 12 TL (Earth image: The package supplies citations but no verified, imported terrain image. Scale: No imported image scale. Credit:) Tj T* (See cited source. [R11]) Tj T* ET
+Q
+Q
+q
+1 0 0 1 52.8 53.2 cm
+q
+.254902 .32549 .419608 rg
+BT 1 0 0 1 0 15 Tm /F1 9 Tf 12 TL (Planetary image: The package supplies citations but no verified, imported terrain image. Scale: No imported image scale.) Tj T* (Credit: See cited source. [R13]) Tj T* ET
+Q
+Q
+ 
+endstream
+endobj
+16 0 obj
+<<
+/Length 2296
+>>
+stream
+1 0 0 1 0 0 cm  BT /F1 12 Tf 14.4 TL ET
+q
+1 0 0 1 52.8 721.2 cm
+q
+.082353 .345098 .415686 rg
+BT 1 0 0 1 0 4 Tm /F2 14 Tf 18 TL (Method and source register) Tj T* ET
+Q
+Q
+q
+1 0 0 1 52.8 676.2 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 29 Tm /F1 10 Tf 13 TL (AI qualitative source desk-screening based on NASA/IUGS sources; not an independent expert or field review.) Tj T* (Next validation: Keep the source-described NE Salda shore/bench and possible Jezero western-margin deposits) Tj T* (as the qualitative scope; georeference feature windows before any numerical terrain comparison.) Tj T* ET
+Q
+Q
+q
+1 0 0 1 52.8 644.2 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 16 Tm /F1 10 Tf 13 TL (Review: reviewed_source_desk_screening | Copilot \(AI source desk-screening\) | Date: 2026-11-15 | Rank eligible:) Tj T* (yes) Tj T* ET
+Q
+Q
+q
+1 0 0 1 52.8 626.2 cm
+q
+.254902 .32549 .419608 rg
+BT 1 0 0 1 0 3 Tm /F1 9 Tf 12 TL (R11 | International Union of Geological Sciences | Mars analog of Lake Salda | Lake coordinate 37d33m09 N 029d40m53 E) Tj T* ET
+Q
+Q
+q
+1 0 0 1 52.8 608.2 cm
+q
+.090196 .419608 .529412 rg
+BT 1 0 0 1 0 3 Tm /F1 9 Tf 12 TL (https://iugs-geoheritage.org/geoheritage_sites/mars-analog-of-lake-salda/) Tj T* ET
+Q
+Q
+q
+1 0 0 1 52.8 578.2 cm
+q
+.254902 .32549 .419608 rg
+BT 1 0 0 1 0 15 Tm /F1 9 Tf 12 TL (R12 | NASA Earth Observatory | What a Lake in Turkey Can Tell Us about Mars | Salda shore exposures and Jezero western) Tj T* (margin) Tj T* ET
+Q
+Q
+q
+1 0 0 1 52.8 560.2 cm
+q
+.090196 .419608 .529412 rg
+BT 1 0 0 1 0 3 Tm /F1 9 Tf 12 TL (https://science.nasa.gov/blogs/earth-matters/2021/02/17/what-a-lake-in-turkey-can-tell-us-about-mars/) Tj T* ET
+Q
+Q
+q
+1 0 0 1 52.8 542.2 cm
+q
+.254902 .32549 .419608 rg
+BT 1 0 0 1 0 3 Tm /F1 9 Tf 12 TL (R13 | NASA JPL | Lake Salda Beach PIA24375 | Eastern shore image PIA24375) Tj T* ET
+Q
+Q
+q
+1 0 0 1 52.8 524.2 cm
+q
+.090196 .419608 .529412 rg
+BT 1 0 0 1 0 3 Tm /F1 9 Tf 12 TL (https://science.nasa.gov/photojournal/lake-salda-beach/) Tj T* ET
+Q
+Q
+q
+1 0 0 1 52.8 506.2 cm
+q
+.254902 .32549 .419608 rg
+BT 1 0 0 1 0 3 Tm /F1 9 Tf 12 TL (R14 | IAU / USGS | Planetary names Jezero crater | center 18.41 N 77.69 E planetocentric) Tj T* ET
+Q
+Q
+q
+1 0 0 1 52.8 488.2 cm
+q
+.090196 .419608 .529412 rg
+BT 1 0 0 1 0 3 Tm /F1 9 Tf 12 TL (https://planetarynames.wr.usgs.gov/Feature/14300) Tj T* ET
+Q
+Q
+ 
+endstream
+endobj
+xref
+0 17
+0000000000 65535 f 
+0000000061 00000 n 
+0000000102 00000 n 
+0000000209 00000 n 
+0000000321 00000 n 
+0000000516 00000 n 
+0000000711 00000 n 
+0000000929 00000 n 
+0000001175 00000 n 
+0000001375 00000 n 
+0000001568 00000 n 
+0000001800 00000 n 
+0000001870 00000 n 
+0000002167 00000 n 
+0000002240 00000 n 
+0000007446 00000 n 
+0000013215 00000 n 
+trailer
+<<
+/ID 
+[<c079db9eafd15e20bbafda3d07d305ac><c079db9eafd15e20bbafda3d07d305ac>]
+% ReportLab generated PDF document -- digest (opensource)
+
+/Info 12 0 R
+/Root 11 0 R
+/Size 17
+>>
+startxref
+15563
+%%EOF

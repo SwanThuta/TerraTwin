@@ -4,7 +4,7 @@
 
 This source-preserving release covers **8 proposed Earth–Moon/Mars pairs (P01–P08)** from the supplied research shortlist, **8 Earth sites**, **6 planetary subfeature scopes**, and **4 planetary host/region references**. The companion `webapp_flat_pairs.csv` makes initial UI ingestion easy. The normalized CSVs allow more accurate scientific and evidence tracking.
 
-**Warning: Do not interpret the number of decimal digits as geodetic accuracy.** `locations.csv` separates `feature_lat_deg` / `feature_lon_deg` (a source-located feature) from `map_anchor_*` (which may locate a base camp, parking lot, image center, host crater or adjacent named valley). Read `anchor_represents`, `anchor_quality` and `coordinate_note` before displaying a location as a feature pin. A missing true feature coordinate is an empty cell, not `0`, and not the nearby context marker. No complete georeferenced study polygons or actual DEM raster measurements have been downloaded or validated in this package.
+**Warning: Do not interpret the number of decimal digits as geodetic accuracy.** `locations.csv` distinguishes source-located points from `approximate_*` reference proxies in `feature_coordinates_status`; every approximate point has a limitation in `coordinate_note`. `map_anchor_*` remains the separately recorded context point, which may be a base camp, parking lot, image center, host crater or adjacent named valley. A proxy is for approximate map orientation only: it is not a surveyed feature coordinate, feature boundary, or DEM footprint. Rows still marked `not_source_verified` keep empty feature-coordinate cells. No complete georeferenced study polygons or actual DEM raster measurements have been downloaded or validated in this package.
 
 The `longitude_convention` for planetary records is positive-east **0–360** degrees; for terrestrial records Earth WGS84-style signed degrees are shown (the Mauna Ulu USGS record explicitly quotes NAD83, so datum metadata must be preserved at higher accuracy). The label `latitude_convention` is a reminder to consult each planetary product's PDS label before GIS raster operations. Never load Moon/Mars coordinates onto an Earth base map.
 
@@ -14,6 +14,7 @@ The `longitude_convention` for planetary records is positive-east **0–360** de
 |---|---|
 | `locations.csv` | 18 locations; `feature_id` is unique; 8 Earth (E01-E08), 6 planetary scoped sites (L01/L02/M01-M04), 4 host records (H_*). |
 | `analog_pairs.csv` | 8 comparisons; join `earth_feature_id` and `planetary_feature_id` to `locations.feature_id`. |
+| `pair_review_overrides.csv` | Branch-local AI source desk-screen decisions for P02-P08; leaves the original proposed-pair rows intact. Missing dimensions stay blank with a reason. |
 | `webapp_flat_pairs.csv` | Flat 8-row frontend import view, including feature-vs-anchor distinction and review states. |
 | `sources.csv` | Research source metadata; semicolon-delimited source IDs are references to these rows. |
 | `comparison_criteria.csv` | First-release scored and unscored dimensions plus future numerical-quality requirements. |
@@ -36,16 +37,16 @@ The `longitude_convention` for planetary records is positive-east **0–360** de
 - `Weak`: supported material/landform differences materially limit analogy, with sources present for both features.
 - Null: missing source-applicable evidence / a feature not precisely selected.
 
-**Overall:** if both rated and reviewed, any `Weak` gives `Weak`; two `Strong` give `Strong`; otherwise `Moderate`. If unreviewed or any rating missing, `Insufficient evidence`. Rankings contain *only reviewed, fully rated pairs*, sorted by terrain label (`Strong` before `Moderate` before `Weak`), then geology label, then stable pair ID (`terrain-first-v1`). `supported_dimensions_count` is 0/2, 1/2 or 2/2 **not a percentage confidence**. P01 retains the supplied research's dated desk review: terrain Moderate, geology Weak, overall Weak. P02–P07 have no rating and P08 remains a process-only case. Published NASA general analog studies must not be treated as validation of every *specific* pair.
+**Overall:** if both rated and reviewed, any `Weak` gives `Weak`; two `Strong` give `Strong`; otherwise `Moderate`. Any missing dimension gives `Insufficient evidence`. A desk-reviewed record may have null dimensions; review status and evidence coverage are separate. Rankings contain *only reviewed, fully rated pairs*, sorted by terrain label (`Strong` before `Moderate` before `Weak`), then geology label, then stable pair ID (`terrain-first-v1`). `supported_dimensions_count` is 0/2, 1/2 or 2/2 **not a percentage confidence**. P01 retains the supplied research's dated desk review: terrain Moderate, geology Weak, overall Weak. The new AI desk-screen overlay rates P05-P07 Moderate/Moderate; P03 has Weak terrain and null geology; P02/P04/P08 have no scored dimensions. P05-P07 are rank-eligible; all P02-P08 screens require independent expert review. No pair is rated Strong. Published NASA general analog studies must not be treated as validation of every *specific* pair.
 
 **Do not manufacture quantitative similarity percentages.** Surface shape, mineral chemistry, gravity, radiation, atmosphere, ice/water and cave geometry are not interchangeable. A DEM cannot measure a cave interior or a submerged lakebed. The `experimental_metric_similarity` helper is an optional new research proposal disabled without `authorized=True`, validated equal-unit/equal-support evidence, and explicitly chosen weights/tolerances. It is **not NASA's formula**, and must not replace the first-release qualitative rubric.
 
 ## Step-by-step app ingestion
 
 1. Read `sources.csv` into a source dictionary by `source_id`; treat external URLs as citations, not automatic proof of local DEM raster coverage.
-2. Read `locations.csv`; render only `feature_*` coordinates as confirmed location markers if appropriate, and label `map_anchor_*` explicitly as **context reference** if it is not the same feature.
-3. Read `analog_pairs.csv` and join to locations; show `relationship_status`, `critical_difference`, `review_status` and the independent terrain/geology evidence IDs.
-4. For P01 show `Moderate / Weak -> Weak`; all other pair ratings remain blank and `Insufficient evidence`. Do not rank P08 based on ice-only process analogy.
+2. Read `locations.csv`; use `feature_coordinates_status` to distinguish sourced feature points from approximate reference proxies. Label approximate pins as approximate, and label `map_anchor_*` explicitly as **context reference** when it differs from the selected feature.
+3. Read `analog_pairs.csv`, join to locations, then apply `pair_review_overrides.csv` by `pair_id`; show `relationship_status`, `critical_difference`, `review_status` and independent terrain/geology evidence IDs.
+4. P01 remains `Moderate / Weak -> Weak`; P05-P07 are `Moderate / Moderate`; P03 has `Weak / null -> Insufficient evidence`; P02/P04/P08 remain `null / null`. Do not rank a pair with a missing dimension or rank P08 based on process context.
 5. Show a per-pair “evidence required” checklist from `location_workflows.csv` ordered by `step_number`. Use this as actual field-collection workflow.
 6. If a researcher enters measurements, keep each row's product, epoch, horizontal/vertical coordinate reference, support window, effective ground sample distance, masks, uncertainty, source and reviewer in `metric_measurements_template.csv`.
 7. If and ONLY if a separately scoped numerical study is approved, obtain the validated DEMs and deposit polygons, compare equivalent physical windows, calculate metrics with the specified methods, and record review. **Do not calculate height difference across different planetary datums.**
@@ -54,14 +55,14 @@ The `longitude_convention` for planetary records is positive-east **0–360** de
 
 | Pair | Earth feature/reference | Planetary feature/reference | Limitation |
 |---|---|---|---|
-| P01 | Haughton Locale 7 **unlocated in absolute coordinates**; HMP station **75.433333,-89.866667** as staging reference (NASA TM p5) | LROC Shackleton rim **-89.684,196.739 E** (750m-wide image) | Base camp is NOT Locale 7; LROC image site is not mapped terrain polygon. |
+| P01 | Approximate Locale 7 point **75.44605,-89.91728**, calculated 2 km on assumed 315° NW bearing from HMP station **75.433333,-89.866667** (NASA reports only roughly 2 km NW; no exact bearing/GPS) | LROC Shackleton rim **-89.684,196.739 E** (750m-wide image) | Locale 7 estimate is not a surveyed point; HMP remains the separate map anchor. LROC image site is not mapped terrain polygon. |
 | P02 | USGS Maunaulu named formation GNIS **19.3678716,-155.2024267** (NAD83) | LROC Marius Hills Pit **14.0917,303.2299 E** | Maunaulu center is not selected basaltic tube/flow unit. |
 | P03 | Fagradalsfjall **2021 vent 5b 63.8906,-22.2691** | Marius Hills Pit **14.0917,303.2299 E** | Fresh eruptive vent vs lunar collapse pit, not necessarily analogous shape. |
-| P04 | Skull Cave **parking**, not entrance **41.7311667,-121.5106667** from USGS Stop 14 | Marius Hills Pit **14.0917,303.2299 E** | Subsurface and exact terrestrial cave-mouth geometry not validated. |
-| P05 | Lake Salda **lake** 37.5525,29.6813889, not selected carbonate bench | Jezero **crater center** 18.41,77.69 E, not western carbonate margin | Need exposed deposits on both sites. |
-| P06 | Rio San Pedro reference -23.30461,-68.21839, **not San Pedro delta** | THEMIS Jezero western-delta **image center** 18.449,77.436 E, not delta outcrop | Map both actual deposits, exclude industrial ponds. |
-| P07 | Copper **canyon** reference 36.1285645,-116.7536577, **not fan** | IAU Peace Vallis **valley** center -4.21,137.23 E, **not fan** | Map full fans from USGS/Palucis before numeric work. |
-| P08 | Lake Untersee study site **-71.3456,13.4640333** | Gale **crater center** -5.44,137.70 E; no proven ancient ice-covered lake point | Process hypothesis only, cannot rank terrain/geology. |
+| P04 | Approximate Skull Cave locator **41.7311667,-121.5106667** uses USGS Stop 14 parking, not cave entrance | Marius Hills Pit **14.0917,303.2299 E** | Cave-mouth position remains unverified; subsurface geometry is not implied. |
+| P05 | Approximate Lake Salda locator **37.5525,29.6813889** is the IUGS whole-lake reference, not the selected carbonate bench | Approximate Jezero locator **18.41,77.69 E** is the IAU crater center, not western carbonate margin | Need exposed deposits on both sites. |
+| P06 | Approximate San Pedro delta-region locator **-23.30461,-68.21839** is the Rio San Pedro gazetteer point, not the delta outlet | Approximate Jezero delta locator **18.449,77.436 E** is a THEMIS image center, not a delta outcrop | Map both actual deposits, exclude industrial ponds. |
+| P07 | Approximate Copper Canyon fan locator **36.1285645,-116.7536577** is a canyon reference, not fan centroid | Approximate Peace Vallis fan locator **-4.21,137.23 E** is the named-valley point, not fan center | Map full fans from USGS/Palucis before numeric work. |
+| P08 | Lake Untersee study site **-71.3456,13.4640333** | Approximate Gale locator **-5.44,137.70 E** is crater center; no proven ancient ice-covered lake point | Process hypothesis only, cannot rank terrain/geology. |
 
 ### Source-backed measurements versus new calculations
 

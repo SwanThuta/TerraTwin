@@ -1,6 +1,6 @@
 # TerraTwin specification
 
-Status: `codex/csv-dimensions-one-pair` imports P01 directly from the 2026-11-14 CSV package as a reviewable preview. The remaining seven pairs and wider product acceptance criteria remain open.
+Status: this branch builds all eight proposed comparisons. P01 keeps its supplied desk-screen; P02-P08 use a separate AI source-desk override layer that preserves the original proposed-pair rows. P01 and P05-P07 have two rated dimensions and are rank-eligible; P03 has Weak terrain with geology not rated; P02, P04, and P08 have neither dimension rated. All AI screens still need independent expert review. Imagery, validated raster measurements, and bounded candidate discovery remain open.
 
 ## Purpose
 
@@ -72,7 +72,7 @@ Verify that the selected MapLibre release supports the intended projection switc
 
 ## Scientific comparison
 
-The current P01 preview reads `TerraTwin_Earth_Moon_Mars_Analog_Data_2026-11-14/` as its research input, without using `source.md` or legacy `data/sites.json`. `comparison_criteria.csv` defines C01 **Named landform and subfeatures** and C02 **Surface material / deposit classes** as the two primary qualitative dimensions. Its other 14 criteria are explanatory, contextual, optional quantitative, or metadata checks; they are displayed with readiness but do not alter the rating. The CSV package contains no validated raster measurements for P01. `analog_pairs.csv` supplies P01's existing desk-screening ratings and source IDs, `locations.csv` supplies feature and context-anchor distinctions, and `location_workflows.csv` supplies the review instructions. `comparison_evidence.csv` supplies pair-specific shared observations and limitations, while `practice_objectives.csv` supplies possible uses with supporting source IDs and caveats. This is a one-pair integration sample, not a new scientific review of the pair.
+The comparison builder reads `TerraTwin_Earth_Moon_Mars_Analog_Data_2026-11-14/` as its research input, without using `source.md` or legacy `data/sites.json`. `comparison_criteria.csv` defines C01 **Named landform and subfeatures** and C02 **Surface material / deposit classes** as the two primary qualitative dimensions. Its other 14 criteria are explanatory, contextual, optional quantitative, or metadata checks; they are displayed with readiness but do not alter the rating. No validated raster measurements or imported terrain images are provided. `analog_pairs.csv` retains the eight proposed-pair rows; `pair_review_overrides.csv` supplies separate AI desk-screen ratings and evidence coverage for P02-P08. `locations.csv` supplies feature and context-anchor distinctions, while `location_workflows.csv` supplies the review instructions. `comparison_evidence.csv` supplies pair-specific observations and limitations, and `practice_objectives.csv` supplies possible uses with source IDs and caveats. AI desk-screen status is not independent expert review. The app builds all eight records, but only fully rated comparisons are ranked.
 
 The first rating profile has two dimensions: terrain/landform and geology/surface materials. Terrain is the primary match for field practice; geology helps distinguish surfaces that may look similar but have different material evidence. Show thermal conditions, water/ice, and dryness as contextual observations when sourced, without using them to set the rating. Gravity, atmosphere/vacuum, and radiation are analogy limits, not rating criteria.
 
@@ -95,7 +95,7 @@ Present terrain evidence first, then geology and other sourced context. Suggest 
 
 ## Data contract
 
-- `Site`: stable ID, name, body (`earth`, `moon`, `mars`), latitude/longitude, coordinate convention, study footprint/scale, description, evidence IDs, curated/candidate status, review status.
+- `Site`: stable ID, name, body (`earth`, `moon`, `mars`), latitude/longitude, coordinate status (`source` or explicitly approximate reference), coordinate convention, study footprint/scale, description, evidence IDs, curated/candidate status, review status.
 - `Observation`: ID, site ID, observed feature or optional numeric/categorical value, unit when applicable, time range, spatial resolution or map scale when known, method, input record/file locator, uncertainty/quality note, source ID. Missing values are explicit nulls with a reason.
 - `Source`: ID, agency/provider, title, original URL, dataset/product identifier and version when available, access date, license/attribution, retrieval/query notes, and local input checksum when applicable.
 - `Criterion`: CSV ID, key, role, title, question, units or rating type, rule, and readiness. Only C01/C02 are scored in the current profile.

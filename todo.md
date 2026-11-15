@@ -1,14 +1,15 @@
 # Hackathon delivery checklist
 
-Status: the new CSV package feeds a P01-only preview on `codex/csv-dimensions-one-pair`. Earlier checklist checks describe the initial P01/P07 milestone; this branch still needs the remaining CSV pairs, per-tag evidence, imagery, candidate discovery, and team assignment. Times are relative to the team's development start. Owner numbers are suggested roles; assign member names at kickoff.
+Status: this branch builds all eight proposed comparisons, their sourced evidence, and matching reports. P02-P08 judgments are stored as AI source desk-screen overrides, separate from the original pair rows; only P01 and P05-P07 have two rated dimensions and are rank-eligible. P03 remains partially rated, and P02/P04/P08 remain unscored. Independent expert review, imagery, bounded candidate discovery, and several interaction/accessibility checks are still open. Times are relative to the team's development start. Owner numbers are suggested roles; assign member names at kickoff.
 
 ## New CSV integration preview
 
 - [x] Create an isolated branch and read P01, its locations, cited sources, workflow steps, and comparison criteria from the new CSV directory.
 - [x] Use C01/C02 as the only scored dimensions, keep other criteria contextual or unavailable, and preserve the P01 Moderate/Weak → Weak desk screening.
 - [x] Mark the HMP station point as context rather than a verified Locale 7 coordinate, and generate P01 website/PDF data from the same validated record.
-- [ ] Import P02–P08 after the P01 preview is reviewed; keep their CSV review states and missing evidence intact.
+- [x] Integrate the P02–P08 AI source desk-screens as a separate review-override layer; preserve the original pair rows and explicit missing evidence.
 - [x] Add P01 pair-specific similarity evidence and possible practice objectives with source IDs and limitations; keep ratings unchanged.
+- [x] Generate all eight comparison records and matching PDFs from the validated CSV-backed dataset.
 
 ## Ownership
 
@@ -54,7 +55,7 @@ Gate: one Earth-to-planet and planet-to-Earth workflow succeeds with traceable e
 
 ## Hours 8–16: breadth and discovery
 
-- [ ] Expand curated data toward 8–12 Earth sites and two targets per planetary body, subject to verification.
+- [x] Load eight proposed Earth sites across two lunar and two Martian targets; distinguish rated screens from missing-evidence records.
 - [ ] Review both rating dimensions for each pair; keep unsupported claims and unreviewed candidates outside ranked results.
 - [ ] Run bounded automated search and save its inputs, methods, and outputs.
 - [ ] Surface at least one candidate beyond the curated list, labeled for review.

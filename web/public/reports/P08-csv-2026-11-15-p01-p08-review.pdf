@@ -1,0 +1,471 @@
+%PDF-1.4
+%“Œ‹ž ReportLab Generated PDF document (opensource)
+1 0 obj
+<<
+/F1 2 0 R /F2 3 0 R
+>>
+endobj
+2 0 obj
+<<
+/BaseFont /Helvetica /Encoding /WinAnsiEncoding /Name /F1 /Subtype /Type1 /Type /Font
+>>
+endobj
+3 0 obj
+<<
+/BaseFont /Helvetica-Bold /Encoding /WinAnsiEncoding /Name /F2 /Subtype /Type1 /Type /Font
+>>
+endobj
+4 0 obj
+<<
+/Contents 13 0 R /MediaBox [ 0 0 612 792 ] /Parent 12 0 R /Resources <<
+/Font 1 0 R /ProcSet [ /PDF /Text /ImageB /ImageC /ImageI ]
+>> /Rotate 0 /Trans <<
+
+>> 
+  /Type /Page
+>>
+endobj
+5 0 obj
+<<
+/Contents 14 0 R /MediaBox [ 0 0 612 792 ] /Parent 12 0 R /Resources <<
+/Font 1 0 R /ProcSet [ /PDF /Text /ImageB /ImageC /ImageI ]
+>> /Rotate 0 /Trans <<
+
+>> 
+  /Type /Page
+>>
+endobj
+6 0 obj
+<<
+/A <<
+/S /URI /Type /Action /URI (https://pmc.ncbi.nlm.nih.gov/articles/PMC7759091/)
+>> /Border [ 0 0 0 ] /Rect [ 52.8 679.075 255.381 691.075 ] /Subtype /Link /Type /Annot
+>>
+endobj
+7 0 obj
+<<
+/A <<
+/S /URI /Type /Action /URI (https://ntrs.nasa.gov/search.jsp?R=20190025827)
+>> /Border [ 0 0 0 ] /Rect [ 52.8 643.075 249.162 655.075 ] /Subtype /Link /Type /Annot
+>>
+endobj
+8 0 obj
+<<
+/A <<
+/S /URI /Type /Action /URI (https://science.nasa.gov/earth/earth-observatory/a-most-unusual-lake/)
+>> /Border [ 0 0 0 ] /Rect [ 52.8 607.075 331.917 619.075 ] /Subtype /Link /Type /Annot
+>>
+endobj
+9 0 obj
+<<
+/Annots [ 6 0 R 7 0 R 8 0 R ] /Contents 15 0 R /MediaBox [ 0 0 612 792 ] /Parent 12 0 R /Resources <<
+/Font 1 0 R /ProcSet [ /PDF /Text /ImageB /ImageC /ImageI ]
+>> /Rotate 0 
+  /Trans <<
+
+>> /Type /Page
+>>
+endobj
+10 0 obj
+<<
+/PageMode /UseNone /Pages 12 0 R /Type /Catalog
+>>
+endobj
+11 0 obj
+<<
+/Author (\(anonymous\)) /CreationDate (D:20261115053407+06'00') /Creator (\(unspecified\)) /Keywords () /ModDate (D:20261115053407+06'00') /Producer (ReportLab PDF Library - \(opensource\)) 
+  /Subject (\(unspecified\)) /Title (TerraTwin P08 evidence report) /Trapped /False
+>>
+endobj
+12 0 obj
+<<
+/Count 3 /Kids [ 4 0 R 5 0 R 9 0 R ] /Type /Pages
+>>
+endobj
+13 0 obj
+<<
+/Length 5253
+>>
+stream
+1 0 0 1 0 0 cm  BT /F1 12 Tf 14.4 TL ET
+q
+1 0 0 1 52.8 717.2 cm
+q
+.078431 .164706 .262745 rg
+BT 1 0 0 1 0 4 Tm /F2 18 Tf 22 TL 116.652 0 Td (TerraTwin evidence report - P08) Tj T* -116.652 0 Td ET
+Q
+Q
+q
+1 0 0 1 52.8 668.2 cm
+q
+.082353 .345098 .415686 rg
+BT 1 0 0 1 0 22 Tm /F2 14 Tf 18 TL (Lake Untersee ice-covered lake and Hypothesized ancient Gale ice-covered) Tj T* (lake system) Tj T* ET
+Q
+Q
+q
+1 0 0 1 52.8 649.2 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 3 Tm /F1 10 Tf 13 TL (Status: reviewed | Overall: Insufficient evidence | Evidence: 0/2 dimensions supported) Tj T* ET
+Q
+Q
+q
+1 0 0 1 52.8 631.2 cm
+q
+.254902 .32549 .419608 rg
+BT 1 0 0 1 0 3 Tm /F1 9 Tf 12 TL (Dataset csv-2026-11-15-p01-p08-review | Rubric terrain-geology-qual-v1 | Order terrain-first-v1) Tj T* ET
+Q
+Q
+q
+1 0 0 1 52.8 613.2 cm
+q
+.254902 .32549 .419608 rg
+BT 1 0 0 1 0 3 Tm /F1 9 Tf 12 TL (Qualitative screening judgment; no similarity percentage or route-safety assessment.) Tj T* ET
+Q
+Q
+q
+1 0 0 1 52.8 582.2 cm
+q
+.082353 .345098 .415686 rg
+BT 1 0 0 1 0 4 Tm /F2 14 Tf 18 TL (Feature scope) Tj T* ET
+Q
+Q
+q
+1 0 0 1 52.8 550.2 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 16 Tm /F1 10 Tf 13 TL (Earth: Lake Untersee ice-covered lake. Locator: Lake Untersee; Research site/lake coordinate; no submerged) Tj T* (lakebed surface point selected. Footprint: not_digitized.) Tj T* ET
+Q
+Q
+q
+1 0 0 1 52.8 508.2 cm
+q
+.254902 .32549 .419608 rg
+BT 1 0 0 1 0 27 Tm /F1 9 Tf 12 TL (Earth map marker: Context reference: published Lake Untersee site coordinate) Tj T* (\(published_lake_site_not_submerged_lakebed\); not a verified feature point. Coordinate note: Research site/lake coordinate; no) Tj T* (submerged lakebed surface point selected.. Convention: WGS84 signed East [-180,180]; WGS84 geodetic) Tj T* ET
+Q
+Q
+q
+1 0 0 1 52.8 476.2 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 16 Tm /F1 10 Tf 13 TL -0.121538 Tw (Mars: Hypothesized ancient Gale ice-covered lake system. Locator: Gale crater; NASA-hosted abstract proposes a) Tj T* 0 Tw (process model; no selected matching terrain / lakebed point. Footprint: not_digitized.) Tj T* ET
+Q
+Q
+q
+1 0 0 1 52.8 446.2 cm
+q
+.254902 .32549 .419608 rg
+BT 1 0 0 1 0 15 Tm /F1 9 Tf 12 TL (Planetary coordinate convention: positive East [0,360]; planetocentric unless product label specifies otherwise; verify.) Tj T* (NASA-hosted abstract proposes a process model; no selected matching terrain / lakebed point.) Tj T* ET
+Q
+Q
+q
+1 0 0 1 52.8 414.2 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 16 Tm /F1 10 Tf 13 TL (Relationship: published hypothesis/process analogy only; terrain ranking ineligible. Theme: ice-covered lake) Tj T* (habitability process hypothesis. [R24, R25, R36]) Tj T* ET
+Q
+Q
+q
+1 0 0 1 52.8 383.2 cm
+q
+.082353 .345098 .415686 rg
+BT 1 0 0 1 0 4 Tm /F2 14 Tf 18 TL (C01 - Named landform and subfeatures) Tj T* ET
+Q
+Q
+q
+1 0 0 1 52.8 353.2 cm
+q
+.254902 .32549 .419608 rg
+BT 1 0 0 1 0 15 Tm /F1 9 Tf 12 TL (Question: Cross-section/planform, visible subfeatures, area/scale, meaningfully corresponding features | Readiness:) Tj T* (not_numerical) Tj T* ET
+Q
+Q
+q
+1 0 0 1 52.8 334.2 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 3 Tm /F1 10 Tf 13 TL (Rating: Insufficient evidence | Sources: R24, R25, R36) Tj T* ET
+Q
+Q
+q
+1 0 0 1 52.8 302.2 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 16 Tm /F1 10 Tf 13 TL (Evidence: The Antarctic study documents a modern ice-covered lake; the Gale comparison is a published) Tj T* (climate/process hypothesis rather than an observed surface feature.) Tj T* ET
+Q
+Q
+q
+1 0 0 1 52.8 270.2 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 16 Tm /F1 10 Tf 13 TL (Difference: This is a process-context hypothesis about possible water persistence beneath ice, not a feature-level) Tj T* (landform comparison.) Tj T* ET
+Q
+Q
+q
+1 0 0 1 52.8 240.2 cm
+q
+.254902 .32549 .419608 rg
+BT 1 0 0 1 0 15 Tm /F1 9 Tf 12 TL (Missing review: No observed Gale ice-cover state or paired exposed lakebed/deposit feature is identified; the NASA-hosted) Tj T* (Antarctic/Gale source is a model hypothesis.) Tj T* ET
+Q
+Q
+q
+1 0 0 1 52.8 209.2 cm
+q
+.082353 .345098 .415686 rg
+BT 1 0 0 1 0 4 Tm /F2 14 Tf 18 TL (C02 - Surface material / deposit classes) Tj T* ET
+Q
+Q
+q
+1 0 0 1 52.8 179.2 cm
+q
+.254902 .32549 .419608 rg
+BT 1 0 0 1 0 15 Tm /F1 9 Tf 12 TL (Question: Published lithology, regolith, layers, sediment size, bedrock context, mineral analyses if measured | Readiness:) Tj T* (not_numerical) Tj T* ET
+Q
+Q
+q
+1 0 0 1 52.8 160.2 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 3 Tm /F1 10 Tf 13 TL (Rating: Insufficient evidence | Sources: R24, R25) Tj T* ET
+Q
+Q
+q
+1 0 0 1 52.8 128.2 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 16 Tm /F1 10 Tf 13 TL -0.036154 Tw (Evidence: The Earth source reports microbial mats and laminated organo-sedimentary structures beneath lake ice;) Tj T* 0 Tw (no corresponding Gale material feature is identified by the hypothesis abstract.) Tj T* ET
+Q
+Q
+q
+1 0 0 1 52.8 96.2 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 16 Tm /F1 10 Tf 13 TL (Difference: Untersee benthic mats are documented under perennial ice; no corresponding Gale material feature or) Tj T* (lakebed locator is established.) Tj T* ET
+Q
+Q
+q
+1 0 0 1 52.8 66.2 cm
+q
+.254902 .32549 .419608 rg
+BT 1 0 0 1 0 15 Tm /F1 9 Tf 12 TL (Missing review: No observed Gale ice-cover state or paired exposed lakebed/deposit feature is identified; the NASA-hosted) Tj T* (Antarctic/Gale source is a model hypothesis.) Tj T* ET
+Q
+Q
+ 
+endstream
+endobj
+14 0 obj
+<<
+/Length 5260
+>>
+stream
+1 0 0 1 0 0 cm  BT /F1 12 Tf 14.4 TL ET
+q
+1 0 0 1 52.8 721.2 cm
+q
+.082353 .345098 .415686 rg
+BT 1 0 0 1 0 4 Tm /F2 14 Tf 18 TL (Documented similarity) Tj T* ET
+Q
+Q
+q
+1 0 0 1 52.8 689.2 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 16 Tm /F1 10 Tf 13 TL (Evidence summary for ice-covered lake habitability process hypothesis; read each dimension and its limitations) Tj T* (before interpreting the label.) Tj T* ET
+Q
+Q
+q
+1 0 0 1 52.8 618.2 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 55 Tm /F1 10 Tf 13 TL (E08-T01 \267 Terrain similarity: The Antarctic study documents a modern ice-covered lake; the Gale comparison is a) Tj T* -0.035 Tw (published climate/process hypothesis rather than an observed surface feature. Limitation: There is no verified Gale) Tj T* 0 Tw -0.118889 Tw (ice cover or paired surface-landform locator; process context is not a terrain match. Earth locator: Greco et al. Lake) Tj T* 0 Tw (Untersee study site Planetary locator: NASA NTRS abstract proposes an ice-covered Gale lake model Scale:) Tj T* (Surface ice DEMs would not measure submerged lakebed terrain; not scoreable. Sources: R24, R25, R36) Tj T* ET
+Q
+Q
+q
+1 0 0 1 52.8 534.2 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 68 Tm /F1 10 Tf 13 TL (E08-G01 \267 Geology similarity: The Earth source reports microbial mats and laminated organo-sedimentary) Tj T* (structures beneath lake ice; no corresponding Gale material feature is identified by the hypothesis abstract.) Tj T* (Limitation: Earth microbial mats do not establish Martian biology or a matching Gale lithology; the compared Mars) Tj T* (feature remains hypothetical. Earth locator: Greco et al. abstract and study of Untersee benthic mats Planetary) Tj T* (locator: NASA NTRS abstract; proposed environment, no mapped material unit Scale: No paired Earth/Mars) Tj T* (sample or lakebed evidence. Sources: R24, R25) Tj T* ET
+Q
+Q
+q
+1 0 0 1 52.8 503.2 cm
+q
+.082353 .345098 .415686 rg
+BT 1 0 0 1 0 4 Tm /F2 14 Tf 18 TL (Explanation and practice) Tj T* ET
+Q
+Q
+q
+1 0 0 1 52.8 380.2 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 107 Tm /F1 10 Tf 13 TL (Terrain is not rated: No observed Gale ice-cover state or paired exposed lakebed/deposit feature is identified; the) Tj T* -0.032 Tw (NASA-hosted Antarctic/Gale source is a model hypothesis. Geology is not rated: No observed Gale ice-cover state) Tj T* 0 Tw (or paired exposed lakebed/deposit feature is identified; the NASA-hosted Antarctic/Gale source is a model) Tj T* (hypothesis. Evidence context: The Antarctic study documents a modern ice-covered lake; the Gale comparison is) Tj T* (a published climate/process hypothesis rather than an observed surface feature. No evidence-backed practice) Tj T* (activity is assigned. Important differences: This is a process-context hypothesis about possible water persistence) Tj T* (beneath ice, not a feature-level landform comparison. Untersee benthic mats are documented under perennial ice;) Tj T* (no corresponding Gale material feature or lakebed locator is established. This desk-reviewed comparison remains) Tj T* (outside ranked results because one or both dimensions lack sufficient evidence.) Tj T* ET
+Q
+Q
+q
+1 0 0 1 52.8 362.2 cm
+q
+.254902 .32549 .419608 rg
+BT 1 0 0 1 0 3 Tm /F1 9 Tf 12 TL (No evidence-backed practice tag is assigned to this comparison.) Tj T* ET
+Q
+Q
+q
+1 0 0 1 52.8 331.2 cm
+q
+.082353 .345098 .415686 rg
+BT 1 0 0 1 0 4 Tm /F2 14 Tf 18 TL (Limits and missing imagery) Tj T* ET
+Q
+Q
+q
+1 0 0 1 52.8 299.2 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 16 Tm /F1 10 Tf 13 TL (- This is a process-context hypothesis about possible water persistence beneath ice, not a feature-level landform) Tj T* (comparison.) Tj T* ET
+Q
+Q
+q
+1 0 0 1 52.8 267.2 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 16 Tm /F1 10 Tf 13 TL (- Untersee benthic mats are documented under perennial ice; no corresponding Gale material feature or lakebed) Tj T* (locator is established.) Tj T* ET
+Q
+Q
+q
+1 0 0 1 52.8 248.2 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 3 Tm /F1 10 Tf 13 TL (- REMA or satellite elevations see ice surface, not lake floor) Tj T* ET
+Q
+Q
+q
+1 0 0 1 52.8 229.2 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 3 Tm /F1 10 Tf 13 TL (- Hypothesis rather than confirmed Gale ice-sheet or lake-surface feature) Tj T* ET
+Q
+Q
+q
+1 0 0 1 52.8 211.2 cm
+q
+.254902 .32549 .419608 rg
+BT 1 0 0 1 0 3 Tm /F1 9 Tf 12 TL (Limit sources: R24, R25, R36) Tj T* ET
+Q
+Q
+q
+1 0 0 1 52.8 181.2 cm
+q
+.254902 .32549 .419608 rg
+BT 1 0 0 1 0 15 Tm /F1 9 Tf 12 TL (Earth image: The package supplies citations but no verified, imported terrain image. Scale: No imported image scale. Credit:) Tj T* (See cited source. [R24]) Tj T* ET
+Q
+Q
+q
+1 0 0 1 52.8 151.2 cm
+q
+.254902 .32549 .419608 rg
+BT 1 0 0 1 0 15 Tm /F1 9 Tf 12 TL (Planetary image: The package supplies citations but no verified, imported terrain image. Scale: No imported image scale.) Tj T* (Credit: See cited source. [R36]) Tj T* ET
+Q
+Q
+q
+1 0 0 1 52.8 120.2 cm
+q
+.082353 .345098 .415686 rg
+BT 1 0 0 1 0 4 Tm /F2 14 Tf 18 TL (Method and source register) Tj T* ET
+Q
+Q
+q
+1 0 0 1 52.8 75.2 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 29 Tm /F1 10 Tf 13 TL (AI source desk-screening; the hypothesized Gale ice-covered lake is not treated as an observed site. Next) Tj T* -0.075714 Tw (validation: Retain P08 as unscored process context unless comparable surface deposits are identified and sourced) Tj T* 0 Tw (on both bodies.) Tj T* ET
+Q
+Q
+ 
+endstream
+endobj
+15 0 obj
+<<
+/Length 1343
+>>
+stream
+1 0 0 1 0 0 cm  BT /F1 12 Tf 14.4 TL ET
+q
+1 0 0 1 52.8 713.2 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 16 Tm /F1 10 Tf 13 TL (Review: reviewed_source_desk_screening | Copilot \(AI source desk-screening\) | Date: 2026-11-15 | Rank eligible:) Tj T* (no) Tj T* ET
+Q
+Q
+q
+1 0 0 1 52.8 695.2 cm
+q
+.254902 .32549 .419608 rg
+BT 1 0 0 1 0 3 Tm /F1 9 Tf 12 TL (R24 | Greco et al. Frontiers in Microbiology | Lake Untersee study site | Lake site 71d20.736 S 13d27.842 E) Tj T* ET
+Q
+Q
+q
+1 0 0 1 52.8 677.2 cm
+q
+.090196 .419608 .529412 rg
+BT 1 0 0 1 0 3 Tm /F1 9 Tf 12 TL (https://pmc.ncbi.nlm.nih.gov/articles/PMC7759091/) Tj T* ET
+Q
+Q
+q
+1 0 0 1 52.8 659.2 cm
+q
+.254902 .32549 .419608 rg
+BT 1 0 0 1 0 3 Tm /F1 9 Tf 12 TL (R25 | NASA NTRS | Antarctic analogy for ancient lakes at Gale Crater Mars | NASA-hosted research abstract) Tj T* ET
+Q
+Q
+q
+1 0 0 1 52.8 641.2 cm
+q
+.090196 .419608 .529412 rg
+BT 1 0 0 1 0 3 Tm /F1 9 Tf 12 TL (https://ntrs.nasa.gov/search.jsp?R=20190025827) Tj T* ET
+Q
+Q
+q
+1 0 0 1 52.8 623.2 cm
+q
+.254902 .32549 .419608 rg
+BT 1 0 0 1 0 3 Tm /F1 9 Tf 12 TL (R36 | NASA Earth Observatory | 2026 Landsat image of Lake Untersee | Landsat 9 2026-02-16 and lake science) Tj T* ET
+Q
+Q
+q
+1 0 0 1 52.8 605.2 cm
+q
+.090196 .419608 .529412 rg
+BT 1 0 0 1 0 3 Tm /F1 9 Tf 12 TL (https://science.nasa.gov/earth/earth-observatory/a-most-unusual-lake/) Tj T* ET
+Q
+Q
+ 
+endstream
+endobj
+xref
+0 16
+0000000000 65535 f 
+0000000061 00000 n 
+0000000102 00000 n 
+0000000209 00000 n 
+0000000321 00000 n 
+0000000516 00000 n 
+0000000711 00000 n 
+0000000905 00000 n 
+0000001096 00000 n 
+0000001310 00000 n 
+0000001535 00000 n 
+0000001605 00000 n 
+0000001902 00000 n 
+0000001974 00000 n 
+0000007279 00000 n 
+0000012591 00000 n 
+trailer
+<<
+/ID 
+[<f2537239c92a4057b5ca4017e684aace><f2537239c92a4057b5ca4017e684aace>]
+% ReportLab generated PDF document -- digest (opensource)
+
+/Info 11 0 R
+/Root 10 0 R
+/Size 16
+>>
+startxref
+13986
+%%EOF

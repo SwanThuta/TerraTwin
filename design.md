@@ -1,6 +1,6 @@
 # TerraTwin interface design
 
-Status: P01-only CSV preview on `codex/csv-dimensions-one-pair`; imagery, the remaining CSV pairs and broader discovery remain pending.
+Status: the atlas contains all eight CSV-backed comparisons. P01 and P05-P07 have two rated dimensions and are rank-eligible; P03 is Weak terrain with geology not rated; P02, P04, and P08 are unscored and unranked. P02-P08 are AI source desk-screens, not independent expert reviews. Imagery, verified raster measurements, and broader candidate discovery remain pending.
 
 ## Visual direction
 
@@ -10,7 +10,7 @@ Use a dark navy planetary atlas with cyan accents for navigation and evidence, r
 
 - Offer Planet → Earth and Earth → Planet search, with body, target, Earth site, and practice-objective controls as applicable.
 - Show a result list, an Earth locator map, and the selected pair's evidence on the same page. Reviewed results follow the versioned terrain-first order. Sourced candidates remain visibly outside that ranking.
-- The Earth locator supports flat and globe projection. Its points are regional locators, not surveyed feature footprints. The bundled Natural Earth land layer works without a basemap account or API key and carries attribution.
+- The Earth locator supports flat and globe projection. Each point's tooltip identifies source-located versus approximate reference coordinates; approximate points are never presented as surveyed feature footprints. The bundled Natural Earth land layer works without a basemap account or API key and carries attribution.
 - Keep the selected comparison and map marker synchronized. Enable the two-Earth-site selector only when a planetary target has at least two comparison records; each side reuses its own evidence and PDF.
 - Keep responsive controls and evidence cards usable on narrow screens. Loading, failed-data, empty-filter, and unavailable-map states must explain what remains usable.
 
@@ -24,8 +24,8 @@ Use a dark navy planetary atlas with cyan accents for navigation and evidence, r
 
 ## Current dataset boundary
 
-P01 is the only imported pair: the CSV's dated Haughton Locale 7 ↔ Shackleton rim desk screening gives terrain Moderate, geology Weak, overall Weak. The HMP research station is a context marker, not a Locale 7 point. The preview shows two pair-specific similarity statements and three possible practice uses from the evidence CSV, each with sources and limitations. Mars search is empty in this preview. No route safety or permanent-base suitability follows from P01. Image assets will be supplied later.
+All eight proposed pairs are imported. The CSV's dated Haughton Locale 7 ↔ Shackleton rim screening remains Moderate terrain / Weak geology / Weak overall; the HMP research station is a context marker, not a Locale 7 point. The new AI desk-screen layer rates P05-P07 Moderate/Moderate, gives P03 a Weak terrain rating with geology unscored, and leaves P02/P04/P08 unscored where evidence is insufficient. Pair-specific evidence and possible practice uses appear with sources and limitations. No route safety or permanent-base suitability follows from these comparisons. Image assets and independent expert review remain pending.
 
 ## Follow-on design work
 
-Add source-permitted georeferenced terrain imagery and scale bars after the images arrive. Expand to more reviewed sites, a reproducible bounded candidate search, and a usable two-Earth-site comparison when the underlying evidence exists. Detailed planetary globes, animations, and numeric similarity bars from the earlier reference design are outside the current qualitative scope.
+Add source-permitted georeferenced terrain imagery and scale bars after the images arrive. Obtain independent expert review and feature-specific evidence for currently unscored dimensions; add a reproducible bounded candidate search and verify the two-Earth-site interaction against the underlying evidence. Detailed planetary globes, animations, and numeric similarity bars from the earlier reference design are outside the current qualitative scope.

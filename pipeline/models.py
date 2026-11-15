@@ -126,14 +126,9 @@ class Comparison(BaseModel):
     reviewStatus: str = ""
 
     @model_validator(mode="after")
-    def reviewed_requires_ratings(self) -> Comparison:
-        if self.status == "reviewed" and (
-            self.terrain.rating is None
-            or self.geology.rating is None
-            or not self.reviewer
-            or not self.reviewDate
-        ):
-            raise ValueError("reviewed comparisons need two ratings, reviewer and date")
+    def reviewed_requires_attribution(self) -> Comparison:
+        if self.status == "reviewed" and (not self.reviewer or not self.reviewDate):
+            raise ValueError("reviewed comparisons need reviewer and date")
         if self.status != "reviewed" and (self.reviewer or self.reviewDate):
             raise ValueError("unreviewed candidates cannot have review attribution")
         return self
@@ -207,21 +202,32 @@ def rank_key(item: Comparison) -> tuple[int, int, str]:
 
 
 def explanation(item: Comparison) -> str:
-    if item.status != "reviewed":
-        return (
-            f"{item.relationship} Terrain lead: {item.terrain.evidence} "
-            f"Geology lead: {item.geology.evidence} "
-            f"The pair remains unranked because {item.terrain.missingReason} "
-            f"{item.geology.missingReason}"
+    dimensions = []
+    for label, dimension in (("Terrain", item.terrain), ("Geology", item.geology)):
+        if dimension.rating is None:
+            dimensions.append(f"{label} is not rated: {dimension.missingReason}")
+        else:
+            dimensions.append(f"{label} is rated {dimension.rating}: {dimension.evidence}")
+    practice = (
+        f"A possible use to assess is {item.practice[0].label.lower()}."
+        if item.practice else "No evidence-backed practice activity is assigned."
+    )
+    status = (
+        "This desk-reviewed comparison remains outside ranked results because one or both dimensions lack sufficient evidence."
+        if item.status == "reviewed" and coverage(item) < 2
+        else "This sourced candidate remains outside ranked results pending review."
+        if item.status != "reviewed"
+        else ""
+    )
+    return " ".join(
+        part for part in (
+            *dimensions,
+            f"Evidence context: {item.similarities[0].sharedObservation}" if item.similarities else "",
+            practice,
+            f"Important differences: {item.terrain.difference} {item.geology.difference}",
+            status,
         )
-    practice = f"A possible use to assess is {item.practice[0].label.lower()}. " if item.practice else "No practice activity has per-tag evidence yet. "
-    similarity = f"Similarity: {item.similarities[0].sharedObservation}. " if item.similarities else ""
-    return (
-        f"Terrain is rated {item.terrain.rating}: {item.terrain.evidence} "
-        f"Geology is rated {item.geology.rating}: {item.geology.evidence} "
-        f"{similarity} "
-        f"{practice}"
-        f"Important differences: {item.terrain.difference} {item.geology.difference}"
+        if part
     )
 
 

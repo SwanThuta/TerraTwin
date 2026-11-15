@@ -1,0 +1,493 @@
+%PDF-1.4
+%“Œ‹ž ReportLab Generated PDF document (opensource)
+1 0 obj
+<<
+/F1 2 0 R /F2 3 0 R
+>>
+endobj
+2 0 obj
+<<
+/BaseFont /Helvetica /Encoding /WinAnsiEncoding /Name /F1 /Subtype /Type1 /Type /Font
+>>
+endobj
+3 0 obj
+<<
+/BaseFont /Helvetica-Bold /Encoding /WinAnsiEncoding /Name /F2 /Subtype /Type1 /Type /Font
+>>
+endobj
+4 0 obj
+<<
+/Contents 14 0 R /MediaBox [ 0 0 612 792 ] /Parent 13 0 R /Resources <<
+/Font 1 0 R /ProcSet [ /PDF /Text /ImageB /ImageC /ImageI ]
+>> /Rotate 0 /Trans <<
+
+>> 
+  /Type /Page
+>>
+endobj
+5 0 obj
+<<
+/Contents 15 0 R /MediaBox [ 0 0 612 792 ] /Parent 13 0 R /Resources <<
+/Font 1 0 R /ProcSet [ /PDF /Text /ImageB /ImageC /ImageI ]
+>> /Rotate 0 /Trans <<
+
+>> 
+  /Type /Page
+>>
+endobj
+6 0 obj
+<<
+/A <<
+/S /URI /Type /Action /URI (https://lroc.im-ldi.com/atlases/pits/1)
+>> /Border [ 0 0 0 ] /Rect [ 52.8 622.075 192.84 634.075 ] /Subtype /Link /Type /Annot
+>>
+endobj
+7 0 obj
+<<
+/A <<
+/S /URI /Type /Action /URI (https://files.hawaii.gov/dbedt/op/gis/bgn/Binder-20210504.pdf)
+>> /Border [ 0 0 0 ] /Rect [ 52.8 574.075 296.439 586.075 ] /Subtype /Link /Type /Annot
+>>
+endobj
+8 0 obj
+<<
+/A <<
+/S /URI /Type /Action /URI (https://pubs.usgs.gov/publication/70017657)
+>> /Border [ 0 0 0 ] /Rect [ 52.8 538.075 225.906 550.075 ] /Subtype /Link /Type /Annot
+>>
+endobj
+9 0 obj
+<<
+/A <<
+/S /URI /Type /Action /URI (https://astrogeology.usgs.gov/search/map/Moon/Geology/Unified_Geologic_Map_of_the_Moon_GIS_v2/)
+>> /Border [ 0 0 0 ] /Rect [ 52.8 490.075 469.005 502.075 ] /Subtype /Link /Type /Annot
+>>
+endobj
+10 0 obj
+<<
+/Annots [ 6 0 R 7 0 R 8 0 R 9 0 R ] /Contents 16 0 R /MediaBox [ 0 0 612 792 ] /Parent 13 0 R /Resources <<
+/Font 1 0 R /ProcSet [ /PDF /Text /ImageB /ImageC /ImageI ]
+>> /Rotate 0 
+  /Trans <<
+
+>> /Type /Page
+>>
+endobj
+11 0 obj
+<<
+/PageMode /UseNone /Pages 13 0 R /Type /Catalog
+>>
+endobj
+12 0 obj
+<<
+/Author (\(anonymous\)) /CreationDate (D:20261115053407+06'00') /Creator (\(unspecified\)) /Keywords () /ModDate (D:20261115053407+06'00') /Producer (ReportLab PDF Library - \(opensource\)) 
+  /Subject (\(unspecified\)) /Title (TerraTwin P02 evidence report) /Trapped /False
+>>
+endobj
+13 0 obj
+<<
+/Count 3 /Kids [ 4 0 R 5 0 R 10 0 R ] /Type /Pages
+>>
+endobj
+14 0 obj
+<<
+/Length 5113
+>>
+stream
+1 0 0 1 0 0 cm  BT /F1 12 Tf 14.4 TL ET
+q
+1 0 0 1 52.8 717.2 cm
+q
+.078431 .164706 .262745 rg
+BT 1 0 0 1 0 4 Tm /F2 18 Tf 22 TL 116.652 0 Td (TerraTwin evidence report - P02) Tj T* -116.652 0 Td ET
+Q
+Q
+q
+1 0 0 1 52.8 668.2 cm
+q
+.082353 .345098 .415686 rg
+BT 1 0 0 1 0 22 Tm /F2 14 Tf 18 TL (Mauna Ulu volcanic formation \(flow selection pending\) and Marius Hills Pit) Tj T* (\(LROC Pits Atlas\)) Tj T* ET
+Q
+Q
+q
+1 0 0 1 52.8 649.2 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 3 Tm /F1 10 Tf 13 TL (Status: reviewed | Overall: Insufficient evidence | Evidence: 0/2 dimensions supported) Tj T* ET
+Q
+Q
+q
+1 0 0 1 52.8 631.2 cm
+q
+.254902 .32549 .419608 rg
+BT 1 0 0 1 0 3 Tm /F1 9 Tf 12 TL (Dataset csv-2026-11-15-p01-p08-review | Rubric terrain-geology-qual-v1 | Order terrain-first-v1) Tj T* ET
+Q
+Q
+q
+1 0 0 1 52.8 613.2 cm
+q
+.254902 .32549 .419608 rg
+BT 1 0 0 1 0 3 Tm /F1 9 Tf 12 TL (Qualitative screening judgment; no similarity percentage or route-safety assessment.) Tj T* ET
+Q
+Q
+q
+1 0 0 1 52.8 582.2 cm
+q
+.082353 .345098 .415686 rg
+BT 1 0 0 1 0 4 Tm /F2 14 Tf 18 TL (Feature scope) Tj T* ET
+Q
+Q
+q
+1 0 0 1 52.8 537.2 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 29 Tm /F1 10 Tf 13 TL (Earth: Mauna Ulu volcanic formation \(flow selection pending\). Locator: Kilauea; USGS GNIS NAD83 feature point;) Tj T* (select a dated mapped flow/tube for comparison; WGS84 display approximation requires datum metadata.) Tj T* (Footprint: not_digitized.) Tj T* ET
+Q
+Q
+q
+1 0 0 1 52.8 483.2 cm
+q
+.254902 .32549 .419608 rg
+BT 1 0 0 1 0 39 Tm /F1 9 Tf 12 TL (Earth map marker: Context reference: USGS GNIS Maunaulu ridge point \(official_named_feature_point_not_selected_flow\);) Tj T* (not a verified feature point. Coordinate note: USGS GNIS NAD83 feature point; select a dated mapped flow/tube for) Tj T* (comparison; WGS84 display approximation requires datum metadata.. Convention: WGS84 signed East [-180,180]; WGS84) Tj T* (geodetic) Tj T* ET
+Q
+Q
+q
+1 0 0 1 52.8 451.2 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 16 Tm /F1 10 Tf 13 TL (Moon: Marius Hills Pit \(LROC Pits Atlas\). Locator: Marius Hills; Use LROC precision; separate from 2009 JAXA) Tj T* (approximate 14.2 N 303.3 E. Footprint: not_digitized.) Tj T* ET
+Q
+Q
+q
+1 0 0 1 52.8 421.2 cm
+q
+.254902 .32549 .419608 rg
+BT 1 0 0 1 0 15 Tm /F1 9 Tf 12 TL (Planetary coordinate convention: positive East [0,360]; planetocentric unless product label specifies otherwise; verify. Use) Tj T* (LROC precision; separate from 2009 JAXA approximate 14.2 N 303.3 E.) Tj T* ET
+Q
+Q
+q
+1 0 0 1 52.8 389.2 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 16 Tm /F1 10 Tf 13 TL (Relationship: proposed specific Marius pair from broad USGS/NASA volcanic analog context. Theme: basaltic) Tj T* (volcanism and lava-tube-related surfaces. [R04, R06, R40]) Tj T* ET
+Q
+Q
+q
+1 0 0 1 52.8 358.2 cm
+q
+.082353 .345098 .415686 rg
+BT 1 0 0 1 0 4 Tm /F2 14 Tf 18 TL (C01 - Named landform and subfeatures) Tj T* ET
+Q
+Q
+q
+1 0 0 1 52.8 328.2 cm
+q
+.254902 .32549 .419608 rg
+BT 1 0 0 1 0 15 Tm /F1 9 Tf 12 TL (Question: Cross-section/planform, visible subfeatures, area/scale, meaningfully corresponding features | Readiness:) Tj T* (not_numerical) Tj T* ET
+Q
+Q
+q
+1 0 0 1 52.8 309.2 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 3 Tm /F1 10 Tf 13 TL (Rating: Insufficient evidence | Sources: R04, R06) Tj T* ET
+Q
+Q
+q
+1 0 0 1 52.8 277.2 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 16 Tm /F1 10 Tf 13 TL (Evidence: USGS documents lava-tube development within Mauna Ulu pahoehoe flows; NASA/LROC sources) Tj T* (interpret the Marius Hills opening as a possible lava-tube skylight.) Tj T* ET
+Q
+Q
+q
+1 0 0 1 52.8 245.2 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 16 Tm /F1 10 Tf 13 TL -0.1325 Tw (Difference: Mauna Ulu documents tube-bearing flows across a prolonged eruption while the Marius Hills record is a) Tj T* 0 Tw (specific pit interpreted as a possible skylight; no matched study footprint is established.) Tj T* ET
+Q
+Q
+q
+1 0 0 1 52.8 215.2 cm
+q
+.254902 .32549 .419608 rg
+BT 1 0 0 1 0 15 Tm /F1 9 Tf 12 TL -0.120947 Tw (Missing review: The Mauna Ulu source describes a multi-flow tube system but no selected bounded flow footprint; the Marius pit) Tj T* 0 Tw (source does not establish pit-wall composition or a confirmed open tube.) Tj T* ET
+Q
+Q
+q
+1 0 0 1 52.8 184.2 cm
+q
+.082353 .345098 .415686 rg
+BT 1 0 0 1 0 4 Tm /F2 14 Tf 18 TL (C02 - Surface material / deposit classes) Tj T* ET
+Q
+Q
+q
+1 0 0 1 52.8 154.2 cm
+q
+.254902 .32549 .419608 rg
+BT 1 0 0 1 0 15 Tm /F1 9 Tf 12 TL (Question: Published lithology, regolith, layers, sediment size, bedrock context, mineral analyses if measured | Readiness:) Tj T* (not_numerical) Tj T* ET
+Q
+Q
+q
+1 0 0 1 52.8 135.2 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 3 Tm /F1 10 Tf 13 TL (Rating: Insufficient evidence | Sources: R04, R40) Tj T* ET
+Q
+Q
+q
+1 0 0 1 52.8 103.2 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 16 Tm /F1 10 Tf 13 TL (Evidence: The Earth source documents lava and tube formation at Mauna Ulu; the USGS lunar map provides) Tj T* (regional geologic context for Marius Hills.) Tj T* ET
+Q
+Q
+q
+1 0 0 1 52.8 71.2 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 16 Tm /F1 10 Tf 13 TL (Difference: No feature-level evidence establishes corresponding materials at the selected Mauna Ulu flow and) Tj T* (lunar pit wall.) Tj T* ET
+Q
+Q
+ 
+endstream
+endobj
+15 0 obj
+<<
+/Length 5498
+>>
+stream
+1 0 0 1 0 0 cm  BT /F1 12 Tf 14.4 TL ET
+q
+1 0 0 1 52.8 715.2 cm
+q
+.254902 .32549 .419608 rg
+BT 1 0 0 1 0 15 Tm /F1 9 Tf 12 TL -0.120947 Tw (Missing review: The Mauna Ulu source describes a multi-flow tube system but no selected bounded flow footprint; the Marius pit) Tj T* 0 Tw (source does not establish pit-wall composition or a confirmed open tube.) Tj T* ET
+Q
+Q
+q
+1 0 0 1 52.8 684.2 cm
+q
+.082353 .345098 .415686 rg
+BT 1 0 0 1 0 4 Tm /F2 14 Tf 18 TL (Documented similarity) Tj T* ET
+Q
+Q
+q
+1 0 0 1 52.8 652.2 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 16 Tm /F1 10 Tf 13 TL (Evidence summary for basaltic volcanism and lava-tube-related surfaces; read each dimension and its limitations) Tj T* (before interpreting the label.) Tj T* ET
+Q
+Q
+q
+1 0 0 1 52.8 555.2 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 81 Tm /F1 10 Tf 13 TL (E02-T01 \267 Terrain similarity: USGS documents lava-tube development within Mauna Ulu pahoehoe flows;) Tj T* (NASA/LROC sources interpret the Marius Hills opening as a possible lava-tube skylight. Limitation: A distributed) Tj T* (terrestrial tube-bearing flow system is not the same visible landform as one lunar pit; no matched footprint or) Tj T* -0.031875 Tw (confirmed lunar tube geometry is established. Earth locator: Peterson et al. 1994 abstract: Mauna Ulu eruption and) Tj T* 0 Tw (tube-forming processes Planetary locator: LROC Pits Atlas pit locator and NASA lunar interpretation Scale: Earth) Tj T* (study covers a multi-year eruption; lunar source is a pit-scale feature; scales are not matched. Sources: R04, R06,) Tj T* (R40) Tj T* ET
+Q
+Q
+q
+1 0 0 1 52.8 471.2 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 68 Tm /F1 10 Tf 13 TL (E02-G01 \267 Geology similarity: The Earth source documents lava and tube formation at Mauna Ulu; the USGS lunar) Tj T* (map provides regional geologic context for Marius Hills. Limitation: The lunar map is 1:5,000,000 regional mapping) Tj T* -0.091765 Tw (and does not establish Marius pit-wall composition or a paired local material class. Earth locator: USGS Mauna Ulu) Tj T* 0 Tw (eruption study Planetary locator: USGS Unified Geologic Map of the Moon, 1:5M; Marius Hills Pit source Scale:) Tj T* (The regional Moon map is not cave-scale evidence; no matched samples or mineralogy are available. Sources:) Tj T* (R04, R06, R40) Tj T* ET
+Q
+Q
+q
+1 0 0 1 52.8 440.2 cm
+q
+.082353 .345098 .415686 rg
+BT 1 0 0 1 0 4 Tm /F2 14 Tf 18 TL (Explanation and practice) Tj T* ET
+Q
+Q
+q
+1 0 0 1 52.8 304.2 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 120 Tm /F1 10 Tf 13 TL (Terrain is not rated: The Mauna Ulu source describes a multi-flow tube system but no selected bounded flow) Tj T* (footprint; the Marius pit source does not establish pit-wall composition or a confirmed open tube. Geology is not) Tj T* (rated: The Mauna Ulu source describes a multi-flow tube system but no selected bounded flow footprint; the) Tj T* (Marius pit source does not establish pit-wall composition or a confirmed open tube. Evidence context: USGS) Tj T* (documents lava-tube development within Mauna Ulu pahoehoe flows; NASA/LROC sources interpret the Marius) Tj T* (Hills opening as a possible lava-tube skylight. No evidence-backed practice activity is assigned. Important) Tj T* (differences: Mauna Ulu documents tube-bearing flows across a prolonged eruption while the Marius Hills record is) Tj T* -0.135 Tw (a specific pit interpreted as a possible skylight; no matched study footprint is established. No feature-level evidence) Tj T* 0 Tw (establishes corresponding materials at the selected Mauna Ulu flow and lunar pit wall. This desk-reviewed) Tj T* (comparison remains outside ranked results because one or both dimensions lack sufficient evidence.) Tj T* ET
+Q
+Q
+q
+1 0 0 1 52.8 286.2 cm
+q
+.254902 .32549 .419608 rg
+BT 1 0 0 1 0 3 Tm /F1 9 Tf 12 TL (No evidence-backed practice tag is assigned to this comparison.) Tj T* ET
+Q
+Q
+q
+1 0 0 1 52.8 255.2 cm
+q
+.082353 .345098 .415686 rg
+BT 1 0 0 1 0 4 Tm /F2 14 Tf 18 TL (Limits and missing imagery) Tj T* ET
+Q
+Q
+q
+1 0 0 1 52.8 223.2 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 16 Tm /F1 10 Tf 13 TL (- Mauna Ulu documents tube-bearing flows across a prolonged eruption while the Marius Hills record is a specific) Tj T* (pit interpreted as a possible skylight; no matched study footprint is established.) Tj T* ET
+Q
+Q
+q
+1 0 0 1 52.8 204.2 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 3 Tm /F1 10 Tf 13 TL (- No feature-level evidence establishes corresponding materials at the selected Mauna Ulu flow and lunar pit wall.) Tj T* ET
+Q
+Q
+q
+1 0 0 1 52.8 185.2 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 3 Tm /F1 10 Tf 13 TL (- GNIS point is not a mapped tube or flow polygon) Tj T* ET
+Q
+Q
+q
+1 0 0 1 52.8 166.2 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 3 Tm /F1 10 Tf 13 TL (- No physical entry, tube continuity or habitability established) Tj T* ET
+Q
+Q
+q
+1 0 0 1 52.8 148.2 cm
+q
+.254902 .32549 .419608 rg
+BT 1 0 0 1 0 3 Tm /F1 9 Tf 12 TL (Limit sources: R04, R06, R40) Tj T* ET
+Q
+Q
+q
+1 0 0 1 52.8 118.2 cm
+q
+.254902 .32549 .419608 rg
+BT 1 0 0 1 0 15 Tm /F1 9 Tf 12 TL (Earth image: The package supplies citations but no verified, imported terrain image. Scale: No imported image scale. Credit:) Tj T* (See cited source. [R04]) Tj T* ET
+Q
+Q
+q
+1 0 0 1 52.8 88.2 cm
+q
+.254902 .32549 .419608 rg
+BT 1 0 0 1 0 15 Tm /F1 9 Tf 12 TL (Planetary image: The package supplies citations but no verified, imported terrain image. Scale: No imported image scale.) Tj T* (Credit: See cited source. [R06]) Tj T* ET
+Q
+Q
+q
+1 0 0 1 52.8 57.2 cm
+q
+.082353 .345098 .415686 rg
+BT 1 0 0 1 0 4 Tm /F2 14 Tf 18 TL (Method and source register) Tj T* ET
+Q
+Q
+ 
+endstream
+endobj
+16 0 obj
+<<
+/Length 2243
+>>
+stream
+1 0 0 1 0 0 cm  BT /F1 12 Tf 14.4 TL ET
+q
+1 0 0 1 52.8 700.2 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 29 Tm /F1 10 Tf 13 TL (AI source desk screen; both dimensions remain null because feature footprints and paired material evidence are) Tj T* (insufficient. Next validation: Select one dated Mauna Ulu flow/tube feature and check a map locator; retain the) Tj T* (lunar pit as a surface feature unless subsurface continuity is independently established.) Tj T* ET
+Q
+Q
+q
+1 0 0 1 52.8 668.2 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 16 Tm /F1 10 Tf 13 TL (Review: reviewed_source_desk_screening | Copilot \(AI source desk-screening\) | Date: 2026-11-15 | Rank eligible:) Tj T* (no) Tj T* ET
+Q
+Q
+q
+1 0 0 1 52.8 638.2 cm
+q
+.254902 .32549 .419608 rg
+BT 1 0 0 1 0 15 Tm /F1 9 Tf 12 TL (R04 | LROC / NASA GSFC / ASU | Pits Atlas: Marius Hills Pit | Marius Hills Pit lat 14.0917 lon 303.2299,) Tj T* (NAC_DTM_MARIUSPIT01) Tj T* ET
+Q
+Q
+q
+1 0 0 1 52.8 620.2 cm
+q
+.090196 .419608 .529412 rg
+BT 1 0 0 1 0 3 Tm /F1 9 Tf 12 TL (https://lroc.im-ldi.com/atlases/pits/1) Tj T* ET
+Q
+Q
+q
+1 0 0 1 52.8 590.2 cm
+q
+.254902 .32549 .419608 rg
+BT 1 0 0 1 0 15 Tm /F1 9 Tf 12 TL (R05 | USGS / US Board on Geographic Names via Hawaii State | GNIS Maunaulu feature report | GNIS ID 1853064;) Tj T* (19.3678716 -155.2024267 NAD83) Tj T* ET
+Q
+Q
+q
+1 0 0 1 52.8 572.2 cm
+q
+.090196 .419608 .529412 rg
+BT 1 0 0 1 0 3 Tm /F1 9 Tf 12 TL (https://files.hawaii.gov/dbedt/op/gis/bgn/Binder-20210504.pdf) Tj T* ET
+Q
+Q
+q
+1 0 0 1 52.8 554.2 cm
+q
+.254902 .32549 .419608 rg
+BT 1 0 0 1 0 3 Tm /F1 9 Tf 12 TL (R06 | USGS | Development of lava tubes in the light of observations at Mauna Ulu | Article record \(1994\)) Tj T* ET
+Q
+Q
+q
+1 0 0 1 52.8 536.2 cm
+q
+.090196 .419608 .529412 rg
+BT 1 0 0 1 0 3 Tm /F1 9 Tf 12 TL (https://pubs.usgs.gov/publication/70017657) Tj T* ET
+Q
+Q
+q
+1 0 0 1 52.8 506.2 cm
+q
+.254902 .32549 .419608 rg
+BT 1 0 0 1 0 15 Tm /F1 9 Tf 12 TL (R40 | USGS Astrogeology | Unified Geologic Map of the Moon 1:5M edition 2 | Global lunar geologic units and contacts;) Tj T* (1:5,000,000 scale) Tj T* ET
+Q
+Q
+q
+1 0 0 1 52.8 488.2 cm
+q
+.090196 .419608 .529412 rg
+BT 1 0 0 1 0 3 Tm /F1 9 Tf 12 TL (https://astrogeology.usgs.gov/search/map/Moon/Geology/Unified_Geologic_Map_of_the_Moon_GIS_v2/) Tj T* ET
+Q
+Q
+ 
+endstream
+endobj
+xref
+0 17
+0000000000 65535 f 
+0000000061 00000 n 
+0000000102 00000 n 
+0000000209 00000 n 
+0000000321 00000 n 
+0000000516 00000 n 
+0000000711 00000 n 
+0000000893 00000 n 
+0000001099 00000 n 
+0000001286 00000 n 
+0000001525 00000 n 
+0000001757 00000 n 
+0000001827 00000 n 
+0000002124 00000 n 
+0000002197 00000 n 
+0000007362 00000 n 
+0000012912 00000 n 
+trailer
+<<
+/ID 
+[<edce415d99d162923024e6ca2e3aebff><edce415d99d162923024e6ca2e3aebff>]
+% ReportLab generated PDF document -- digest (opensource)
+
+/Info 12 0 R
+/Root 11 0 R
+/Size 17
+>>
+startxref
+15207
+%%EOF

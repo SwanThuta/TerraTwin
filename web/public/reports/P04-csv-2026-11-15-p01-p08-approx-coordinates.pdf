@@ -1,0 +1,493 @@
+%PDF-1.4
+%“Œ‹ž ReportLab Generated PDF document (opensource)
+1 0 obj
+<<
+/F1 2 0 R /F2 3 0 R
+>>
+endobj
+2 0 obj
+<<
+/BaseFont /Helvetica /Encoding /WinAnsiEncoding /Name /F1 /Subtype /Type1 /Type /Font
+>>
+endobj
+3 0 obj
+<<
+/BaseFont /Helvetica-Bold /Encoding /WinAnsiEncoding /Name /F2 /Subtype /Type1 /Type /Font
+>>
+endobj
+4 0 obj
+<<
+/Contents 14 0 R /MediaBox [ 0 0 612 792 ] /Parent 13 0 R /Resources <<
+/Font 1 0 R /ProcSet [ /PDF /Text /ImageB /ImageC /ImageI ]
+>> /Rotate 0 /Trans <<
+
+>> 
+  /Type /Page
+>>
+endobj
+5 0 obj
+<<
+/Contents 15 0 R /MediaBox [ 0 0 612 792 ] /Parent 13 0 R /Resources <<
+/Font 1 0 R /ProcSet [ /PDF /Text /ImageB /ImageC /ImageI ]
+>> /Rotate 0 /Trans <<
+
+>> 
+  /Type /Page
+>>
+endobj
+6 0 obj
+<<
+/A <<
+/S /URI /Type /Action /URI (https://lroc.im-ldi.com/atlases/pits/1)
+>> /Border [ 0 0 0 ] /Rect [ 52.8 622.075 192.84 634.075 ] /Subtype /Link /Type /Annot
+>>
+endobj
+7 0 obj
+<<
+/A <<
+/S /URI /Type /Action /URI (https://pubs.usgs.gov/sir/2017/5022/k1/sir20175022k1.pdf)
+>> /Border [ 0 0 0 ] /Rect [ 52.8 574.075 283.434 586.075 ] /Subtype /Link /Type /Annot
+>>
+endobj
+8 0 obj
+<<
+/A <<
+/S /URI /Type /Action /URI (https://home.nps.gov/labe/learn/nature/geology.htm)
+>> /Border [ 0 0 0 ] /Rect [ 52.8 538.075 257.91 550.075 ] /Subtype /Link /Type /Annot
+>>
+endobj
+9 0 obj
+<<
+/A <<
+/S /URI /Type /Action /URI (https://astrogeology.usgs.gov/search/map/Moon/Geology/Unified_Geologic_Map_of_the_Moon_GIS_v2/)
+>> /Border [ 0 0 0 ] /Rect [ 52.8 490.075 469.005 502.075 ] /Subtype /Link /Type /Annot
+>>
+endobj
+10 0 obj
+<<
+/Annots [ 6 0 R 7 0 R 8 0 R 9 0 R ] /Contents 16 0 R /MediaBox [ 0 0 612 792 ] /Parent 13 0 R /Resources <<
+/Font 1 0 R /ProcSet [ /PDF /Text /ImageB /ImageC /ImageI ]
+>> /Rotate 0 
+  /Trans <<
+
+>> /Type /Page
+>>
+endobj
+11 0 obj
+<<
+/PageMode /UseNone /Pages 13 0 R /Type /Catalog
+>>
+endobj
+12 0 obj
+<<
+/Author (\(anonymous\)) /CreationDate (D:20261115085458+06'00') /Creator (\(unspecified\)) /Keywords () /ModDate (D:20261115085458+06'00') /Producer (ReportLab PDF Library - \(opensource\)) 
+  /Subject (\(unspecified\)) /Title (TerraTwin P04 evidence report) /Trapped /False
+>>
+endobj
+13 0 obj
+<<
+/Count 3 /Kids [ 4 0 R 5 0 R 10 0 R ] /Type /Pages
+>>
+endobj
+14 0 obj
+<<
+/Length 5178
+>>
+stream
+1 0 0 1 0 0 cm  BT /F1 12 Tf 14.4 TL ET
+q
+1 0 0 1 52.8 717.2 cm
+q
+.078431 .164706 .262745 rg
+BT 1 0 0 1 0 4 Tm /F2 18 Tf 22 TL 116.652 0 Td (TerraTwin evidence report - P04) Tj T* -116.652 0 Td ET
+Q
+Q
+q
+1 0 0 1 52.8 668.2 cm
+q
+.082353 .345098 .415686 rg
+BT 1 0 0 1 0 22 Tm /F2 14 Tf 18 TL (Skull Cave collapse trench / lava-tube entrance and Marius Hills Pit \(LROC) Tj T* (Pits Atlas\)) Tj T* ET
+Q
+Q
+q
+1 0 0 1 52.8 649.2 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 3 Tm /F1 10 Tf 13 TL (Status: reviewed | Overall: Insufficient evidence | Evidence: 0/2 dimensions supported) Tj T* ET
+Q
+Q
+q
+1 0 0 1 52.8 631.2 cm
+q
+.254902 .32549 .419608 rg
+BT 1 0 0 1 0 3 Tm /F1 9 Tf 12 TL (Dataset csv-2026-11-15-p01-p08-approx-coordinates | Rubric terrain-geology-qual-v1 | Order terrain-first-v1) Tj T* ET
+Q
+Q
+q
+1 0 0 1 52.8 613.2 cm
+q
+.254902 .32549 .419608 rg
+BT 1 0 0 1 0 3 Tm /F1 9 Tf 12 TL (Qualitative screening judgment; no similarity percentage or route-safety assessment.) Tj T* ET
+Q
+Q
+q
+1 0 0 1 52.8 582.2 cm
+q
+.082353 .345098 .415686 rg
+BT 1 0 0 1 0 4 Tm /F2 14 Tf 18 TL (Feature scope) Tj T* ET
+Q
+Q
+q
+1 0 0 1 52.8 537.2 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 29 Tm /F1 10 Tf 13 TL (Earth: Skull Cave collapse trench / lava-tube entrance. Locator: Lava Beds National Monument; Approximate site) Tj T* (locator uses the USGS Stop 14 parking coordinate \(41 degrees 43.87 minutes N, 121 degrees 30.64 minutes W\);) Tj T* (this is not the cave entrance GPS. Footprint: not_digitized.) Tj T* ET
+Q
+Q
+q
+1 0 0 1 52.8 483.2 cm
+q
+.254902 .32549 .419608 rg
+BT 1 0 0 1 0 39 Tm /F1 9 Tf 12 TL (Earth map marker: Approximate reference locator: Approximate site locator uses the USGS Stop 14 parking coordinate \(41) Tj T* (degrees 43.87 minutes N, 121 degrees 30.64 minutes W\); this is not the cave entrance GPS.. Coordinate note: Approximate) Tj T* -0.064 Tw (site locator uses the USGS Stop 14 parking coordinate \(41 degrees 43.87 minutes N, 121 degrees 30.64 minutes W\); this is not) Tj T* 0 Tw (the cave entrance GPS.. Convention: WGS84 signed East [-180,180]; WGS84 geodetic) Tj T* ET
+Q
+Q
+q
+1 0 0 1 52.8 451.2 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 16 Tm /F1 10 Tf 13 TL (Moon: Marius Hills Pit \(LROC Pits Atlas\). Locator: Marius Hills; Use LROC precision; separate from 2009 JAXA) Tj T* (approximate 14.2 N 303.3 E. Footprint: not_digitized.) Tj T* ET
+Q
+Q
+q
+1 0 0 1 52.8 421.2 cm
+q
+.254902 .32549 .419608 rg
+BT 1 0 0 1 0 15 Tm /F1 9 Tf 12 TL (Planetary coordinate convention: positive East [0,360]; planetocentric unless product label specifies otherwise; verify. Use) Tj T* (LROC precision; separate from 2009 JAXA approximate 14.2 N 303.3 E.) Tj T* ET
+Q
+Q
+q
+1 0 0 1 52.8 389.2 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 16 Tm /F1 10 Tf 13 TL (Relationship: volcanic cave process analog; no direct named cave to Marius match. Theme: lava tube cave and) Tj T* (surface skylight detection. [R04, R09, R10, R40]) Tj T* ET
+Q
+Q
+q
+1 0 0 1 52.8 358.2 cm
+q
+.082353 .345098 .415686 rg
+BT 1 0 0 1 0 4 Tm /F2 14 Tf 18 TL (C01 - Named landform and subfeatures) Tj T* ET
+Q
+Q
+q
+1 0 0 1 52.8 328.2 cm
+q
+.254902 .32549 .419608 rg
+BT 1 0 0 1 0 15 Tm /F1 9 Tf 12 TL (Question: Cross-section/planform, visible subfeatures, area/scale, meaningfully corresponding features | Readiness:) Tj T* (not_numerical) Tj T* ET
+Q
+Q
+q
+1 0 0 1 52.8 309.2 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 3 Tm /F1 10 Tf 13 TL (Rating: Insufficient evidence | Sources: R09, R04) Tj T* ET
+Q
+Q
+q
+1 0 0 1 52.8 277.2 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 16 Tm /F1 10 Tf 13 TL (Evidence: The proposed Earth cave and lunar pit are volcanic opening features that motivate a surface-mapping) Tj T* (comparison.) Tj T* ET
+Q
+Q
+q
+1 0 0 1 52.8 245.2 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 16 Tm /F1 10 Tf 13 TL (Difference: The source locator for Skull Cave is an adjacent parking point; comparable cave-mouth/pit morphology) Tj T* (and scale have not been established.) Tj T* ET
+Q
+Q
+q
+1 0 0 1 52.8 215.2 cm
+q
+.254902 .32549 .419608 rg
+BT 1 0 0 1 0 15 Tm /F1 9 Tf 12 TL (Missing review: Available review material does not verify a bounded Skull Cave entrance/collapse footprint or paired material) Tj T* (classes; the cited coordinate is parking, not the cave entrance.) Tj T* ET
+Q
+Q
+q
+1 0 0 1 52.8 184.2 cm
+q
+.082353 .345098 .415686 rg
+BT 1 0 0 1 0 4 Tm /F2 14 Tf 18 TL (C02 - Surface material / deposit classes) Tj T* ET
+Q
+Q
+q
+1 0 0 1 52.8 154.2 cm
+q
+.254902 .32549 .419608 rg
+BT 1 0 0 1 0 15 Tm /F1 9 Tf 12 TL (Question: Published lithology, regolith, layers, sediment size, bedrock context, mineral analyses if measured | Readiness:) Tj T* (not_numerical) Tj T* ET
+Q
+Q
+q
+1 0 0 1 52.8 135.2 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 3 Tm /F1 10 Tf 13 TL (Rating: Insufficient evidence | Sources: R09, R10, R04, R40) Tj T* ET
+Q
+Q
+q
+1 0 0 1 52.8 103.2 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 16 Tm /F1 10 Tf 13 TL (Evidence: Available records place the Earth cave in a volcanic lava-tube setting and the lunar pit in a volcanic) Tj T* (province.) Tj T* ET
+Q
+Q
+q
+1 0 0 1 52.8 71.2 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 16 Tm /F1 10 Tf 13 TL (Difference: A broad volcanic setting does not establish matching material classes, and the accessible source) Tj T* (readers did not expose the NPS/USGS descriptions needed to verify the selected cave feature.) Tj T* ET
+Q
+Q
+ 
+endstream
+endobj
+15 0 obj
+<<
+/Length 5278
+>>
+stream
+1 0 0 1 0 0 cm  BT /F1 12 Tf 14.4 TL ET
+q
+1 0 0 1 52.8 715.2 cm
+q
+.254902 .32549 .419608 rg
+BT 1 0 0 1 0 15 Tm /F1 9 Tf 12 TL (Missing review: Available review material does not verify a bounded Skull Cave entrance/collapse footprint or paired material) Tj T* (classes; the cited coordinate is parking, not the cave entrance.) Tj T* ET
+Q
+Q
+q
+1 0 0 1 52.8 684.2 cm
+q
+.082353 .345098 .415686 rg
+BT 1 0 0 1 0 4 Tm /F2 14 Tf 18 TL (Documented similarity) Tj T* ET
+Q
+Q
+q
+1 0 0 1 52.8 652.2 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 16 Tm /F1 10 Tf 13 TL (Evidence summary for lava tube cave and surface skylight detection; read each dimension and its limitations) Tj T* (before interpreting the label.) Tj T* ET
+Q
+Q
+q
+1 0 0 1 52.8 581.2 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 55 Tm /F1 10 Tf 13 TL (E04-T01 \267 Terrain similarity: The proposed Earth cave and lunar pit are volcanic opening features that motivate a) Tj T* (surface-mapping comparison. Limitation: The supplied coordinate locates Skull Cave parking rather than its) Tj T* (entrance; comparable mouth geometry and scale were not verified. Earth locator: USGS Medicine Lake Volcano) Tj T* (field-trip guide, Stop 14; source text not readable in available reader Planetary locator: LROC Pits Atlas pit locator) Tj T* (Scale: No paired feature footprints or measured dimensions are available. Sources: R04, R09, R10) Tj T* ET
+Q
+Q
+q
+1 0 0 1 52.8 497.2 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 68 Tm /F1 10 Tf 13 TL (E04-G01 \267 Geology similarity: Available records place the Earth cave in a volcanic lava-tube setting and the lunar) Tj T* (pit in a volcanic province. Limitation: Feature-specific material classes and the cave entrance locator could not be) Tj T* (verified; broad volcanic context alone is insufficient. Earth locator: USGS Medicine Lake field-trip guide and NPS) Tj T* (Lava Beds geology page; access was limited Planetary locator: USGS Unified Geologic Map of the Moon, 1:5M;) Tj T* (LROC pit atlas Scale: Regional map scale cannot establish lunar pit-wall composition. Sources: R04, R09, R10,) Tj T* (R40) Tj T* ET
+Q
+Q
+q
+1 0 0 1 52.8 466.2 cm
+q
+.082353 .345098 .415686 rg
+BT 1 0 0 1 0 4 Tm /F2 14 Tf 18 TL (Explanation and practice) Tj T* ET
+Q
+Q
+q
+1 0 0 1 52.8 330.2 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 120 Tm /F1 10 Tf 13 TL (Terrain is not rated: Available review material does not verify a bounded Skull Cave entrance/collapse footprint or) Tj T* (paired material classes; the cited coordinate is parking, not the cave entrance. Geology is not rated: Available) Tj T* (review material does not verify a bounded Skull Cave entrance/collapse footprint or paired material classes; the) Tj T* (cited coordinate is parking, not the cave entrance. Evidence context: The proposed Earth cave and lunar pit are) Tj T* (volcanic opening features that motivate a surface-mapping comparison. No evidence-backed practice activity is) Tj T* (assigned. Important differences: The source locator for Skull Cave is an adjacent parking point; comparable) Tj T* (cave-mouth/pit morphology and scale have not been established. A broad volcanic setting does not establish) Tj T* (matching material classes, and the accessible source readers did not expose the NPS/USGS descriptions needed) Tj T* (to verify the selected cave feature. This desk-reviewed comparison remains outside ranked results because one or) Tj T* (both dimensions lack sufficient evidence.) Tj T* ET
+Q
+Q
+q
+1 0 0 1 52.8 312.2 cm
+q
+.254902 .32549 .419608 rg
+BT 1 0 0 1 0 3 Tm /F1 9 Tf 12 TL (No evidence-backed practice tag is assigned to this comparison.) Tj T* ET
+Q
+Q
+q
+1 0 0 1 52.8 281.2 cm
+q
+.082353 .345098 .415686 rg
+BT 1 0 0 1 0 4 Tm /F2 14 Tf 18 TL (Limits and missing imagery) Tj T* ET
+Q
+Q
+q
+1 0 0 1 52.8 249.2 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 16 Tm /F1 10 Tf 13 TL (- The source locator for Skull Cave is an adjacent parking point; comparable cave-mouth/pit morphology and scale) Tj T* (have not been established.) Tj T* ET
+Q
+Q
+q
+1 0 0 1 52.8 217.2 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 16 Tm /F1 10 Tf 13 TL (- A broad volcanic setting does not establish matching material classes, and the accessible source readers did not) Tj T* (expose the NPS/USGS descriptions needed to verify the selected cave feature.) Tj T* ET
+Q
+Q
+q
+1 0 0 1 52.8 198.2 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 3 Tm /F1 10 Tf 13 TL (- Surface imagery cannot measure cave continuity or roof strength) Tj T* ET
+Q
+Q
+q
+1 0 0 1 52.8 179.2 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 3 Tm /F1 10 Tf 13 TL (- No physical entry, tube continuity or habitability established) Tj T* ET
+Q
+Q
+q
+1 0 0 1 52.8 161.2 cm
+q
+.254902 .32549 .419608 rg
+BT 1 0 0 1 0 3 Tm /F1 9 Tf 12 TL (Limit sources: R04, R09, R10, R40) Tj T* ET
+Q
+Q
+q
+1 0 0 1 52.8 131.2 cm
+q
+.254902 .32549 .419608 rg
+BT 1 0 0 1 0 15 Tm /F1 9 Tf 12 TL (Earth image: The package supplies citations but no verified, imported terrain image. Scale: No imported image scale. Credit:) Tj T* (See cited source. [R09]) Tj T* ET
+Q
+Q
+q
+1 0 0 1 52.8 101.2 cm
+q
+.254902 .32549 .419608 rg
+BT 1 0 0 1 0 15 Tm /F1 9 Tf 12 TL (Planetary image: The package supplies citations but no verified, imported terrain image. Scale: No imported image scale.) Tj T* (Credit: See cited source. [R04]) Tj T* ET
+Q
+Q
+q
+1 0 0 1 52.8 70.2 cm
+q
+.082353 .345098 .415686 rg
+BT 1 0 0 1 0 4 Tm /F2 14 Tf 18 TL (Method and source register) Tj T* ET
+Q
+Q
+ 
+endstream
+endobj
+16 0 obj
+<<
+/Length 2191
+>>
+stream
+1 0 0 1 0 0 cm  BT /F1 12 Tf 14.4 TL ET
+q
+1 0 0 1 52.8 700.2 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 29 Tm /F1 10 Tf 13 TL (AI source desk screen; the cave record remains insufficient rather than being assigned a Weak rating. Next) Tj T* (validation: Verify a readable cave map/description and source-located cave-mouth footprint; do not infer lunar) Tj T* (subsurface continuity or stability.) Tj T* ET
+Q
+Q
+q
+1 0 0 1 52.8 668.2 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 16 Tm /F1 10 Tf 13 TL (Review: reviewed_source_desk_screening | Copilot \(AI source desk-screening\) | Date: 2026-11-15 | Rank eligible:) Tj T* (no) Tj T* ET
+Q
+Q
+q
+1 0 0 1 52.8 638.2 cm
+q
+.254902 .32549 .419608 rg
+BT 1 0 0 1 0 15 Tm /F1 9 Tf 12 TL (R04 | LROC / NASA GSFC / ASU | Pits Atlas: Marius Hills Pit | Marius Hills Pit lat 14.0917 lon 303.2299,) Tj T* (NAC_DTM_MARIUSPIT01) Tj T* ET
+Q
+Q
+q
+1 0 0 1 52.8 620.2 cm
+q
+.090196 .419608 .529412 rg
+BT 1 0 0 1 0 3 Tm /F1 9 Tf 12 TL (https://lroc.im-ldi.com/atlases/pits/1) Tj T* ET
+Q
+Q
+q
+1 0 0 1 52.8 590.2 cm
+q
+.254902 .32549 .419608 rg
+BT 1 0 0 1 0 15 Tm /F1 9 Tf 12 TL (R09 | USGS | Geologic Field-trip Guide to Medicine Lake Volcano | Stop 14 Skull Cave printed p33; parking 41d43.87 N) Tj T* (121d30.64 W; Fig 36) Tj T* ET
+Q
+Q
+q
+1 0 0 1 52.8 572.2 cm
+q
+.090196 .419608 .529412 rg
+BT 1 0 0 1 0 3 Tm /F1 9 Tf 12 TL (https://pubs.usgs.gov/sir/2017/5022/k1/sir20175022k1.pdf) Tj T* ET
+Q
+Q
+q
+1 0 0 1 52.8 554.2 cm
+q
+.254902 .32549 .419608 rg
+BT 1 0 0 1 0 3 Tm /F1 9 Tf 12 TL (R10 | US National Park Service | Geology of Lava Beds National Monument | Park geology and lava-tube description) Tj T* ET
+Q
+Q
+q
+1 0 0 1 52.8 536.2 cm
+q
+.090196 .419608 .529412 rg
+BT 1 0 0 1 0 3 Tm /F1 9 Tf 12 TL (https://home.nps.gov/labe/learn/nature/geology.htm) Tj T* ET
+Q
+Q
+q
+1 0 0 1 52.8 506.2 cm
+q
+.254902 .32549 .419608 rg
+BT 1 0 0 1 0 15 Tm /F1 9 Tf 12 TL (R40 | USGS Astrogeology | Unified Geologic Map of the Moon 1:5M edition 2 | Global lunar geologic units and contacts;) Tj T* (1:5,000,000 scale) Tj T* ET
+Q
+Q
+q
+1 0 0 1 52.8 488.2 cm
+q
+.090196 .419608 .529412 rg
+BT 1 0 0 1 0 3 Tm /F1 9 Tf 12 TL (https://astrogeology.usgs.gov/search/map/Moon/Geology/Unified_Geologic_Map_of_the_Moon_GIS_v2/) Tj T* ET
+Q
+Q
+ 
+endstream
+endobj
+xref
+0 17
+0000000000 65535 f 
+0000000061 00000 n 
+0000000102 00000 n 
+0000000209 00000 n 
+0000000321 00000 n 
+0000000516 00000 n 
+0000000711 00000 n 
+0000000893 00000 n 
+0000001094 00000 n 
+0000001288 00000 n 
+0000001527 00000 n 
+0000001759 00000 n 
+0000001829 00000 n 
+0000002126 00000 n 
+0000002199 00000 n 
+0000007429 00000 n 
+0000012759 00000 n 
+trailer
+<<
+/ID 
+[<b1b1a917925eb8d467f80454cc69374f><b1b1a917925eb8d467f80454cc69374f>]
+% ReportLab generated PDF document -- digest (opensource)
+
+/Info 12 0 R
+/Root 11 0 R
+/Size 17
+>>
+startxref
+15002
+%%EOF

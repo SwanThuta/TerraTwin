@@ -1,5 +1,5 @@
 {
-  "datasetVersion": "csv-2026-11-14-p01",
+  "datasetVersion": "csv-2026-11-15-p01-p08-approx-coordinates",
   "reviewProfile": "terrain-geology-qual-v1",
   "orderingProfile": "terrain-first-v1",
   "sources": [
@@ -28,19 +28,219 @@
       "accessDate": null
     },
     {
-      "id": "R29",
+      "id": "R04",
       "provider": "LROC / NASA GSFC / ASU",
-      "title": "Shackleton rim ESA Lander DTM confidence map",
-      "url": "https://data.lroc.im-ldi.com/lroc/view_rdr_product/NAC_DTM_ESALL_SR12_CONF",
-      "locator": "2 m/pixel; catalog bounds 180.83-226.60 E -89.84 to -89.63",
+      "title": "Pits Atlas: Marius Hills Pit",
+      "url": "https://lroc.im-ldi.com/atlases/pits/1",
+      "locator": "Marius Hills Pit lat 14.0917 lon 303.2299, NAC_DTM_MARIUSPIT01",
       "accessDate": null
     },
     {
-      "id": "R31",
-      "provider": "Polar Geospatial Center",
-      "title": "ArcticDEM",
-      "url": "https://www.pgc.umn.edu/data/arcticdem/",
-      "locator": "Arctic strips / mosaics",
+      "id": "R05",
+      "provider": "USGS / US Board on Geographic Names via Hawaii State",
+      "title": "GNIS Maunaulu feature report",
+      "url": "https://files.hawaii.gov/dbedt/op/gis/bgn/Binder-20210504.pdf",
+      "locator": "GNIS ID 1853064; 19.3678716 -155.2024267 NAD83",
+      "accessDate": null
+    },
+    {
+      "id": "R06",
+      "provider": "USGS",
+      "title": "Development of lava tubes in the light of observations at Mauna Ulu",
+      "url": "https://pubs.usgs.gov/publication/70017657",
+      "locator": "Article record (1994)",
+      "accessDate": null
+    },
+    {
+      "id": "R07",
+      "provider": "Barsotti et al. Natural Hazards",
+      "title": "The eruption in Fagradalsfjall (2021 Iceland)",
+      "url": "https://link.springer.com/article/10.1007/s11069-022-05798-7",
+      "locator": "Table 3 vent 5b and section 4.3: 63.8906 N -22.2691 W",
+      "accessDate": null
+    },
+    {
+      "id": "R08",
+      "provider": "NASA",
+      "title": "NASA Fieldwork Spotlight Iceland GIFT",
+      "url": "https://science.nasa.gov/solar-system/planetary-analogs/nasas-goddard-instrument-field-team-iceland-2025/",
+      "locator": "Fagradalsfjall vents / lava flows",
+      "accessDate": null
+    },
+    {
+      "id": "R09",
+      "provider": "USGS",
+      "title": "Geologic Field-trip Guide to Medicine Lake Volcano",
+      "url": "https://pubs.usgs.gov/sir/2017/5022/k1/sir20175022k1.pdf",
+      "locator": "Stop 14 Skull Cave printed p33; parking 41d43.87 N 121d30.64 W; Fig 36",
+      "accessDate": null
+    },
+    {
+      "id": "R10",
+      "provider": "US National Park Service",
+      "title": "Geology of Lava Beds National Monument",
+      "url": "https://home.nps.gov/labe/learn/nature/geology.htm",
+      "locator": "Park geology and lava-tube description",
+      "accessDate": null
+    },
+    {
+      "id": "R11",
+      "provider": "International Union of Geological Sciences",
+      "title": "Mars analog of Lake Salda",
+      "url": "https://iugs-geoheritage.org/geoheritage_sites/mars-analog-of-lake-salda/",
+      "locator": "Lake coordinate 37d33m09 N 029d40m53 E",
+      "accessDate": null
+    },
+    {
+      "id": "R12",
+      "provider": "NASA Earth Observatory",
+      "title": "What a Lake in Turkey Can Tell Us about Mars",
+      "url": "https://science.nasa.gov/blogs/earth-matters/2021/02/17/what-a-lake-in-turkey-can-tell-us-about-mars/",
+      "locator": "Salda shore exposures and Jezero western margin",
+      "accessDate": null
+    },
+    {
+      "id": "R13",
+      "provider": "NASA JPL",
+      "title": "Lake Salda Beach PIA24375",
+      "url": "https://science.nasa.gov/photojournal/lake-salda-beach/",
+      "locator": "Eastern shore image PIA24375",
+      "accessDate": null
+    },
+    {
+      "id": "R14",
+      "provider": "IAU / USGS",
+      "title": "Planetary names Jezero crater",
+      "url": "https://planetarynames.wr.usgs.gov/Feature/14300",
+      "locator": "center 18.41 N 77.69 E planetocentric",
+      "accessDate": null
+    },
+    {
+      "id": "R15",
+      "provider": "NASA / JPL / ASU THEMIS",
+      "title": "Jezero Crater Delta image",
+      "url": "https://themis.asu.edu/zoom-20231205a",
+      "locator": "Image center 18.449 N 77.436 E; 2023-05-19 VIS frame",
+      "accessDate": null
+    },
+    {
+      "id": "R16",
+      "provider": "USGS EROS",
+      "title": "Salar de Atacama Chile Earthshots",
+      "url": "https://eros.usgs.gov/earthshots/salar-de-atacama-chile",
+      "locator": "Northern basin / San Pedro River delta description",
+      "accessDate": null
+    },
+    {
+      "id": "R17",
+      "provider": "Mindat / GeoNames",
+      "title": "Rio San Pedro Antofagasta stream gazetteer",
+      "url": "https://www.mindat.org/feature-3871789.html",
+      "locator": "Stream feature -23.30461 -68.21839",
+      "accessDate": null
+    },
+    {
+      "id": "R18",
+      "provider": "USGS",
+      "title": "Copper Canyon Fan",
+      "url": "https://www.usgs.gov/media/images/copper-canyon-fan",
+      "locator": "USGS image and description source scale 1:48000",
+      "accessDate": null
+    },
+    {
+      "id": "R19",
+      "provider": "USGS Professional Paper 466",
+      "title": "Alluvial Fans in Death Valley Region",
+      "url": "https://pubs.usgs.gov/pp/0466/report.pdf",
+      "locator": "Copper Canyon fan study, figs and plates 4, 19; about 2 sq miles",
+      "accessDate": null
+    },
+    {
+      "id": "R20",
+      "provider": "USGS GNIS-derived map, non-primary reproduction",
+      "title": "Copper Canyon geographical valley entry",
+      "url": "https://www.anyplaceamerica.com/directory/ca/inyo-county-06027/valleys/copper-canyon-240905/",
+      "locator": "Mapped named canyon 36.1285645 -116.7536577",
+      "accessDate": null
+    },
+    {
+      "id": "R21",
+      "provider": "IAU / USGS",
+      "title": "Planetary Names Peace Vallis",
+      "url": "https://planetarynames.wr.usgs.gov/Feature/15036",
+      "locator": "center -4.21 latitude 137.23 east longitude",
+      "accessDate": null
+    },
+    {
+      "id": "R22",
+      "provider": "Palucis et al. JGR Planets",
+      "title": "The origin and evolution of Peace Vallis fan",
+      "url": "https://agupubs.onlinelibrary.wiley.com/doi/abs/10.1002/2013JE004583",
+      "locator": "Table 2 80 km2 total, upper 49, lower 31; Figs 2 & 5",
+      "accessDate": null
+    },
+    {
+      "id": "R23",
+      "provider": "NASA / JPL",
+      "title": "River Fans on Earth and Mars",
+      "url": "https://www.jpl.nasa.gov/videos/river-fans-on-earth-and-mars/",
+      "locator": "2012 video and transcript",
+      "accessDate": null
+    },
+    {
+      "id": "R24",
+      "provider": "Greco et al. Frontiers in Microbiology",
+      "title": "Lake Untersee study site",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC7759091/",
+      "locator": "Lake site 71d20.736 S 13d27.842 E",
+      "accessDate": null
+    },
+    {
+      "id": "R25",
+      "provider": "NASA NTRS",
+      "title": "Antarctic analogy for ancient lakes at Gale Crater Mars",
+      "url": "https://ntrs.nasa.gov/search.jsp?R=20190025827",
+      "locator": "NASA-hosted research abstract",
+      "accessDate": null
+    },
+    {
+      "id": "R26",
+      "provider": "IAU / USGS",
+      "title": "Planetary Names Gale",
+      "url": "https://planetarynames.wr.usgs.gov/Feature/2071",
+      "locator": "center -5.44 latitude 137.70 E in MDIM 2.1",
+      "accessDate": null
+    },
+    {
+      "id": "R36",
+      "provider": "NASA Earth Observatory",
+      "title": "2026 Landsat image of Lake Untersee",
+      "url": "https://science.nasa.gov/earth/earth-observatory/a-most-unusual-lake/",
+      "locator": "Landsat 9 2026-02-16 and lake science",
+      "accessDate": null
+    },
+    {
+      "id": "R40",
+      "provider": "USGS Astrogeology",
+      "title": "Unified Geologic Map of the Moon 1:5M edition 2",
+      "url": "https://astrogeology.usgs.gov/search/map/Moon/Geology/Unified_Geologic_Map_of_the_Moon_GIS_v2/",
+      "locator": "Global lunar geologic units and contacts; 1:5,000,000 scale",
+      "accessDate": null
+    },
+    {
+      "id": "R41",
+      "provider": "NASA Goddard Instrument Field Team",
+      "title": "Iceland Team Lava 2025 fieldwork",
+      "url": "https://science.nasa.gov/solar-system/planetary-analogs/nasas-goddard-instrument-field-team-iceland-2025/team-lava/",
+      "locator": "Fagradalsfjall vents, lava flows, drone topography, thermal mapping and rock observations",
+      "accessDate": null
+    },
+    {
+      "id": "R42",
+      "provider": "NASA",
+      "title": "Perseverance Explores the Jezero Crater Delta",
+      "url": "https://science.nasa.gov/resource/perseverance-explores-the-jezero-crater-delta/",
+      "locator": "Mastcam-Z panorama acquired June 12, 13, 16, 17 and 20, 2022; delta-front transcript and named outcrops",
       "accessDate": null
     }
   ],
@@ -213,14 +413,126 @@
       "body": "earth",
       "region": "Devon Island, Nunavut, Canada",
       "feature": "Haughton Site A / Locale 7 rocky carbonate ridge",
-      "locator": "Haughton impact crater; NASA locates Locale 7 roughly 2 km NW of base camp. No exact Locale 7 GPS found. Base coordinates only. Footprint: not_digitized.",
+      "locator": "Haughton impact crater; Approximate point calculated 2 km on an assumed 315-degree NW bearing from the HMP reference; NASA reports only roughly 2 km NW and gives no Locale 7 GPS or exact bearing. Footprint: not_digitized.",
       "mapPoint": [
-        -89.86666666666666,
-        75.43333333333334
+        -89.91728,
+        75.44605
       ],
-      "mapPointKind": "Context reference: HMP research station 2km SE of Locale 7 (related_research_base_not_feature); not a verified feature point",
+      "mapPointKind": "Approximate reference locator: Approximate point calculated 2 km on an assumed 315-degree NW bearing from the HMP reference; NASA reports only roughly 2 km NW and gives no Locale 7 GPS or exact bearing.",
       "mapPointSourceId": "R01",
-      "coordinateNote": "NASA locates Locale 7 roughly 2 km NW of base camp. No exact Locale 7 GPS found. Base coordinates only.",
+      "coordinateNote": "Approximate point calculated 2 km on an assumed 315-degree NW bearing from the HMP reference; NASA reports only roughly 2 km NW and gives no Locale 7 GPS or exact bearing.",
+      "coordinateConvention": "WGS84 signed East [-180,180]; WGS84 geodetic"
+    },
+    {
+      "id": "E02",
+      "name": "Mauna Ulu volcanic formation (flow selection pending)",
+      "body": "earth",
+      "region": "Hawaii, USA",
+      "feature": "Mauna Ulu volcanic formation (flow selection pending)",
+      "locator": "Kilauea; USGS GNIS NAD83 feature point; select a dated mapped flow/tube for comparison; WGS84 display approximation requires datum metadata. Footprint: not_digitized.",
+      "mapPoint": [
+        -155.2024267,
+        19.3678716
+      ],
+      "mapPointKind": "Source-located point (source_coordinate): USGS GNIS NAD83 feature point; select a dated mapped flow/tube for comparison; WGS84 display approximation requires datum metadata.",
+      "mapPointSourceId": "R05",
+      "coordinateNote": "USGS GNIS NAD83 feature point; select a dated mapped flow/tube for comparison; WGS84 display approximation requires datum metadata.",
+      "coordinateConvention": "WGS84 signed East [-180,180]; WGS84 geodetic"
+    },
+    {
+      "id": "E03",
+      "name": "Fagradalsfjall 2021 vent 5b",
+      "body": "earth",
+      "region": "Reykjanes Peninsula, Iceland",
+      "feature": "Fagradalsfjall 2021 vent 5b",
+      "locator": "Fagradalsfjall; 2021 vent location; lava flow perimeter and DEM observation epoch must be separately mapped. Footprint: not_digitized.",
+      "mapPoint": [
+        -22.2691,
+        63.8906
+      ],
+      "mapPointKind": "Source-located point (source_coordinate): 2021 vent location; lava flow perimeter and DEM observation epoch must be separately mapped.",
+      "mapPointSourceId": "R07",
+      "coordinateNote": "2021 vent location; lava flow perimeter and DEM observation epoch must be separately mapped.",
+      "coordinateConvention": "WGS84 signed East [-180,180]; WGS84 geodetic"
+    },
+    {
+      "id": "E04",
+      "name": "Skull Cave collapse trench / lava-tube entrance",
+      "body": "earth",
+      "region": "California, USA",
+      "feature": "Skull Cave collapse trench / lava-tube entrance",
+      "locator": "Lava Beds National Monument; Approximate site locator uses the USGS Stop 14 parking coordinate (41 degrees 43.87 minutes N, 121 degrees 30.64 minutes W); this is not the cave entrance GPS. Footprint: not_digitized.",
+      "mapPoint": [
+        -121.51066666666667,
+        41.73116666666667
+      ],
+      "mapPointKind": "Approximate reference locator: Approximate site locator uses the USGS Stop 14 parking coordinate (41 degrees 43.87 minutes N, 121 degrees 30.64 minutes W); this is not the cave entrance GPS.",
+      "mapPointSourceId": "R09",
+      "coordinateNote": "Approximate site locator uses the USGS Stop 14 parking coordinate (41 degrees 43.87 minutes N, 121 degrees 30.64 minutes W); this is not the cave entrance GPS.",
+      "coordinateConvention": "WGS84 signed East [-180,180]; WGS84 geodetic"
+    },
+    {
+      "id": "E05",
+      "name": "Lake Salda carbonate-rich shoreline / terrace candidate",
+      "body": "earth",
+      "region": "Burdur, Türkiye",
+      "feature": "Lake Salda carbonate-rich shoreline / terrace candidate",
+      "locator": "Lake Salda; Approximate locator uses the IUGS whole-lake reference point; the NASA-described northeastern beach/terrace has no published subfeature coordinate in the cited source. Footprint: not_digitized.",
+      "mapPoint": [
+        29.68138888888889,
+        37.552499999999995
+      ],
+      "mapPointKind": "Approximate reference locator: Approximate locator uses the IUGS whole-lake reference point; the NASA-described northeastern beach/terrace has no published subfeature coordinate in the cited source.",
+      "mapPointSourceId": "R11",
+      "coordinateNote": "Approximate locator uses the IUGS whole-lake reference point; the NASA-described northeastern beach/terrace has no published subfeature coordinate in the cited source.",
+      "coordinateConvention": "WGS84 signed East [-180,180]; WGS84 geodetic"
+    },
+    {
+      "id": "E06",
+      "name": "San Pedro River delta at Salar de Atacama (deposit selection pending)",
+      "body": "earth",
+      "region": "Antofagasta, Chile",
+      "feature": "San Pedro River delta at Salar de Atacama (deposit selection pending)",
+      "locator": "Salar de Atacama; Approximate northern-basin locator reuses the Rio San Pedro gazetteer point; it is a river feature, not a surveyed delta outlet or deposit centroid. Footprint: not_digitized.",
+      "mapPoint": [
+        -68.21839,
+        -23.30461
+      ],
+      "mapPointKind": "Approximate reference locator: Approximate northern-basin locator reuses the Rio San Pedro gazetteer point; it is a river feature, not a surveyed delta outlet or deposit centroid.",
+      "mapPointSourceId": "R17",
+      "coordinateNote": "Approximate northern-basin locator reuses the Rio San Pedro gazetteer point; it is a river feature, not a surveyed delta outlet or deposit centroid.",
+      "coordinateConvention": "WGS84 signed East [-180,180]; WGS84 geodetic"
+    },
+    {
+      "id": "E07",
+      "name": "Copper Canyon alluvial fan",
+      "body": "earth",
+      "region": "Death Valley National Park, California, USA",
+      "feature": "Copper Canyon alluvial fan",
+      "locator": "Death Valley; Approximate locator uses the mapped Copper Canyon valley point; it locates the source canyon, not the fan apex, toe, centroid, or boundary. Footprint: not_digitized.",
+      "mapPoint": [
+        -116.7536577,
+        36.1285645
+      ],
+      "mapPointKind": "Approximate reference locator: Approximate locator uses the mapped Copper Canyon valley point; it locates the source canyon, not the fan apex, toe, centroid, or boundary.",
+      "mapPointSourceId": "R20",
+      "coordinateNote": "Approximate locator uses the mapped Copper Canyon valley point; it locates the source canyon, not the fan apex, toe, centroid, or boundary.",
+      "coordinateConvention": "WGS84 signed East [-180,180]; WGS84 geodetic"
+    },
+    {
+      "id": "E08",
+      "name": "Lake Untersee ice-covered lake",
+      "body": "earth",
+      "region": "Queen Maud Land, Antarctica",
+      "feature": "Lake Untersee ice-covered lake",
+      "locator": "Lake Untersee; Research site/lake coordinate; no submerged lakebed surface point selected. Footprint: not_digitized.",
+      "mapPoint": [
+        13.464033333333333,
+        -71.3456
+      ],
+      "mapPointKind": "Source-located point (source_coordinate): Research site/lake coordinate; no submerged lakebed surface point selected.",
+      "mapPointSourceId": "R24",
+      "coordinateNote": "Research site/lake coordinate; no submerged lakebed surface point selected.",
       "coordinateConvention": "WGS84 signed East [-180,180]; WGS84 geodetic"
     },
     {
@@ -234,6 +546,71 @@
       "mapPointKind": "Context reference: center of selected 750m-wide LROC NAC image (published_selected_image_locator_not_point_sample); not a verified feature point",
       "mapPointSourceId": "R03",
       "coordinateNote": "Image view location at rim/ridge intersection; center or scene location published, not polygon / safe route.",
+      "coordinateConvention": "positive East [0,360]; planetocentric unless product label specifies otherwise; verify"
+    },
+    {
+      "id": "L02",
+      "name": "Marius Hills Pit (LROC Pits Atlas)",
+      "body": "moon",
+      "region": "Marius Hills, Moon",
+      "feature": "Marius Hills Pit (LROC Pits Atlas)",
+      "locator": "Marius Hills; Use LROC precision; separate from 2009 JAXA approximate 14.2 N 303.3 E. Footprint: not_digitized.",
+      "mapPoint": null,
+      "mapPointKind": "Context reference: LROC Pits Atlas pit center (published_pit_feature_coordinate); not a verified feature point",
+      "mapPointSourceId": "R04",
+      "coordinateNote": "Use LROC precision; separate from 2009 JAXA approximate 14.2 N 303.3 E.",
+      "coordinateConvention": "positive East [0,360]; planetocentric unless product label specifies otherwise; verify"
+    },
+    {
+      "id": "M01",
+      "name": "Jezero western carbonate-bearing crater margin (deposit pending)",
+      "body": "mars",
+      "region": "Jezero, Mars",
+      "feature": "Jezero western carbonate-bearing crater margin (deposit pending)",
+      "locator": "Jezero crater; Approximate regional locator reuses the IAU Jezero crater center; it does not locate the western carbonate unit or a sampled exposure. Footprint: not_digitized.",
+      "mapPoint": null,
+      "mapPointKind": "Context reference: IAU Jezero crater center (NOT carbonate margin) (host_crater_center_only); not a verified feature point",
+      "mapPointSourceId": "R14",
+      "coordinateNote": "Approximate regional locator reuses the IAU Jezero crater center; it does not locate the western carbonate unit or a sampled exposure.",
+      "coordinateConvention": "positive East [0,360]; planetocentric unless product label specifies otherwise; verify"
+    },
+    {
+      "id": "M02",
+      "name": "Jezero western delta sediment exposures (feature pending)",
+      "body": "mars",
+      "region": "Jezero, Mars",
+      "feature": "Jezero western delta sediment exposures (feature pending)",
+      "locator": "Jezero crater; Approximate locator uses the 2023 THEMIS VIS frame center that includes the western delta; it is not an outcrop or geologic centroid. Footprint: not_digitized.",
+      "mapPoint": null,
+      "mapPointKind": "Context reference: THEMIS image footprint center (NOT measured delta feature) (source_image_center_not_geologic_feature); not a verified feature point",
+      "mapPointSourceId": "R15",
+      "coordinateNote": "Approximate locator uses the 2023 THEMIS VIS frame center that includes the western delta; it is not an outcrop or geologic centroid.",
+      "coordinateConvention": "positive East [0,360]; planetocentric unless product label specifies otherwise; verify"
+    },
+    {
+      "id": "M03",
+      "name": "Peace Vallis alluvial fan deposit (mapped units)",
+      "body": "mars",
+      "region": "Gale, Mars",
+      "feature": "Peace Vallis alluvial fan deposit (mapped units)",
+      "locator": "Gale crater; Approximate locator uses the IAU Peace Vallis named-feature point as a nearby regional reference; it is not the downstream fan center or mapped fan boundary. Footprint: not_digitized.",
+      "mapPoint": null,
+      "mapPointKind": "Context reference: IAU Peace Vallis valley named-feature center (NOT fan) (host_valley_point_not_fan); not a verified feature point",
+      "mapPointSourceId": "R21",
+      "coordinateNote": "Approximate locator uses the IAU Peace Vallis named-feature point as a nearby regional reference; it is not the downstream fan center or mapped fan boundary.",
+      "coordinateConvention": "positive East [0,360]; planetocentric unless product label specifies otherwise; verify"
+    },
+    {
+      "id": "M04",
+      "name": "Hypothesized ancient Gale ice-covered lake system",
+      "body": "mars",
+      "region": "Gale, Mars",
+      "feature": "Hypothesized ancient Gale ice-covered lake system",
+      "locator": "Gale crater; Approximate regional locator reuses the IAU Gale crater center; NASA's lake model is a hypothesis and supplies no selected lake-surface or lakebed coordinate. Footprint: not_digitized.",
+      "mapPoint": null,
+      "mapPointKind": "Context reference: IAU Gale crater center, NOT ancient lake deposit (host_crater_center_only); not a verified feature point",
+      "mapPointSourceId": "R26",
+      "coordinateNote": "Approximate regional locator reuses the IAU Gale crater center; NASA's lake model is a hypothesis and supplies no selected lake-surface or lakebed coordinate.",
       "coordinateConvention": "positive East [0,360]; planetocentric unless product label specifies otherwise; verify"
     }
   ],
@@ -250,10 +627,10 @@
         "R02",
         "R03"
       ],
-      "similaritySummary": "Both locations are documented in impact settings with rocky or blocky terrain and source-described surface materials.",
+      "similaritySummary": "Evidence summary for impact-rim obstacles and robotic traverse mapping; read each dimension and its limitations before interpreting the label.",
       "terrain": {
         "rating": "Moderate",
-        "evidence": "Compare bouldered ridge, shelf and crater blocks with image-scale warning; terrain Moderate from previous dated desk review.",
+        "evidence": "Both scoped features are documented as impact-related terrain with rocky or blocky obstacles relevant to interpreting traverses and access routes.",
         "difference": "Locale 7 carbonates vs interpreted lunar regolith/ejecta; complex terrestrial vs simple lunar crater; no matched slopes",
         "sourceIds": [
           "R02",
@@ -263,7 +640,7 @@
       },
       "geology": {
         "rating": "Weak",
-        "evidence": "Locale 7 carbonate markers vs unmeasured lunar regolith / likely ejecta; geology Weak from existing desk review.",
+        "evidence": "Both records identify surface materials or blocks associated with impact settings and describe the materials used to interpret the selected terrain.",
         "difference": "Haughton carbonate stratigraphy is not Moon regolith",
         "sourceIds": [
           "R02",
@@ -355,15 +732,15 @@
           "localPath": null,
           "sourceId": "R02",
           "scale": "No imported image scale",
-          "credit": "NASA NTRS",
-          "missingReason": "CSV package supplies citations but no redistributable terrain image."
+          "credit": "See cited source",
+          "missingReason": "The package supplies citations but no verified, imported terrain image."
         },
         "target": {
           "localPath": null,
           "sourceId": "R03",
-          "scale": "750 m NAC scene cited in CSV workflow; no image imported",
-          "credit": "LROC / NASA GSFC / ASU",
-          "missingReason": "CSV package supplies an image locator but no imported image."
+          "scale": "No imported image scale",
+          "credit": "See cited source",
+          "missingReason": "The package supplies citations but no verified, imported terrain image."
         }
       },
       "reviewNotes": "Original source-based 2026-11-14 desk review retained only for P01; new coordinates do not automatically change ratings Next validation: Publish source-map figure locator; acquire site GPS and comparable bounded footprints if numerical analysis planned",
@@ -372,12 +749,882 @@
       "coverage": 2,
       "rankEligible": true,
       "rankOrder": 1,
-      "explanation": "Terrain is rated Moderate: Compare bouldered ridge, shelf and crater blocks with image-scale warning; terrain Moderate from previous dated desk review. Geology is rated Weak: Locale 7 carbonate markers vs unmeasured lunar regolith / likely ejecta; geology Weak from existing desk review. Similarity: Both scoped features are documented as impact-related terrain with rocky or blocky obstacles relevant to interpreting traverses and access routes..  A possible use to assess is impact-landform observation. Important differences: Locale 7 carbonates vs interpreted lunar regolith/ejecta; complex terrestrial vs simple lunar crater; no matched slopes Haughton carbonate stratigraphy is not Moon regolith",
+      "explanation": "Terrain is rated Moderate: Both scoped features are documented as impact-related terrain with rocky or blocky obstacles relevant to interpreting traverses and access routes. Geology is rated Weak: Both records identify surface materials or blocks associated with impact settings and describe the materials used to interpret the selected terrain. Evidence context: Both scoped features are documented as impact-related terrain with rocky or blocky obstacles relevant to interpreting traverses and access routes. A possible use to assess is impact-landform observation. Important differences: Locale 7 carbonates vs interpreted lunar regolith/ejecta; complex terrestrial vs simple lunar crater; no matched slopes Haughton carbonate stratigraphy is not Moon regolith",
       "explanationSourceIds": [
         "R02",
         "R03"
       ],
-      "reportPath": "/reports/P01-csv-2026-11-14-p01.pdf"
+      "reportPath": "/reports/P01-csv-2026-11-15-p01-p08-approx-coordinates.pdf"
+    },
+    {
+      "id": "P02",
+      "earthId": "E02",
+      "targetId": "L02",
+      "status": "reviewed",
+      "reviewer": "Copilot (AI source desk-screening)",
+      "reviewDate": "2026-11-15",
+      "relationship": "proposed specific Marius pair from broad USGS/NASA volcanic analog context. Theme: basaltic volcanism and lava-tube-related surfaces.",
+      "relationshipSourceIds": [
+        "R04",
+        "R06",
+        "R40"
+      ],
+      "similaritySummary": "Evidence summary for basaltic volcanism and lava-tube-related surfaces; read each dimension and its limitations before interpreting the label.",
+      "terrain": {
+        "rating": null,
+        "evidence": "USGS documents lava-tube development within Mauna Ulu pahoehoe flows; NASA/LROC sources interpret the Marius Hills opening as a possible lava-tube skylight.",
+        "difference": "Mauna Ulu documents tube-bearing flows across a prolonged eruption while the Marius Hills record is a specific pit interpreted as a possible skylight; no matched study footprint is established.",
+        "sourceIds": [
+          "R04",
+          "R06"
+        ],
+        "missingReason": "The Mauna Ulu source describes a multi-flow tube system but no selected bounded flow footprint; the Marius pit source does not establish pit-wall composition or a confirmed open tube."
+      },
+      "geology": {
+        "rating": null,
+        "evidence": "The Earth source documents lava and tube formation at Mauna Ulu; the USGS lunar map provides regional geologic context for Marius Hills.",
+        "difference": "No feature-level evidence establishes corresponding materials at the selected Mauna Ulu flow and lunar pit wall.",
+        "sourceIds": [
+          "R04",
+          "R40"
+        ],
+        "missingReason": "The Mauna Ulu source describes a multi-flow tube system but no selected bounded flow footprint; the Marius pit source does not establish pit-wall composition or a confirmed open tube."
+      },
+      "similarities": [
+        {
+          "id": "E02-T01",
+          "dimension": "terrain",
+          "earthFeature": "Mauna Ulu 1969-1974 lava-tube-bearing flows",
+          "planetaryFeature": "Marius Hills Pit",
+          "sharedObservation": "USGS documents lava-tube development within Mauna Ulu pahoehoe flows; NASA/LROC sources interpret the Marius Hills opening as a possible lava-tube skylight.",
+          "limitation": "A distributed terrestrial tube-bearing flow system is not the same visible landform as one lunar pit; no matched footprint or confirmed lunar tube geometry is established.",
+          "earthLocator": "Peterson et al. 1994 abstract: Mauna Ulu eruption and tube-forming processes",
+          "planetaryLocator": "LROC Pits Atlas pit locator and NASA lunar interpretation",
+          "scaleNote": "Earth study covers a multi-year eruption; lunar source is a pit-scale feature; scales are not matched.",
+          "sourceIds": [
+            "R04",
+            "R06",
+            "R40"
+          ],
+          "reviewStatus": "reviewed_source_desk_screening"
+        },
+        {
+          "id": "E02-G01",
+          "dimension": "geology",
+          "earthFeature": "Mauna Ulu lava flows",
+          "planetaryFeature": "Marius Hills Pit",
+          "sharedObservation": "The Earth source documents lava and tube formation at Mauna Ulu; the USGS lunar map provides regional geologic context for Marius Hills.",
+          "limitation": "The lunar map is 1:5,000,000 regional mapping and does not establish Marius pit-wall composition or a paired local material class.",
+          "earthLocator": "USGS Mauna Ulu eruption study",
+          "planetaryLocator": "USGS Unified Geologic Map of the Moon, 1:5M; Marius Hills Pit source",
+          "scaleNote": "The regional Moon map is not cave-scale evidence; no matched samples or mineralogy are available.",
+          "sourceIds": [
+            "R04",
+            "R06",
+            "R40"
+          ],
+          "reviewStatus": "reviewed_source_desk_screening"
+        }
+      ],
+      "practice": [],
+      "limits": [
+        "Mauna Ulu documents tube-bearing flows across a prolonged eruption while the Marius Hills record is a specific pit interpreted as a possible skylight; no matched study footprint is established.",
+        "No feature-level evidence establishes corresponding materials at the selected Mauna Ulu flow and lunar pit wall.",
+        "GNIS point is not a mapped tube or flow polygon",
+        "No physical entry, tube continuity or habitability established"
+      ],
+      "limitSourceIds": [
+        "R04",
+        "R06",
+        "R40"
+      ],
+      "visuals": {
+        "earth": {
+          "localPath": null,
+          "sourceId": "R04",
+          "scale": "No imported image scale",
+          "credit": "See cited source",
+          "missingReason": "The package supplies citations but no verified, imported terrain image."
+        },
+        "target": {
+          "localPath": null,
+          "sourceId": "R06",
+          "scale": "No imported image scale",
+          "credit": "See cited source",
+          "missingReason": "The package supplies citations but no verified, imported terrain image."
+        }
+      },
+      "reviewNotes": "AI source desk screen; both dimensions remain null because feature footprints and paired material evidence are insufficient. Next validation: Select one dated Mauna Ulu flow/tube feature and check a map locator; retain the lunar pit as a surface feature unless subsurface continuity is independently established.",
+      "reviewStatus": "reviewed_source_desk_screening",
+      "overall": "Insufficient evidence",
+      "coverage": 0,
+      "rankEligible": false,
+      "rankOrder": null,
+      "explanation": "Terrain is not rated: The Mauna Ulu source describes a multi-flow tube system but no selected bounded flow footprint; the Marius pit source does not establish pit-wall composition or a confirmed open tube. Geology is not rated: The Mauna Ulu source describes a multi-flow tube system but no selected bounded flow footprint; the Marius pit source does not establish pit-wall composition or a confirmed open tube. Evidence context: USGS documents lava-tube development within Mauna Ulu pahoehoe flows; NASA/LROC sources interpret the Marius Hills opening as a possible lava-tube skylight. No evidence-backed practice activity is assigned. Important differences: Mauna Ulu documents tube-bearing flows across a prolonged eruption while the Marius Hills record is a specific pit interpreted as a possible skylight; no matched study footprint is established. No feature-level evidence establishes corresponding materials at the selected Mauna Ulu flow and lunar pit wall. This desk-reviewed comparison remains outside ranked results because one or both dimensions lack sufficient evidence.",
+      "explanationSourceIds": [
+        "R04",
+        "R06",
+        "R40"
+      ],
+      "reportPath": "/reports/P02-csv-2026-11-15-p01-p08-approx-coordinates.pdf"
+    },
+    {
+      "id": "P03",
+      "earthId": "E03",
+      "targetId": "L02",
+      "status": "reviewed",
+      "reviewer": "Copilot (AI source desk-screening)",
+      "reviewDate": "2026-11-15",
+      "relationship": "NASA Iceland lunar/mars broad comparison; exact Marius connection proposed. Theme: fresh eruptive vent / lunar volcanic terrain.",
+      "relationshipSourceIds": [
+        "R04",
+        "R07",
+        "R08",
+        "R40",
+        "R41"
+      ],
+      "similaritySummary": "Evidence summary for fresh eruptive vent / lunar volcanic terrain; read each dimension and its limitations before interpreting the label.",
+      "terrain": {
+        "rating": "Weak",
+        "evidence": "Both source records identify volcanic openings, but the selected terrestrial feature is an eruptive vent and the lunar feature is a collapse pit in a sinuous rille.",
+        "difference": "A terrestrial eruptive vent and a lunar collapse pit in a sinuous rille are materially different landforms for surface-terrain comparison.",
+        "sourceIds": [
+          "R07",
+          "R08",
+          "R41"
+        ],
+        "missingReason": null
+      },
+      "geology": {
+        "rating": null,
+        "evidence": "Sources establish a terrestrial eruption and a lunar volcanic setting but do not describe corresponding material classes at both selected features.",
+        "difference": "Earth vent/flow material is not characterized in an accessible feature-specific source, and the lunar pit-wall material is unmeasured.",
+        "sourceIds": [
+          "R07",
+          "R04",
+          "R40"
+        ],
+        "missingReason": "No feature-specific evidence establishes corresponding surface-material classes at vent 5b and the lunar pit; the regional volcanic setting alone is insufficient."
+      },
+      "similarities": [
+        {
+          "id": "E03-T01",
+          "dimension": "terrain",
+          "earthFeature": "Fagradalsfjall 2021 vent 5b",
+          "planetaryFeature": "Marius Hills Pit",
+          "sharedObservation": "Both source records identify volcanic openings, but the selected terrestrial feature is an eruptive vent and the lunar feature is a collapse pit in a sinuous rille.",
+          "limitation": "A vent and a possible skylight have materially different surface forms; the shared volcanic context does not remove that difference.",
+          "earthLocator": "Published 2021 vent 5b locator in Barsotti et al.; NASA Iceland fieldwork context",
+          "planetaryLocator": "LROC Marius Hills Pit atlas",
+          "scaleNote": "Feature names are source-backed; comparable surface windows and scales have not been established.",
+          "sourceIds": [
+            "R04",
+            "R07",
+            "R41"
+          ],
+          "reviewStatus": "reviewed_source_desk_screening"
+        },
+        {
+          "id": "E03-G01",
+          "dimension": "geology",
+          "earthFeature": "Fagradalsfjall 2021 vent 5b",
+          "planetaryFeature": "Marius Hills Pit",
+          "sharedObservation": "Sources establish a terrestrial eruption and a lunar volcanic setting but do not describe corresponding material classes at both selected features.",
+          "limitation": "The cited Earth vent material and lunar pit-wall material are not sufficiently characterized for a geology rating.",
+          "earthLocator": "Barsotti et al. 2021 eruption record; NASA Team Lava fieldwork",
+          "planetaryLocator": "LROC pit atlas and USGS lunar geologic map",
+          "scaleNote": "Regional volcanic context is not direct feature-specific material evidence.",
+          "sourceIds": [
+            "R04",
+            "R07",
+            "R40",
+            "R41"
+          ],
+          "reviewStatus": "reviewed_source_desk_screening"
+        }
+      ],
+      "practice": [],
+      "limits": [
+        "A terrestrial eruptive vent and a lunar collapse pit in a sinuous rille are materially different landforms for surface-terrain comparison.",
+        "Earth vent/flow material is not characterized in an accessible feature-specific source, and the lunar pit-wall material is unmeasured.",
+        "Vent point does not define full extent of flow",
+        "No physical entry, tube continuity or habitability established"
+      ],
+      "limitSourceIds": [
+        "R04",
+        "R07",
+        "R08",
+        "R40",
+        "R41"
+      ],
+      "visuals": {
+        "earth": {
+          "localPath": null,
+          "sourceId": "R07",
+          "scale": "No imported image scale",
+          "credit": "See cited source",
+          "missingReason": "The package supplies citations but no verified, imported terrain image."
+        },
+        "target": {
+          "localPath": null,
+          "sourceId": "R41",
+          "scale": "No imported image scale",
+          "credit": "See cited source",
+          "missingReason": "The package supplies citations but no verified, imported terrain image."
+        }
+      },
+      "reviewNotes": "AI source desk screen; terrain is Weak because the identified landforms differ; geology is not rated. Next validation: Obtain a readable, site-specific eruption material record and feature-applicable lunar geologic evidence before rating geology.",
+      "reviewStatus": "reviewed_source_desk_screening",
+      "overall": "Insufficient evidence",
+      "coverage": 1,
+      "rankEligible": false,
+      "rankOrder": null,
+      "explanation": "Terrain is rated Weak: Both source records identify volcanic openings, but the selected terrestrial feature is an eruptive vent and the lunar feature is a collapse pit in a sinuous rille. Geology is not rated: No feature-specific evidence establishes corresponding surface-material classes at vent 5b and the lunar pit; the regional volcanic setting alone is insufficient. Evidence context: Both source records identify volcanic openings, but the selected terrestrial feature is an eruptive vent and the lunar feature is a collapse pit in a sinuous rille. No evidence-backed practice activity is assigned. Important differences: A terrestrial eruptive vent and a lunar collapse pit in a sinuous rille are materially different landforms for surface-terrain comparison. Earth vent/flow material is not characterized in an accessible feature-specific source, and the lunar pit-wall material is unmeasured. This desk-reviewed comparison remains outside ranked results because one or both dimensions lack sufficient evidence.",
+      "explanationSourceIds": [
+        "R04",
+        "R07",
+        "R08",
+        "R40",
+        "R41"
+      ],
+      "reportPath": "/reports/P03-csv-2026-11-15-p01-p08-approx-coordinates.pdf"
+    },
+    {
+      "id": "P04",
+      "earthId": "E04",
+      "targetId": "L02",
+      "status": "reviewed",
+      "reviewer": "Copilot (AI source desk-screening)",
+      "reviewDate": "2026-11-15",
+      "relationship": "volcanic cave process analog; no direct named cave to Marius match. Theme: lava tube cave and surface skylight detection.",
+      "relationshipSourceIds": [
+        "R04",
+        "R09",
+        "R10",
+        "R40"
+      ],
+      "similaritySummary": "Evidence summary for lava tube cave and surface skylight detection; read each dimension and its limitations before interpreting the label.",
+      "terrain": {
+        "rating": null,
+        "evidence": "The proposed Earth cave and lunar pit are volcanic opening features that motivate a surface-mapping comparison.",
+        "difference": "The source locator for Skull Cave is an adjacent parking point; comparable cave-mouth/pit morphology and scale have not been established.",
+        "sourceIds": [
+          "R09",
+          "R04"
+        ],
+        "missingReason": "Available review material does not verify a bounded Skull Cave entrance/collapse footprint or paired material classes; the cited coordinate is parking, not the cave entrance."
+      },
+      "geology": {
+        "rating": null,
+        "evidence": "Available records place the Earth cave in a volcanic lava-tube setting and the lunar pit in a volcanic province.",
+        "difference": "A broad volcanic setting does not establish matching material classes, and the accessible source readers did not expose the NPS/USGS descriptions needed to verify the selected cave feature.",
+        "sourceIds": [
+          "R09",
+          "R10",
+          "R04",
+          "R40"
+        ],
+        "missingReason": "Available review material does not verify a bounded Skull Cave entrance/collapse footprint or paired material classes; the cited coordinate is parking, not the cave entrance."
+      },
+      "similarities": [
+        {
+          "id": "E04-T01",
+          "dimension": "terrain",
+          "earthFeature": "Skull Cave entrance/collapse trench",
+          "planetaryFeature": "Marius Hills Pit",
+          "sharedObservation": "The proposed Earth cave and lunar pit are volcanic opening features that motivate a surface-mapping comparison.",
+          "limitation": "The supplied coordinate locates Skull Cave parking rather than its entrance; comparable mouth geometry and scale were not verified.",
+          "earthLocator": "USGS Medicine Lake Volcano field-trip guide, Stop 14; source text not readable in available reader",
+          "planetaryLocator": "LROC Pits Atlas pit locator",
+          "scaleNote": "No paired feature footprints or measured dimensions are available.",
+          "sourceIds": [
+            "R04",
+            "R09",
+            "R10"
+          ],
+          "reviewStatus": "reviewed_source_desk_screening"
+        },
+        {
+          "id": "E04-G01",
+          "dimension": "geology",
+          "earthFeature": "Skull Cave basaltic lava-tube setting",
+          "planetaryFeature": "Marius Hills Pit",
+          "sharedObservation": "Available records place the Earth cave in a volcanic lava-tube setting and the lunar pit in a volcanic province.",
+          "limitation": "Feature-specific material classes and the cave entrance locator could not be verified; broad volcanic context alone is insufficient.",
+          "earthLocator": "USGS Medicine Lake field-trip guide and NPS Lava Beds geology page; access was limited",
+          "planetaryLocator": "USGS Unified Geologic Map of the Moon, 1:5M; LROC pit atlas",
+          "scaleNote": "Regional map scale cannot establish lunar pit-wall composition.",
+          "sourceIds": [
+            "R04",
+            "R09",
+            "R10",
+            "R40"
+          ],
+          "reviewStatus": "reviewed_source_desk_screening"
+        }
+      ],
+      "practice": [],
+      "limits": [
+        "The source locator for Skull Cave is an adjacent parking point; comparable cave-mouth/pit morphology and scale have not been established.",
+        "A broad volcanic setting does not establish matching material classes, and the accessible source readers did not expose the NPS/USGS descriptions needed to verify the selected cave feature.",
+        "Surface imagery cannot measure cave continuity or roof strength",
+        "No physical entry, tube continuity or habitability established"
+      ],
+      "limitSourceIds": [
+        "R04",
+        "R09",
+        "R10",
+        "R40"
+      ],
+      "visuals": {
+        "earth": {
+          "localPath": null,
+          "sourceId": "R09",
+          "scale": "No imported image scale",
+          "credit": "See cited source",
+          "missingReason": "The package supplies citations but no verified, imported terrain image."
+        },
+        "target": {
+          "localPath": null,
+          "sourceId": "R04",
+          "scale": "No imported image scale",
+          "credit": "See cited source",
+          "missingReason": "The package supplies citations but no verified, imported terrain image."
+        }
+      },
+      "reviewNotes": "AI source desk screen; the cave record remains insufficient rather than being assigned a Weak rating. Next validation: Verify a readable cave map/description and source-located cave-mouth footprint; do not infer lunar subsurface continuity or stability.",
+      "reviewStatus": "reviewed_source_desk_screening",
+      "overall": "Insufficient evidence",
+      "coverage": 0,
+      "rankEligible": false,
+      "rankOrder": null,
+      "explanation": "Terrain is not rated: Available review material does not verify a bounded Skull Cave entrance/collapse footprint or paired material classes; the cited coordinate is parking, not the cave entrance. Geology is not rated: Available review material does not verify a bounded Skull Cave entrance/collapse footprint or paired material classes; the cited coordinate is parking, not the cave entrance. Evidence context: The proposed Earth cave and lunar pit are volcanic opening features that motivate a surface-mapping comparison. No evidence-backed practice activity is assigned. Important differences: The source locator for Skull Cave is an adjacent parking point; comparable cave-mouth/pit morphology and scale have not been established. A broad volcanic setting does not establish matching material classes, and the accessible source readers did not expose the NPS/USGS descriptions needed to verify the selected cave feature. This desk-reviewed comparison remains outside ranked results because one or both dimensions lack sufficient evidence.",
+      "explanationSourceIds": [
+        "R04",
+        "R09",
+        "R10",
+        "R40"
+      ],
+      "reportPath": "/reports/P04-csv-2026-11-15-p01-p08-approx-coordinates.pdf"
+    },
+    {
+      "id": "P05",
+      "earthId": "E05",
+      "targetId": "M01",
+      "status": "reviewed",
+      "reviewer": "Copilot (AI source desk-screening)",
+      "reviewDate": "2026-11-15",
+      "relationship": "NASA explicitly compares Lake Salda with Jezero; selected footprints pending. Theme: Mg-carbonate shoreline / sediment deposition.",
+      "relationshipSourceIds": [
+        "R11",
+        "R12",
+        "R13"
+      ],
+      "similaritySummary": "Evidence summary for Mg-carbonate shoreline / sediment deposition; read each dimension and its limitations before interpreting the label.",
+      "terrain": {
+        "rating": "Moderate",
+        "evidence": "NASA documents exposed Salda shoreline benches and terraces and a possible ancient-shoreline interpretation for carbonate-bearing deposits on Jezero's western margin.",
+        "difference": "Both sources identify shoreline benches/terraces and exposed deposits, but they do not provide matched footprints or comparable physical scales.",
+        "sourceIds": [
+          "R11",
+          "R12",
+          "R13"
+        ],
+        "missingReason": null
+      },
+      "geology": {
+        "rating": "Moderate",
+        "evidence": "NASA reports Salda beach sediments composed of hydromagnesite and possible carbonate-bearing material along Jezero's western margin.",
+        "difference": "Salda hydromagnesite is characterized while Jezero carbonate-bearing western-margin material remains a possible interpretation; identical mineralogy or biological origin is not established.",
+        "sourceIds": [
+          "R11",
+          "R12",
+          "R13"
+        ],
+        "missingReason": null
+      },
+      "similarities": [
+        {
+          "id": "E05-T01",
+          "dimension": "terrain",
+          "earthFeature": "Lake Salda northeastern shoreline/terrace deposits",
+          "planetaryFeature": "Jezero western carbonate-bearing margin",
+          "sharedObservation": "NASA documents exposed Salda shoreline benches and terraces and a possible ancient-shoreline interpretation for carbonate-bearing deposits on Jezero's western margin.",
+          "limitation": "Source descriptions support a broad shoreline/depositional comparison but do not georeference paired footprints or provide comparable physical scales.",
+          "earthLocator": "NASA Earth Observatory text and PIA24375 description identify eastern/NE shore benches and old terraces",
+          "planetaryLocator": "NASA Earth Observatory identifies possible carbonate-bearing material on Jezero western margins",
+          "scaleNote": "Photographs and regional orbital interpretation are not matched terrain measurements.",
+          "sourceIds": [
+            "R11",
+            "R12",
+            "R13"
+          ],
+          "reviewStatus": "reviewed_source_desk_screening"
+        },
+        {
+          "id": "E05-G01",
+          "dimension": "geology",
+          "earthFeature": "Lake Salda carbonate sediments and hydromagnesite",
+          "planetaryFeature": "Jezero possible carbonate-bearing western margin",
+          "sharedObservation": "NASA reports Salda beach sediments composed of hydromagnesite and possible carbonate-bearing material along Jezero's western margin.",
+          "limitation": "Jezero mineral identification is possible rather than confirmed as the same mineral species; microbialite origin at Salda does not imply Martian life.",
+          "earthLocator": "NASA Earth Observatory shoreline description; IUGS Lake Salda geoheritage record",
+          "planetaryLocator": "NASA Earth Observatory MRO interpretation of Jezero western margin",
+          "scaleNote": "No matched mineral analyses, grain-size data, or sample locations.",
+          "sourceIds": [
+            "R11",
+            "R12",
+            "R13"
+          ],
+          "reviewStatus": "reviewed_source_desk_screening"
+        }
+      ],
+      "practice": [
+        {
+          "id": "shoreline-mapping",
+          "label": "Shoreline and terrace mapping",
+          "reason": "NASA documents exposed Salda shoreline deposits and terraces and a possible ancient-shoreline context at Jezero.",
+          "sourceIds": [
+            "R12",
+            "R13"
+          ],
+          "status": "possible",
+          "limitations": "This supports comparative observation only; feature footprints and physical scales are not matched, and it is not an approved Mars field plan."
+        },
+        {
+          "id": "sediment-observation",
+          "label": "Carbonate and sediment observation",
+          "reason": "Published Salda observations describe hydromagnesite-rich sediments while NASA identifies possible carbonate-bearing Jezero margin material.",
+          "sourceIds": [
+            "R11",
+            "R12"
+          ],
+          "status": "possible",
+          "limitations": "Jezero mineral identification is tentative; do not infer identical mineralogy or biological origin."
+        }
+      ],
+      "limits": [
+        "Both sources identify shoreline benches/terraces and exposed deposits, but they do not provide matched footprints or comparable physical scales.",
+        "Salda hydromagnesite is characterized while Jezero carbonate-bearing western-margin material remains a possible interpretation; identical mineralogy or biological origin is not established.",
+        "Lake water is not an exposed DEM sample of lakebed",
+        "Possible ancient shore interpretation not an exact mineral sample GPS"
+      ],
+      "limitSourceIds": [
+        "R11",
+        "R12",
+        "R13"
+      ],
+      "visuals": {
+        "earth": {
+          "localPath": null,
+          "sourceId": "R11",
+          "scale": "No imported image scale",
+          "credit": "See cited source",
+          "missingReason": "The package supplies citations but no verified, imported terrain image."
+        },
+        "target": {
+          "localPath": null,
+          "sourceId": "R13",
+          "scale": "No imported image scale",
+          "credit": "See cited source",
+          "missingReason": "The package supplies citations but no verified, imported terrain image."
+        }
+      },
+      "reviewNotes": "AI qualitative source desk-screening based on NASA/IUGS sources; not an independent expert or field review. Next validation: Keep the source-described NE Salda shore/bench and possible Jezero western-margin deposits as the qualitative scope; georeference feature windows before any numerical terrain comparison.",
+      "reviewStatus": "reviewed_source_desk_screening",
+      "overall": "Moderate",
+      "coverage": 2,
+      "rankEligible": true,
+      "rankOrder": 1,
+      "explanation": "Terrain is rated Moderate: NASA documents exposed Salda shoreline benches and terraces and a possible ancient-shoreline interpretation for carbonate-bearing deposits on Jezero's western margin. Geology is rated Moderate: NASA reports Salda beach sediments composed of hydromagnesite and possible carbonate-bearing material along Jezero's western margin. Evidence context: NASA documents exposed Salda shoreline benches and terraces and a possible ancient-shoreline interpretation for carbonate-bearing deposits on Jezero's western margin. A possible use to assess is shoreline and terrace mapping. Important differences: Both sources identify shoreline benches/terraces and exposed deposits, but they do not provide matched footprints or comparable physical scales. Salda hydromagnesite is characterized while Jezero carbonate-bearing western-margin material remains a possible interpretation; identical mineralogy or biological origin is not established.",
+      "explanationSourceIds": [
+        "R11",
+        "R12",
+        "R13"
+      ],
+      "reportPath": "/reports/P05-csv-2026-11-15-p01-p08-approx-coordinates.pdf"
+    },
+    {
+      "id": "P06",
+      "earthId": "E06",
+      "targetId": "M02",
+      "status": "reviewed",
+      "reviewer": "Copilot (AI source desk-screening)",
+      "reviewDate": "2026-11-15",
+      "relationship": "independent basin / Jezero delta sources; exact pair proposed. Theme: ephemeral river delta / ancient delta.",
+      "relationshipSourceIds": [
+        "R16",
+        "R42"
+      ],
+      "similaritySummary": "Evidence summary for ephemeral river delta / ancient delta; read each dimension and its limitations before interpreting the label.",
+      "terrain": {
+        "rating": "Moderate",
+        "evidence": "USGS identifies the San Pedro delta in the northern Salar basin; NASA's rover panorama and transcript identify Jezero delta-front cliffs, layered outcrops, and sedimentary features.",
+        "difference": "USGS identifies the northern San Pedro delta and NASA documents the Jezero delta front and sedimentary outcrops; exact matched footprints, channel geometry, and scale remain unmeasured.",
+        "sourceIds": [
+          "R16",
+          "R42"
+        ],
+        "missingReason": null
+      },
+      "geology": {
+        "rating": "Moderate",
+        "evidence": "USGS describes episodic river delivery and alluvial fans around the Salar; NASA reports Jezero delta mud and sand, layered fine-grained sedimentary rocks, and rover-observed sedimentary outcrops.",
+        "difference": "Earth's ephemeral San Pedro delta drains into a saline salar while Jezero's ancient delta entered a crater lake; these sources support broad sedimentary deposits, not matched mineralogy or grain-size distributions.",
+        "sourceIds": [
+          "R16",
+          "R42"
+        ],
+        "missingReason": null
+      },
+      "similarities": [
+        {
+          "id": "E06-T01",
+          "dimension": "terrain",
+          "earthFeature": "San Pedro River delta at Salar de Atacama",
+          "planetaryFeature": "Jezero delta front and sedimentary outcrops",
+          "sharedObservation": "USGS identifies the San Pedro delta in the northern Salar basin; NASA's rover panorama and transcript identify Jezero delta-front cliffs, layered outcrops, and sedimentary features.",
+          "limitation": "An ephemeral river delta entering a saline salar differs from an ancient delta entering a crater lake; channel geometry, footprint, and scale are not matched.",
+          "earthLocator": "USGS Earthshots Landsat scenes and description of the northern San Pedro delta",
+          "planetaryLocator": "NASA Mastcam-Z panorama acquired June 12, 13, 16, 17 and 20, 2022; named Hogwallow Flats and Skinner Ridge",
+          "scaleNote": "Image dates and feature narratives are known; no matched polygon, slope, or scale analysis was performed.",
+          "sourceIds": [
+            "R16",
+            "R42"
+          ],
+          "reviewStatus": "reviewed_source_desk_screening"
+        },
+        {
+          "id": "E06-G01",
+          "dimension": "geology",
+          "earthFeature": "San Pedro River alluvial/delta deposits",
+          "planetaryFeature": "Jezero fine-grained delta sedimentary rocks",
+          "sharedObservation": "USGS describes episodic river delivery and alluvial fans around the Salar; NASA reports Jezero delta mud and sand, layered fine-grained sedimentary rocks, and rover-observed sedimentary outcrops.",
+          "limitation": "The broad sediment-deposit family is comparable, but Earth salinity/evaporites and Mars sulfates/phyllosilicates are not shown to be compositionally equivalent.",
+          "earthLocator": "USGS Earthshots San Pedro River delta and basin description",
+          "planetaryLocator": "NASA Perseverance delta panorama transcript and outcrop observations",
+          "scaleNote": "No paired mineralogy or grain-size distributions.",
+          "sourceIds": [
+            "R16",
+            "R42"
+          ],
+          "reviewStatus": "reviewed_source_desk_screening"
+        }
+      ],
+      "practice": [
+        {
+          "id": "delta-mapping",
+          "label": "Delta and depositional-landform mapping",
+          "reason": "USGS identifies the San Pedro delta and NASA documents the Jezero delta front and sedimentary outcrops.",
+          "sourceIds": [
+            "R16",
+            "R42"
+          ],
+          "status": "possible",
+          "limitations": "The Earth site is an ephemeral delta entering a saline salar; no matched footprint, scale, or route suitability is established."
+        },
+        {
+          "id": "sedimentary-observation",
+          "label": "Sedimentary outcrop observation",
+          "reason": "The sources document Earth alluvial/delta deposits and Mars fine-grained layered delta sediments.",
+          "sourceIds": [
+            "R16",
+            "R42"
+          ],
+          "status": "possible",
+          "limitations": "This is a research practice analogy only; material chemistry differs and no field activity is approved."
+        }
+      ],
+      "limits": [
+        "USGS identifies the northern San Pedro delta and NASA documents the Jezero delta front and sedimentary outcrops; exact matched footprints, channel geometry, and scale remain unmeasured.",
+        "Earth's ephemeral San Pedro delta drains into a saline salar while Jezero's ancient delta entered a crater lake; these sources support broad sedimentary deposits, not matched mineralogy or grain-size distributions.",
+        "Exclude lithium ponds/mining and salt-flat crust from target fan geometry",
+        "Do not equate all Jezero delta units with a salt-flat delta"
+      ],
+      "limitSourceIds": [
+        "R16",
+        "R42"
+      ],
+      "visuals": {
+        "earth": {
+          "localPath": null,
+          "sourceId": "R16",
+          "scale": "No imported image scale",
+          "credit": "See cited source",
+          "missingReason": "The package supplies citations but no verified, imported terrain image."
+        },
+        "target": {
+          "localPath": null,
+          "sourceId": "R42",
+          "scale": "No imported image scale",
+          "credit": "See cited source",
+          "missingReason": "The package supplies citations but no verified, imported terrain image."
+        }
+      },
+      "reviewNotes": "AI qualitative source desk-screening using published Landsat context and rover observations; not an independent field review. Next validation: Use the USGS-named northern San Pedro delta and NASA's named Jezero delta-front panorama/outcrops; retain regional map anchors as context rather than feature coordinates.",
+      "reviewStatus": "reviewed_source_desk_screening",
+      "overall": "Moderate",
+      "coverage": 2,
+      "rankEligible": true,
+      "rankOrder": 1,
+      "explanation": "Terrain is rated Moderate: USGS identifies the San Pedro delta in the northern Salar basin; NASA's rover panorama and transcript identify Jezero delta-front cliffs, layered outcrops, and sedimentary features. Geology is rated Moderate: USGS describes episodic river delivery and alluvial fans around the Salar; NASA reports Jezero delta mud and sand, layered fine-grained sedimentary rocks, and rover-observed sedimentary outcrops. Evidence context: USGS identifies the San Pedro delta in the northern Salar basin; NASA's rover panorama and transcript identify Jezero delta-front cliffs, layered outcrops, and sedimentary features. A possible use to assess is delta and depositional-landform mapping. Important differences: USGS identifies the northern San Pedro delta and NASA documents the Jezero delta front and sedimentary outcrops; exact matched footprints, channel geometry, and scale remain unmeasured. Earth's ephemeral San Pedro delta drains into a saline salar while Jezero's ancient delta entered a crater lake; these sources support broad sedimentary deposits, not matched mineralogy or grain-size distributions.",
+      "explanationSourceIds": [
+        "R16",
+        "R42"
+      ],
+      "reportPath": "/reports/P06-csv-2026-11-15-p01-p08-approx-coordinates.pdf"
+    },
+    {
+      "id": "P07",
+      "earthId": "E07",
+      "targetId": "M03",
+      "status": "reviewed",
+      "reviewer": "Copilot (AI source desk-screening)",
+      "reviewDate": "2026-11-15",
+      "relationship": "NASA Death Valley–Gale regional analogy; named Copper Canyon–Peace Vallis pairing proposed. Theme: radial alluvial fan, channels and sediment size trends.",
+      "relationshipSourceIds": [
+        "R18",
+        "R19",
+        "R22",
+        "R23"
+      ],
+      "similaritySummary": "Evidence summary for radial alluvial fan, channels and sediment size trends; read each dimension and its limitations before interpreting the label.",
+      "terrain": {
+        "rating": "Moderate",
+        "evidence": "USGS documents radial drainage, coarse-to-fine fan grading, and channels at Copper Canyon; Palucis et al. map upper/lower Peace Vallis fan units and describe inverted channels and contrasting flow patterns.",
+        "difference": "The USGS source documents Copper Canyon radial drainage and coarse-to-fine fan deposits; Palucis et al. map Peace Vallis upper/lower fan and channels, but matched subareas and terrain metrics are unavailable.",
+        "sourceIds": [
+          "R18",
+          "R19",
+          "R22",
+          "R23"
+        ],
+        "missingReason": null
+      },
+      "geology": {
+        "rating": "Moderate",
+        "evidence": "Sources support fluvial alluvial-fan deposits at both sites and describe sediment transport/deposition.",
+        "difference": "Published sources support broad alluvial-fan sediment deposits but do not establish matching source lithology or mineralogy.",
+        "sourceIds": [
+          "R19",
+          "R22"
+        ],
+        "missingReason": null
+      },
+      "similarities": [
+        {
+          "id": "E07-T01",
+          "dimension": "terrain",
+          "earthFeature": "Copper Canyon alluvial fan",
+          "planetaryFeature": "Peace Vallis alluvial fan",
+          "sharedObservation": "USGS documents radial drainage, coarse-to-fine fan grading, and channels at Copper Canyon; Palucis et al. map upper/lower Peace Vallis fan units and describe inverted channels and contrasting flow patterns.",
+          "limitation": "Whole-fan published areas differ substantially, about 5.2 km2 versus 80 km2; subarea-scale terrain and slopes are not matched.",
+          "earthLocator": "USGS Copper Canyon Fan image, source scale 1:48,000; Professional Paper 466",
+          "planetaryLocator": "Palucis et al. Figures 2 and 5 and mapped fan units",
+          "scaleNote": "Published source map/image scales differ; no equivalent terrain raster comparison.",
+          "sourceIds": [
+            "R18",
+            "R19",
+            "R22"
+          ],
+          "reviewStatus": "reviewed_source_desk_screening"
+        },
+        {
+          "id": "E07-G01",
+          "dimension": "geology",
+          "earthFeature": "Copper Canyon fan sediment and source material",
+          "planetaryFeature": "Peace Vallis fan deposits",
+          "sharedObservation": "Sources support fluvial alluvial-fan deposits at both sites and describe sediment transport/deposition.",
+          "limitation": "The cited records do not show matching source lithology, mineralogy, or equivalent grain-size distributions; the comparison is at broad deposit-class level.",
+          "earthLocator": "USGS Professional Paper 466 Copper Canyon fan discussion and mapped source area",
+          "planetaryLocator": "Palucis et al. Peace Vallis fan deposits and channels",
+          "scaleNote": "Published material descriptions are not paired mineral analyses.",
+          "sourceIds": [
+            "R19",
+            "R22"
+          ],
+          "reviewStatus": "reviewed_source_desk_screening"
+        }
+      ],
+      "practice": [
+        {
+          "id": "fan-mapping",
+          "label": "Alluvial-fan mapping",
+          "reason": "USGS and Palucis et al. map named alluvial fans and describe channels and sediment deposition at both sites.",
+          "sourceIds": [
+            "R18",
+            "R22"
+          ],
+          "status": "possible",
+          "limitations": "Whole-fan sizes differ substantially; no matched subarea, slope, or safe-traverse assessment is available."
+        },
+        {
+          "id": "sediment-observation",
+          "label": "Alluvial sediment observation",
+          "reason": "The sources describe coarse-to-fine terrestrial fan sediment and mapped Martian fan deposits.",
+          "sourceIds": [
+            "R18",
+            "R19",
+            "R22"
+          ],
+          "status": "possible",
+          "limitations": "Source lithology and mineralogy are not demonstrated to match."
+        }
+      ],
+      "limits": [
+        "The USGS source documents Copper Canyon radial drainage and coarse-to-fine fan deposits; Palucis et al. map Peace Vallis upper/lower fan and channels, but matched subareas and terrain metrics are unavailable.",
+        "Published sources support broad alluvial-fan sediment deposits but do not establish matching source lithology or mineralogy.",
+        "Whole-fan area ~5.2 km2; do not use canyon point as fan centroid",
+        "Valley center may fall outside mapped fan; avoid numerical analysis until checked"
+      ],
+      "limitSourceIds": [
+        "R18",
+        "R19",
+        "R22",
+        "R23"
+      ],
+      "visuals": {
+        "earth": {
+          "localPath": null,
+          "sourceId": "R18",
+          "scale": "No imported image scale",
+          "credit": "See cited source",
+          "missingReason": "The package supplies citations but no verified, imported terrain image."
+        },
+        "target": {
+          "localPath": null,
+          "sourceId": "R23",
+          "scale": "No imported image scale",
+          "credit": "See cited source",
+          "missingReason": "The package supplies citations but no verified, imported terrain image."
+        }
+      },
+      "reviewNotes": "AI qualitative source desk-screening; no matched raster measurements or independent field review. Next validation: Reported whole-fan areas differ substantially (about 5.2 km2 vs 80 km2); keep canyon/valley map points labeled as context and do not infer matched slopes or travel safety.",
+      "reviewStatus": "reviewed_source_desk_screening",
+      "overall": "Moderate",
+      "coverage": 2,
+      "rankEligible": true,
+      "rankOrder": 1,
+      "explanation": "Terrain is rated Moderate: USGS documents radial drainage, coarse-to-fine fan grading, and channels at Copper Canyon; Palucis et al. map upper/lower Peace Vallis fan units and describe inverted channels and contrasting flow patterns. Geology is rated Moderate: Sources support fluvial alluvial-fan deposits at both sites and describe sediment transport/deposition. Evidence context: USGS documents radial drainage, coarse-to-fine fan grading, and channels at Copper Canyon; Palucis et al. map upper/lower Peace Vallis fan units and describe inverted channels and contrasting flow patterns. A possible use to assess is alluvial-fan mapping. Important differences: The USGS source documents Copper Canyon radial drainage and coarse-to-fine fan deposits; Palucis et al. map Peace Vallis upper/lower fan and channels, but matched subareas and terrain metrics are unavailable. Published sources support broad alluvial-fan sediment deposits but do not establish matching source lithology or mineralogy.",
+      "explanationSourceIds": [
+        "R18",
+        "R19",
+        "R22",
+        "R23"
+      ],
+      "reportPath": "/reports/P07-csv-2026-11-15-p01-p08-approx-coordinates.pdf"
+    },
+    {
+      "id": "P08",
+      "earthId": "E08",
+      "targetId": "M04",
+      "status": "reviewed",
+      "reviewer": "Copilot (AI source desk-screening)",
+      "reviewDate": "2026-11-15",
+      "relationship": "published hypothesis/process analogy only; terrain ranking ineligible. Theme: ice-covered lake habitability process hypothesis.",
+      "relationshipSourceIds": [
+        "R24",
+        "R25",
+        "R36"
+      ],
+      "similaritySummary": "Evidence summary for ice-covered lake habitability process hypothesis; read each dimension and its limitations before interpreting the label.",
+      "terrain": {
+        "rating": null,
+        "evidence": "The Antarctic study documents a modern ice-covered lake; the Gale comparison is a published climate/process hypothesis rather than an observed surface feature.",
+        "difference": "This is a process-context hypothesis about possible water persistence beneath ice, not a feature-level landform comparison.",
+        "sourceIds": [
+          "R24",
+          "R25",
+          "R36"
+        ],
+        "missingReason": "No observed Gale ice-cover state or paired exposed lakebed/deposit feature is identified; the NASA-hosted Antarctic/Gale source is a model hypothesis."
+      },
+      "geology": {
+        "rating": null,
+        "evidence": "The Earth source reports microbial mats and laminated organo-sedimentary structures beneath lake ice; no corresponding Gale material feature is identified by the hypothesis abstract.",
+        "difference": "Untersee benthic mats are documented under perennial ice; no corresponding Gale material feature or lakebed locator is established.",
+        "sourceIds": [
+          "R24",
+          "R25"
+        ],
+        "missingReason": "No observed Gale ice-cover state or paired exposed lakebed/deposit feature is identified; the NASA-hosted Antarctic/Gale source is a model hypothesis."
+      },
+      "similarities": [
+        {
+          "id": "E08-T01",
+          "dimension": "terrain",
+          "earthFeature": "Lake Untersee perennial ice surface",
+          "planetaryFeature": "Hypothesized Gale ice-covered lake",
+          "sharedObservation": "The Antarctic study documents a modern ice-covered lake; the Gale comparison is a published climate/process hypothesis rather than an observed surface feature.",
+          "limitation": "There is no verified Gale ice cover or paired surface-landform locator; process context is not a terrain match.",
+          "earthLocator": "Greco et al. Lake Untersee study site",
+          "planetaryLocator": "NASA NTRS abstract proposes an ice-covered Gale lake model",
+          "scaleNote": "Surface ice DEMs would not measure submerged lakebed terrain; not scoreable.",
+          "sourceIds": [
+            "R24",
+            "R25",
+            "R36"
+          ],
+          "reviewStatus": "reviewed_source_desk_screening"
+        },
+        {
+          "id": "E08-G01",
+          "dimension": "geology",
+          "earthFeature": "Lake Untersee benthic mats",
+          "planetaryFeature": "Gale lake sediments under a model hypothesis",
+          "sharedObservation": "The Earth source reports microbial mats and laminated organo-sedimentary structures beneath lake ice; no corresponding Gale material feature is identified by the hypothesis abstract.",
+          "limitation": "Earth microbial mats do not establish Martian biology or a matching Gale lithology; the compared Mars feature remains hypothetical.",
+          "earthLocator": "Greco et al. abstract and study of Untersee benthic mats",
+          "planetaryLocator": "NASA NTRS abstract; proposed environment, no mapped material unit",
+          "scaleNote": "No paired Earth/Mars sample or lakebed evidence.",
+          "sourceIds": [
+            "R24",
+            "R25"
+          ],
+          "reviewStatus": "reviewed_source_desk_screening"
+        }
+      ],
+      "practice": [],
+      "limits": [
+        "This is a process-context hypothesis about possible water persistence beneath ice, not a feature-level landform comparison.",
+        "Untersee benthic mats are documented under perennial ice; no corresponding Gale material feature or lakebed locator is established.",
+        "REMA or satellite elevations see ice surface, not lake floor",
+        "Hypothesis rather than confirmed Gale ice-sheet or lake-surface feature"
+      ],
+      "limitSourceIds": [
+        "R24",
+        "R25",
+        "R36"
+      ],
+      "visuals": {
+        "earth": {
+          "localPath": null,
+          "sourceId": "R24",
+          "scale": "No imported image scale",
+          "credit": "See cited source",
+          "missingReason": "The package supplies citations but no verified, imported terrain image."
+        },
+        "target": {
+          "localPath": null,
+          "sourceId": "R36",
+          "scale": "No imported image scale",
+          "credit": "See cited source",
+          "missingReason": "The package supplies citations but no verified, imported terrain image."
+        }
+      },
+      "reviewNotes": "AI source desk-screening; the hypothesized Gale ice-covered lake is not treated as an observed site. Next validation: Retain P08 as unscored process context unless comparable surface deposits are identified and sourced on both bodies.",
+      "reviewStatus": "reviewed_source_desk_screening",
+      "overall": "Insufficient evidence",
+      "coverage": 0,
+      "rankEligible": false,
+      "rankOrder": null,
+      "explanation": "Terrain is not rated: No observed Gale ice-cover state or paired exposed lakebed/deposit feature is identified; the NASA-hosted Antarctic/Gale source is a model hypothesis. Geology is not rated: No observed Gale ice-cover state or paired exposed lakebed/deposit feature is identified; the NASA-hosted Antarctic/Gale source is a model hypothesis. Evidence context: The Antarctic study documents a modern ice-covered lake; the Gale comparison is a published climate/process hypothesis rather than an observed surface feature. No evidence-backed practice activity is assigned. Important differences: This is a process-context hypothesis about possible water persistence beneath ice, not a feature-level landform comparison. Untersee benthic mats are documented under perennial ice; no corresponding Gale material feature or lakebed locator is established. This desk-reviewed comparison remains outside ranked results because one or both dimensions lack sufficient evidence.",
+      "explanationSourceIds": [
+        "R24",
+        "R25",
+        "R36"
+      ],
+      "reportPath": "/reports/P08-csv-2026-11-15-p01-p08-approx-coordinates.pdf"
     }
   ]
 }

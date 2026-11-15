@@ -1,0 +1,458 @@
+%PDF-1.4
+%“Œ‹ž ReportLab Generated PDF document (opensource)
+1 0 obj
+<<
+/F1 2 0 R /F2 3 0 R
+>>
+endobj
+2 0 obj
+<<
+/BaseFont /Helvetica /Encoding /WinAnsiEncoding /Name /F1 /Subtype /Type1 /Type /Font
+>>
+endobj
+3 0 obj
+<<
+/BaseFont /Helvetica-Bold /Encoding /WinAnsiEncoding /Name /F2 /Subtype /Type1 /Type /Font
+>>
+endobj
+4 0 obj
+<<
+/Contents 13 0 R /MediaBox [ 0 0 612 792 ] /Parent 12 0 R /Resources <<
+/Font 1 0 R /ProcSet [ /PDF /Text /ImageB /ImageC /ImageI ]
+>> /Rotate 0 /Trans <<
+
+>> 
+  /Type /Page
+>>
+endobj
+5 0 obj
+<<
+/Contents 14 0 R /MediaBox [ 0 0 612 792 ] /Parent 12 0 R /Resources <<
+/Font 1 0 R /ProcSet [ /PDF /Text /ImageB /ImageC /ImageI ]
+>> /Rotate 0 /Trans <<
+
+>> 
+  /Type /Page
+>>
+endobj
+6 0 obj
+<<
+/A <<
+/S /URI /Type /Action /URI (https://themis.asu.edu/zoom-20231205a)
+>> /Border [ 0 0 0 ] /Rect [ 52.8 573.075 213.387 585.075 ] /Subtype /Link /Type /Annot
+>>
+endobj
+7 0 obj
+<<
+/A <<
+/S /URI /Type /Action /URI (https://eros.usgs.gov/earthshots/salar-de-atacama-chile)
+>> /Border [ 0 0 0 ] /Rect [ 52.8 537.075 274.389 549.075 ] /Subtype /Link /Type /Annot
+>>
+endobj
+8 0 obj
+<<
+/A <<
+/S /URI /Type /Action /URI (https://science.nasa.gov/resource/perseverance-explores-the-jezero-crater-delta/)
+>> /Border [ 0 0 0 ] /Rect [ 52.8 489.075 374.919 501.075 ] /Subtype /Link /Type /Annot
+>>
+endobj
+9 0 obj
+<<
+/Annots [ 6 0 R 7 0 R 8 0 R ] /Contents 15 0 R /MediaBox [ 0 0 612 792 ] /Parent 12 0 R /Resources <<
+/Font 1 0 R /ProcSet [ /PDF /Text /ImageB /ImageC /ImageI ]
+>> /Rotate 0 
+  /Trans <<
+
+>> /Type /Page
+>>
+endobj
+10 0 obj
+<<
+/PageMode /UseNone /Pages 12 0 R /Type /Catalog
+>>
+endobj
+11 0 obj
+<<
+/Author (\(anonymous\)) /CreationDate (D:20261115053407+06'00') /Creator (\(unspecified\)) /Keywords () /ModDate (D:20261115053407+06'00') /Producer (ReportLab PDF Library - \(opensource\)) 
+  /Subject (\(unspecified\)) /Title (TerraTwin P06 evidence report) /Trapped /False
+>>
+endobj
+12 0 obj
+<<
+/Count 3 /Kids [ 4 0 R 5 0 R 9 0 R ] /Type /Pages
+>>
+endobj
+13 0 obj
+<<
+/Length 5129
+>>
+stream
+1 0 0 1 0 0 cm  BT /F1 12 Tf 14.4 TL ET
+q
+1 0 0 1 52.8 717.2 cm
+q
+.078431 .164706 .262745 rg
+BT 1 0 0 1 0 4 Tm /F2 18 Tf 22 TL 116.652 0 Td (TerraTwin evidence report - P06) Tj T* -116.652 0 Td ET
+Q
+Q
+q
+1 0 0 1 52.8 668.2 cm
+q
+.082353 .345098 .415686 rg
+BT 1 0 0 1 0 22 Tm /F2 14 Tf 18 TL (San Pedro River delta at Salar de Atacama \(deposit selection pending\) and) Tj T* (Jezero western delta sediment exposures \(feature pending\)) Tj T* ET
+Q
+Q
+q
+1 0 0 1 52.8 649.2 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 3 Tm /F1 10 Tf 13 TL (Status: reviewed | Overall: Moderate | Evidence: 2/2 dimensions supported) Tj T* ET
+Q
+Q
+q
+1 0 0 1 52.8 631.2 cm
+q
+.254902 .32549 .419608 rg
+BT 1 0 0 1 0 3 Tm /F1 9 Tf 12 TL (Dataset csv-2026-11-15-p01-p08-review | Rubric terrain-geology-qual-v1 | Order terrain-first-v1) Tj T* ET
+Q
+Q
+q
+1 0 0 1 52.8 613.2 cm
+q
+.254902 .32549 .419608 rg
+BT 1 0 0 1 0 3 Tm /F1 9 Tf 12 TL (Qualitative screening judgment; no similarity percentage or route-safety assessment.) Tj T* ET
+Q
+Q
+q
+1 0 0 1 52.8 582.2 cm
+q
+.082353 .345098 .415686 rg
+BT 1 0 0 1 0 4 Tm /F2 14 Tf 18 TL (Feature scope) Tj T* ET
+Q
+Q
+q
+1 0 0 1 52.8 537.2 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 29 Tm /F1 10 Tf 13 TL (Earth: San Pedro River delta at Salar de Atacama \(deposit selection pending\). Locator: Salar de Atacama; USGS) Tj T* (names the northern basin delta but gives no outlet GPS; mapped river gazetteer point is NOT delta geolocation.) Tj T* (Footprint: not_digitized.) Tj T* ET
+Q
+Q
+q
+1 0 0 1 52.8 495.2 cm
+q
+.254902 .32549 .419608 rg
+BT 1 0 0 1 0 27 Tm /F1 9 Tf 12 TL (Earth map marker: Context reference: Rio San Pedro mapped stream point \(NOT delta\) \(related_river_not_delta\); not a verified) Tj T* (feature point. Coordinate note: USGS names the northern basin delta but gives no outlet GPS; mapped river gazetteer point is) Tj T* (NOT delta geolocation.. Convention: WGS84 signed East [-180,180]; WGS84 geodetic) Tj T* ET
+Q
+Q
+q
+1 0 0 1 52.8 463.2 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 16 Tm /F1 10 Tf 13 TL (Mars: Jezero western delta sediment exposures \(feature pending\). Locator: Jezero crater; 2023 THEMIS VIS) Tj T* (image center; choose map unit, outcrop or image pixel for actual delta feature. Footprint: not_digitized.) Tj T* ET
+Q
+Q
+q
+1 0 0 1 52.8 433.2 cm
+q
+.254902 .32549 .419608 rg
+BT 1 0 0 1 0 15 Tm /F1 9 Tf 12 TL (Planetary coordinate convention: positive East [0,360]; planetocentric unless product label specifies otherwise; verify. 2023) Tj T* (THEMIS VIS image center; choose map unit, outcrop or image pixel for actual delta feature.) Tj T* ET
+Q
+Q
+q
+1 0 0 1 52.8 401.2 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 16 Tm /F1 10 Tf 13 TL (Relationship: independent basin / Jezero delta sources; exact pair proposed. Theme: ephemeral river delta /) Tj T* (ancient delta. [R16, R42]) Tj T* ET
+Q
+Q
+q
+1 0 0 1 52.8 370.2 cm
+q
+.082353 .345098 .415686 rg
+BT 1 0 0 1 0 4 Tm /F2 14 Tf 18 TL (C01 - Named landform and subfeatures) Tj T* ET
+Q
+Q
+q
+1 0 0 1 52.8 340.2 cm
+q
+.254902 .32549 .419608 rg
+BT 1 0 0 1 0 15 Tm /F1 9 Tf 12 TL (Question: Cross-section/planform, visible subfeatures, area/scale, meaningfully corresponding features | Readiness:) Tj T* (not_numerical) Tj T* ET
+Q
+Q
+q
+1 0 0 1 52.8 321.2 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 3 Tm /F1 10 Tf 13 TL (Rating: Moderate | Sources: R16, R42) Tj T* ET
+Q
+Q
+q
+1 0 0 1 52.8 289.2 cm
+q
+BT 1 0 0 1 0 16 Tm 13 TL /F1 10 Tf 0 0 0 rg (Evidence: USGS identifies the San Pedro delta in the northern Salar basin; NASA) Tj (') Tj (s rover panorama and transcript) Tj T* (identify Jezero delta-front cliffs, layered outcrops, and sedimentary features.) Tj T* ET
+Q
+Q
+q
+1 0 0 1 52.8 257.2 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 16 Tm /F1 10 Tf 13 TL (Difference: USGS identifies the northern San Pedro delta and NASA documents the Jezero delta front and) Tj T* (sedimentary outcrops; exact matched footprints, channel geometry, and scale remain unmeasured.) Tj T* ET
+Q
+Q
+q
+1 0 0 1 52.8 226.2 cm
+q
+.082353 .345098 .415686 rg
+BT 1 0 0 1 0 4 Tm /F2 14 Tf 18 TL (C02 - Surface material / deposit classes) Tj T* ET
+Q
+Q
+q
+1 0 0 1 52.8 196.2 cm
+q
+.254902 .32549 .419608 rg
+BT 1 0 0 1 0 15 Tm /F1 9 Tf 12 TL (Question: Published lithology, regolith, layers, sediment size, bedrock context, mineral analyses if measured | Readiness:) Tj T* (not_numerical) Tj T* ET
+Q
+Q
+q
+1 0 0 1 52.8 177.2 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 3 Tm /F1 10 Tf 13 TL (Rating: Moderate | Sources: R16, R42) Tj T* ET
+Q
+Q
+q
+1 0 0 1 52.8 145.2 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 16 Tm /F1 10 Tf 13 TL (Evidence: USGS describes episodic river delivery and alluvial fans around the Salar; NASA reports Jezero delta) Tj T* (mud and sand, layered fine-grained sedimentary rocks, and rover-observed sedimentary outcrops.) Tj T* ET
+Q
+Q
+q
+1 0 0 1 52.8 113.2 cm
+q
+BT 1 0 0 1 0 16 Tm 13 TL /F1 10 Tf 0 0 0 rg (Difference: Earth) Tj (') Tj (s ephemeral San Pedro delta drains into a saline salar while Jezero) Tj (') Tj (s ancient delta entered a) Tj T* (crater lake; these sources support broad sedimentary deposits, not matched mineralogy or grain-size distributions.) Tj T* ET
+Q
+Q
+q
+1 0 0 1 52.8 82.2 cm
+q
+.082353 .345098 .415686 rg
+BT 1 0 0 1 0 4 Tm /F2 14 Tf 18 TL (Documented similarity) Tj T* ET
+Q
+Q
+ 
+endstream
+endobj
+14 0 obj
+<<
+/Length 5630
+>>
+stream
+1 0 0 1 0 0 cm  BT /F1 12 Tf 14.4 TL ET
+q
+1 0 0 1 52.8 713.2 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 16 Tm /F1 10 Tf 13 TL (Evidence summary for ephemeral river delta / ancient delta; read each dimension and its limitations before) Tj T* (interpreting the label.) Tj T* ET
+Q
+Q
+q
+1 0 0 1 52.8 616.2 cm
+q
+BT 1 0 0 1 0 81 Tm 13 TL /F1 10 Tf 0 0 0 rg (E06-T01 \267 Terrain similarity: USGS identifies the San Pedro delta in the northern Salar basin; NASA) Tj (') Tj (s rover) Tj T* (panorama and transcript identify Jezero delta-front cliffs, layered outcrops, and sedimentary features. Limitation:) Tj T* (An ephemeral river delta entering a saline salar differs from an ancient delta entering a crater lake; channel) Tj T* -0.108667 Tw (geometry, footprint, and scale are not matched. Earth locator: USGS Earthshots Landsat scenes and description of) Tj T* 0 Tw (the northern San Pedro delta Planetary locator: NASA Mastcam-Z panorama acquired June 12, 13, 16, 17 and 20,) Tj T* (2022; named Hogwallow Flats and Skinner Ridge Scale: Image dates and feature narratives are known; no) Tj T* (matched polygon, slope, or scale analysis was performed. Sources: R16, R42) Tj T* ET
+Q
+Q
+q
+1 0 0 1 52.8 532.2 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 68 Tm /F1 10 Tf 13 TL (E06-G01 \267 Geology similarity: USGS describes episodic river delivery and alluvial fans around the Salar; NASA) Tj T* (reports Jezero delta mud and sand, layered fine-grained sedimentary rocks, and rover-observed sedimentary) Tj T* (outcrops. Limitation: The broad sediment-deposit family is comparable, but Earth salinity/evaporites and Mars) Tj T* (sulfates/phyllosilicates are not shown to be compositionally equivalent. Earth locator: USGS Earthshots San Pedro) Tj T* (River delta and basin description Planetary locator: NASA Perseverance delta panorama transcript and outcrop) Tj T* (observations Scale: No paired mineralogy or grain-size distributions. Sources: R16, R42) Tj T* ET
+Q
+Q
+q
+1 0 0 1 52.8 501.2 cm
+q
+.082353 .345098 .415686 rg
+BT 1 0 0 1 0 4 Tm /F2 14 Tf 18 TL (Explanation and practice) Tj T* ET
+Q
+Q
+q
+1 0 0 1 52.8 352.2 cm
+q
+BT 1 0 0 1 0 133 Tm 13 TL /F1 10 Tf 0 0 0 rg (Terrain is rated Moderate: USGS identifies the San Pedro delta in the northern Salar basin; NASA) Tj (') Tj (s rover) Tj T* (panorama and transcript identify Jezero delta-front cliffs, layered outcrops, and sedimentary features. Geology is) Tj T* (rated Moderate: USGS describes episodic river delivery and alluvial fans around the Salar; NASA reports Jezero) Tj T* (delta mud and sand, layered fine-grained sedimentary rocks, and rover-observed sedimentary outcrops. Evidence) Tj T* (context: USGS identifies the San Pedro delta in the northern Salar basin; NASA) Tj (') Tj (s rover panorama and transcript) Tj T* (identify Jezero delta-front cliffs, layered outcrops, and sedimentary features. A possible use to assess is delta and) Tj T* (depositional-landform mapping. Important differences: USGS identifies the northern San Pedro delta and NASA) Tj T* (documents the Jezero delta front and sedimentary outcrops; exact matched footprints, channel geometry, and) Tj T* (scale remain unmeasured. Earth) Tj (') Tj (s ephemeral San Pedro delta drains into a saline salar while Jezero) Tj (') Tj (s ancient) Tj T* (delta entered a crater lake; these sources support broad sedimentary deposits, not matched mineralogy or) Tj T* (grain-size distributions.) Tj T* ET
+Q
+Q
+q
+1 0 0 1 52.8 307.2 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 29 Tm /F1 10 Tf 13 TL (Delta and depositional-landform mapping \(possible\): USGS identifies the San Pedro delta and NASA documents) Tj T* -0.062353 Tw (the Jezero delta front and sedimentary outcrops. Limitations: The Earth site is an ephemeral delta entering a saline) Tj T* 0 Tw (salar; no matched footprint, scale, or route suitability is established. [R16, R42]) Tj T* ET
+Q
+Q
+q
+1 0 0 1 52.8 262.2 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 29 Tm /F1 10 Tf 13 TL (Sedimentary outcrop observation \(possible\): The sources document Earth alluvial/delta deposits and Mars) Tj T* (fine-grained layered delta sediments. Limitations: This is a research practice analogy only; material chemistry) Tj T* (differs and no field activity is approved. [R16, R42]) Tj T* ET
+Q
+Q
+q
+1 0 0 1 52.8 231.2 cm
+q
+.082353 .345098 .415686 rg
+BT 1 0 0 1 0 4 Tm /F2 14 Tf 18 TL (Limits and missing imagery) Tj T* ET
+Q
+Q
+q
+1 0 0 1 52.8 199.2 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 16 Tm /F1 10 Tf 13 TL (- USGS identifies the northern San Pedro delta and NASA documents the Jezero delta front and sedimentary) Tj T* (outcrops; exact matched footprints, channel geometry, and scale remain unmeasured.) Tj T* ET
+Q
+Q
+q
+1 0 0 1 52.8 167.2 cm
+q
+BT 1 0 0 1 0 16 Tm 13 TL /F1 10 Tf 0 0 0 rg (- Earth) Tj (') Tj (s ephemeral San Pedro delta drains into a saline salar while Jezero) Tj (') Tj (s ancient delta entered a crater lake;) Tj T* (these sources support broad sedimentary deposits, not matched mineralogy or grain-size distributions.) Tj T* ET
+Q
+Q
+q
+1 0 0 1 52.8 148.2 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 3 Tm /F1 10 Tf 13 TL (- Exclude lithium ponds/mining and salt-flat crust from target fan geometry) Tj T* ET
+Q
+Q
+q
+1 0 0 1 52.8 129.2 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 3 Tm /F1 10 Tf 13 TL (- Do not equate all Jezero delta units with a salt-flat delta) Tj T* ET
+Q
+Q
+q
+1 0 0 1 52.8 111.2 cm
+q
+.254902 .32549 .419608 rg
+BT 1 0 0 1 0 3 Tm /F1 9 Tf 12 TL (Limit sources: R16, R42) Tj T* ET
+Q
+Q
+q
+1 0 0 1 52.8 81.2 cm
+q
+.254902 .32549 .419608 rg
+BT 1 0 0 1 0 15 Tm /F1 9 Tf 12 TL (Earth image: The package supplies citations but no verified, imported terrain image. Scale: No imported image scale. Credit:) Tj T* (See cited source. [R16]) Tj T* ET
+Q
+Q
+ 
+endstream
+endobj
+15 0 obj
+<<
+/Length 2241
+>>
+stream
+1 0 0 1 0 0 cm  BT /F1 12 Tf 14.4 TL ET
+q
+1 0 0 1 52.8 715.2 cm
+q
+.254902 .32549 .419608 rg
+BT 1 0 0 1 0 15 Tm /F1 9 Tf 12 TL (Planetary image: The package supplies citations but no verified, imported terrain image. Scale: No imported image scale.) Tj T* (Credit: See cited source. [R42]) Tj T* ET
+Q
+Q
+q
+1 0 0 1 52.8 684.2 cm
+q
+.082353 .345098 .415686 rg
+BT 1 0 0 1 0 4 Tm /F2 14 Tf 18 TL (Method and source register) Tj T* ET
+Q
+Q
+q
+1 0 0 1 52.8 639.2 cm
+q
+BT 1 0 0 1 0 29 Tm 13 TL /F1 10 Tf 0 0 0 rg (AI qualitative source desk-screening using published Landsat context and rover observations; not an independent) Tj T* (field review. Next validation: Use the USGS-named northern San Pedro delta and NASA) Tj (') Tj (s named Jezero) Tj T* (delta-front panorama/outcrops; retain regional map anchors as context rather than feature coordinates.) Tj T* ET
+Q
+Q
+q
+1 0 0 1 52.8 607.2 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 16 Tm /F1 10 Tf 13 TL (Review: reviewed_source_desk_screening | Copilot \(AI source desk-screening\) | Date: 2026-11-15 | Rank eligible:) Tj T* (yes) Tj T* ET
+Q
+Q
+q
+1 0 0 1 52.8 589.2 cm
+q
+.254902 .32549 .419608 rg
+BT 1 0 0 1 0 3 Tm /F1 9 Tf 12 TL (R15 | NASA / JPL / ASU THEMIS | Jezero Crater Delta image | Image center 18.449 N 77.436 E; 2023-05-19 VIS frame) Tj T* ET
+Q
+Q
+q
+1 0 0 1 52.8 571.2 cm
+q
+.090196 .419608 .529412 rg
+BT 1 0 0 1 0 3 Tm /F1 9 Tf 12 TL (https://themis.asu.edu/zoom-20231205a) Tj T* ET
+Q
+Q
+q
+1 0 0 1 52.8 553.2 cm
+q
+.254902 .32549 .419608 rg
+BT 1 0 0 1 0 3 Tm /F1 9 Tf 12 TL (R16 | USGS EROS | Salar de Atacama Chile Earthshots | Northern basin / San Pedro River delta description) Tj T* ET
+Q
+Q
+q
+1 0 0 1 52.8 535.2 cm
+q
+.090196 .419608 .529412 rg
+BT 1 0 0 1 0 3 Tm /F1 9 Tf 12 TL (https://eros.usgs.gov/earthshots/salar-de-atacama-chile) Tj T* ET
+Q
+Q
+q
+1 0 0 1 52.8 505.2 cm
+q
+.254902 .32549 .419608 rg
+BT 1 0 0 1 0 15 Tm /F1 9 Tf 12 TL (R42 | NASA | Perseverance Explores the Jezero Crater Delta | Mastcam-Z panorama acquired June 12, 13, 16, 17 and 20,) Tj T* (2022; delta-front transcript and named outcrops) Tj T* ET
+Q
+Q
+q
+1 0 0 1 52.8 487.2 cm
+q
+.090196 .419608 .529412 rg
+BT 1 0 0 1 0 3 Tm /F1 9 Tf 12 TL (https://science.nasa.gov/resource/perseverance-explores-the-jezero-crater-delta/) Tj T* ET
+Q
+Q
+ 
+endstream
+endobj
+xref
+0 16
+0000000000 65535 f 
+0000000061 00000 n 
+0000000102 00000 n 
+0000000209 00000 n 
+0000000321 00000 n 
+0000000516 00000 n 
+0000000711 00000 n 
+0000000893 00000 n 
+0000001093 00000 n 
+0000001318 00000 n 
+0000001543 00000 n 
+0000001613 00000 n 
+0000001910 00000 n 
+0000001982 00000 n 
+0000007163 00000 n 
+0000012845 00000 n 
+trailer
+<<
+/ID 
+[<c7f8158bbe1df82d4dc31810ab38d9e2><c7f8158bbe1df82d4dc31810ab38d9e2>]
+% ReportLab generated PDF document -- digest (opensource)
+
+/Info 11 0 R
+/Root 10 0 R
+/Size 16
+>>
+startxref
+15138
+%%EOF

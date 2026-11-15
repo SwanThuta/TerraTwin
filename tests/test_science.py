@@ -7,7 +7,7 @@ import pytest
 from pydantic import ValidationError
 
 from pipeline.build import build
-from pipeline.csv_loader import load_p01, rows
+from pipeline.csv_loader import load_dataset, load_p01, rows
 from pipeline.models import Dataset, coverage, overall_rating, publishable, rank_key
 
 
@@ -50,13 +50,62 @@ def test_p01_uses_csv_review_and_criteria_only():
     assert rank_key(item) == (1, 2, "E01")
 
 
-def test_research_station_is_context_not_locale_7():
+def test_p02_to_p08_reviews_keep_missing_dimensions_out_of_rankings():
+    dataset = load_dataset()
+    comparisons = {item.id: item for item in dataset.comparisons}
+    published = {item["id"]: item for item in publishable(dataset)["comparisons"]}
+
+    assert set(comparisons) == {f"P{number:02}" for number in range(1, 9)}
+    assert (comparisons["P05"].terrain.rating, comparisons["P05"].geology.rating) == ("Moderate", "Moderate")
+    assert (comparisons["P06"].terrain.rating, comparisons["P06"].geology.rating) == ("Moderate", "Moderate")
+    assert (comparisons["P07"].terrain.rating, comparisons["P07"].geology.rating) == ("Moderate", "Moderate")
+    assert comparisons["P03"].terrain.rating == "Weak"
+    assert comparisons["P03"].geology.rating is None
+    assert comparisons["P08"].terrain.rating is None
+    assert comparisons["P08"].geology.rating is None
+    assert all(comparisons[pair_id].status == "reviewed" for pair_id in comparisons)
+    assert {pair_id for pair_id, item in published.items() if item["rankEligible"]} == {"P01", "P05", "P06", "P07"}
+    assert published["P03"]["overall"] == "Insufficient evidence"
+    assert published["P03"]["coverage"] == 1
+    assert published["P08"]["rankEligible"] is False
+    assert "Geology is not rated" in published["P03"]["explanation"]
+
+
+def test_added_sources_and_practice_tags_resolve_in_the_dataset():
+    dataset = load_dataset()
+    source_ids = {source.id for source in dataset.sources}
+    comparisons = {item.id: item for item in dataset.comparisons}
+
+    assert {"R40", "R41", "R42"}.issubset(source_ids)
+    assert {source_id for tag in comparisons["P06"].practice for source_id in tag.sourceIds} <= source_ids
+    assert comparisons["P06"].practice
+    assert not comparisons["P08"].practice
+
+
+def test_approximate_locale_7_point_is_distinguished_from_the_station():
     earth, moon = load_p01().sites
-    assert earth.mapPoint == (-89.86666666666666, 75.43333333333334)
-    assert "not a verified feature point" in earth.mapPointKind
-    assert "No exact Locale 7 GPS found" in earth.coordinateNote
+    assert earth.mapPoint == (-89.91728, 75.44605)
+    assert earth.mapPointKind.startswith("Approximate reference locator:")
+    assert "assumed 315-degree NW bearing" in earth.coordinateNote
+    assert "no Locale 7 GPS" in earth.coordinateNote
     assert moon.mapPoint is None
     assert "positive East" in moon.coordinateConvention
+
+
+def test_approximate_coordinate_rows_are_filled_and_labeled():
+    locations = rows("locations.csv")
+    approximate = {
+        row["feature_id"]: row for row in locations
+        if row["feature_coordinates_status"].startswith("approximate_")
+    }
+    assert set(approximate) == {"E01", "E04", "E05", "E06", "E07", "M01", "M02", "M03", "M04", "H_L02"}
+    for row in approximate.values():
+        assert row["feature_lat_deg"] and row["feature_lon_deg"]
+        assert "approximate" in row["coordinate_note"].lower()
+
+    sites = {site.id: site for site in load_dataset().sites}
+    for feature_id in ("E04", "E05", "E06", "E07"):
+        assert sites[feature_id].mapPointKind.startswith("Approximate reference locator:")
 
 
 def test_missing_evidence_and_unknown_sources_are_rejected():
@@ -70,19 +119,22 @@ def test_missing_evidence_and_unknown_sources_are_rejected():
         Dataset.model_validate(raw)
 
 
-def test_explanation_and_report_reuse_selected_csv_record():
+def test_explanations_and_reports_reuse_all_selected_csv_records():
     output = build()
     root = Path(__file__).resolve().parents[1]
     web = json.loads((root / "web/public/data/atlas.json").read_text(encoding="utf-8"))
     assert web == output
-    item = web["comparisons"][0]
-    assert item["rankEligible"] is True and item["rankOrder"] == 1
-    assert set(item["terrain"]["sourceIds"] + item["geology"]["sourceIds"]).issubset(item["explanationSourceIds"])
-    assert set(source for similarity in item["similarities"] for source in similarity["sourceIds"]).issubset(item["explanationSourceIds"])
-    pdf = root / "web/public" / item["reportPath"].lstrip("/")
-    body = pdf.read_bytes()
-    assert body.startswith(b"%PDF")
-    for expected in (item["id"], item["overall"], item["reviewStatus"], item["terrain"]["rating"],
-                     item["geology"]["rating"], output["reviewProfile"], "C01", "C02",
-                     "HMP research station", "Impact-landform observation", "E01-T01", *item["terrain"]["sourceIds"]):
-        assert expected.encode() in body
+    for item in web["comparisons"]:
+        dimension_sources = item["terrain"]["sourceIds"] + item["geology"]["sourceIds"]
+        similarity_sources = [source for similarity in item["similarities"] for source in similarity["sourceIds"]]
+        assert set(dimension_sources + similarity_sources).issubset(item["explanationSourceIds"])
+        pdf = root / "web/public" / item["reportPath"].lstrip("/")
+        body = pdf.read_bytes()
+        assert body.startswith(b"%PDF")
+        for expected in (
+            item["id"], item["overall"], item["reviewStatus"],
+            item["terrain"]["rating"] or "Insufficient evidence",
+            item["geology"]["rating"] or "Insufficient evidence",
+            output["reviewProfile"], "C01", "C02", *dimension_sources,
+        ):
+            assert expected.encode() in body

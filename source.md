@@ -1,8 +1,12 @@
 # TerraTwin: evidence for qualitative analog ratings
 
-Research review date: 2026-11-14.
+Research review dates: 2026-11-14 (P01 source record); 2026-11-15 (P02-P08 AI desk screens).
 
-Status: research shortlist for eight proposed pairs. P01 has a dated source-based screening review; the other pairs remain unrated candidates. This file records what each source supports, what needs review, and the limits of each proposed analogy. The first product uses sourced qualitative ratings; DEM-derived similarity percentages are outside its scope.
+Status: all eight proposed pairs now have source-based desk screens in `pair_review_overrides.csv`. P01 remains Moderate/Weak; P05, P06, and P07 are Moderate/Moderate; P03 has Weak terrain with geology not rated; P02, P04, and P08 have neither scored dimension. P01 and P05-P07 are rank-eligible; all others remain outside rankings. No pair meets the Strong threshold. The override file preserves the original proposed-pair rows and clearly identifies these as AI desk screenings, not independent expert or field reviews. DEM-derived similarity percentages are outside scope.
+
+The generated atlas and PDFs now include all eight desk-screen records from the same validated dataset. P02, P04, and P08 remain unranked with explicit gaps; P03 is 1/2 dimensions supported. The only fully rated additional records are P05-P07, and their Moderate labels do not imply matched measurements, safety, or independent approval.
+
+Source-access note: R07's publisher page returned HTTP 406; the R09 PDF was returned as binary and could not be text-inspected; R10 returned HTTP 403; R15 timed out; and publisher pages R22/R23 returned HTTP 403. The Crossref abstract for R22, NASA pages R41/R42, USGS page R06, R40's map catalog, and the NASA NTRS R25 record were readable. Findings that depend on blocked documents remain explicitly limited; no inaccessible source is treated as a new measurement.
 
 ## Selected dimensions
 
@@ -38,16 +42,16 @@ Moon targets: Shackleton crater and Marius Hills. Mars targets: Jezero crater an
 
 The requested Earth regions are represented by Haughton, Death Valley, Antarctica, Atacama, Iceland and Hawaii. The two additional Earth sites are Lava Beds National Monument and Lake Salda. "Houton" is interpreted as Haughton Crater on Devon Island, Canada.
 
-| Pair ID | Planetary feature | Earth location | Relationship supported by sources | Initial assessment |
-| --- | --- | --- | --- | --- |
-| P01 | Shackleton: impact terrain and traverse context | Haughton Crater, Devon Island, Canada | Directly documented Shackleton-relevant analog relationship [S01]; selected rim-area evidence [S19, S22] | Reviewed desk screening: terrain Moderate, geology Weak, overall Weak |
-| P02 | Marius Hills: volcanic surfaces | Mauna Ulu lava-flow area, Kilauea, Hawaii | Documented lava-tube development and broader lunar volcanic analog work [S02, S03] | Proposed specific Marius pairing; terrain/geology candidate |
-| P03 | Marius Hills: volcanic surfaces and vents | Fagradalsfjall lava-flow terrain, Iceland | NASA studies these flows/vents for lunar and Martian comparisons [S04] | Proposed specific Marius pairing; terrain/geology candidate |
-| P04 | Marius Hills pit region: volcanic cave exploration | Lava Beds National Monument, California, USA | Lunar cave-detection research near Medicine Lake Volcano and documented lava tubes [S03, S05] | Proposed specific Marius pairing; feature/process evidence first |
-| P05 | Jezero: carbonate-bearing margin and sedimentary features | Lake Salda, Turkiye | Explicit Jezero comparison involving carbonates and sediment deposition [S06] | Well-documented geological/process lead; identify matching exposed features |
-| P06 | Jezero: deltaic deposits | San Pedro River delta, Salar de Atacama, Chile | Earth delta documented by USGS [S07]; Jezero delta documented by NASA [S08] | Proposed comparison, not a source-validated exact pair |
-| P07 | Gale: Peace Vallis alluvial fan | Copper Canyon fan, Death Valley, California, USA | Published Death Valley-Gale fan analogy [S09]; Copper Canyon-Peace Vallis is TerraTwin's proposed specific pairing | Priority qualitative candidate; compare cited fan features and scale differences |
-| P08 | Gale: possible ancient ice-covered lake conditions | Lake Untersee, Antarctica | Explicit published Antarctic analogy for ancient Gale lakes [S10] | Context/process case; not currently eligible for terrain ranking |
+| Pair ID | Planetary feature | Earth location | Relationship supported by sources | Initial assessment | Branch desk-screen result |
+|---|---|---|---|---|---|
+| P01 | Shackleton: impact terrain and traverse context | Haughton Crater, Devon Island, Canada | Directly documented Shackleton-relevant analog relationship [S01]; selected rim-area evidence [S19, S22] | Supplied review: terrain Moderate, geology Weak, overall Weak | Existing P01 record; unchanged |
+| P02 | Marius Hills: volcanic surfaces | Mauna Ulu lava-flow area, Kilauea, Hawaii | USGS documents multiple Mauna Ulu tube-forming processes [R06]; Moon map is regional only [R40] | Source-screened; selected flow footprint and lunar material remain unresolved | 0/2 dimensions; Insufficient evidence |
+| P03 | Marius Hills: volcanic surfaces and vents | Fagradalsfjall 2021 vent 5b, Iceland | Published vent locator [R07], NASA field methods [R41], and LROC pit morphology [R04] | AI source desk-screen | Terrain Weak; geology null; Insufficient evidence |
+| P04 | Marius Hills pit region: volcanic cave exploration | Skull Cave, Lava Beds National Monument, California, USA | Cave/parking locator and possible lunar skylight sources [R04, R09, R10] | AI source desk-screen; source text access limited | 0/2 dimensions; Insufficient evidence |
+| P05 | Jezero: carbonate-bearing margin and sedimentary features | Lake Salda, Turkiye | NASA directly describes Salda carbonates/shorelines and possible Jezero carbonates [R11-R13] | AI source desk-screen | Terrain Moderate; geology Moderate; overall Moderate |
+| P06 | Jezero: deltaic deposits | San Pedro River delta, Salar de Atacama, Chile | USGS identifies the northern San Pedro delta [R16]; NASA documents Jezero delta outcrops [R42] | AI source desk-screen | Terrain Moderate; geology Moderate; overall Moderate |
+| P07 | Gale: Peace Vallis alluvial fan | Copper Canyon fan, Death Valley, California, USA | USGS fan description [R18-R19]; Peace Vallis paper/abstract [R22] | AI source desk-screen | Terrain Moderate; geology Moderate; overall Moderate |
+| P08 | Gale: possible ancient ice-covered lake conditions | Lake Untersee, Antarctica | Modern lake observations [R24, R36]; NASA-hosted Gale model hypothesis [R25] | AI source desk-screen; process context only | 0/2 dimensions; Insufficient evidence |
 
 The distribution is intentionally one Earth site for Shackleton, three for Marius Hills, two for Jezero, and two for Gale. Eight Earth sites do not imply two equally strong or rankable sites for every target. The two-Earth-site UI should operate where two eligible records actually exist; it must not manufacture a second ranked match.
 
@@ -55,7 +59,7 @@ The distribution is intentionally one Earth site for Shackleton, three for Mariu
 
 ### P01: Haughton - Shackleton
 
-**Selected scope and locators:** Haughton *Site A, Locale 7* on the northwestern crater rim, identified by the NASA robotic follow-up map (Figure 22) and field photographs (Figure 28); the paper places Locale 7 about 2 km northwest of HMP base camp [S22]. Its broader Site A context is Figure 13 (PDF page 40) in [S01]. The website's Earth map uses a published Haughton **crater-center regional locator** [S26], not an invented Locale 7 coordinate or footprint. On the Moon, use the **750-m-wide LROC rim image** at the intersection with the Shackleton-de Gerlache ridge, **89.684°S, 196.739°E** (positive-east longitude) [S19]. These source-backed figure locators define a field-practice comparison, not matched polygons or approved routes. NASA explicitly identifies the Haughton-Shackleton analog relationship at the whole-crater and operations levels in Table 3 (PDF page 27) [S01].
+**Selected scope and locators:** Haughton *Site A, Locale 7* on the northwestern crater rim, identified by the NASA robotic follow-up map (Figure 22) and field photographs (Figure 28); the paper places Locale 7 about 2 km northwest of HMP base camp [S22]. The map now uses **75.44605°N, 89.91728°W** as an approximate point, calculated 2 km along an assumed 315° northwest bearing from the HMP reference coordinate [S01]. NASA does not publish an exact Locale 7 GPS or bearing; the HMP base coordinate remains separately recorded as a context anchor. Its broader Site A context is Figure 13 (PDF page 40) in [S01]. On the Moon, use the **750-m-wide LROC rim image** at the intersection with the Shackleton-de Gerlache ridge, **89.684°S, 196.739°E** (positive-east longitude) [S19]. These locators define a field-practice comparison, not matched polygons or approved routes. NASA explicitly identifies the Haughton-Shackleton analog relationship at the whole-crater and operations levels in Table 3 (PDF page 27) [S01].
 
 **Terrain — Moderate (`terrain-geology-qual-v1`):** the Haughton Locale 7 field record describes a rocky ridge, a broad lower shelf and a heavily bouldered section that complicated K10 rover access (Figure 28 and printed page 20) [S22]. The selected Shackleton rim image shows blocks, small craters and a relatively flat observation area; the linked 1:8,000 geomorphic map documents impact-related textures and slope features across the ridge and adjacent rim [S19]. This is a useful broad comparison for observing rim obstacles and planning a route from imagery. The sources do not establish matching slopes, block sizes/distributions or a trafficable lunar route. Haughton is a modified terrestrial complex impact structure with faults and terraces [S01]; LOLA describes Shackleton as a well-preserved simple crater [S21]. These morphology and observation-scale differences prevent a Strong terrain label.
 
@@ -69,23 +73,31 @@ The distribution is intentionally one Earth site for Shackleton, three for Mariu
 
 ### P02: Mauna Ulu, Hawaii - Marius Hills
 
-USGS documents lava-tube development in the Mauna Ulu eruption field [S02]. NASA describes Kilauea as a lunar volcanic fieldwork analog, but its gallery example uses Hadley Rille rather than validating a Marius Hills match [S03]. Assigning Mauna Ulu to Marius Hills is TerraTwin's proposed process comparison, supported by the lunar volcanic/pit interpretation in [S11].
+USGS documents four tube-forming processes observed during the 1969–1974 Mauna Ulu eruption, including crusted channels and pahoehoe lobes fed by distributary networks [R06]. This is stronger Earth-side process evidence than a generic Kilauea analogy. The Marius Hills atlas identifies a specific pit in a sinuous rille but does not establish an open or continuous tube or local wall composition [R04]. The USGS Maunaulu GNIS point is a named-formation reference, not the particular flow/tube footprint [R05]. The USGS Unified Geologic Map gives only regional lunar context at 1:5,000,000 scale [R40].
 
-Identify a dated, mapped flow surface and a corresponding lunar volcanic feature. Compare documented surface form and material interpretations, including their age and scale limits. Candidate practice tags: lava-surface mapping and geological observation. Do not infer equivalent cave dimensions from the surrounding surface.
+**AI source-desk decision — Insufficient evidence overall (0/2).** The Earth source describes a multi-flow tube system without selecting a bounded Mauna Ulu flow; the lunar source is a pit-scale feature. The broad tube-forming process does not establish a matched surface landform. Regional map context also does not characterize the Marius pit wall. Both dimensions therefore remain null rather than receiving a forced Weak label.
+
+Next evidence: select one dated Mauna Ulu flow/tube feature, record a source-backed map or image footprint, and compare it with the specific LROC pit at compatible physical scale. Do not infer equivalent cave dimensions, local lunar composition, or a tube interior from the regional surface records. P02 is present in the generated atlas/PDF as a reviewed but unscored record.
 
 Limits: eruption age, weathering, material details, gravity and flow-emplacement conditions. An Earth flow is not a replica of the entire Marius volcanic complex.
 
 ### P03: Fagradalsfjall, Iceland - Marius Hills
 
-NASA's GIFT fieldwork account describes study of Fagradalsfjall vents and lava flows for comparison with volcanic features on Mars and the Moon [S04]. That supports a volcanic-process analog, not an independently established Marius-specific match.
+NASA's 2025 Team Lava report adds field-method evidence from Fagradalsfjall: drone-derived topographic models, thermal mapping, rock descriptions/sampling and observation of vent rockslide scars [R41]. It does not show that the team sampled the specific 2021 vent 5b in this pair. The source record identifies vent 5b, while the lunar feature is the LROC pit in a sinuous rille ([CSV source R07](https://link.springer.com/article/10.1007/s11069-022-05798-7), [NASA R41](https://science.nasa.gov/solar-system/planetary-analogs/nasas-goddard-instrument-field-team-iceland-2025/team-lava/), [LROC R04](https://lroc.im-ldi.com/atlases/pits/1)).
 
-Choose a particular eruption/flow footprint with an acquisition date. Use surface volcanic terrain for the first comparison; do not substitute Vatnajokull glacier topography or treat Iceland as one site. Candidate practice tags: volcanic-landform mapping and instrument characterization, supported by the fieldwork description.
+**Terrain — Weak (desk-screening result):** the selected Earth feature is an eruptive vent, while the lunar feature is a pit in a sinuous rille that is interpreted as a possible lava-tube skylight. The shared volcanic context does not make these the same landform, and the Earth flow footprint and lunar comparison window are not matched. This is a material limitation for a feature-level terrain analogy.
+
+**Geology — Not rated; insufficient evidence.** The Earth vent 5b record does not provide an accessible, feature-specific material analysis, and neither the lunar pit atlas nor the regional 1:5M lunar map establishes pit-wall composition [R04, R07, R40]. NASA's 2025 observations are from the region but do not validate materials at vent 5b [R41]. A shared volcanic setting is not sufficient to infer matching surface-material classes. P03 remains **Insufficient evidence overall** and is not rank-eligible.
+
+The generated record retains the Weak terrain judgment and null geology. A published-source map of the 2021 flow/vent and feature-specific material evidence would be required to complete the comparison. NASA's broader drone, thermal and rock-sampling work supports possible field-method context, not a P03 geology rating.
 
 Limits: fresh Earth lava can differ strongly from ancient lunar surfaces in weathering, cover and preservation. If a DEM is used later, its acquisition date must postdate the flow being assessed; mosaic dates require checking.
 
 ### P04: Lava Beds - Marius Hills pit
 
-NPS documents lava flows and lava tubes at Lava Beds [S05]. NASA documents lunar cave-detection research near Medicine Lake Volcano [S03]. These establish relevant feature/process research; the specific Marius pairing remains proposed, and the exact NASA field site must not be assumed to coincide with a chosen park cave without checking its locator.
+NPS documents lava flows and lava tubes at Lava Beds [S05]. NASA documents lunar cave-detection research near Medicine Lake Volcano [S03]. The cited USGS guide coordinate is for Skull Cave parking, not a surveyed cave entrance; the Marius Hills atlas identifies a pit but does not establish an accessible or continuous subsurface tube ([CSV sources R09](https://pubs.usgs.gov/sir/2017/5022/k1/sir20175022k1.pdf), [R10](https://home.nps.gov/labe/learn/nature/geology.htm), [R04](https://lroc.im-ldi.com/atlases/pits/1)).
+
+**AI source-desk decision — Insufficient evidence overall (0/2).** The supplied Earth coordinate is Skull Cave parking, not a surveyed cave entrance, and the USGS guide's PDF text and NPS page could not be verified through the available readers. The lunar pit atlas does not establish an accessible or continuous subsurface tube. The pair is recorded as reviewed with both dimensions null, not as a Weak comparison; cave-detection research remains process/practice context only.
 
 Identify a documented cave and surrounding surface feature. Rate only the visible/sourced surface and process evidence; do not rate underground geometry without cave surveys or equivalent evidence. Candidate practice tags: cave-detection instrument research and geological observation, conditional on source/site verification.
 
@@ -97,13 +109,13 @@ NASA directly compares Lake Salda with Jezero, including carbonate deposits, sho
 
 **Selected scope and locators:** On Earth, use an exposed Lake Salda shoreline deposit or terrace rather than the whole lake. NASA's source identifies beach sediments along the northeastern shore, a shallow hydromagnesite carbonate bench extending about 40 m offshore, an exposed microbialite island, alluvial-fan delta deposits, an ancient-stream outcrop and a terrace deposit on the southwest peninsula [S06]. On Mars, use a named Jezero shoreline/delta feature with a source-backed locator. NASA identifies carbonate-bearing material along the western crater margins as possible ancient-shoreline deposits [S06] and identifies the delta's fan-shaped sedimentary setting, layered outcrops, Hogwallow Flats and Skinner Ridge in the Perseverance panorama and transcript [S08]. These are source-backed feature leads, not matched polygons, rover routes or proof that a Salda deposit is equivalent to a selected Jezero outcrop.
 
-**Terrain/landform evidence — pending feature review (`terrain-geology-qual-v1`):** both sources document water-related depositional settings, including Lake Salda alluvial fans, terraces and shoreline deposits and the Jezero delta's fan-shaped sedimentary deposits [S06, S08]. This supports a possible comparison of depositional form and sediment organization. The sources do not yet define one bounded Salda footprint and one bounded Jezero footprint with comparable area, relief, slope, roughness or image scale. Do not rate the lake surface as lakebed terrain, and do not infer a terrain score from visual resemblance alone.
+**Terrain/landform — Moderate (desk-screening result):** NASA documents Salda's exposed northeastern beach, carbonate bench and shoreline/terrace deposits, and describes possible ancient-shoreline deposits along Jezero's western margin [S06, CSV sources R12 and R13]. This supports a broad shoreline/depositional-form comparison. The specific footprints, matched scales, and terrain measurements are not established, so Strong is not supported.
 
-**Geology/materials — pending feature review (`terrain-geology-qual-v1`):** NASA reports hydromagnesite and other carbonate-rich sediments around Lake Salda, including sediments associated with microbialites, and describes possible carbonate-bearing material on the western margins of Jezero [S06]. NASA's Jezero source also documents layered sedimentary rocks and finer-grained delta deposits, including the Hogwallow Flats and Skinner Ridge areas [S08]. This supports a material/process comparison at the documented category level. It does not establish identical mineralogy, microbial origin, grain-size distribution or depositional history; any mineral label must remain tied to the cited source and selected feature.
+**Geology/materials — Moderate (desk-screening result):** NASA reports hydromagnesite-rich Salda beach/bench deposits and possible carbonate-bearing material at Jezero's western margin [S06, CSV source R12]. This supports a broad carbonate-category comparison, but the Martian identification is tentative and does not establish the same mineral species, microbial origin, grain size, or depositional history. Strong is not supported.
 
-**Current implementation: qualitative heuristic comparison.** Apply `terrain-geology-qual-v1` from `spec.md`; no elevation raster, DEM download, slope/roughness calculation or lakebed measurement is required for the first review. P05 remains outside ranked results until both named features are selected, both dimensions are reviewed, and the review status is recorded. No numeric similarity percentage is required or implied.
+**Overall — Moderate and rank-eligible.** The fixed rule yields Moderate from two Moderate dimensions. P05 is now included in the generated comparison record and PDF; the source-preserving proposed-pair row remains unchanged, and the decision is stored in `pair_review_overrides.csv`. The coordinates remain lake/crater context anchors, not points on the selected deposits. This AI desk screen does not imply exact footprints, quantitative similarity, independent review, or an approved field site.
 
-**Required P05 evidence:**
+**Remaining P05 validation for higher-resolution or independent review:**
 
 | Dimension | Lake Salda evidence | Jezero evidence | Review requirement |
 | --- | --- | --- | --- |
@@ -111,13 +123,13 @@ NASA directly compares Lake Salda with Jezero, including carbonate deposits, sho
 | Geology/materials | Hydromagnesite/carbonate sediments, microbialite-related deposits or documented sediment layers [S06] | Possible carbonate-bearing western-margin deposits and layered/fine-grained delta sediments [S06, S08] | Compare only source-supported material categories; do not infer life, identical minerals or unmeasured composition |
 | Practice context (unscored) | Shoreline/fan/terrace observations and sample-site selection research [S06] | Perseverance delta observation, abrasion and core-sampling context [S08] | Justify each tag from evidence and state that Earth activities do not approve Mars operations |
 
-**Completion steps for the current profile:**
+**Optional follow-up steps:**
 
-1. Choose one bounded exposed Lake Salda feature and one bounded Jezero feature; record source page, figure, caption, panorama region or map locator for each.
-2. Record terrain and geology claims separately with source IDs, exact locators, similarities, differences and uncertainties. Keep climate, biology and water/ice as context rather than terrain-score inputs.
-3. Review both dimensions as Strong, Moderate, Weak or null with an insufficient-evidence reason. Record reviewer, date and rubric version; apply the overall-label and `terrain-first-v1` ordering rules from `spec.md`.
+1. For a production comparison, choose one bounded exposed Lake Salda feature and one bounded Jezero feature; record source page, figure, caption, panorama region or map locator for each.
+2. Refine terrain and geology claims separately with exact locators, similarities, differences and uncertainties. Keep climate, biology and water/ice as context rather than terrain-score inputs.
+3. Keep the Moderate/Moderate label while source evidence remains at broad shoreline/carbonate-family scope; revise only when additional feature-specific sources support a different judgment.
 4. Select Earth and Mars visual assets only when coverage, attribution, reuse terms and scale/field of view are known. Label different or unknown display scales.
-5. Create one validated P05 comparison record and generate the website explanation and PDF from it, preserving source references, limitations, practice-tag rationale and review status.
+5. The validated P05 record and matching PDF are generated from the same CSV inputs. Rebuild them after any source or review update.
 
 **Practice use and limits:** possible tags are **sedimentary observation**, **shoreline/fan mapping** and **sample-site selection research**, subject to selected-feature review. Lake Salda's microbialites can inform questions about carbonate deposition and biosignature search locations, but Earth microbialites do not establish Martian life. Lake-water surfaces do not supply lakebed terrain measurements. Salda's current hydrology, climate, biology, gravity and atmosphere differ from ancient Jezero conditions; the analogy does not establish habitability, safety or permanent-base suitability.
 
@@ -125,11 +137,15 @@ NASA directly compares Lake Salda with Jezero, including carbonate deposits, sho
 
 ### P06: San Pedro delta, Atacama - Jezero
 
-USGS describes the San Pedro River delta and ephemeral water delivery at Salar de Atacama [S07]. NASA documents Jezero's ancient delta and sedimentary rocks [S08]. Those sources support a hypothesis to test; neither alone establishes compatibility between the two specific footprints.
+USGS explicitly identifies the San Pedro River delta in the northern Salar de Atacama basin, describes it as an ephemeral stream, and notes that flows form alluvial fans around the salt-pan margins [R16]. The EarthShots source includes Landsat scenes from 1991, 2006, and 2025 (path/row 233/76). NASA's Perseverance resource describes the Jezero delta front using a Mastcam-Z panorama assembled from 1,118 images acquired on June 12, 13, 16, 17, and 20, 2022; it identifies Hogwallow Flats and Skinner Ridge [R42]. The transcript describes a roughly 32-ft layered cliff, fine-grained delta sediments, mud and sand from the former river, and core-sampling at Skinner Ridge.
 
-Select depositional features, identify their geological setting, exclude mining infrastructure and artificial surfaces, and assess whether terrain scale and processes are comparable. Candidate practice tag: depositional-landform interpretation, after review. Aridity can be sourced context, not evidence of matching delta geology.
+**Terrain/landform — Moderate:** both are source-identified river-fed delta/fan depositional settings. Source windows, channel shapes, physical scales, and elevation products are not matched, and the Earth feature is an ephemeral river delta entering a saline salar while Jezero's ancient delta entered a crater lake. This supports a broad landform comparison, not Strong terrain similarity.
 
-Limits: salt-flat chemistry, episodic flows, depositional history and preservation may differ. Do not label the entire Atacama Desert a Jezero delta analog.
+**Geology/materials — Moderate:** the sources support broad sedimentary/alluvial deposit classes on both sides. They do not establish matched mineralogy or grain-size distributions; the salar's saline/evaporitic setting differs from Jezero's ancient lake/delta sediments. Do not substitute Salar brine, salt crust, or mining ponds for the river delta.
+
+**Overall — Moderate and rank-eligible.** P06's source-based AI desk screen is included in the generated comparison and PDF. The Earth river gazetteer coordinate remains a context reference, not a delta coordinate; the planetary panorama is a view of named outcrops, not a georeferenced polygon or route. No similarity percentage or safety conclusion is implied.
+
+**Practice context and limits:** possible uses are delta/depositional-landform mapping and sedimentary outcrop observation, with the evidence and caveats in the practice CSV. Keep salinity, episodic flows, basin geometry, age, material chemistry, and Martian preservation differences visible. Aridity alone is not evidence of a delta match.
 
 ### P07: Copper Canyon fan - Peace Vallis fan
 
@@ -139,11 +155,15 @@ The USGS identifies Copper Canyon as an alluvial fan with radial drainage and do
 
 The website's Earth map uses a **Copper Canyon valley-mouth regional locator** from a secondary presentation of the USGS GNIS record [S27]. It is not a surveyed fan centroid, boundary or field access point. The National Park Service currently lists Copper Canyon as closed to the public [S28]; a possible field-practice use is not an access recommendation.
 
-Qualitative review plan: use the named Copper Canyon and Peace Vallis fan deposits as the feature scope, citing the USGS image/study and Palucis et al.'s mapped fan. Distinguish fan deposits from their source channels and adjacent terrain. Record fan form, radial/channel features, deposit classes, the large whole-fan scale difference, and uncertainty. Candidate practice tags: channel/fan mapping, sedimentary observation and terrain-navigation research; attach only after selected-feature evidence review.
+**Terrain/landform — Moderate (desk-screening result):** the USGS documents Copper Canyon's radial drainage and coarse-to-fine fan deposits [S12, S13], while Palucis et al. map upper/lower Peace Vallis fan units and associated channels [S14]. These are feature-applicable sources for a broad alluvial-fan comparison. The reported whole-fan areas differ substantially (about 5.2 km² vs. 80 km²), and matched subareas, relief, slopes, and image scales are not established, so Strong is not supported.
+
+**Geology/materials — Moderate (desk-screening result):** the sources support comparison at the broad alluvial-fan sediment/deposit-class level [S13, S14], but do not establish matching source lithology or mineralogy for the selected windows. This unresolved provenance and scale difference prevents Strong; it does not by itself justify Weak without feature-specific evidence of a material mismatch.
+
+**Overall — Moderate and rank-eligible.** The rubric yields Moderate from two Moderate dimensions. P07 is included in the generated comparison and PDF with an AI desk-screen attribution; the original proposed-pair row is preserved and the review is recorded in `pair_review_overrides.csv`. The fan-center coordinates remain context-only. No matched terrain measurements, access recommendation, or independent expert review is claimed.
 
 **Current implementation: qualitative heuristic comparison.** Apply `terrain-geology-qual-v1` from `spec.md`; no elevation raster, DEM download, slope/roughness calculation or equal-area polygon is required. The local `data/raw/earth/` and `data/raw/mars/` download folders were removed at the user's request because they are not required for this profile. The inspected Earth tile did not establish Copper Canyon fan coverage, and the Gale HRSC `.part` file was incomplete. Neither was used to derive observations or ratings. Research documents and metadata elsewhere in `data/raw/` are retained.
 
-Required P07 evidence:
+The following checks remain useful for a higher-resolution or independent P07 review:
 
 | Dimension | Copper Canyon evidence | Peace Vallis evidence | Review requirement |
 | --- | --- | --- | --- |
@@ -155,25 +175,25 @@ Completion steps for the current profile:
 
 1. Record source-backed locators for both named fan deposits, using cited maps, figures or image footprints. Distinguish fan deposits from source channels and adjacent terrain; exact GIS polygons are optional.
 2. Record each terrain/geology claim with its source ID and exact page, figure, map unit or caption. State similarities, meaningful differences and unresolved evidence.
-3. Review the two dimensions using Strong/Moderate/Weak or null with an insufficient-evidence reason. Record reviewer, date and rubric version; apply the overall-label and `terrain-first-v1` ordering rules from `spec.md`. A downloaded file alone does not complete this review.
+3. If new evidence changes either dimension, record the source and rationale, reviewer and date, and reapply the overall-label and `terrain-first-v1` ordering rules from `spec.md`. Downloading a raster alone does not establish a rating.
 4. Select sourced images with known feature coverage, attribution, reuse terms and scale/field of view when available. Clearly label mismatched or unknown display scales.
-5. Create one validated P07 comparison record and generate the website explanation and PDF from it, preserving evidence references, limitations, practice-tag rationale and review status. Keep P07 outside ranked results until both dimensions are rated and the review is recorded.
+5. The current P07 comparison and PDF are generated from the same validated dataset record. Rebuild them after any source or rating changes.
 
-No P07 rating or completed review is established by this document update. No similarity percentage is required or implied.
+No similarity percentage is required or implied.
 
 Optional future quantitative work: NASA's SRTMGL1 tile **N36W117.SRTMGL1.hgt** [S16] and the USGS **MSL_Gale_DEM_Mosaic_1m_v3** [S17] remain retrieval leads; neither has verified terrain at a selected fan window. The previously proposed HiRISE DTM **DTEED_062963_1760_062172_1760_A01** is described as **channel** terrain [S15, S18], so it is not confirmed fan-deposit coverage. Reintroduce raster collection only for a separately scoped numerical analysis with checked coverage, units, quality and comparable physical scales.
 
 Visual leads: the USGS Copper Canyon fan image states a 1:48,000 source scale and public-domain use [S12]. Palucis et al., Figure 2, identifies CTX image P22_009571_1756_XI_04S222W at 6 m/pixel [S14]. Those source scales are not calibrated scale bars for a displayed thumbnail. Verify image coverage, georeferencing and reuse terms before cropping or publishing; label differing display scales.
 
-P07 rating checks: confirm the cited terrain and geology evidence applies to both named fan deposits, record corresponding features and meaningful differences, then assign the two rubric labels and overall label with reviewer/date and references. Use the same record for web/PDF provenance. Until this review is recorded, show P07 as a sourced candidate without a ranked rating.
+P07's Moderate labels are AI source desk-screening judgments, not independent review. Exact feature windows and georeferenced fan polygons remain future validation work; these do not turn the existing broad evidence into a Strong score.
 
 Limits: Earth rainfall and sediment transport do not reproduce current Martian conditions; a fan is not automatically a delta or lakebed. Quantitative mobility claims require finer terrain and surface-property evidence than broad topography alone.
 
 ### P08: Lake Untersee - ancient Gale lake
 
-The NASA-hosted research abstract explicitly discusses Lake Untersee in a cold-climate hypothesis for ancient Gale lakes [S10]. This supports studying how liquid water could persist beneath ice under specified model conditions.
+The NASA-hosted research abstract explicitly discusses Lake Untersee in a cold-climate hypothesis for ancient Gale lakes [S10, CSV source R25]. The hypothesis tests how a body of water might persist beneath ice under specified conditions; the NASA record identifies it as an abstract/model, not a field observation of ice-covered Gale.
 
-Keep this pair as an unranked process/context case unless the named terrain and geology features on both bodies can be identified and reviewed independently. Cite the model assumptions in the explanation. Lake-ice or hydrological observations cannot replace the two required rating dimensions.
+**Desk-review decision — process context only; no terrain/geology ratings.** The Earth source describes a modern ice-covered lake with submerged microbial mats [CSV source R24], while the Mars source is a model hypothesis and does not locate a corresponding Gale lake deposit or confirm ice cover. These records do not support either C01 terrain or C02 geology for a named feature pair. Keep P08 outside the scored-comparison catalog; do not assign Strong, Moderate, or Weak to force a result.
 
 Limits: this is a hypothesis about ancient environmental conditions, not proof that Gale's lake was ice-covered or that modern surfaces match. A DEM over lake ice does not measure the submerged sedimentary surface.
 
@@ -227,13 +247,15 @@ These are mostly primary agency/research sources reviewed in the conversation on
 - **S19 - LROC/Arizona State University (2022):** [Traversing the Shackleton-de Gerlache Ridge](https://lroc.im-ldi.com/images/1247). Identifies a specific Shackleton rim image at 89.684°S, 196.739°E (positive-east), 750 m wide; describes its mapped blocks as *likely* ejecta and links the 1:8,000 geomorphic map. The image does not establish rock composition or a safe route. Credit: NASA/GSFC/Arizona State University.
 - **S20 - LROC RDR catalog:** [Shackleton Crater Rim Potential Landing Site for ESA Lunar Lander DTM](https://data.lroc.im-ldi.com/lroc/view_rdr_product/NAC_DTM_ESALL_SR12). Lists NAC_DTM_ESALL_SR12 at 2 m/pixel and bounding coordinates; the [product group](https://data.lroc.im-ldi.com/lroc/view_rdr/NAC_DTM_ESALL_SR12) offers orthoimages, confidence map and readme. Catalog bounds are not a valid-pixel or vertical-reference check.
 - **S21 - Zuber et al. (2012):** [Constraints on the volatile distribution within Shackleton crater at the lunar south pole](https://ntrs.nasa.gov/api/citations/20120013758/downloads/20120013758.pdf), Nature research letter, Figure 1 and pages 1–2. LOLA observations describe Shackleton as a well-preserved simple crater, with rim/wall/floor differences and permanently shadowed interior; crater-wide observations do not prove the material class or slope of the selected LROC rim footprint.
-- **S22 - Fong et al., NASA/AIAA:** [Robotic Follow-up for Human Exploration](https://ntrs.nasa.gov/api/citations/20110008151/downloads/20110008151.pdf), Figures 21–22 and 28–29, printed pages 16–21. Maps Haughton Site A and Locale 7, documents the bouldered shelf and rover access difficulty, and reports host carbonate marker beds and field mapping. Locale 7 is approximately 2 km northwest of HMP base camp; this relative locator is not a surveyed footprint or pixel-scale image width. The source's Site B breccia observations do not describe Locale 7.
+- **S22 - Fong et al., NASA/AIAA:** [Robotic Follow-up for Human Exploration](https://ntrs.nasa.gov/api/citations/20110008151/downloads/20110008151.pdf), Figures 21–22 and 28–29, printed pages 16–21. Maps Haughton Site A and Locale 7, documents the bouldered shelf and rover access difficulty, and reports host carbonate marker beds and field mapping. Locale 7 is approximately 2 km northwest of HMP base camp; this relative locator is not a surveyed footprint or pixel-scale image width. The CSV's map point estimates the offset using an assumed 315° bearing and is explicitly approximate. The source's Site B breccia observations do not describe Locale 7.
 - **S23 - LROC/Arizona State University:** [Terms of Use & Citation Policy](https://lroc.im-ldi.com/about/terms). Featured-site images are copyrighted but permitted for educational use with NASA/GSFC/Arizona State University credit; commercial use needs permission. PDS-delivered LROC data products are public domain. This does not clear rights for NASA report figures or other providers' image layers.
 - **S24 - NASA NTRS:** [Record for *Robotic Follow-up for Human Exploration*](https://ntrs.nasa.gov/citations/20110008151), document 20110008151. Its copyright metadata states “Public Use Permitted.” This supports use of the report and its Figure 28; it does not assert that every embedded item is public domain.
 - **S25 - NASA STI:** [Disclaimers, Copyright Notice, and Terms and Conditions of Use](https://sti.nasa.gov/disclaimers/). NASA explains that an available report may contain separately copyrighted material and asks that NASA be acknowledged as a source. No separately marked rights restriction was found on Figure 28.
 - **S26 - NASA NTRS:** [TRIDENT Drill Validation at Mars and Lunar Analog Field Sites](https://ntrs.nasa.gov/citations/20240000585). Gives Haughton crater's regional center as 75°22′N, 89°41′W. This point is only for map orientation and does not locate Site A or Locale 7.
 - **S27 - AnyplaceAmerica, citing USGS GNIS:** [Copper Canyon, Inyo County, California](https://www.anyplaceamerica.com/directory/ca/inyo-county-06027/valleys/copper-canyon-240905/). Presents GNIS valley-mouth point 36.1285645°N, 116.7536577°W. This secondary coordinate lead orients the map; it does not identify the fan polygon or a field access location. Verify against the direct GNIS record before scientific georeferencing.
 - **S28 - National Park Service:** [Death Valley National Park rules and regulations](https://www.nps.gov/deva/learn/management/rules-and-regulations.htm). Lists Copper Canyon as closed to the public. Access status may change; this source cannot establish a safe or permitted practice site.
+
+The expanded CSV source register also includes **R40**, the USGS Unified Geologic Map of the Moon (1:5M regional map; not pit-wall evidence); **R41**, NASA's 2025 Team Lava fieldwork report; and **R42**, NASA's Perseverance Jezero-delta panorama and transcript. R42 documents named outcrops and sediment observations. These additions are included in [sources.csv](TerraTwin_Earth_Moon_Mars_Analog_Data_2026-11-14/sources.csv) and referenced from the pair evidence records.
 
 ## Ready-to-rate checklist
 
@@ -244,4 +266,4 @@ These are mostly primary agency/research sources reviewed in the conversation on
 - [ ] The overall label and terrain-first order follow the rubric; unreviewed and insufficient-evidence records stay outside ranked results.
 - [ ] Explanation, practice tags, imagery and PDF preserve evidence references and limitations.
 
-This checklist is project-wide. The current branch publishes a P01 desk screening and an unranked P07 candidate, each with a matching website record and PDF; their terrain images remain pending. The other proposed pairs remain research leads. The eight curated pairs do not satisfy the separate bounded automated-discovery milestone in `spec.md`; that requires additional candidate inputs and a reproducible search beyond this list.
+This checklist is project-wide. The current branch publishes all eight AI desk-screen records and matching PDFs. P01 and P05-P07 have two rated dimensions and are ranked; P03 has only a Weak terrain judgment; P02, P04, and P08 have null dimensions and remain unranked. All terrain images remain pending. The eight curated pairs do not satisfy the separate bounded automated-discovery milestone in `spec.md`; that requires additional candidate inputs and a reproducible search beyond this list.
